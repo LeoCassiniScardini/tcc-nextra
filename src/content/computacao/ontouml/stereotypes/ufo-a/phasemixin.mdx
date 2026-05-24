@@ -32,15 +32,7 @@ Um «PhaseMixin» deve ser usado quando uma classe representa uma condição tem
 
 ### Exemplo:
 
-```
-«Category» Entidade Administrativa
-    «Kind» Pessoa
-    «Kind» Organização
-    «Relator» Contrato
-
-«PhaseMixin» Entidade Ativa
-«PhaseMixin» Entidade Inativa
-```
+![phasemixin](./assets/phasemixin/image.png)
 
 Nesse caso, Entidade Ativa pode agrupar uma pessoa ativa, uma organização ativa ou um contrato ativo. Cada uma dessas entidades possui identidade própria diferente, mas todas podem compartilhar uma fase de atividade/inatividade.
 
@@ -71,20 +63,11 @@ Além disso, por ser antirrígido, o «PhaseMixin» não pode ter como descenden
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Phase» Pessoa Ativa
-    «Phase» Pessoa Inativa
-```
+![phasemixin](./assets/phasemixin/imagecopy.png)
 
 Aqui, todas as instâncias são pessoas.
 
-```
-«PhaseMixin» Entidade Ativa
-    «Phase» Pessoa Ativa
-    «Phase» Organização Ativa
-    «Phase» Contrato Ativo
-```
+![phasemixin](./assets/phasemixin/imagecopy2.png)
 
 Aqui, a fase mistura pessoas, organizações e contratos, que possuem princípios de identidade distintos.
 
@@ -97,15 +80,11 @@ Ambos são abstratos, antirrígidos e não fornecem identidade. A diferença pri
 
 **Exemplo:**
 
-```
-«PhaseMixin» Recurso Disponível
-```
+![phasemixin](./assets/phasemixin/imagecopy3.png)
 
 A disponibilidade pode ser tratada como um estado do próprio recurso.
 
-```
-«RoleMixin» Parte Contratual
-```
+![phasemixin](./assets/phasemixin/imagecopy4.png)
 
 A condição de parte contratual depende de uma relação contratual.
 
@@ -115,12 +94,7 @@ Use quando precisar representar uma fase comum a diferentes tipos de entidades.
 
 **Exemplo:**
 
-```
-«PhaseMixin» Entidade Suspensa
-    «Phase» Pessoa Suspensa
-    «Phase» Empresa Suspensa
-    «Phase» Contrato Suspenso
-```
+![phasemixin](./assets/phasemixin/imagecopy5.png)
 
 Pessoa, Empresa e Contrato têm identidades diferentes, mas podem compartilhar a condição temporária de suspensão.
 
@@ -131,62 +105,19 @@ Não. Ele é abstrato. O correto é instanciar os subtipos concretos ou mais esp
 ## Exemplos
 
 ### Exemplo 1 — Entidade ativa ou inativa
-```
-«Category» Entidade Administrativa
-    «Kind» Pessoa
-    «Kind» Organização
-    «Relator» Contrato
-
-«PhaseMixin» Entidade Ativa
-«PhaseMixin» Entidade Inativa
-```
+![phasemixin](./assets/phasemixin/imagecopy6.png)
 
 - Entidade Ativa e Entidade Inativa agrupam fases de entidades diferentes dentro de um domínio administrativo.
 
 ### Exemplo 2 — Recurso disponível
-```
-«Mixin» Recurso
-    «Kind» Equipamento
-    «Quantity» Água
-    «Collective» Acervo
-
-«PhaseMixin» Recurso Disponível
-«PhaseMixin» Recurso Indisponível
-```
+![phasemixin](./assets/phasemixin/imagecopy7.png)
 
 - Recurso Disponível pode abranger equipamento disponível, água disponível ou acervo disponível, sem fornecer identidade própria.
 
 ### Exemplo 3 — Objeto danificado
-```
-«Category» Entidade Física
-    «Kind» Veículo
-    «Kind» Equipamento
-    «Collective» Frota
-
-«PhaseMixin» Entidade Danificada
-    «Phase» Veículo Danificado
-    «Phase» Equipamento Danificado
-    «Phase» Frota Danificada
-```
+![phasemixin](./assets/phasemixin/imagecopy8.png)
 
 - A condição de danificado é temporária e pode atingir diferentes tipos de entidades físicas.
-
-### Exemplo 4 — Contexto jurídico-administrativo
-```
-«Category» Entidade Jurídica
-    «Kind» Pessoa
-    «Kind» Organização
-    «Relator» Contrato
-    «Relator» Benefício Previdenciário
-
-«PhaseMixin» Entidade Suspensa
-    «Phase» Pessoa Suspensa
-    «Phase» Organização Suspensa
-    «Phase» Contrato Suspenso
-    «Phase» Benefício Suspenso
-```
-
-- Entidade Suspensa é uma fase abstrata que agrupa diferentes entidades jurídicas ou administrativas em estado temporário de suspensão.
 
 ## Resumo final
 

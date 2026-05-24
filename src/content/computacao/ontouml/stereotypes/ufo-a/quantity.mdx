@@ -37,9 +37,7 @@ Se a resposta for sim, provavelmente é um «Quantity».
 
 ### Exemplo:
 
-```
-«Quantity» Areia
-```
+![quantity](./assets/quantity/image.png)
 
 Se uma porção de areia for dividida em duas, as duas partes continuam sendo areia. O mesmo raciocínio vale para água, argila, ouro e sangue.
 
@@ -49,10 +47,7 @@ O «Quantity» fornece identidade própria. Por isso, não deve ter como superti
 
 ### Exemplo inadequado:
 
-```
-«Kind» Objeto
-    «Quantity» Água
-```
+![quantity](./assets/quantity/imagecopy.png)
 
 Nesse caso, Água não deveria herdar identidade de Objeto, pois já possui seu próprio princípio de identidade como quantidade de matéria.
 
@@ -73,10 +68,7 @@ Além disso, como é rígido, um «Quantity» não pode ter como supertipo um ti
 
 **Exemplo:**
 
-```
-«Quantity» Areia
-«Collective» Pilha de Tijolos
-```
+![quantity](./assets/quantity/imagecopy2.png)
 
 - Na areia, o foco está na massa ou porção de matéria.
 - Na pilha de tijolos, é possível identificar cada tijolo como membro do coletivo.
@@ -88,10 +80,7 @@ Além disso, como é rígido, um «Quantity» não pode ter como supertipo um ti
 
 **Exemplo:**
 
-```
-«Kind» Garrafa
-«Quantity» Água
-```
+![quantity](./assets/quantity/imagecopy3.png)
 
 - A garrafa é um objeto individual.
 - A água é uma porção de substância.
@@ -103,10 +92,7 @@ Além disso, como é rígido, um «Quantity» não pode ter como supertipo um ti
 
 **Exemplo:**
 
-```
-«Quantity» Água
-«Quality» Temperatura
-```
+![quantity](./assets/quantity/imagecopy4.png)
 
 - A água é uma substância.
 - A temperatura é uma qualidade que pode caracterizar a água.
@@ -119,58 +105,19 @@ Sim. Ele pode ser especializado por Subkind, Phase e Role, além de poder ser ge
 
 **Exemplo:**
 
-```
-«Quantity» Água
-    «Subkind» Água Potável
-    «Phase» Água Congelada
-    «Phase» Água Líquida
-    «Role» Água Utilizada em Tratamento Médico
-```
+![quantity](./assets/quantity/imagecopy5.png)
 
 ## Exemplos
 
-### Exemplo 1 — Água
-```
-«Quantity» Água
-    «Subkind» Água Mineral
-    «Subkind» Água Potável
-    «Phase» Água Líquida
-    «Phase» Gelo
-```
-
-- Água é uma quantidade porque representa uma substância.
-- Água Mineral e Água Potável podem ser especializações.
-- Água Líquida e Gelo podem ser fases, conforme o estado físico.
-
-### Exemplo 2 — Areia
-```
-«Quantity» Areia
-    «Phase» Areia Seca
-    «Phase» Areia Molhada
-```
-
-- Areia é uma substância não contável.
-- Areia Seca e Areia Molhada são fases determinadas por uma condição intrínseca.
-
-### Exemplo 3 — Sangue
-```
-«Quantity» Sangue
-    «Subkind» Sangue Tipo A
-    «Subkind» Sangue Tipo B
-    «Subkind» Sangue Tipo O
-    «Phase» Sangue Coagulado
-```
+### Exemplo 1 — Sangue
+![quantity](./assets/quantity/imagecopy6.png)
 
 - Sangue é uma quantidade de matéria biológica.
 - Os tipos sanguíneos podem ser modelados como subtipos.
 - Sangue Coagulado pode ser uma fase.
 
-### Exemplo 4 — Ouro
-```
-«Quantity» Ouro
-    «Subkind» Ouro Puro
-    «Subkind» Ouro 18k
-```
+### Exemplo 2 — Ouro
+![quantity](./assets/quantity/imagecopy7.png)
 
 - Ouro é uma substância material.
 - Ouro Puro e Ouro 18k são especializações da substância.

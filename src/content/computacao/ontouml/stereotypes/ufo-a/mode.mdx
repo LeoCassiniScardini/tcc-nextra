@@ -33,23 +33,13 @@ Um «Mode» deve ser usado quando a classe representa uma característica indivi
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-«Mode» Dor
-
-Pessoa -- «Characterization» -- Dor
-```
+![mode](./assets/mode/image.png)
 
 A Dor não existe isoladamente. Ela existe como dor de uma pessoa. Por isso, ela depende do seu portador.
 
 ### Outro exemplo:
 
-```
-«Kind» Pessoa
-«Mode» Habilidade Profissional
-
-Pessoa -- «Characterization» -- Habilidade Profissional
-```
+![mode](./assets/mode/imagecopy.png)
 
 A habilidade profissional é uma propriedade intrínseca da pessoa. Ela caracteriza a pessoa, mas não é uma entidade independente como Pessoa, Contrato ou Organização.
 
@@ -59,18 +49,11 @@ Todo «Mode» deve estar conectado, direta ou indiretamente, a pelo menos uma re
 
 ### Exemplo correto:
 
-```
-«Kind» Pessoa
-«Mode» Sintoma
-
-Pessoa -- «Characterization» -- Sintoma
-```
+![mode](./assets/mode/imagecopy2.png)
 
 ### Exemplo inadequado:
 
-```
-«Mode» Sintoma
-```
+![mode](./assets/mode/imagecopy3.png)
 
 Nesse caso, o modelo está incompleto, porque não informa de quem o sintoma é.
 
@@ -85,12 +68,7 @@ A diferença é que o «Quality» se conecta a um espaço de valores estruturado
 
 **Exemplo:**
 
-```
-«Quality» Peso
-«Quality» Temperatura
-«Mode» Dor
-«Mode» Habilidade
-```
+![mode](./assets/mode/imagecopy4.png)
 
 - Peso e Temperatura podem ser medidos em escalas.
 - Dor e Habilidade, no modelo, podem ser tratadas como características individualizadas sem estrutura de valor própria.
@@ -102,15 +80,11 @@ A diferença é que o «Quality» se conecta a um espaço de valores estruturado
 
 **Exemplo:**
 
-```
-«Mode» Sintoma
-```
+![mode](./assets/mode/imagecopy5.png)
 
 O sintoma pertence a uma pessoa.
 
-```
-«Relator» Contrato
-```
+![mode](./assets/mode/imagecopy6.png)
 
 O contrato conecta partes contratantes.
 
@@ -125,12 +99,7 @@ Use quando quiser representar uma característica que:
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-«Mode» Intenção
-«Mode» Crença
-«Mode» Habilidade
-```
+![mode](./assets/mode/imagecopy7.png)
 
 Esses elementos existem como aspectos da pessoa.
 
@@ -140,61 +109,24 @@ Sim. O «Mode» pode ter como subtipos «Subkind», «Role» e «Phase».
 
 **Exemplo:**
 
-```
-«Mode» Sintoma
-    «Subkind» Dor
-    «Subkind» Febre
-    «Phase» Sintoma Leve
-    «Phase» Sintoma Grave
-```
+![mode](./assets/mode/imagecopy8.png)
 
 ## Exemplos
 
 ### Exemplo 1 — Saúde
-```
-«Kind» Pessoa
-«Mode» Sintoma
-    «Subkind» Dor
-    «Subkind» Náusea
-    «Phase» Sintoma Leve
-    «Phase» Sintoma Grave
-
-Pessoa -- «Characterization» -- Sintoma
-```
+![mode](./assets/mode/imagecopy9.png)
 
 - Sintoma é um Mode porque caracteriza uma pessoa e depende dela para existir.
 
 ### Exemplo 2 — Educação
-```
-«Kind» Pessoa
-«Mode» Habilidade
-    «Subkind» Habilidade de Leitura
-    «Subkind» Habilidade Matemática
-
-Pessoa -- «Characterization» -- Habilidade
-```
+![mode](./assets/mode/imagecopy10.png)
 
 - A habilidade pertence à pessoa. Ela não é uma entidade independente.
 
 ### Exemplo 3 — Direito
-```
-«Kind» Pessoa
-«Mode» Capacidade Civil
-
-Pessoa -- «Characterization» -- Capacidade Civil
-```
+![mode](./assets/mode/imagecopy11.png)
 
 - A capacidade civil pode ser modelada como um Mode quando for tratada como uma característica jurídica intrínseca da pessoa.
-
-### Exemplo 4 — Administração pública
-```
-«Kind» Servidor Público
-«Mode» Aptidão Funcional
-
-Servidor Público -- «Characterization» -- Aptidão Funcional
-```
-
-- A aptidão funcional caracteriza o servidor e depende dele.
 
 ## Resumo final
 

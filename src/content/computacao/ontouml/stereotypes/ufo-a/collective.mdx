@@ -37,19 +37,13 @@ Se a resposta for sim, provavelmente se trata de um «Collective».
 
 ### Exemplo:
 
-```
-«Collective» Turma
-    membros: Alunos
-```
+![collective](./assets/collective/image.png)
 
 A Turma é um coletivo porque é composta por alunos que, naquele contexto, são percebidos de forma semelhante como membros da turma.
 
 ### Outro exemplo:
 
-```
-«Collective» Frota
-    membros: Veículos
-```
+![collective](./assets/collective/imagecopy.png)
 
 A Frota é composta por veículos. Cada veículo participa como membro do coletivo.
 
@@ -59,10 +53,7 @@ O «Collective» fornece identidade própria, assim como «Kind», «Quantity»,
 
 ### Exemplo inadequado:
 
-```
-«Kind» Objeto
-    «Collective» Frota
-```
+![collective](./assets/collective/imagecopy2.png)
 
 Nesse caso, Frota já fornece identidade própria como coletivo. Ela não deve herdar identidade de outro provedor.
 
@@ -76,10 +67,7 @@ Além disso, por ser rígido, um «Collective» não pode ter como supertipo um 
 
 ### Exemplo inadequado:
 
-```
-«Role» Grupo Contratado
-    «Collective» Equipe Técnica
-```
+![collective](./assets/collective/imagecopy3.png)
 
 Equipe Técnica, se for um coletivo rígido, não deve herdar de um papel temporário.
 
@@ -92,10 +80,7 @@ Equipe Técnica, se for um coletivo rígido, não deve herdar de um papel tempor
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-«Collective» Grupo de Pessoas
-```
+![collective](./assets/collective/imagecopy4.png)
 
 - Pessoa é um indivíduo.
 - Grupo de Pessoas é um coletivo composto por pessoas.
@@ -107,10 +92,7 @@ Equipe Técnica, se for um coletivo rígido, não deve herdar de um papel tempor
 
 **Exemplo:**
 
-```
-«Collective» Pilha de Tijolos
-«Quantity» Quantidade de Areia
-```
+![collective](./assets/collective/imagecopy5.png)
 
 - Na pilha, é possível identificar os tijolos como membros.
 - Na areia, o foco está na quantidade de matéria, não em membros individualizados.
@@ -121,17 +103,13 @@ Depende da modelagem. A documentação da OntoUML explica que alguns conceitos, 
 
 **Exemplo como coletivo:**
 
-```
-«Collective» Família
-```
+![collective](./assets/collective/imagecopy6.png)
 
 quando os membros são vistos de forma uniforme.
 
 **Exemplo como estrutura funcional:**
 
-```
-«Kind» Família
-```
+![collective](./assets/collective/imagecopy7.png)
 
 quando há papéis internos diferenciados, como responsável familiar, dependente, provedor etc.
 
@@ -145,66 +123,19 @@ Sim. Como outros provedores de identidade, o «Collective» pode ser especializa
 
 **Exemplo:**
 
-```
-«Collective» Frota
-    «Subkind» Frota de Ônibus
-    «Phase» Frota Ativa
-    «Role» Frota Contratada
-```
+![collective](./assets/collective/imagecopy8.png)
 
 ## Exemplos
 
 ### Exemplo 1 — Turma escolar
-```
-«Collective» Turma
-    «Subkind» Turma de Educação Infantil
-    «Phase» Turma Ativa
-    «Role» Turma Participante de Projeto
-
-«Kind» Aluno
-
-Aluno -- membro de -- Turma
-```
+![collective](./assets/collective/imagecopy9.png)
 
 - Turma é um coletivo porque é formada por alunos que participam como membros.
 
-### Exemplo 2 — Frota
-```
-«Collective» Frota
-    «Subkind» Frota de Veículos Oficiais
-    «Phase» Frota Em Operação
-    «Phase» Frota Desativada
-
-«Kind» Veículo
-
-Veículo -- membro de -- Frota
-```
-
-- A Frota é composta por veículos. Os veículos são percebidos como membros semelhantes dentro do coletivo.
-
-### Exemplo 3 — Rebanho
-```
-«Collective» Rebanho
-    «Subkind» Rebanho Bovino
-    «Subkind» Rebanho Caprino
-
-«Kind» Animal
-
-Animal -- membro de -- Rebanho
-```
+### Exemplo 2 — Rebanho
+![collective](./assets/collective/imagecopy10.png)
 
 - Rebanho é um coletivo porque é composto por animais individualizáveis.
-
-### Exemplo 4 — Área ambiental
-```
-«Collective» Floresta
-
-«Kind» Árvore
-
-Árvore -- membro de -- Floresta
-```
-
-- A Floresta é composta por árvores, que funcionam como membros do coletivo.
 
 ## Resumo final
 

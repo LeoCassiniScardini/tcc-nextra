@@ -34,23 +34,13 @@ Um «Category» deve ser usado quando se deseja representar uma generalização 
 
 ### Exemplo:
 
-```
-«Category» Ser Vivo
-    «Kind» Pessoa
-    «Kind» Animal
-```
+![category](./assets/category/image.png)
 
 Pessoa e Animal possuem princípios de identidade próprios, mas ambos podem ser reunidos na categoria Ser Vivo.
 
 ### Outro exemplo:
 
-```
-«Category» Entidade Física
-    «Kind» Pessoa
-    «Kind» Carro
-    «Quantity» Água
-    «Collective» Floresta
-```
+![category](./assets/category/imagecopy.png)
 
 Pessoa, Carro, Água e Floresta não possuem o mesmo princípio de identidade, mas podem compartilhar propriedades essenciais de entidades físicas, como localização, massa ou extensão espacial.
 
@@ -60,11 +50,7 @@ O «Category» é sempre abstrato. Isso significa que ele não deve possuir inst
 
 ### Exemplo correto:
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-```
+![category](./assets/category/imagecopy2.png)
 
 Nesse caso, não se instancia diretamente Agente. Instanciam-se Pessoa ou Organização.
 
@@ -84,10 +70,7 @@ A documentação também destaca que, por ser rígido, o «Category» não pode 
 
 ### Exemplo inadequado:
 
-```
-«Role» Cliente
-    «Category» Agente Econômico
-```
+![category](./assets/category/imagecopy3.png)
 
 Agente Econômico, sendo rígido, não deve depender de um papel temporário como Cliente.
 
@@ -100,11 +83,7 @@ Agente Econômico, sendo rígido, não deve depender de um papel temporário com
 
 **Exemplo:**
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-```
+![category](./assets/category/imagecopy4.png)
 
 - Pessoa e Organização fornecem identidade.
 - Agente apenas generaliza uma característica comum.
@@ -116,10 +95,7 @@ Agente Econômico, sendo rígido, não deve depender de um papel temporário com
 
 **Exemplo:**
 
-```
-«Category» Ser Vivo
-«Mixin» Objeto Segurável
-```
+![category](./assets/category/imagecopy5.png)
 
 - Ser vivo é uma característica essencial para pessoas e animais.
 - Objeto segurável pode ser uma classificação mais contextual, dependendo do domínio.
@@ -130,12 +106,7 @@ Use quando quiser criar uma generalização abstrata e essencial entre tipos com
 
 **Exemplo:**
 
-```
-«Category» Bem Jurídico
-    «Kind» Imóvel
-    «Kind» Veículo
-    «Quantity» Dinheiro
-```
+![category](./assets/category/imagecopy6.png)
 
 Bem Jurídico pode reunir diferentes tipos de entidades que possuem relevância jurídica, mas cada subtipo mantém seu próprio princípio de identidade.
 
@@ -146,47 +117,20 @@ Não. O «Category» é abstrato. Ele deve ser instanciado por meio de seus subt
 ## Exemplos
 
 ### Exemplo 1 — Agente
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-```
+![category](./assets/category/imagecopy7.png)
 
 - Agente generaliza entidades capazes de agir no domínio.
 - Pessoa e Organização possuem princípios de identidade diferentes.
 
 ### Exemplo 2 — Entidade física
-```
-«Category» Entidade Física
-    «Kind» Pessoa
-    «Kind» Veículo
-    «Quantity» Água
-    «Collective» Floresta
-```
+![category](./assets/category/imagecopy8.png)
 
 - Entidade Física reúne indivíduos que possuem existência material ou localização espacial.
 
 ### Exemplo 3 — Bem jurídico
-```
-«Category» Bem Jurídico
-    «Kind» Imóvel
-    «Kind» Veículo
-    «Quantity» Dinheiro
-    «Relator» Direito Real
-```
+![category](./assets/category/imagecopy9.png)
 
 - Bem Jurídico funciona como uma generalização abstrata de entidades relevantes para o direito.
-
-### Exemplo 4 — Recurso educacional
-```
-«Category» Recurso Educacional
-    «Kind» Livro
-    «Kind» Equipamento
-    «Quantity» Material Didático
-    «Collective» Acervo
-```
-
-- Recurso Educacional reúne diferentes entidades utilizadas no contexto educacional, mesmo que cada uma possua identidade própria.
 
 ## Resumo final
 

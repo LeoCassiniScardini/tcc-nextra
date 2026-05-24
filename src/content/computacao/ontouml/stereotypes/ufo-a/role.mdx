@@ -6,13 +6,7 @@ Ele é antirrígido, porque uma instância pode deixar de exercer aquele papel s
 
 ## Exemplos simples:
 
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «Role» Professor
-    «Role» Paciente
-    «Role» Cliente
-```
+![role](./assets/role/image.png)
 
 Uma pessoa pode ser Aluno em uma escola, deixar de ser aluno e continuar sendo a mesma Pessoa.
 
@@ -35,14 +29,7 @@ Um «Role» deve ser usado quando uma classe representa uma classificação cont
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-    «Role» Aluno
-
-«Kind» Escola
-
-Pessoa -- matriculada em -- Escola
-```
+![role](./assets/role/image2.png)
 
 Nesse caso, Aluno depende da relação entre Pessoa e Escola.
 A pessoa só é Aluno porque está vinculada a uma instituição de ensino.
@@ -55,10 +42,7 @@ Ele não fornece identidade própria. A identidade continua vindo do tipo superi
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-    «Role» Empregado
-```
+![role](./assets/role/imagecopy.png)
 
 Empregado não define o que a pessoa é essencialmente. Apenas indica um papel exercido em uma relação de trabalho.
 
@@ -68,28 +52,15 @@ Além disso, o «Role» deve possuir uma dependência relacional obrigatória. I
 
 ### Exemplo correto:
 
-```
-«Kind» Pessoa
-    «Role» Paciente
-
-«Kind» Hospital
-
-Paciente -- atendido por -- Hospital
-```
+![role](./assets/role/imagecopy10.png)
 
 ### Exemplo inadequado:
 
-```
-«Kind» Pessoa
-    «Role» Adulto
-```
+![role](./assets/role/imagecopy2.png)
 
 Adulto não é Role, porque não depende de uma relação externa. Depende da idade, que é uma propriedade intrínseca. Portanto, o correto seria:
 
-```
-«Kind» Pessoa
-    «Phase» Adulto
-```
+![role](./assets/role/imagecopy3.png)
 
 ## Questões comuns
 
@@ -100,11 +71,7 @@ Adulto não é Role, porque não depende de uma relação externa. Depende da id
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «Phase» Adulto
-```
+![role](./assets/role/imagecopy5.png)
 
 - Aluno depende de matrícula em uma instituição.
 - Adulto depende da idade da pessoa.
@@ -116,11 +83,7 @@ Adulto não é Role, porque não depende de uma relação externa. Depende da id
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Subkind» Pessoa Física
-    «Role» Cliente
-```
+![role](./assets/role/imagecopy6.png)
 
 - Pessoa Física é uma especialização estável.
 - Cliente depende de uma relação comercial ou contratual.
@@ -131,12 +94,7 @@ Sim.
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «Role» Empregado
-    «Role» Cliente
-```
+![role](./assets/role/imagecopy7.png)
 
 Uma mesma pessoa pode ser, ao mesmo tempo, aluna de uma faculdade, empregada de uma empresa e cliente de um banco.
 
@@ -158,57 +116,15 @@ Esses papéis normalmente dependem de processos, contratos, vínculos administra
 ## Exemplos
 
 ### Exemplo 1 — Educação
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «Role» Professor
-
-«Kind» Escola
-
-Aluno -- matriculado em -- Escola
-Professor -- trabalha em -- Escola
-```
+![role](./assets/role/imagecopy8.png)
 
 - Aluno e Professor são papéis porque dependem de uma relação com a escola.
 
 ### Exemplo 2 — Saúde
-```
-«Kind» Pessoa
-    «Role» Paciente
-    «Role» Médico
-
-«Kind» Hospital
-
-Paciente -- atendido por -- Hospital
-Médico -- vinculado a -- Hospital
-```
+![role](./assets/role/imagecopy9.png)
 
 - Paciente depende de atendimento ou vínculo com serviço de saúde.
 - Médico, neste exemplo, pode ser tratado como Role quando o foco é o papel exercido em um hospital específico.
-
-### Exemplo 3 — Direito Previdenciário
-```
-«Kind» Pessoa
-    «Role» Segurado
-    «Role» Beneficiário
-    «Role» Dependente
-
-«Kind» INSS
-«Relator» Benefício Previdenciário
-```
-
-- Segurado, Beneficiário e Dependente são papéis jurídicos ou administrativos assumidos em razão de vínculos com o sistema previdenciário.
-
-### Exemplo 4 — Contratos
-```
-«Kind» Pessoa
-    «Role» Contratante
-    «Role» Contratado
-
-«Relator» Contrato
-```
-
-- Contratante e Contratado são papéis assumidos dentro de uma relação contratual.
 
 ## Resumo final
 

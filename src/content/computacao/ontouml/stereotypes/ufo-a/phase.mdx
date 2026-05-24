@@ -6,12 +6,7 @@ Ele é antirrígido, porque uma instância pode deixar de pertencer à fase sem 
 
 ## Exemplos simples:
 
-```
-«Kind» Pessoa
-    «Phase» Criança
-    «Phase» Adulto
-    «Phase» Idoso
-```
+![phase1](./assets/phase1.png)
 
 Uma pessoa pode ser criança, depois adulta e depois idosa, mas continua sendo a mesma Pessoa.
 
@@ -36,21 +31,13 @@ Um «Phase» deve ser usado quando uma classe representa uma condição transit�
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-    «Phase» Viva
-    «Phase» Falecida
-```
+![phase2](./assets/phase2.png)
 
 Nesse caso, Viva e Falecida são fases da pessoa. A mudança ocorre por uma condição intrínseca da própria pessoa, não por uma relação externa.
 
 ### Outro exemplo:
 
-```
-«Kind» Veículo
-    «Phase» Novo
-    «Phase» Usado
-```
+![phase3](./assets/phase3.png)
 
 O veículo pode mudar de estado ao longo do tempo, mas continua sendo o mesmo veículo.
 
@@ -62,13 +49,7 @@ Além disso, um «Phase» deve fazer parte de uma partição, normalmente repres
 
 ### Exemplo correto:
 
-```
-«Kind» Pessoa
-    «Phase» Criança
-    «Phase» Adolescente
-    «Phase» Adulto
-    «Phase» Idoso
-```
+![phase1](./assets/phase1.png)
 
 Como é antirrígido, um «Phase» não pode ser supertipo de tipos rígidos, como Kind, Subkind, Collective, Quantity, Relator, Mode, Quality ou Category.
 
@@ -83,14 +64,9 @@ Também não deve ser usado quando a classificação depende de uma relação ex
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Subkind» Pessoa Natural
-    «Phase» Criança
-    «Phase» Adulto
-```
+![phase4](./assets/phase4.png)
 
-- Pessoa Natural é uma especialização estável.
+- Pessoa Fisica é uma especialização estável.
 - Criança e Adulto são fases temporárias.
 
 ### Qual é a diferença entre Phase e Role?
@@ -100,11 +76,7 @@ Também não deve ser usado quando a classificação depende de uma relação ex
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Phase» Criança
-    «Role» Aluno
-```
+![phase5](./assets/phase5.png)
 
 - Criança depende da idade da pessoa.
 - Aluno depende de uma relação com uma instituição de ensino.
@@ -115,54 +87,24 @@ Não é obrigatório, mas é recomendável. A documentação da OntoUML orienta 
 
 **Exemplo mais completo:**
 
-```
-«Kind» Pessoa
-    atributo: idade
-
-    «Phase» Criança
-    «Phase» Adulto
-    «Phase» Idoso
-```
+![phase5](./assets/phase5.png)
 
 ## Exemplos
 
 ### Exemplo 1 — Pessoa por idade
-```
-«Kind» Pessoa
-    «Phase» Criança
-    «Phase» Adolescente
-    «Phase» Adulto
-    «Phase» Idoso
-```
+![phase1](./assets/phase1.png)
 
 A pessoa passa por fases conforme sua idade. A identidade continua sendo fornecida por Pessoa.
 
 ### Exemplo 2 — Pessoa por condição de vida
-```
-«Kind» Pessoa
-    «Phase» Pessoa Viva
-    «Phase» Pessoa Falecida
-```
+![phase2](./assets/phase2.png)
 
 A fase depende de uma condição intrínseca da pessoa.
 
 ### Exemplo 3 — Veículo por estado de uso
-```
-«Kind» Veículo
-    «Phase» Veículo Novo
-    «Phase» Veículo Usado
-```
+![phase3](./assets/phase3.png)
 
 O mesmo veículo pode deixar de ser novo e passar a ser usado.
-
-### Exemplo 4 — Produto por validade
-```
-«Kind» Produto
-    «Phase» Produto Válido
-    «Phase» Produto Vencido
-```
-
-A classificação depende de uma condição interna do produto, relacionada à validade.
 
 ## Resumo final
 

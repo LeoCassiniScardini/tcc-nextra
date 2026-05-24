@@ -38,15 +38,7 @@ Se a resposta for sim, provavelmente é um «RoleMixin».
 
 ### Exemplo:
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-
-«RoleMixin» Parte Contratual
-    «Role» Contratante
-    «Role» Contratado
-```
+![rolemixin](./assets/rolemixin/image.png)
 
 Parte Contratual é um RoleMixin, pois pode ser exercido tanto por uma Pessoa quanto por uma Organização, dependendo de uma relação contratual.
 
@@ -56,12 +48,7 @@ O «RoleMixin» é sempre abstrato, portanto não deve possuir instâncias diret
 
 ### Exemplo correto:
 
-```
-«RoleMixin» Participante de Processo
-    «Role» Autor
-    «Role» Réu
-    «Role» Interessado
-```
+![rolemixin](./assets/rolemixin/imagecopy.png)
 
 Nesse exemplo, não se instancia diretamente Participante de Processo. Instanciam-se papéis mais específicos, como Autor, Réu ou Interessado.
 
@@ -79,12 +66,7 @@ Além disso, o «RoleMixin» possui dependência relacional obrigatória. Ele s�
 
 ### Exemplo:
 
-```
-«RoleMixin» Parte Contratual
-
-«Relator» Contrato
-Parte Contratual -- participa de -- Contrato
-```
+![rolemixin](./assets/rolemixin/imagecopy2.png)
 
 Sem o Contrato, não há justificativa ontológica para classificar alguém como Parte Contratual.
 
@@ -97,22 +79,13 @@ Sem o Contrato, não há justificativa ontológica para classificar alguém como
 
 **Exemplo com Role:**
 
-```
-«Kind» Pessoa
-    «Role» Aluno
-```
+![rolemixin](./assets/rolemixin/imagecopy3.png)
 
 Aluno é um papel de Pessoa.
 
 **Exemplo com RoleMixin:**
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-
-«RoleMixin» Contratante
-```
+![rolemixin](./assets/rolemixin/imagecopy4.png)
 
 Contratante pode ser uma pessoa ou uma organização. Por isso, pode ser modelado como RoleMixin quando se deseja generalizar o papel.
 
@@ -127,15 +100,11 @@ A diferença está na origem da classificação:
 
 **Exemplo:**
 
-```
-«RoleMixin» Parte Contratual
-```
+![rolemixin](./assets/rolemixin/imagecopy5.png)
 
 depende de um contrato.
 
-```
-«PhaseMixin» Entidade Suspensa
-```
+![rolemixin](./assets/rolemixin/imagecopy6.png)
 
 depende de um estado temporário da entidade.
 
@@ -146,15 +115,11 @@ depende de um estado temporário da entidade.
 
 **Exemplo:**
 
-```
-«Mixin» Objeto Segurável
-```
+![rolemixin](./assets/rolemixin/imagecopy7.png)
 
 pode ser uma característica estável para alguns tipos e temporária para outros.
 
-```
-«RoleMixin» Segurado
-```
+![rolemixin](./assets/rolemixin/imagecopy8.png)
 
 depende de uma relação securitária ou previdenciária.
 
@@ -169,79 +134,19 @@ Use quando o papel:
 
 **Exemplo:**
 
-```
-«RoleMixin» Prestador de Serviço
-    «Role» Pessoa Prestadora de Serviço
-    «Role» Empresa Prestadora de Serviço
-```
+![rolemixin](./assets/rolemixin/imagecopy9.png)
 
 ## Exemplos
 
 ### Exemplo 1 — Parte contratual
-```
-«Category» Agente Jurídico
-    «Kind» Pessoa
-    «Kind» Organização
-
-«RoleMixin» Parte Contratual
-    «Role» Contratante
-    «Role» Contratado
-
-«Relator» Contrato
-
-Parte Contratual -- «Mediation» -- Contrato
-```
+![rolemixin](./assets/rolemixin/imagecopy10.png)
 
 - Parte Contratual é um papel abstrato que pode ser exercido por pessoas ou organizações.
 
 ### Exemplo 2 — Participante de processo
-```
-«Category» Sujeito Processual
-    «Kind» Pessoa
-    «Kind» Organização
-    «Kind» Órgão Público
-
-«RoleMixin» Participante de Processo
-    «Role» Autor
-    «Role» Réu
-    «Role» Terceiro Interessado
-
-«Relator» Processo Judicial
-```
+![rolemixin](./assets/rolemixin/imagecopy11.png)
 
 - Participante de Processo agrupa papéis processuais que dependem da existência de um processo.
-
-### Exemplo 3 — Prestador de serviço
-```
-«Category» Agente Econômico
-    «Kind» Pessoa
-    «Kind» Empresa
-
-«RoleMixin» Prestador de Serviço
-    «Role» Profissional Autônomo
-    «Role» Empresa Prestadora
-
-«Relator» Contrato de Prestação de Serviço
-```
-
-- Prestador de Serviço pode ser exercido por pessoa física ou empresa, sempre em razão de uma relação de prestação de serviço.
-
-### Exemplo 4 — Direito previdenciário
-```
-«Category» Agente Previdenciário
-    «Kind» Pessoa
-    «Kind» Organização
-
-«RoleMixin» Participante da Relação Previdenciária
-    «Role» Segurado
-    «Role» Beneficiário
-    «Role» Dependente
-    «Role» INSS como Administrador do Benefício
-
-«Relator» Benefício Previdenciário
-```
-
-- Participante da Relação Previdenciária é um papel abstrato que reúne diferentes participantes de uma relação previdenciária.
 
 ## Resumo final
 

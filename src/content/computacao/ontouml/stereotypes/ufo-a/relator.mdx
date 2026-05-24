@@ -35,27 +35,13 @@ Um «Relator» deve ser usado quando a relação entre indivíduos possui exist�
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-«Kind» Empresa
-«Relator» Contrato de Trabalho
-
-Pessoa -- participa de -- Contrato de Trabalho
-Empresa -- participa de -- Contrato de Trabalho
-```
+![relator](./assets/relator/image.png)
 
 O Contrato de Trabalho é um Relator porque conecta a pessoa e a empresa, fundamentando a relação entre empregado e empregador.
 
 ### Outro exemplo:
 
-```
-«Kind» Pessoa
-«Kind» Instituição de Ensino
-«Relator» Matrícula
-
-Pessoa -- vinculada por -- Matrícula
-Instituição de Ensino -- vinculada por -- Matrícula
-```
+![relator](./assets/relator/imagecopy.png)
 
 A Matrícula fundamenta a relação entre a pessoa e a instituição de ensino. Sem a matrícula, a pessoa não exerce o papel de aluno naquele contexto.
 
@@ -65,23 +51,13 @@ O «Relator» deve estar conectado, direta ou indiretamente, a pelo menos uma re
 
 ### Exemplo correto:
 
-```
-«Kind» Pessoa
-«Kind» Banco
-«Relator» Conta Bancária
-
-Pessoa -- «Mediation» -- Conta Bancária
-Banco -- «Mediation» -- Conta Bancária
-```
+![relator](./assets/relator/imagecopy2.png)
 
 Além disso, a soma das cardinalidades mínimas das mediações ligadas ao Relator deve ser maior ou igual a 2. Em termos simples: um relator precisa mediar pelo menos dois participantes obrigatórios.
 
 ### Exemplo inadequado:
 
-```
-«Relator» Contrato
-Contrato -- «Mediation» -- Pessoa
-```
+![relator](./assets/relator/imagecopy3.png)
 
 Se o contrato estiver ligado obrigatoriamente a apenas uma pessoa, o modelo fica incompleto, porque um contrato normalmente depende de pelo menos duas partes.
 
@@ -104,17 +80,13 @@ Como é rígido, um «Relator» não pode ter como supertipo um tipo antirrígid
 
 **Exemplo:**
 
-```
-Pessoa -- trabalha para -- Empresa
-```
+![relator](./assets/relator/imagecopy4.png)
 
 Essa é apenas uma relação.
 
 Mas, se quisermos representar o vínculo que fundamenta essa relação:
 
-```
-«Relator» Contrato de Trabalho
-```
+![relator](./assets/relator/imagecopy5.png)
 
 Nesse caso, o contrato é o objeto relacional que explica por que a pessoa trabalha para a empresa.
 
@@ -125,10 +97,7 @@ Nesse caso, o contrato é o objeto relacional que explica por que a pessoa traba
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-«Relator» Casamento
-```
+![relator](./assets/relator/imagecopy6.png)
 
 - A pessoa existe independentemente do casamento.
 - O casamento só existe se houver pessoas ou partes relacionadas por ele.
@@ -137,10 +106,7 @@ Nesse caso, o contrato é o objeto relacional que explica por que a pessoa traba
 
 Em muitos modelos, sim. O contrato normalmente fundamenta papéis como:
 
-```
-«Role» Contratante
-«Role» Contratado
-```
+![relator](./assets/relator/imagecopy7.png)
 
 Esses papéis existem em razão do «Relator» Contrato.
 
@@ -150,76 +116,21 @@ Pode, dependendo do objetivo do modelo. Em um domínio previdenciário, o Benef�
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Role» Beneficiário
-
-«Kind» INSS
-«Relator» Benefício Previdenciário
-
-Pessoa -- «Mediation» -- Benefício Previdenciário
-INSS -- «Mediation» -- Benefício Previdenciário
-```
+![relator](./assets/relator/imagecopy8.png)
 
 O benefício fundamenta a relação jurídica-previdenciária entre a pessoa e o INSS.
 
 ## Exemplos
 
 ### Exemplo 1 — Contrato
-```
-«Kind» Pessoa
-    «Role» Contratante
-    «Role» Contratado
-
-«Relator» Contrato
-
-Contratante -- «Mediation» -- Contrato
-Contratado -- «Mediation» -- Contrato
-```
+![relator](./assets/relator/imagecopy9.png)
 
 O Contrato é o relator que fundamenta os papéis de Contratante e Contratado.
 
-### Exemplo 2 — Matrícula escolar
-```
-«Kind» Pessoa
-    «Role» Aluno
-
-«Kind» Escola
-«Relator» Matrícula
-
-Aluno -- «Mediation» -- Matrícula
-Escola -- «Mediation» -- Matrícula
-```
-
-A Matrícula é o relator que explica por que uma pessoa exerce o papel de aluno em uma escola.
-
-### Exemplo 3 — Casamento
-```
-«Kind» Pessoa
-    «Role» Cônjuge
-
-«Relator» Casamento
-
-Cônjuge -- «Mediation» -- Casamento
-Cônjuge -- «Mediation» -- Casamento
-```
+### Exemplo 2 — Casamento
+![relator](./assets/relator/imagecopy10.png)
 
 O Casamento é um relator porque fundamenta a relação conjugal entre duas pessoas.
-
-### Exemplo 4 — Relação previdenciária
-```
-«Kind» Pessoa
-    «Role» Segurado
-    «Role» Beneficiário
-
-«Kind» INSS
-«Relator» Benefício Previdenciário
-
-Segurado -- «Mediation» -- Benefício Previdenciário
-INSS -- «Mediation» -- Benefício Previdenciário
-```
-
-O Benefício Previdenciário pode ser modelado como relator porque fundamenta uma relação jurídica entre o segurado ou beneficiário e o INSS.
 
 ## Resumo final
 

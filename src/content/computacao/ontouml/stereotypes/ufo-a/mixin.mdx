@@ -32,12 +32,7 @@ Um «Mixin» deve ser usado quando uma classe agrupa tipos diferentes, sem forne
 
 ### Exemplo:
 
-```
-«Mixin» Objeto Sentável
-    «Kind» Cadeira
-    «Kind» Banco
-    «Role» Caixa Usada como Assento
-```
+![mixin](./assets/mixin/image.png)
 
 Nesse exemplo, ser "sentável" pode ser essencial para Cadeira e Banco, mas apenas acidental para uma Caixa que está sendo usada como assento.
 
@@ -49,12 +44,7 @@ Ele também não fornece identidade. A identidade das instâncias vem dos tipos 
 
 ### Exemplo correto:
 
-```
-«Mixin» Entidade Registrável
-    «Kind» Pessoa
-    «Kind» Organização
-    «Relator» Contrato
-```
+![mixin](./assets/mixin/imagecopy.png)
 
 Entidade Registrável não define a identidade das instâncias. Pessoa, Organização e Contrato possuem seus próprios princípios de identidade.
 
@@ -69,20 +59,11 @@ Além disso, o «Mixin» deve ser usado quando realmente houver mistura de rigid
 
 **Exemplo:**
 
-```
-«Category» Ser Vivo
-    «Kind» Pessoa
-    «Kind» Animal
-```
+![mixin](./assets/mixin/imagecopy2.png)
 
 Ser vivo é uma característica essencial para pessoa e animal.
 
-```
-«Mixin» Objeto Segurável
-    «Kind» Imóvel
-    «Kind» Veículo
-    «Role» Bem Dado em Garantia
-```
+![mixin](./assets/mixin/imagecopy3.png)
 
 Ser segurável pode ser essencial em alguns contextos do modelo e acidental em outros.
 
@@ -93,20 +74,11 @@ Ser segurável pode ser essencial em alguns contextos do modelo e acidental em o
 
 **Exemplo:**
 
-```
-«RoleMixin» Parte Contratual
-    «Role» Contratante
-    «Role» Contratado
-```
+![mixin](./assets/mixin/imagecopy4.png)
 
 Todos os subtipos são papéis relacionais.
 
-```
-«Mixin» Recurso Utilizável
-    «Kind» Equipamento
-    «Quantity» Água
-    «Role» Bem Emprestado
-```
+![mixin](./assets/mixin/imagecopy5.png)
 
 O mixin reúne tipos de naturezas diferentes, com rigidez distinta.
 
@@ -116,13 +88,7 @@ Use quando precisar criar uma generalização abstrata que reúna tipos diferent
 
 **Exemplo:**
 
-```
-«Mixin» Item Transportável
-    «Kind» Pessoa
-    «Kind» Produto
-    «Quantity» Água
-    «Collective» Carga
-```
+![mixin](./assets/mixin/imagecopy6.png)
 
 Item Transportável não fornece identidade. Ele apenas reúne entidades que podem ser transportadas no domínio modelado.
 
@@ -133,47 +99,19 @@ Não. O «Mixin» é abstrato. Ele serve para organizar o modelo e generalizar p
 ## Exemplos
 
 ### Exemplo 1 — Objeto segurável
-```
-«Mixin» Objeto Segurável
-    «Kind» Veículo
-    «Kind» Imóvel
-    «Role» Bem Financiado
-```
+![mixin](./assets/mixin/imagecopy7.png)
 
 - Objeto Segurável reúne entidades que podem ser objeto de seguro. Para alguns tipos, essa característica pode ser estável; para outros, pode depender de uma situação específica.
 
 ### Exemplo 2 — Entidade comunicável
-```
-«Mixin» Entidade Comunicável
-    «Kind» Pessoa
-    «Kind» Organização
-    «Role» Representante Legal
-```
+![mixin](./assets/mixin/imagecopy8.png)
 
 - Pessoa, Organização e Representante Legal podem receber comunicações, mas possuem princípios de identidade e rigidez diferentes.
 
 ### Exemplo 3 — Recurso utilizável
-```
-«Mixin» Recurso Utilizável
-    «Kind» Equipamento
-    «Quantity» Água
-    «Collective» Acervo
-    «Role» Bem Cedido
-```
+![mixin](./assets/mixin/imagecopy9.png)
 
 - Recurso Utilizável generaliza coisas que podem ser utilizadas em determinada atividade, sem transformar essa característica em identidade própria.
-
-### Exemplo 4 — Contexto jurídico
-```
-«Mixin» Objeto de Direito
-    «Kind» Imóvel
-    «Kind» Veículo
-    «Quantity» Dinheiro
-    «Relator» Contrato
-    «Role» Bem Penhorado
-```
-
-- Objeto de Direito pode reunir diferentes entidades relevantes juridicamente, mesmo que cada uma tenha natureza ontológica distinta.
 
 ## Resumo final
 

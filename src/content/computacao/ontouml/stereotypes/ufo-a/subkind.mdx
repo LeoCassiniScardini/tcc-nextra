@@ -32,11 +32,7 @@ Um «Subkind» representa um subtipo que:
 
 ### Exemplo:
 
-```
-«Kind» Animal
-    «Subkind» Cachorro
-    «Subkind» Gato
-```
+![subkind](./assets/subkind.png)
 
 Cachorro e Gato não criam nova identidade independente. Eles seguem o princípio de identidade de Animal.
 
@@ -58,23 +54,14 @@ O «Kind» fornece a identidade. O «Subkind» apenas especializa essa identidad
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Subkind» Pessoa Natural
-    «Subkind» Pessoa Jurídica
-```
+![subkind2](./assets/subkind2.png)
 
 - Pessoa fornece a identidade geral.
-- Pessoa Natural e Pessoa Jurídica são especializações rígidas.
+- Pessoa Fisica e Pessoa Jurídica são especializações rígidas.
 
 ### Qual é a diferença entre Subkind, Role e Phase?
 
-```
-«Kind» Pessoa
-    «Subkind» Mulher
-    «Role» Aluna
-    «Phase» Criança
-```
+![subkind3](./assets/subkind3.png)
 
 - Mulher é Subkind, pois é uma especialização rígida.
 - Aluna é Role, pois depende de uma relação com uma instituição de ensino.
@@ -83,44 +70,23 @@ O «Kind» fornece a identidade. O «Subkind» apenas especializa essa identidad
 ## Exemplos
 
 ### Exemplo 1 — Pessoa
-```
-«Kind» Pessoa
-    «Subkind» Homem
-    «Subkind» Mulher
-    «Role» Estudante
-    «Phase» Idoso
-```
+![subkind4](./assets/subkind4.png)
 
 - Homem e Mulher são Subkind, pois representam especializações permanentes de Pessoa.
 
 ### Exemplo 2 — Veículo
-```
-«Kind» Veículo
-    «Subkind» Carro
-    «Subkind» Motocicleta
-    «Role» Veículo Alugado
-```
+![subkind5](./assets/subkind5.png)
 
 - Carro e Motocicleta são especializações rígidas de Veículo.
 - Veículo Alugado é um papel, pois depende de uma relação contratual de aluguel.
 
 ### Exemplo 3 — Organização
-```
-«Kind» Organização
-    «Subkind» Escola
-    «Subkind» Empresa
-    «Role» Contratante
-    «Role» Fornecedora
-```
+![subkind6](./assets/subkind6.png)
 
 - Escola e Empresa são Subkind porque são tipos específicos de organização.
 - Contratante e Fornecedora são Role, pois dependem de relações jurídicas ou comerciais específicas.
 
 ### Exemplo 4 — Relator
-```
-«Relator» Contrato
-    «Subkind» Contrato de Locação
-    «Subkind» Contrato de Prestação de Serviço
-```
+![subkind7](./assets/subkind7.png)
 
 Nesse caso, Contrato de Locação e Contrato de Prestação de Serviço são Subkind porque especializam rigidamente o relator Contrato.
