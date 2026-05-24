@@ -1,0 +1,316 @@
+# Comparação: UFO-A vs UFO-B vs UFO-C
+
+Esta página oferece uma comparação direta das três camadas da UFO, ajudando você a entender quando usar cada uma e como elas se complementam.
+
+## Tabela Comparativa Completa
+
+| Aspecto | UFO-A | UFO-B | UFO-C |
+|--------|-------|-------|-------|
+| **Foco Principal** | Estrutura estática de objetos | Dinâmica e mudança temporal | Agência e intenção |
+| **Pergunta Central** | O que existe? | O que acontece? | Quem faz e por quê? |
+| **Categoria Primária** | Endurants | Perdurants | Agents + Actions |
+| **Extensão Temporal** | Persistem continuamente | Ocorrem através do tempo | Realizam ações ao longo do tempo |
+| **Mudança** | States e Phases | Events e Transitions | Intentional Actions |
+| **Entidades Chave** | Objects, Kinds, Roles | Events, Processes, Situations | Agents, Intentions, Actions |
+| **Relacionamentos Típicos** | Specialization, Part-of | Participation, Causation | Agency, Delegation, Commitment |
+| **Exemplo Típico** | Pessoa, Produto | Venda, Corrida | Comprador comprando, Vendedor vendendo |
+
+## Categorias por Camada
+
+### UFO-A: Objetos
+
+```
+Kind (Essência)
+├─ Subkind (Especialização rígida)
+├─ Role (Papéis temporários)
+├─ Phase (Fases de vida)
+├─ Relator (Mediadores)
+├─ Collective (Coleções)
+└─ Mixin (Aspectos compartilhados)
+```
+
+**Quando Usar:**
+- Modelando estrutura estática de dados
+- Definindo tipos essenciais
+- Relacionando objetos através de part-whole
+- Capturando propriedades de entidades
+
+**Exemplo Prático:**
+```
+Kind: Pessoa
+├─ Subkind: Homem
+├─ Subkind: Mulher
+├─ Role: Estudante
+├─ Role: Professor
+├─ Phase: Criança
+├─ Phase: Adulto
+└─ Mixin: Vivo
+```
+
+### UFO-B: Eventos e Mudanças
+
+```
+Event (Ocorrência)
+├─ Action (Intencional - melhor em UFO-C)
+├─ Process (Mudança contínua)
+├─ Transition (Passagem de estado)
+└─ Situation (Estado de coisas)
+```
+
+**Quando Usar:**
+- Modelando processos de negócio
+- Capturando mudanças de estado
+- Definindo sequências de eventos
+- Representando causalidade temporal
+
+**Exemplo Prático:**
+```
+Event: Processo de Vendas
+├─ Sub-event: Consulta
+├─ Sub-event: Negociação
+└─ Sub-event: Finalização
+
+Transitions:
+├─ Produto: Em Estoque → Vendido
+├─ Pessoa: Sem compra → Com compra
+└─ Transação: Iniciada → Completa
+```
+
+### UFO-C: Agência
+
+```
+Agent (Entidade com agência)
+├─ Intention (Propósito mental)
+├─ Action (Evento intencional)
+├─ Goal (Resultado esperado)
+├─ Capability (Habilidade)
+├─ Commitment (Obrigação)
+└─ Permission (Autorização)
+```
+
+**Quando Usar:**
+- Modelando processos com atores
+- Capturando intenções e objetivos
+- Rastreando responsabilidade
+- Definindo permissões e obrigações
+- Modelando sistemas multi-agente
+
+**Exemplo Prático:**
+```
+Agent: Vendedor
+├─ Intention: Vender produto
+├─ Action: Apresentar produto
+├─ Goal: Fechar venda
+├─ Capability: Falar sobre produto
+├─ Commitment: Entregar no prazo
+└─ Permission: Oferecer até 20% desconto
+```
+
+## Relacionamentos Entre as Camadas
+
+### UFO-A ↔ UFO-B
+
+UFO-A define **o que** muda; UFO-B define **como** e **quando** muda.
+
+```
+UFO-A:
+┌─────────────┐
+│   Pessoa    │  ← Kind
+└─────────────┘
+  └─ Propriedade: Status
+
+UFO-B:
+Event: Mudança de Status
+├─ Participant: Pessoa (antes estado X)
+├─ Participant: Pessoa (depois estado Y)
+└─ Transition: Status X → Status Y
+```
+
+### UFO-B ↔ UFO-C
+
+UFO-B define **eventos**; UFO-C define **quem** realiza e **por quê**.
+
+```
+UFO-B:
+Event: Venda
+├─ Participant 1: Produto
+├─ Participant 2: Dinheiro
+└─ Result: Propriedade muda
+
+UFO-C:
+Action: Vender (subtype de Event)
+├─ Agent: Vendedor (quem faz)
+├─ Recipient: Comprador
+├─ Intention: Obter lucro (por quê)
+└─ Commitment: Garantir qualidade
+```
+
+### UFO-A ↔ UFO-C
+
+UFO-A define **tipos de agentes**; UFO-C define **o que fazem**.
+
+```
+UFO-A:
+<<agent>>
+Kind: Pessoa
+
+UFO-C:
+<<action>>
+Action: Estudar
+  agent: Pessoa
+  intention: Aprender
+```
+
+## Matriz de Decisão: Qual Usar?
+
+```
+Pergunta: O que você precisa modelar?
+
+1. Tipos de entidades e suas propriedades?
+   → Use UFO-A
+   
+2. Como as entidades mudam de estado?
+   → Use UFO-A (Phases/States) + UFO-B (Events)
+   
+3. Que eventos ocorrem no sistema?
+   → Use UFO-B
+   
+4. Quem são os atores e o que fazem?
+   → Use UFO-C
+   
+5. Por que ações ocorrem?
+   → Use UFO-C (Intentions)
+   
+6. Qual a sequência de eventos?
+   → Use UFO-B (Causation, Triggering)
+   
+7. Responsabilidade e obrigações?
+   → Use UFO-C (Commitments, Obligations)
+```
+
+## Exemplo Integrado: Sistema de Aluguel de Carros
+
+### UFO-A: Estrutura Estática
+
+```
+Kind: Pessoa
+Kind: Carro
+Kind: Empresa (Rental)
+
+Role: Cliente (desempenhado por Pessoa)
+Role: Funcionário (desempenhado por Pessoa)
+
+Phase: Carro em Aluguel
+Phase: Carro Disponível
+Phase: Carro em Manutenção
+
+Relator: Contrato de Aluguel
+  ├─ Property: dataCriacao
+  ├─ Property: dataInicio
+  ├─ Property: dataFim
+  └─ Property: valorDiario
+```
+
+### UFO-B: Processos e Mudanças
+
+```
+Event: Processo de Aluguel
+├─ Sub-event: Reserva
+│  ├─ Participant: Cliente
+│  ├─ Participant: Carro
+│  └─ Result: Carro Reservado
+├─ Sub-event: Retirada
+│  ├─ Participant: Cliente
+│  ├─ Participant: Carro
+│  └─ Transition: Disponível → Em Aluguel
+└─ Sub-event: Devolução
+   ├─ Participant: Cliente
+   ├─ Participant: Carro
+   └─ Transition: Em Aluguel → Disponível
+
+Causation:
+  Reserva → Retirada → Devolução
+
+Situation: ContratAtivo
+  ├─ Carro está com Cliente
+  ├─ Aluguel está em curso
+  └─ Pagamento não foi feito
+```
+
+### UFO-C: Agência e Intenção
+
+```
+<<agent>>
+Class: Cliente (subtype de Pessoa)
+  Agent_Intention: Alugar carro para viagem
+
+<<agent>>
+Class: Funcionário (subtype de Pessoa)
+  Agent_Capability: Processar aluguel
+  Agent_Commitment: Entregar carro no horário
+
+<<action>>
+Class: ReservarCarro
+  agent: Cliente
+  intention: Garantir disponibilidade
+  commitment: Pagar no vencimento
+
+<<action>>
+Class: ProcessarAluguel
+  agent: Funcionário
+  recipient: Cliente
+  intention: Formalizar transação
+  commitment: Garantir qualidade do carro
+
+<<action>>
+Class: DevolverCarro
+  agent: Cliente
+  recipient: Funcionário
+  intention: Encerrar aluguel
+  commitment: Devolver no prazo
+```
+
+## Checklist de Modelagem
+
+### Para UFO-A
+
+- [ ] Identifiquei os Kinds essenciais?
+- [ ] Diferenciou Subkinds (rígido) de Roles (temporário)?
+- [ ] Modelei Phases de vida das entidades?
+- [ ] Identifiquei Relators mediadores?
+- [ ] Defini propriedades intrínsecas vs extrínsecas?
+
+### Para UFO-B
+
+- [ ] Identifiquei os principais eventos do processo?
+- [ ] Defini a sequência temporal de eventos?
+- [ ] Modelei transitions entre estados?
+- [ ] Identifiquei participações em eventos?
+- [ ] Defini causalidade entre eventos?
+
+### Para UFO-C
+
+- [ ] Identifiquei os agentes?
+- [ ] Defini as intenções de cada agente?
+- [ ] Diferenciei actions intencionais de processos?
+- [ ] Modelei commitments e obligations?
+- [ ] Captureiem responsabilidade?
+
+## Padrão de Leitura Recomendado
+
+1. **Comece com UFO-A** - Entenda a estrutura estática
+2. **Passe para UFO-B** - Entenda como as coisas mudam
+3. **Termine com UFO-C** - Entenda quem faz e por quê
+
+Este é o padrão usado em ontologias bem estruturadas e facilita compreensão gradual.
+
+## Próximas Etapas
+
+Depois de dominar as três camadas da UFO, você está pronto para:
+
+1. **Aprender sobre Stereotypes** - Notações OntoUML específicas
+2. **Estudar Relacionamentos** - Relacionamentos especializados em cada camada
+3. **Explorar Padrões** - Padrões de modelagem comuns
+4. **Criar Ontologias** - Aplicar UFO em seu domínio específico
+
+> **Nota**: Este é um resumo de comparação. Para detalhes completos sobre cada camada, consulte as páginas dedicadas de UFO-A, UFO-B e UFO-C.

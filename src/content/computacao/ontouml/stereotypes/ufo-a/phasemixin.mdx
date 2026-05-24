@@ -1,0 +1,193 @@
+# «PhaseMixin»
+
+O «PhaseMixin» representa uma fase abstrata e antirrígida que agrupa indivíduos com diferentes princípios de identidade.
+
+Ele funciona como uma versão mais geral de «Phase». A diferença é que o «Phase» se aplica a indivíduos que seguem o mesmo princípio de identidade; já o «PhaseMixin» pode reunir indivíduos de naturezas diferentes. A documentação da OntoUML define o «PhaseMixin» como equivalente ao «Phase» para tipos que agregam instâncias com diferentes princípios de identidade.
+
+## Exemplos simples:
+
+- «PhaseMixin» Entidade Ativa
+- «PhaseMixin» Entidade Inativa
+- «PhaseMixin» Objeto Danificado
+- «PhaseMixin» Recurso Disponível
+- «PhaseMixin» Recurso Indisponível
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | AntiRigidNonSortal |
+| Prove identidade | Não |
+| Princípio de identidade | Múltiplo |
+| Rigidez | Antirrígido |
+| Dependência | Obrigatória |
+| Supertipos permitidos | Mixin, PhaseMixin, Category |
+| Subtipos permitidos | Phase, PhaseMixin, Role, RoleMixin |
+| Associação proibida | Structuration |
+| Abstrato | Sim |
+
+## Definição
+
+Um «PhaseMixin» deve ser usado quando uma classe representa uma condição temporária, determinada por propriedades internas, mas aplicável a indivíduos de tipos diferentes.
+
+### Exemplo:
+
+```
+«Category» Entidade Administrativa
+    «Kind» Pessoa
+    «Kind» Organização
+    «Relator» Contrato
+
+«PhaseMixin» Entidade Ativa
+«PhaseMixin» Entidade Inativa
+```
+
+Nesse caso, Entidade Ativa pode agrupar uma pessoa ativa, uma organização ativa ou um contrato ativo. Cada uma dessas entidades possui identidade própria diferente, mas todas podem compartilhar uma fase de atividade/inatividade.
+
+## Restrições
+
+O «PhaseMixin» é sempre abstrato, portanto não deve possuir instâncias diretas. Suas instâncias aparecem por meio de subtipos concretos, como «Phase», «Role», «RoleMixin» ou outro «PhaseMixin».
+
+Ele também não fornece identidade. Como agrega indivíduos com diferentes princípios de identidade, não deve ter como ancestral tipos que fornecem ou herdam identidade específica, como:
+
+- «Kind»
+- «Quantity»
+- «Collective»
+- «Subkind»
+- «Role»
+- «Phase»
+- «Relator»
+- «Mode»
+- «Quality»
+
+Além disso, por ser antirrígido, o «PhaseMixin» não pode ter como descendente tipos rígidos ou semirrígidos, como «Kind», «Subkind», «Collective», «Quantity», «Relator», «Category», «Mixin», «Mode» ou «Quality».
+
+## Questões comuns
+
+### Qual é a diferença entre Phase e PhaseMixin?
+
+- O «Phase» é usado quando todos os indivíduos seguem o mesmo princípio de identidade.
+- O «PhaseMixin» é usado quando a fase agrupa indivíduos com identidades diferentes.
+
+**Exemplo:**
+
+```
+«Kind» Pessoa
+    «Phase» Pessoa Ativa
+    «Phase» Pessoa Inativa
+```
+
+Aqui, todas as instâncias são pessoas.
+
+```
+«PhaseMixin» Entidade Ativa
+    «Phase» Pessoa Ativa
+    «Phase» Organização Ativa
+    «Phase» Contrato Ativo
+```
+
+Aqui, a fase mistura pessoas, organizações e contratos, que possuem princípios de identidade distintos.
+
+### Qual é a diferença entre PhaseMixin e RoleMixin?
+
+Ambos são abstratos, antirrígidos e não fornecem identidade. A diferença principal está na origem da classificação.
+
+- O «PhaseMixin» depende de uma condição intrínseca ou de estado interno.
+- O «RoleMixin» depende de uma relação externa. A própria documentação observa que o PhaseMixin é semelhante ao RoleMixin, mas com diferença quanto à dependência relacional.
+
+**Exemplo:**
+
+```
+«PhaseMixin» Recurso Disponível
+```
+
+A disponibilidade pode ser tratada como um estado do próprio recurso.
+
+```
+«RoleMixin» Parte Contratual
+```
+
+A condição de parte contratual depende de uma relação contratual.
+
+### Quando devo usar PhaseMixin?
+
+Use quando precisar representar uma fase comum a diferentes tipos de entidades.
+
+**Exemplo:**
+
+```
+«PhaseMixin» Entidade Suspensa
+    «Phase» Pessoa Suspensa
+    «Phase» Empresa Suspensa
+    «Phase» Contrato Suspenso
+```
+
+Pessoa, Empresa e Contrato têm identidades diferentes, mas podem compartilhar a condição temporária de suspensão.
+
+### Um PhaseMixin pode ter instâncias diretas?
+
+Não. Ele é abstrato. O correto é instanciar os subtipos concretos ou mais específicos.
+
+## Exemplos
+
+### Exemplo 1 — Entidade ativa ou inativa
+```
+«Category» Entidade Administrativa
+    «Kind» Pessoa
+    «Kind» Organização
+    «Relator» Contrato
+
+«PhaseMixin» Entidade Ativa
+«PhaseMixin» Entidade Inativa
+```
+
+- Entidade Ativa e Entidade Inativa agrupam fases de entidades diferentes dentro de um domínio administrativo.
+
+### Exemplo 2 — Recurso disponível
+```
+«Mixin» Recurso
+    «Kind» Equipamento
+    «Quantity» Água
+    «Collective» Acervo
+
+«PhaseMixin» Recurso Disponível
+«PhaseMixin» Recurso Indisponível
+```
+
+- Recurso Disponível pode abranger equipamento disponível, água disponível ou acervo disponível, sem fornecer identidade própria.
+
+### Exemplo 3 — Objeto danificado
+```
+«Category» Entidade Física
+    «Kind» Veículo
+    «Kind» Equipamento
+    «Collective» Frota
+
+«PhaseMixin» Entidade Danificada
+    «Phase» Veículo Danificado
+    «Phase» Equipamento Danificado
+    «Phase» Frota Danificada
+```
+
+- A condição de danificado é temporária e pode atingir diferentes tipos de entidades físicas.
+
+### Exemplo 4 — Contexto jurídico-administrativo
+```
+«Category» Entidade Jurídica
+    «Kind» Pessoa
+    «Kind» Organização
+    «Relator» Contrato
+    «Relator» Benefício Previdenciário
+
+«PhaseMixin» Entidade Suspensa
+    «Phase» Pessoa Suspensa
+    «Phase» Organização Suspensa
+    «Phase» Contrato Suspenso
+    «Phase» Benefício Suspenso
+```
+
+- Entidade Suspensa é uma fase abstrata que agrupa diferentes entidades jurídicas ou administrativas em estado temporário de suspensão.
+
+## Resumo final
+
+O «PhaseMixin» deve ser usado para representar fases abstratas, temporárias e antirrígidas aplicáveis a indivíduos com diferentes princípios de identidade. Ele não fornece identidade, é sempre abstrato e serve para generalizar fases como Entidade Ativa, Recurso Disponível, Objeto Danificado ou Entidade Suspensa.

@@ -1,0 +1,130 @@
+# «Subkind»
+
+O «Subkind» é usado para representar uma especialização rígida de um tipo que já fornece identidade, como «Kind», «Collective», «Quantity», «Relator», «Mode» ou «Quality». Ele não cria uma identidade própria, apenas herda o princípio de identidade do seu supertipo.
+
+## Exemplos simples:
+
+```
+«Kind» Pessoa
+    «Subkind» Homem
+    «Subkind» Mulher
+```
+
+Homem e Mulher são Subkind porque continuam sendo Pessoa durante toda a existência. Eles apenas especializam o tipo principal.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | RigidSortal |
+| Prove identidade | Não |
+| Princípio de identidade | Simples |
+| Rigidez | Rígido |
+| Dependência | Opcional |
+| Supertipos permitidos | Kind, Subkind, Collective, Quantity, Relator, Category, Mixin, Mode, Quality |
+| Subtipos permitidos | Subkind, Phase, Role |
+| Associação proibida | Structuration |
+
+## Definição
+
+Um «Subkind» representa um subtipo que:
+
+- é rígido, ou seja, suas instâncias pertencem a ele durante toda a existência;
+- não fornece identidade própria;
+- herda a identidade de um tipo superior;
+- normalmente é usado para criar classificações permanentes dentro de um Kind ou de outro provedor de identidade.
+
+### Exemplo:
+
+```
+«Kind» Animal
+    «Subkind» Cachorro
+    «Subkind» Gato
+```
+
+Cachorro e Gato não criam nova identidade independente. Eles seguem o princípio de identidade de Animal.
+
+## Restrições
+
+O «Subkind» deve sempre ter exatamente um provedor de identidade como ancestral, seja diretamente ou indiretamente. Esse provedor pode ser, por exemplo, Kind, Collective, Quantity, Relator, Mode ou Quality.
+
+Como é rígido, um «Subkind» não pode ter como ancestral um tipo antirrígido, como «Role», «Phase» ou «RoleMixin». Isso ocorre porque um tipo rígido não pode depender de uma classificação temporária.
+
+Além disso, um «Subkind» não pode ter como descendente um tipo misto, como «Category», «Mixin» ou «RoleMixin», pois suas instâncias seguem o mesmo princípio de identidade.
+
+## Questões comuns
+
+### Todo Subkind precisa vir de um Kind?
+Não. Apesar do nome, o «Subkind» pode especializar outros provedores de identidade, como «Collective», «Quantity» e «Relator», e não apenas «Kind».
+
+### Qual é a diferença entre Kind e Subkind?
+O «Kind» fornece a identidade. O «Subkind» apenas especializa essa identidade.
+
+**Exemplo:**
+
+```
+«Kind» Pessoa
+    «Subkind» Pessoa Natural
+    «Subkind» Pessoa Jurídica
+```
+
+- Pessoa fornece a identidade geral.
+- Pessoa Natural e Pessoa Jurídica são especializações rígidas.
+
+### Qual é a diferença entre Subkind, Role e Phase?
+
+```
+«Kind» Pessoa
+    «Subkind» Mulher
+    «Role» Aluna
+    «Phase» Criança
+```
+
+- Mulher é Subkind, pois é uma especialização rígida.
+- Aluna é Role, pois depende de uma relação com uma instituição de ensino.
+- Criança é Phase, pois depende de uma condição intrínseca temporária, como idade.
+
+## Exemplos
+
+### Exemplo 1 — Pessoa
+```
+«Kind» Pessoa
+    «Subkind» Homem
+    «Subkind» Mulher
+    «Role» Estudante
+    «Phase» Idoso
+```
+
+- Homem e Mulher são Subkind, pois representam especializações permanentes de Pessoa.
+
+### Exemplo 2 — Veículo
+```
+«Kind» Veículo
+    «Subkind» Carro
+    «Subkind» Motocicleta
+    «Role» Veículo Alugado
+```
+
+- Carro e Motocicleta são especializações rígidas de Veículo.
+- Veículo Alugado é um papel, pois depende de uma relação contratual de aluguel.
+
+### Exemplo 3 — Organização
+```
+«Kind» Organização
+    «Subkind» Escola
+    «Subkind» Empresa
+    «Role» Contratante
+    «Role» Fornecedora
+```
+
+- Escola e Empresa são Subkind porque são tipos específicos de organização.
+- Contratante e Fornecedora são Role, pois dependem de relações jurídicas ou comerciais específicas.
+
+### Exemplo 4 — Relator
+```
+«Relator» Contrato
+    «Subkind» Contrato de Locação
+    «Subkind» Contrato de Prestação de Serviço
+```
+
+Nesse caso, Contrato de Locação e Contrato de Prestação de Serviço são Subkind porque especializam rigidamente o relator Contrato.

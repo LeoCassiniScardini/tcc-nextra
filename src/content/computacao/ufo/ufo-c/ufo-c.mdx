@@ -1,0 +1,408 @@
+# UFO-C: Ontologia de Agência e Ação
+
+UFO-C estende UFO-A e UFO-B com conceitos para modelar agência, intenção, ação e responsabilidade. Enquanto UFO-B responde "O que acontece?", UFO-C responde "Quem faz e por quê?"
+
+## O que é UFO-C?
+
+UFO-C fornece categorias ontológicas para responder:
+- **O que é um agente?**
+- **O que é uma intenção?**
+- **Como diferenciar ações intencionais de eventos não-intencionais?**
+- **Como modelar responsabilidade e consequências?**
+- **Como relacionar agentes com suas ações?**
+
+## Conceitos Fundamentais de UFO-C
+
+### 1. Agents (Agentes)
+
+Um **Agent** é um tipo especial de endurant que possui a capacidade de:
+- Deliberar (pensar sobre alternativas)
+- Tomar decisões
+- Realizar ações intencionais
+- Ser responsável por suas ações
+
+#### Tipos de Agentes
+
+**Human Agent (Agente Humano):**
+- Pessoas que possuem capacidade cognitiva
+- Exemplos: João, Maria, Pedro
+
+**Organizational Agent (Agente Organizacional):**
+- Organizações que possuem agência própria
+- Exemplos: Empresa, Universidade, Governo
+
+**Artificial Agent (Agente Artificial):**
+- Sistemas de software ou robôs autônomos
+- Exemplos: Chatbot, Sistema de IA, Drone autônomo
+
+```
+Agent (Pessoa)
+├─ name: String
+├─ intentionality: Boolean = true
+├─ canDeliberate: Boolean = true
+└─ capabilities: [Capability]
+```
+
+### 2. Intentions (Intenções)
+
+Uma **Intention** é um estado mental que representa o propósito ou objetivo que um agente quer alcançar através de uma ação.
+
+Exemplos:
+- João tem a intenção de se graduar
+- A empresa tem a intenção de aumentar lucros
+- O sistema tem a intenção de processar pagamentos
+
+**Características:**
+- Estados mentais de agentes
+- Motivam e direcionam ações
+- Podem ser realizadas (sucesso) ou não (fracasso)
+
+#### Propriedades de Intenções
+
+```
+Intention
+├─ description: String
+├─ intendedActor: Agent
+├─ targetState: Situation
+├─ deadline: DateTime (opcional)
+├─ priority: Priority
+└─ status: Status (Pending, InProgress, Achieved, Failed)
+```
+
+### 3. Actions (Ações)
+
+Uma **Action** é um evento que é intencional e deliberadamente realizado por um agente para satisfazer uma intenção.
+
+Exemplos:
+- João estudando para exame
+- Vendedor vendendo produto
+- Sistema processando transação
+
+**Características:**
+- Eventos realizados intencionalmente
+- Sempre têm um agente responsável
+- Relacionadas a uma intenção
+- Possuem consequências esperadas e reais
+
+#### Diferença: Action vs Process
+
+| Action | Process |
+|--------|---------|
+| Intencional | Não-intencional |
+| Tem agente | Sem agente necessário |
+| Tem intenção | Sem propósito |
+| Exemplos: Estudar, Trabalhar | Exemplos: Envelhecer, Apodrecer |
+
+```
+Event: Estudar (Action)
+├─ Agent: João
+├─ Intention: Passar no exame
+├─ temporalLocation: [14:00 - 16:00]
+├─ instrument: Livro de Matemática
+└─ result: Conhecimento adquirido
+
+Event: Envelhecer (Process)
+├─ no agent
+├─ no intention
+└─ resultado natural/inevitável
+```
+
+### 4. Goals (Objetivos)
+
+Um **Goal** é a situação ou estado que um agente intenciona alcançar.
+
+Exemplos:
+- Objetivo: Se graduar em Engenharia
+- Objetivo: Aumentar receita em 20%
+- Objetivo: Processar 1000 transações/hora
+
+**Características:**
+- Definem resultados esperados
+- Podem ser alcançados ou não
+- Podem ter métricas de sucesso
+
+## Relacionamentos em UFO-C
+
+### 1. Intention Realization
+
+Define a relação entre uma intenção e a ação que a realiza.
+
+```
+Intention: Passar no exame
+  ↓ realizes through
+Action: Estudar
+  ↓ results in
+Situation: Exame aprovado
+```
+
+### 2. Agent Participation (Revisitado)
+
+Define como um agente participa de uma ação:
+
+**Initiator**: O agente que inicia a ação
+- Exemplo: Vendedor que inicia a venda
+
+**Participant**: O agente envolvido na ação
+- Exemplo: Cliente que participa da venda
+
+**Recipient**: O agente que recebe os efeitos da ação
+- Exemplo: Cliente que recebe o produto
+
+### 3. Causal Responsibility
+
+Define responsabilidade causal de um agente pelas consequências de sua ação.
+
+```
+Agent: João
+  ↓ performs
+Action: Dirigir embriagado
+  ↓ causes
+Event: Acidente de carro
+  ↓ responsibility
+Agent: João (responsável pelo acidente)
+```
+
+### 4. Delegation
+
+Define quando um agente delega uma ação a outro agente.
+
+```
+Agent A: Chefe
+  ↓ delegates to
+Agent B: Subordinado
+  ↓ performs
+Action: Preparar relatório
+```
+
+## Tipos de Ações em UFO-C
+
+### 1. Purposeful Action (Ação Proposital)
+
+Ação realizada intencionalmente para alcançar um objetivo específico.
+
+```
+Action: Procurar por um livro em uma biblioteca
+├─ Agent: Estudante
+├─ Purpose: Encontrar referências para tese
+├─ Method: Buscar no catálogo
+└─ Success Criteria: Livro encontrado
+```
+
+### 2. Communicative Action (Ação Comunicativa)
+
+Ação de comunicação entre agentes para coordenar outras ações.
+
+Exemplos:
+- Uma pessoa pedindo informação
+- Um gerente dando instruções
+- Um professor explicando conceito
+
+```
+Action: Solicitar informação
+├─ Agent: Estudante
+├─ Recipient: Professor
+├─ Content: "Como usar OntoUML?"
+├─ Response Expected: Sim
+└─ Intent: Ganhar conhecimento
+```
+
+### 3. Coordinated Action (Ação Coordenada)
+
+Múltiplos agentes coordenando suas ações para um objetivo comum.
+
+Exemplos:
+- Uma equipe desenvolvendo software
+- Uma banda tocando música
+- Uma empresa executando projeto
+
+```
+Coordinated Action: Projeto de Desenvolvimento
+├─ Agent 1: Developer A (programação backend)
+├─ Agent 2: Developer B (programação frontend)
+├─ Agent 3: Designer (design UI)
+├─ Shared Goal: Lançar aplicação
+└─ Coordination Mechanism: Daily standups
+```
+
+## Modalidades Agênticas
+
+UFO-C define diferentes aspectos da agência:
+
+### Ability (Capacidade)
+
+A capacidade de um agente realizar uma ação.
+
+```
+Agent: João
+├─ Ability: Falar português
+├─ Ability: Programar em Python
+└─ Ability: Dirigir carro
+```
+
+### Commitment (Comprometimento)
+
+O comprometimento de um agente com uma ação ou objetivo.
+
+```
+Agent: Empresa
+├─ Commitment: Entregar projeto em prazo
+├─ Commitment: Manter qualidade
+└─ Commitment: Satisfazer cliente
+```
+
+### Permission (Permissão)
+
+A autorização para um agente realizar uma ação.
+
+```
+Agent: Vendedor
+├─ Permission: Vender produtos
+├─ Permission: Oferecer desconto até 10%
+└─ Permission: Abrir conta de cliente
+```
+
+### Obligation (Obrigação)
+
+A obrigação de um agente realizar uma ação.
+
+```
+Agent: Empresa
+├─ Obligation: Pagar salários
+├─ Obligation: Cumprir normas de segurança
+└─ Obligation: Respeitar privacidade de dados
+```
+
+## Ciclo de Vida de uma Ação em UFO-C
+
+```
+1. Intention Formation
+   ├─ Agent delibera
+   └─ Decides to act
+   
+2. Action Planning
+   ├─ Agent planeja como realizar
+   └─ Define steps e recursos
+   
+3. Action Execution
+   ├─ Agent realiza a ação
+   └─ Podem ocorrer sub-ações
+   
+4. Action Completion
+   ├─ Ação termina
+   └─ Resultados são conhecidos
+   
+5. Outcome Evaluation
+   ├─ Agent avalia sucesso/fracasso
+   └─ Aprende para ações futuras
+```
+
+## Exemplo Completo: Modelagem de Processo de Contratação
+
+```
+Agent: Gerente de Recursos Humanos
+
+Intention: Contratar desenvolvedor qualificado
+├─ Goal: Preenchimento da vaga de Dev Senior
+├─ Timeline: 3 meses
+└─ Success Criteria: Desenvolvedor contratado e iniciado
+
+Coordinated Action: Processo de Contratação
+├─ Sub-Action 1: Publicar vaga
+│  ├─ Agent: Gerente de RH
+│  ├─ Purpose: Atrair candidatos
+│  └─ Outcome: Vaga publicada
+│
+├─ Sub-Action 2: Receber candidaturas
+│  ├─ Participant: Candidatos
+│  ├─ Recipient: Gerente de RH
+│  └─ Outcome: Currículo recebido
+│
+├─ Sub-Action 3: Entrevistar candidatos
+│  ├─ Agent: Gerente de RH, Tech Lead
+│  ├─ Patient: Candidato
+│  ├─ Purpose: Avaliar competências
+│  └─ Outcome: Nota de avaliação
+│
+└─ Sub-Action 4: Fazer oferta
+   ├─ Agent: Gerente de RH
+   ├─ Recipient: Candidato selecionado
+   ├─ Commitment: Oferecer posição
+   └─ Outcome: Candidato contratado
+
+Final Situation:
+├─ Vaga está preenchida
+├─ Novo desenvolvedor está empregado
+└─ Intenção foi realizada
+```
+
+## Tabela de Categorias UFO-C
+
+| Categoria | Tipo | Intencional? | Exemplo |
+|-----------|------|--------------|---------|
+| **Agent** | Endurant | - | Pessoa, Organização, IA |
+| **Intention** | Estado Mental | - | Objetivo de graduação |
+| **Action** | Event | Sim | Estudar, Trabalhar, Negociar |
+| **Goal** | Resultado Esperado | - | Se graduar |
+| **Capability** | Propriedade | - | Falar idioma |
+| **Commitment** | Obrigação Assumida | - | Entregar projeto |
+
+## Integração com UFO-A e UFO-B
+
+```
+UFO-A: Estrutura Estática
+├─ Objects (People, Organizations)
+├─ Properties
+└─ Relationships
+
+UFO-B: Dinâmica Temporal
+├─ Events (processes)
+├─ Situations
+└─ Causation
+
+UFO-C: Agência e Propósito
+├─ Agents (subtype de Objects)
+├─ Intentions (mental states)
+├─ Actions (intentional Events)
+├─ Causation com responsabilidade
+└─ Commitments e Obligations
+```
+
+## Boas Práticas em UFO-C
+
+1. **Sempre identifique o agente**: Toda ação deve ter um agente responsável
+2. **Separe intenção de resultado**: Uma ação pode não alcançar sua intenção
+3. **Modele comunicação**: Explicitamente quando agentes se comunicam
+4. **Capture compromissos**: Obligations e Permissions são essenciais para negócios
+5. **Rastreie responsabilidade**: Sempre saiba quem é responsável por quê
+
+## Quando Usar UFO-C
+
+Use UFO-C quando o modelo precisa:
+- Representar quem faz o quê (agência)
+- Capturar por que ações ocorrem (intenção)
+- Rastrear responsabilidade
+- Modelar processos de negócio com atores
+- Definir permissões e obrigações
+
+## Exemplo em OntoUML
+
+```
+<<agent>>
+Class: Pessoa
+
+<<agent>>
+Class: Organização
+
+<<action>>
+Class: Contratar
+  agent: Organização
+  recipient: Pessoa
+  intention: Preencher vaga
+
+<<action>>
+Class: Estudar
+  agent: Pessoa
+  intention: Adquirir conhecimento
+```
+
+> Você agora compreende as três camadas da UFO! Próxima seção: Stereotypes e suas definições em cada camada.

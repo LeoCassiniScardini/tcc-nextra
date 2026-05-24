@@ -1,0 +1,180 @@
+# «Quantity»
+
+O «Quantity» representa uma quantidade de matéria ou substância não contável, como água, areia, argila, ouro, cerveja ou sangue. Ele é usado quando o objeto modelado não é tratado como uma coleção de membros individuais, mas como uma porção contínua de matéria.
+
+## Exemplos simples:
+
+- «Quantity» Água
+- «Quantity» Areia
+- «Quantity» Ouro
+- «Quantity» Sangue
+- «Quantity» Argila
+
+A documentação da OntoUML define «Quantity» como um tipo rígido que fornece identidade e representa uma quantidade de matéria maximamente conectada topologicamente.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | RigidSortal |
+| Prove identidade | Sim |
+| Princípio de identidade | Simples |
+| Rigidez | Rígido |
+| Dependência | Opcional |
+| Supertipos permitidos | Category, Mixin |
+| Subtipos permitidos | Subkind, Phase, Role |
+| Associações proibidas | ComponentOf, Derivation, Structuration, SubCollectionOf |
+
+## Definição
+
+Um «Quantity» deve ser usado para representar coisas incontáveis, isto é, substâncias ou massas que podem ser divididas e continuar sendo instâncias do mesmo tipo.
+
+A pergunta prática é:
+
+**Se eu dividir uma porção dessa coisa em duas partes, cada parte continua sendo uma instância do mesmo tipo?**
+
+Se a resposta for sim, provavelmente é um «Quantity».
+
+### Exemplo:
+
+```
+«Quantity» Areia
+```
+
+Se uma porção de areia for dividida em duas, as duas partes continuam sendo areia. O mesmo raciocínio vale para água, argila, ouro e sangue.
+
+## Restrições
+
+O «Quantity» fornece identidade própria. Por isso, não deve ter como supertipo outro provedor de identidade, como Kind, Collective, Quantity, Relator, Mode ou Quality, para evitar conflito entre princípios de identidade.
+
+### Exemplo inadequado:
+
+```
+«Kind» Objeto
+    «Quantity» Água
+```
+
+Nesse caso, Água não deveria herdar identidade de Objeto, pois já possui seu próprio princípio de identidade como quantidade de matéria.
+
+Também não deve ter como supertipo tipos que apenas herdam identidade, como:
+
+- «Subkind»
+- «Role»
+- «Phase»
+
+Além disso, como é rígido, um «Quantity» não pode ter como supertipo um tipo antirrígido, como Role, RoleMixin ou Phase.
+
+## Questões comuns
+
+### Qual é a diferença entre Quantity e Collective?
+
+- O «Quantity» representa matéria não contável.
+- O «Collective» representa um conjunto de membros individualizáveis.
+
+**Exemplo:**
+
+```
+«Quantity» Areia
+«Collective» Pilha de Tijolos
+```
+
+- Na areia, o foco está na massa ou porção de matéria.
+- Na pilha de tijolos, é possível identificar cada tijolo como membro do coletivo.
+
+### Qual é a diferença entre Quantity e Kind?
+
+- O «Kind» representa um indivíduo ou objeto funcional, como pessoa, carro ou livro.
+- O «Quantity» representa uma substância ou quantidade de matéria.
+
+**Exemplo:**
+
+```
+«Kind» Garrafa
+«Quantity» Água
+```
+
+- A garrafa é um objeto individual.
+- A água é uma porção de substância.
+
+### Qual é a diferença entre Quantity e Quality?
+
+- O «Quantity» representa uma coisa material, como água, sangue ou areia.
+- O «Quality» representa uma propriedade, como cor, peso, altura ou temperatura.
+
+**Exemplo:**
+
+```
+«Quantity» Água
+«Quality» Temperatura
+```
+
+- A água é uma substância.
+- A temperatura é uma qualidade que pode caracterizar a água.
+
+A própria documentação alerta para não confundir «Quantity» com «Quality».
+
+### Um Quantity pode ter subtipos?
+
+Sim. Ele pode ser especializado por Subkind, Phase e Role, além de poder ser generalizado por Category e Mixin.
+
+**Exemplo:**
+
+```
+«Quantity» Água
+    «Subkind» Água Potável
+    «Phase» Água Congelada
+    «Phase» Água Líquida
+    «Role» Água Utilizada em Tratamento Médico
+```
+
+## Exemplos
+
+### Exemplo 1 — Água
+```
+«Quantity» Água
+    «Subkind» Água Mineral
+    «Subkind» Água Potável
+    «Phase» Água Líquida
+    «Phase» Gelo
+```
+
+- Água é uma quantidade porque representa uma substância.
+- Água Mineral e Água Potável podem ser especializações.
+- Água Líquida e Gelo podem ser fases, conforme o estado físico.
+
+### Exemplo 2 — Areia
+```
+«Quantity» Areia
+    «Phase» Areia Seca
+    «Phase» Areia Molhada
+```
+
+- Areia é uma substância não contável.
+- Areia Seca e Areia Molhada são fases determinadas por uma condição intrínseca.
+
+### Exemplo 3 — Sangue
+```
+«Quantity» Sangue
+    «Subkind» Sangue Tipo A
+    «Subkind» Sangue Tipo B
+    «Subkind» Sangue Tipo O
+    «Phase» Sangue Coagulado
+```
+
+- Sangue é uma quantidade de matéria biológica.
+- Os tipos sanguíneos podem ser modelados como subtipos.
+- Sangue Coagulado pode ser uma fase.
+
+### Exemplo 4 — Ouro
+```
+«Quantity» Ouro
+    «Subkind» Ouro Puro
+    «Subkind» Ouro 18k
+```
+
+- Ouro é uma substância material.
+- Ouro Puro e Ouro 18k são especializações da substância.
+
+## Resumo final
+
+O «Quantity» deve ser usado para representar matérias, substâncias ou massas não contáveis, como água, areia, sangue, argila e ouro. Ele é rígido, fornece identidade própria e se diferencia de Collective porque não é composto por membros individualizados, mas por porções de matéria.

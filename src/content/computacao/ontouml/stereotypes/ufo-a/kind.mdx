@@ -1,0 +1,120 @@
+# «Kind»
+
+O «Kind» é um dos estereótipos mais usados na OntoUML. Ele representa um tipo essencial e rígido de coisa, isto é, algo que mantém sua identidade durante toda a existência do indivíduo. Além disso, o «Kind» fornece o princípio de identidade para suas instâncias.
+
+## Exemplos simples de «Kind»:
+
+- Pessoa
+- Animal
+- Carro
+- Livro
+- Organização
+
+Uma instância de Pessoa, por exemplo, continua sendo pessoa durante toda a sua existência. Ela pode assumir papéis, como Aluno, Servidor ou Cliente, mas esses papéis não substituem sua identidade principal.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | RigidSortal |
+| Prove identidade | Sim |
+| Princípio de identidade | Simples |
+| Rigidez | Rígido |
+| Dependência | Opcional |
+| Supertipos permitidos | Category, Mixin |
+| Subtipos permitidos | Subkind, Phase, Role |
+| Associações proibidas | Derivation, Structuration, SubCollectionOf, SubQuantityOf |
+
+## Definição
+
+Um «Kind» representa um conceito que:
+
+- é rígido, ou seja, suas instâncias pertencem a esse tipo durante toda a existência;
+- fornece identidade, servindo como base para reconhecer o que aquele indivíduo é;
+- não depende obrigatoriamente de outro indivíduo para existir;
+- representa normalmente um complexo funcional, ou seja, um todo composto por partes que contribuem para seu funcionamento.
+
+### Exemplo:
+
+**«Kind» Pessoa**
+
+A classe Pessoa fornece a identidade dos indivíduos. Uma pessoa pode mudar de fase ou papel, mas continua sendo a mesma pessoa.
+
+## Restrições
+
+Um «Kind» não deve ter como supertipo outro tipo que também forneça identidade, como Kind, Collective, Quantity, Relator, Mode ou Quality. Isso evita conflito entre princípios de identidade.
+
+Também não deve ter como supertipo tipos que apenas herdam identidade, como Subkind, Role ou Phase. O Kind deve estar no topo da cadeia sortal, fornecendo a identidade, e não recebendo-a de outro tipo.
+
+Como é rígido, um «Kind» não pode ser especializado a partir de tipos antirrígidos, como Role, RoleMixin ou Phase.
+
+## Questões comuns
+
+### Um Kind não pode ter relações com outras classes?
+Pode sim. A dependência ser "opcional" significa apenas que o Kind não precisa obrigatoriamente de uma relação para existir, diferente de um Role, que depende de um contexto relacional.
+
+### Quando devo usar Kind?
+Use quando a classe representar a identidade principal de um indivíduo.
+
+**Exemplo:**
+
+- `Pessoa` é melhor como «Kind», enquanto:
+- `Aluno`
+- `Professor`
+- `Cliente`
+- `Paciente`
+
+normalmente são «Role», porque dependem de uma relação ou contexto.
+
+### Qual a diferença entre Kind e Subkind?
+O Kind fornece a identidade. O Subkind apenas especializa essa identidade.
+
+**Exemplo:**
+
+```
+«Kind» Pessoa
+    «Subkind» Mulher
+    «Subkind» Homem
+```
+
+Mulher e Homem continuam seguindo o princípio de identidade de Pessoa.
+
+## Exemplos
+
+### Exemplo 1 — Pessoa
+```
+«Kind» Pessoa
+    «Role» Aluno
+    «Role» Servidor Público
+    «Phase» Criança
+    «Phase» Adulto
+```
+
+- Pessoa é o Kind, pois fornece a identidade.
+- Aluno e Servidor Público são papéis.
+- Criança e Adulto são fases da vida da pessoa.
+
+### Exemplo 2 — Veículo
+```
+«Kind» Veículo
+    «Subkind» Carro
+    «Subkind» Moto
+    «Role» Veículo Alugado
+```
+
+- Veículo fornece a identidade.
+- Carro e Moto são especializações rígidas.
+- Veículo Alugado é um papel, pois depende de uma relação de aluguel.
+
+### Exemplo 3 — Organização
+```
+«Kind» Organização
+    «Subkind» Escola
+    «Subkind» Empresa
+    «Role» Contratante
+    «Role» Prestadora de Serviço
+```
+
+- Organização é o tipo essencial.
+- Escola e Empresa são subtipos.
+- Contratante e Prestadora de Serviço são papéis assumidos em relações específicas.

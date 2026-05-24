@@ -1,0 +1,211 @@
+# «Collective»
+
+O «Collective» representa um conjunto ou coleção de indivíduos que são percebidos como partes semelhantes dentro de um todo. Ele é usado quando os membros do conjunto contribuem de forma uniforme para a existência ou funcionamento do coletivo. A documentação da OntoUML define «Collective» como um conceito rígido que fornece princípio de identidade e possui estrutura interna homogênea.
+
+## Exemplos simples:
+
+- «Collective» Turma
+- «Collective» Frota
+- «Collective» Floresta
+- «Collective» Rebanho
+- «Collective» Pilha de Tijolos
+
+Uma Frota, por exemplo, é formada por veículos. Os veículos são membros da frota e, em regra, são percebidos de maneira semelhante dentro daquele conjunto.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | RigidSortal |
+| Prove identidade | Sim |
+| Princípio de identidade | Simples |
+| Rigidez | Rígido |
+| Dependência | Opcional |
+| Supertipos permitidos | Category, Mixin |
+| Subtipos permitidos | Subkind, Phase, Role |
+| Associações proibidas | Derivation, Structuration, SubQuantityOf |
+
+## Definição
+
+Um «Collective» deve ser usado quando a classe representa um todo coletivo, formado por membros semelhantes ou tratados de maneira uniforme.
+
+A pergunta central é:
+
+**Os membros desse todo são percebidos da mesma forma dentro do conjunto?**
+
+Se a resposta for sim, provavelmente se trata de um «Collective».
+
+### Exemplo:
+
+```
+«Collective» Turma
+    membros: Alunos
+```
+
+A Turma é um coletivo porque é composta por alunos que, naquele contexto, são percebidos de forma semelhante como membros da turma.
+
+### Outro exemplo:
+
+```
+«Collective» Frota
+    membros: Veículos
+```
+
+A Frota é composta por veículos. Cada veículo participa como membro do coletivo.
+
+## Restrições
+
+O «Collective» fornece identidade própria, assim como «Kind», «Quantity», «Relator», «Mode» e «Quality». Por isso, ele não deve ter como supertipo outro provedor de identidade, para evitar conflito entre princípios de identidade.
+
+### Exemplo inadequado:
+
+```
+«Kind» Objeto
+    «Collective» Frota
+```
+
+Nesse caso, Frota já fornece identidade própria como coletivo. Ela não deve herdar identidade de outro provedor.
+
+Também não deve ter como supertipo tipos que apenas herdam identidade, como:
+
+- «Subkind»
+- «Role»
+- «Phase»
+
+Além disso, por ser rígido, um «Collective» não pode ter como supertipo um tipo antirrígido, como «Role», «Phase» ou «RoleMixin».
+
+### Exemplo inadequado:
+
+```
+«Role» Grupo Contratado
+    «Collective» Equipe Técnica
+```
+
+Equipe Técnica, se for um coletivo rígido, não deve herdar de um papel temporário.
+
+## Questões comuns
+
+### Qual é a diferença entre Collective e Kind?
+
+- O «Kind» representa um indivíduo funcional, como uma pessoa, carro ou organização.
+- O «Collective» representa um conjunto de indivíduos semelhantes.
+
+**Exemplo:**
+
+```
+«Kind» Pessoa
+«Collective» Grupo de Pessoas
+```
+
+- Pessoa é um indivíduo.
+- Grupo de Pessoas é um coletivo composto por pessoas.
+
+### Qual é a diferença entre Collective e Quantity?
+
+- O «Collective» é composto por membros individualizáveis.
+- O «Quantity» representa uma quantidade de matéria, massa ou substância, normalmente não contável por membros individuais.
+
+**Exemplo:**
+
+```
+«Collective» Pilha de Tijolos
+«Quantity» Quantidade de Areia
+```
+
+- Na pilha, é possível identificar os tijolos como membros.
+- Na areia, o foco está na quantidade de matéria, não em membros individualizados.
+
+### Família é Collective ou Kind?
+
+Depende da modelagem. A documentação da OntoUML explica que alguns conceitos, como Família ou Frota, podem ser modelados como coletivos ou como complexos funcionais, conforme o modo como suas partes são entendidas. Se todos os membros forem percebidos com papéis semelhantes, pode ser Collective; se houver papéis funcionais distintos, pode ser tratado como outro tipo de entidade.
+
+**Exemplo como coletivo:**
+
+```
+«Collective» Família
+```
+
+quando os membros são vistos de forma uniforme.
+
+**Exemplo como estrutura funcional:**
+
+```
+«Kind» Família
+```
+
+quando há papéis internos diferenciados, como responsável familiar, dependente, provedor etc.
+
+### Um Collective pode ter subtipos?
+
+Sim. Como outros provedores de identidade, o «Collective» pode ser especializado por:
+
+- «Subkind»
+- «Phase»
+- «Role»
+
+**Exemplo:**
+
+```
+«Collective» Frota
+    «Subkind» Frota de Ônibus
+    «Phase» Frota Ativa
+    «Role» Frota Contratada
+```
+
+## Exemplos
+
+### Exemplo 1 — Turma escolar
+```
+«Collective» Turma
+    «Subkind» Turma de Educação Infantil
+    «Phase» Turma Ativa
+    «Role» Turma Participante de Projeto
+
+«Kind» Aluno
+
+Aluno -- membro de -- Turma
+```
+
+- Turma é um coletivo porque é formada por alunos que participam como membros.
+
+### Exemplo 2 — Frota
+```
+«Collective» Frota
+    «Subkind» Frota de Veículos Oficiais
+    «Phase» Frota Em Operação
+    «Phase» Frota Desativada
+
+«Kind» Veículo
+
+Veículo -- membro de -- Frota
+```
+
+- A Frota é composta por veículos. Os veículos são percebidos como membros semelhantes dentro do coletivo.
+
+### Exemplo 3 — Rebanho
+```
+«Collective» Rebanho
+    «Subkind» Rebanho Bovino
+    «Subkind» Rebanho Caprino
+
+«Kind» Animal
+
+Animal -- membro de -- Rebanho
+```
+
+- Rebanho é um coletivo porque é composto por animais individualizáveis.
+
+### Exemplo 4 — Área ambiental
+```
+«Collective» Floresta
+
+«Kind» Árvore
+
+Árvore -- membro de -- Floresta
+```
+
+- A Floresta é composta por árvores, que funcionam como membros do coletivo.
+
+## Resumo final
+
+O «Collective» deve ser usado para representar conjuntos homogêneos de indivíduos, como turmas, frotas, rebanhos, florestas ou grupos. Ele é rígido, fornece identidade própria e seus membros são percebidos de forma semelhante dentro do todo.

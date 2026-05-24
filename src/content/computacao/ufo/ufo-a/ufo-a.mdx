@@ -1,0 +1,253 @@
+# UFO-A: Ontologia de Objetos e Propriedades
+
+UFO-A é a primeira e mais fundamental camada das Unified Foundational Ontologies. Ela fornece as categorias básicas para modelar entidades do mundo real, suas propriedades essenciais, e os relacionamentos estruturais entre elas.
+
+## O que é UFO-A?
+
+UFO-A define categorias ontológicas para responder perguntas fundamentais:
+- **O que é uma entidade?**
+- **Como distinguir diferentes tipos de entidades?**
+- **Como modelar propriedades e características?**
+- **Como representar relacionamentos estruturais?**
+
+## Categorias Fundamentais de UFO-A
+
+### 1. Endurants (Persistentes)
+
+Endurants são entidades que persistem ao longo do tempo de forma contínua. Eles possuem um "snapshot" em cada momento no tempo.
+
+#### Object (Objeto)
+
+Um **Object** é um endurant concreto, independente, com identidade própria. Exemplos:
+- Uma pessoa específica (João)
+- Um carro (Toyota RAV4 de 2020)
+- Um computador
+- Uma organização
+
+**Características:**
+- Possui identidade única
+- Pode existir independentemente
+- Tem ciclo de vida bem definido
+
+```
+[Object: Pessoa]
+  ├─ name: String
+  ├─ birthDate: Date
+  └─ age: Integer
+```
+
+#### Kind (Tipo/Essência)
+
+Um **Kind** é um tipo essencial que define a natureza fundamental de um objeto. Todo objeto é instância exatamente de um Kind.
+
+- A **Pessoa** é um Kind
+- **Produto** é um Kind
+- **Empresa** é um Kind
+
+**Características:**
+- Define a essência da entidade
+- Todo objeto instancia exatamente um Kind
+- Não pode ser adquirido ou perdido durante a vida do objeto
+
+#### Subkind (Subtipo Essencial)
+
+Um **Subkind** é uma especialização de um Kind que herda sua essência essencial. Um objeto pode permanecer um Subkind durante toda sua vida.
+
+- **Homem** e **Mulher** são Subkinds de **Pessoa**
+- **Fornecedor** e **Cliente** podem ser Subkinds de **Organização**
+
+**Características:**
+- Herança rígida (a entidade permanece no Subkind)
+- Pode adicionar propriedades específicas
+- Múltiplas generalizações são permitidas
+
+### 2. Roles (Papéis)
+
+Um **Role** é um tipo de endurant que representa um papel que uma entidade desempenha em relação a outras entidades. Um objeto pode adquirir e perder roles durante sua vida.
+
+Exemplos:
+- **Estudante** - um papel que uma Pessoa pode desempenhar
+- **Professor** - outro papel
+- **Empregado** - papel em uma organização
+
+**Características:**
+- Podem ser adquiridos e perdidos
+- Dependentes (existem em relação a outra entidade)
+- Mutáveis ao longo da vida
+
+```
+Pessoa
+  ├─ desempenha_Role: Estudante
+  ├─ desempenha_Role: Professor
+  └─ desempenha_Role: Pesquisador
+```
+
+### 3. Phases (Fases)
+
+Um **Phase** é um tipo de endurant que representa uma fase distinta que uma entidade passa durante sua vida. As fases são mutáveis e podem ser adquiridas/perdidas.
+
+Exemplos:
+- **Criança**, **Adolescente**, **Adulto** - fases de uma Pessoa
+- **Produto em Desenvolvimento**, **Produto Ativo**, **Produto Descontinuado**
+
+**Características:**
+- Representam estados mutuamente exclusivos
+- Podem mudar ao longo do tempo
+- Particiona o ciclo de vida de um objeto
+
+### 4. Relators (Mediadores)
+
+Um **Relator** é um tipo de endurant que existe apenas em virtude de um relacionamento entre outras entidades. Relators são "coisas abstratas" que medeiam relacionamentos.
+
+Exemplos:
+- **Casamento** - medeia a relação entre duas Pessoas
+- **Emprego** - medeia a relação entre Pessoa e Organização
+- **Matrícula** - medeia a relação entre Estudante e Universidade
+
+**Características:**
+- Sempre mediam relacionamentos
+- Possuem identidade própria
+- Podem ter propriedades (data, duração, etc.)
+
+### 5. Collectives (Coletivos)
+
+Um **Collective** é um tipo de endurant que é uma coleção de entidades. O collective existe apenas enquanto seus membros existem.
+
+Exemplos:
+- **Organização** - coletivo de pessoas
+- **Grupo** - coletivo de indivíduos
+- **Equipe** - coletivo de pessoas com objetivo específico
+
+**Características:**
+- Representa agregações de entidades
+- Tem identidade própria
+- Relação part-whole com seus componentes
+
+### 6. Mixins (Aspectos Compartilhados)
+
+Um **Mixin** é um tipo que representa aspectos compartilhados entre diferentes categorias de entidades. Permite generalizar características comuns sem implicar herança rígida.
+
+Exemplos:
+- **Vivo** - aspecto compartilhado entre Pessoa, Animal, Planta
+- **Imóvel** - aspecto compartilhado entre Casa, Terreno, Prédio
+- **Tangível** - aspecto compartilhado entre objetos físicos
+
+**Características:**
+- Permite múltiplas generalizações
+- Não rígido (pode ser adquirido/perdido)
+- Útil para definir categorias transversais
+
+## Propriedades e Atributos
+
+### Intrinsic Attributes (Atributos Intrínsecos)
+
+Atributos que dependem apenas da entidade mesma:
+- Nome
+- Cor
+- Peso
+- Data de nascimento
+
+### Extrinsic Attributes (Atributos Extrínsecos)
+
+Atributos que dependem de relacionamentos com outras entidades:
+- Posição
+- Contexto social
+- Filiação organizacional
+
+## Relacionamentos em UFO-A
+
+### 1. Specialization (Especialização)
+
+Define hierarquias de tipos. Existem dois tipos:
+
+**Specialization Rígida (Is-a):**
+- Um Kind para outro Kind
+- Um Subkind para um Kind
+- Permanente durante a vida do objeto
+
+**Specialization Não-Rígida:**
+- Um Role para um Kind
+- Um Phase para um Kind
+- Mutável durante a vida do objeto
+
+### 2. Part-Whole (Parte-Todo)
+
+Define relacionamentos entre um todo e suas partes.
+
+Exemplos:
+- Pessoa é parte de Organização
+- Braço é parte de Corpo
+- Sala é parte de Prédio
+
+**Propriedades:**
+- Transitiva (se A é parte de B e B é parte de C, então A é parte de C)
+- Antissimétrica
+
+### 3. Instantiation (Instanciação)
+
+Relaciona um Kind com suas instâncias (objetos concretos).
+
+```
+Kind: Pessoa
+  ├─ Instância: João (Object)
+  ├─ Instância: Maria (Object)
+  └─ Instância: Pedro (Object)
+```
+
+### 4. Characterization (Caracterização)
+
+Define propriedades ou características de uma entidade.
+
+## Tabela de Categorias UFO-A
+
+| Categoria | Tipo | Rígido? | Independente? | Exemplos |
+|-----------|------|---------|---------------|----------|
+| **Object** | Endurant | - | Sim | João, Carro, Livro |
+| **Kind** | Tipo | - | - | Pessoa, Veículo, Livro |
+| **Subkind** | Tipo Especializado | Sim | - | Homem, Carro Elétrico |
+| **Role** | Endurant | Não | Não | Estudante, Empregado |
+| **Phase** | Endurant | Não | Não | Adulto, Produto Ativo |
+| **Relator** | Endurant | - | Não | Casamento, Emprego |
+| **Collective** | Endurant | - | Sim | Organização, Equipe |
+| **Mixin** | Tipo | Não | - | Vivo, Imóvel |
+
+## Boas Práticas em UFO-A
+
+1. **Sempre defina um Kind**: Todo objeto deve ser instância de exatamente um Kind essencial
+2. **Use Subkinds para especialização rígida**: Quando uma subcategoria é permanente
+3. **Use Roles para papéis temporários**: Quando uma categoria pode ser adquirida/perdida
+4. **Evite múltiplas heranças rígidas**: Um objeto é exatamente um Kind
+5. **Separe aspectos estáticos e dinâmicos**: Use UFO-B para modelar mudanças de estado
+
+## Exemplo Completo: Modelagem de Universidade
+
+```
+Kind: Pessoa
+├─ Subkind: PessoaFísica
+└─ Subkind: PessoaJurídica
+    └─ Kind: Organização (Universidade)
+
+Role: Estudante (desempenhado por Pessoa)
+Role: Professor (desempenhado por Pessoa)
+Role: Funcionário (desempenhado por Pessoa)
+
+Phase: EstudanteAtivo
+Phase: EstudanteFormado
+Phase: EstudanteTrancado
+
+Collective: Universidade
+├─ Part-of: Departamento
+│   └─ Part-of: Sala
+└─ Part-of: Biblioteca
+
+Relator: Matrícula (medeia Estudante → Universidade)
+Relator: Emprego (medeia Professor → Universidade)
+```
+
+## Conexão com UFO-B e UFO-C
+
+UFO-A fornece a base estática para:
+- **UFO-B**: Adiciona conceitos de eventos e como objetos mudam
+- **UFO-C**: Adiciona conceitos de agência e como agentes agem intencionalmente
+
+> Próxima leitura: [UFO-B: Ontologia de Eventos e Mudanças](/computacao/ontouml/ufo-b)

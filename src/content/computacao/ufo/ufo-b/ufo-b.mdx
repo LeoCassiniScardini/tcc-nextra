@@ -1,0 +1,301 @@
+# UFO-B: Ontologia de Eventos e Mudanças
+
+UFO-B estende UFO-A com conceitos para modelar eventos, processos, e como o mundo muda ao longo do tempo. Enquanto UFO-A responde "O que existe?", UFO-B responde "O que acontece?"
+
+## O que é UFO-B?
+
+UFO-B fornece categorias ontológicas para responder:
+- **O que é um evento?**
+- **Como eventos relacionam-se com entidades?**
+- **Como modelar processos e mudanças?**
+- **Como representar causalidade e dependência temporal?**
+
+## Conceito Fundamental: Perdurance vs Endurance
+
+### Endurants (do UFO-A)
+
+Endurants são entidades que **persistem continuamente** no tempo:
+- Existem "completamente" em cada momento
+- Um "snapshot" em qualquer momento mostra a entidade inteira
+- Exemplos: Pessoa, Carro, Livro
+
+### Perdurants (do UFO-B)
+
+Perdurants são entidades que **ocorrem ao longo do tempo**:
+- Existem através de partes temporais
+- Um "snapshot" em qualquer momento mostra apenas uma parte do perdurant
+- Exemplos: Corrida de 1 hora, Concerto, Guerra
+
+```
+Endurant (Pessoa):
+Tempo: |----X----|  (existe completamente em cada momento)
+
+Perdurant (Corrida):
+Tempo: |--Início--|--Meio--|--Fim--|  (partes temporais)
+```
+
+## Categorias Fundamentais de UFO-B
+
+### 1. Events (Eventos)
+
+Um **Event** é um tipo de perdurant que representa algo que acontece ou ocorre. Um evento é uma mudança ou situação que se desenrola ao longo do tempo.
+
+Exemplos:
+- Uma pessoa correndo
+- Um acidente de carro
+- Uma graduação
+- Uma transação comercial
+
+**Características:**
+- Tem extensão temporal (começo, meio, fim)
+- É constituído de subeventos e situações
+- Pode causalmente afetar outras entidades
+- Pode ser participado por endurants
+
+#### Tipos Específicos de Events:
+
+**Action (Ação):**
+Evento intencional realizado por um agente. (Desenvolvido mais em UFO-C)
+
+Exemplos:
+- João correndo para pegar ônibus
+- Maria assinando um contrato
+- Pedro entregando um presente
+
+**Process (Processo):**
+Evento caracterizado por um progresso ordenado ou mudança contínua.
+
+Exemplos:
+- Processo de manufatura
+- Reação química
+- Envelhecimento
+
+**Transition (Transição):**
+Evento que marca uma mudança de estado ou passagem de fase.
+
+Exemplos:
+- Mudança de Estudante Ativo para Estudante Formado
+- Transição de Produto em Desenvolvimento para Produto Ativo
+
+### 2. Situations (Situações)
+
+Uma **Situation** é um tipo de perdurant que representa um estado de coisas ou uma configuração de endurants em um dado momento.
+
+Exemplos:
+- João estar desempregado (estado onde uma relação não existe)
+- O prédio estar ocupado
+- A empresa estar em lucro
+
+**Características:**
+- Representa estados, não apenas momentos
+- Pode ter duração
+- Sofre mudanças quando as entidades participantes mudam
+
+```
+Situation: João Desempregado
+├─ Endurant: João
+├─ Propriedade: Estado = "sem emprego"
+└─ Duração: 6 meses
+```
+
+### 3. Aspectos Temporais
+
+#### Temporal Location (Localização Temporal)
+
+Quando um evento ou situação ocorre:
+- Data de início
+- Data de fim
+- Duração
+
+#### Temporal Parts (Partes Temporais)
+
+Um perdurant é dividido em partes temporais:
+
+```
+Event: Jogo de Futebol (90 minutos)
+├─ Temporal Part: Primeiro Tempo (45 min)
+├─ Temporal Part: Intervalo (15 min)
+└─ Temporal Part: Segundo Tempo (45 min)
+```
+
+## Relacionamentos em UFO-B
+
+### 1. Participation (Participação)
+
+Define como um endurant está envolvido em um evento.
+
+```
+Event: Palestra
+├─ Participate: Professor João (como apresentador)
+├─ Participate: Estudante Maria (como ouvinte)
+└─ Participate: Sala 101 (como local)
+```
+
+**Tipos de Participation:**
+- **Agent**: Entidade que causa ou realiza o evento
+- **Patient**: Entidade que sofre mudança pelo evento
+- **Instrument**: Entidade usada para realizar o evento
+- **Location**: Lugar onde o evento ocorre
+
+### 2. Causation (Causalidade)
+
+Define relacionamentos causais entre eventos.
+
+```
+Event A: Aceleração do carro
+  ↓ causa
+Event B: Aumento de velocidade
+```
+
+**Tipos:**
+- **Direct Causation**: Causa imediata
+- **Indirect Causation**: Causa mediada por outros eventos
+
+### 3. Triggering (Acionamento)
+
+Define quando um evento dispara ou inicia outro evento.
+
+```
+Event A: Sinal de partida da corrida
+  ↓ triggers
+Event B: Corredores começam a correr
+```
+
+### 4. Holistic Relations (Relações Holísticas)
+
+Define como eventos relacionam-se com o todo:
+
+**Aggregation**: Vários eventos menores formam um evento maior
+
+```
+Events:
+├─ Escrever introdução
+├─ Escrever desenvolvimento
+├─ Escrever conclusão
+  ↓ aggregation
+Event: Escrever tese (todo)
+```
+
+## Mudanças de Estado
+
+UFO-B permite modelar como entidades mudam de estado:
+
+### State vs Phase (Revisitado de UFO-A)
+
+**Phase (UFO-A)**: Categorias ontológicas mutáveis
+- Criança, Adolescente, Adulto
+
+**State (UFO-B)**: Configuração temporal em um dado momento
+- Dormindo, Acordado
+- Empregado, Desempregado
+- Ativo, Inativo
+
+### Transitions Modeladas
+
+```
+Phase: Estudante
+├─ State: Ativo
+├─ State: Trancado
+└─ State: Formado
+
+Transition: De Ativo para Trancado
+├─ Trigger: Solicitação de trancamento
+├─ Duration: Imediato
+└─ Consequência: Suspensão de matrícula
+```
+
+## Exemplo Completo: Modelagem de Processo de Venda
+
+```
+Event: Processo de Venda
+├─ Sub-event 1: Consulta de Produto
+│   ├─ Participant (Agent): Vendedor
+│   ├─ Participant (Patient): Cliente
+│   └─ Temporal Location: 10 min
+│
+├─ Sub-event 2: Negociação de Preço
+│   ├─ Participant (Agent): Vendedor, Cliente
+│   ├─ Participant (Instrument): Nota Fiscal
+│   └─ Temporal Location: 5 min
+│
+└─ Sub-event 3: Finalização da Compra
+    ├─ Participant (Agent): Vendedor
+    ├─ Participant (Patient): Cliente, Produto
+    ├─ Participant (Instrument): Cartão de Crédito
+    └─ Temporal Location: 2 min
+
+Causation Chain:
+  Consulta → Negociação → Finalização
+
+Final Situation:
+├─ Cliente possui Produto (novo relacionamento)
+├─ Vendedor recebe Pagamento
+└─ Transação está Completa
+```
+
+## Tabela de Categorias UFO-B
+
+| Categoria | Tipo | Duração | Exemplo |
+|-----------|------|---------|---------|
+| **Event** | Perdurant | Variável | Palestra, Festa, Acidente |
+| **Action** | Event | Variável | Correr, Escrever, Conversar |
+| **Process** | Event | Variável | Manufatura, Reação, Envelhecimento |
+| **Transition** | Event | Breve | Passagem de fase, Mudança de estado |
+| **Situation** | Perdurant | Variável | Desemprego, Pobreza, Paz |
+
+## Propriedades Temporais
+
+### Interval-based
+
+Eventos são definidos por intervalos de tempo:
+
+```
+Event
+├─ beginTime: DateTime
+├─ endTime: DateTime
+├─ duration: Duration
+└─ temporalParts: [TemporalPart]
+```
+
+### Ordering Relations
+
+Relacionamentos temporais entre eventos:
+
+- **Before**: Evento A termina antes de B começar
+- **During**: Evento A ocorre durante B
+- **Overlaps**: Eventos A e B compartilham tempo
+- **Meets**: Evento A termina quando B começa
+
+## Boas Práticas em UFO-B
+
+1. **Distinga Situations de States**: Situations têm duração e identidade própria
+2. **Modele Causalidade Explicitamente**: Use Causation e Triggering
+3. **Separe Actions Intencionais de Processos**: Actions têm agentes intencionais (UFO-C)
+4. **Use Temporal Parts**: Para eventos complexos com subfases
+5. **Documente Participações**: Sempre indique o papel de cada participante
+
+## Extensão para UFO-C
+
+UFO-B fornece os conceitos de eventos necessários para:
+- **UFO-C**: Adiciona noção de agência, intenção e responsabilidade em ações
+
+Um **Action** em UFO-B, quando realizado por um **Agent** com **Intention**, torna-se o foco de UFO-C.
+
+## Fluxo de Tempo em OntoUML
+
+```
+UFO-A: Estrutura Estática
+├─ Objects, Properties, Relationships
+│
+UFO-B: Dinâmica Temporal
+├─ Events que alteram o estado
+├─ Transitions entre fases
+└─ Causalidade entre eventos
+│
+UFO-C: Agência (próximo)
+├─ Agents que realizam ações
+├─ Intentions que motivam ações
+└─ Responsabilidade por consequências
+```
+
+> Próxima leitura: [UFO-C: Ontologia de Agência e Ação](/computacao/ontouml/ufo-c)
