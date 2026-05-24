@@ -7,7 +7,7 @@ O [Nextra 4](https://nextra.site) é um site de documentação criado usando [Ne
 O primeiro passo é clonar o projeto Nextra com o comando git:
 
 ```bash
-git clone https://github.com/adaptiOficial/adapti-nextra-project-template.git
+git clone https://github.com/LeoCassiniScardini/tcc-nextra/.git
 ```
 O próximo passo é instalar os pacotes Node usando o gerenciador de pacotes:
 
