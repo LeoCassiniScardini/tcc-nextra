@@ -1,0 +1,302 @@
+# «SubQuantityOf»
+
+A relação «SubQuantityOf» representa uma relação parte-todo entre duas quantidades. Ela deve ser usada quando uma porção de matéria ou substância é parte de outra quantidade de matéria ou substância.
+
+## Exemplos simples:
+
+- Álcool -- «SubQuantityOf» -- Vinho
+- Plasma -- «SubQuantityOf» -- Sangue
+- Açúcar -- «SubQuantityOf» -- Sorvete
+- Leite -- «SubQuantityOf» -- Cappuccino
+- Porção de Água -- «SubQuantityOf» -- Quantidade de Água
+
+A documentação da OntoUML define «SubQuantityOf» como uma relação de parte-todo entre dois «Quantity», isto é, entre quantidades ou substâncias não contáveis.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | Relação parte-todo |
+| Tipo de parte | Quantity |
+| Tipo de todo | Quantity |
+| Direcionada | Sim |
+| Origem típica | Subquantidade |
+| Destino típica | Quantidade maior |
+| Multiplicidade da origem | 1..1 |
+| Multiplicidade do destino | 1..1 |
+| Compartilhável | Não |
+| Transitividade | Sim |
+| Reflexiva | Não |
+| Simétrica | Não |
+| Cíclica | Não |
+| Exemplo típico | Plasma–Sangue |
+
+## Definição
+
+Uma relação «SubQuantityOf» deve ser usada quando tanto a parte quanto o todo são quantidades de matéria.
+
+### Exemplo:
+
+```
+«Quantity» Plasma
+«Quantity» Sangue
+
+Plasma -- «SubQuantityOf» -- Sangue
+```
+
+- O Plasma é uma quantidade que compõe o Sangue.
+- Ambos são tratados como substâncias ou porções de matéria, não como indivíduos contáveis.
+
+### Outro exemplo:
+
+```
+«Quantity» Açúcar
+«Quantity» Sorvete
+
+Açúcar -- «SubQuantityOf» -- Sorvete
+```
+
+- O açúcar é uma subquantidade presente na quantidade de sorvete.
+
+## Diferença entre SubQuantityOf, MemberOf, SubCollectionOf e ComponentOf
+
+### SubQuantityOf
+
+Usado quando a parte e o todo são quantidades de matéria.
+
+```
+Álcool -- «SubQuantityOf» -- Vinho
+```
+
+### MemberOf
+
+Usado quando um indivíduo é membro de um coletivo.
+
+```
+Aluno -- «MemberOf» -- Turma
+```
+
+### SubCollectionOf
+
+Usado quando um coletivo menor é parte de um coletivo maior.
+
+```
+Frota de Ônibus -- «SubCollectionOf» -- Frota Municipal
+```
+
+### ComponentOf
+
+Usado quando uma parte é componente funcional de um todo funcional.
+
+```
+Motor -- «ComponentOf» -- Carro
+```
+
+A diferença principal é:
+
+- **SubQuantityOf** = quantidade → quantidade
+- **MemberOf** = indivíduo → coletivo
+- **SubCollectionOf** = coletivo → coletivo
+- **ComponentOf** = componente funcional → todo funcional
+
+## Restrições
+
+A relação «SubQuantityOf» deve conectar apenas quantidades. Os dois extremos da relação devem ser classes cujas instâncias sejam «Quantity» ou subtipos de «Quantity».
+
+### Exemplo correto:
+
+```
+«Quantity» Leite
+«Quantity» Cappuccino
+
+Leite -- «SubQuantityOf» -- Cappuccino
+```
+
+### Exemplo inadequado:
+
+```
+Aluno -- «SubQuantityOf» -- Turma
+```
+
+Aluno não é quantidade, e Turma é melhor modelada como «Collective». O correto seria:
+
+```
+Aluno -- «MemberOf» -- Turma
+```
+
+### Outro exemplo inadequado:
+
+```
+Motor -- «SubQuantityOf» -- Carro
+```
+
+Motor e Carro não são quantidades de matéria. O correto seria:
+
+```
+Motor -- «ComponentOf» -- Carro
+```
+
+## Não compartilhável
+
+A relação «SubQuantityOf» é sempre não compartilhável. Isso significa que uma mesma subquantidade não pode ser parte de várias superquantidades ao mesmo tempo. A documentação explica que isso ocorre porque quantidades são conectadas topologicamente e formam porções máximas de matéria.
+
+### Exemplo:
+
+```
+Plasma específico -- «SubQuantityOf» -- Sangue específico
+```
+
+- Esse plasma específico pertence àquele sangue específico. Ele não pode ser, ao mesmo tempo, a mesma subquantidade de outro sangue específico.
+
+## Parte essencial
+
+Em «SubQuantityOf», a subquantidade é tratada como parte essencial da quantidade maior. A alteração de uma parte da quantidade altera a identidade do todo, porque quantidades são entidades extensionais.
+
+### Exemplo:
+
+```
+Álcool -- «SubQuantityOf» -- Vinho
+```
+
+- Se a composição material do vinho for alterada, a própria quantidade de vinho pode deixar de ser a mesma quantidade.
+
+## Transitividade
+
+A relação «SubQuantityOf» é transitiva. Isso significa que, se uma quantidade A é parte de B, e B é parte de C, então A também é parte de C.
+
+### Exemplo:
+
+```
+Glicose -- «SubQuantityOf» -- Mosto
+Mosto -- «SubQuantityOf» -- Vinho
+
+Logo:
+Glicose -- «SubQuantityOf» -- Vinho
+```
+
+## Questões comuns
+
+### Qual é a diferença entre quantidade e coletivo?
+
+A quantidade não possui membros individualizáveis. Ela é uma porção contínua de matéria.
+
+```
+«Quantity» Água
+«Quantity» Areia
+«Quantity» Sangue
+```
+
+O coletivo possui membros individualizáveis.
+
+```
+«Collective» Turma
+«Collective» Frota
+«Collective» Rebanho
+```
+
+Por isso:
+
+```
+Porção de Água -- «SubQuantityOf» -- Quantidade de Água
+Aluno -- «MemberOf» -- Turma
+```
+
+### Quando devo usar SubQuantityOf?
+
+Use quando estiver modelando relações como:
+
+- substância dentro de substância
+- ingrediente material dentro de mistura
+- porção de matéria dentro de outra porção de matéria
+- componente químico dentro de uma mistura
+- fração de sangue dentro do sangue
+
+**Exemplos:**
+
+- Álcool no vinho
+- Plasma no sangue
+- Açúcar no sorvete
+- Leite no cappuccino
+- Argila em uma mistura de barro
+
+### Posso usar SubQuantityOf para peças de objetos?
+
+Não. Peças de objetos normalmente são componentes funcionais.
+
+**Exemplo inadequado:**
+
+```
+Roda -- «SubQuantityOf» -- Carro
+```
+
+**Melhor:**
+
+```
+Roda -- «ComponentOf» -- Carro
+```
+
+### Posso usar SubQuantityOf para integrantes de grupo?
+
+Não. Integrantes de grupo são membros de coletivo.
+
+**Exemplo inadequado:**
+
+```
+Servidor -- «SubQuantityOf» -- Comissão
+```
+
+**Melhor:**
+
+```
+Servidor -- «MemberOf» -- Comissão
+```
+
+## Exemplos
+
+### Exemplo 1 — Sangue
+```
+«Quantity» Plasma
+«Quantity» Sangue
+
+Plasma -- «SubQuantityOf» -- Sangue
+```
+
+- O plasma é uma subquantidade do sangue.
+
+### Exemplo 2 — Vinho
+```
+«Quantity» Álcool
+«Quantity» Vinho
+
+Álcool -- «SubQuantityOf» -- Vinho
+```
+
+- O álcool é uma quantidade de substância presente no vinho.
+
+### Exemplo 3 — Sorvete
+```
+«Quantity» Açúcar
+«Quantity» Leite
+«Quantity» Sorvete
+
+Açúcar -- «SubQuantityOf» -- Sorvete
+Leite -- «SubQuantityOf» -- Sorvete
+```
+
+- Açúcar e leite são subquantidades da quantidade de sorvete.
+
+### Exemplo 4 — Mistura medicinal
+```
+«Quantity» Substância Ativa
+«Quantity» Excipiente
+«Quantity» Medicamento Líquido
+
+Substância Ativa -- «SubQuantityOf» -- Medicamento Líquido
+Excipiente -- «SubQuantityOf» -- Medicamento Líquido
+```
+
+- A substância ativa e o excipiente são quantidades que compõem a quantidade maior do medicamento líquido.
+
+## Resumo final
+
+A relação «SubQuantityOf» deve ser usada para representar uma relação parte-todo entre duas quantidades de matéria. Ela é adequada para casos como Álcool–Vinho, Plasma–Sangue, Açúcar–Sorvete e Leite–Cappuccino. Não deve ser usada para membros de coletivos, como Aluno–Turma, nem para componentes funcionais, como Motor–Carro.

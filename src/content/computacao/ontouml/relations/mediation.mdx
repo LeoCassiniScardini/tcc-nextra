@@ -1,0 +1,243 @@
+# «Mediation»
+
+A relação «Mediation» conecta um «Relator» aos indivíduos que participam dele. Ela mostra quais entidades são mediadas, vinculadas ou conectadas por uma entidade relacional.
+
+## Exemplos simples:
+
+- Pessoa -- «Mediation» -- Contrato
+- Empresa -- «Mediation» -- Contrato
+- Aluno -- «Mediation» -- Matrícula
+- Escola -- «Mediation» -- Matrícula
+- Beneficiário -- «Mediation» -- Benefício Previdenciário
+- INSS -- «Mediation» -- Benefício Previdenciário
+
+Em termos práticos: se o «Relator» é aquilo que fundamenta uma relação material, a «Mediation» mostra quem participa desse relator.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | Relação de dependência entre Relator e participantes |
+| Tipo de relação | Formal |
+| Direcionada | Normalmente não |
+| Origem típica | «Relator» |
+| Destino típico | Entidade mediada, como Kind, Role, Category, Mixin |
+| Dependência | Obrigatória para o Relator |
+| Relações relacionadas | «Material», «Derivation», «Relator» |
+| Exemplo típico | Contrato mediando contratante e contratado |
+
+## Definição
+
+Uma relação «Mediation» deve ser usada para indicar que determinado indivíduo participa de um «Relator».
+
+### Exemplo:
+
+```
+«Kind» Pessoa
+«Kind» Empresa
+«Relator» Contrato de Trabalho
+
+Pessoa -- «Mediation» -- Contrato de Trabalho
+Empresa -- «Mediation» -- Contrato de Trabalho
+```
+
+- O Contrato de Trabalho é o relator.
+- Pessoa e Empresa são os participantes mediados por esse relator.
+
+A partir dessas mediações, pode-se derivar uma relação material:
+
+```
+Pessoa -- «Material» trabalha para -- Empresa
+```
+
+## Relação com «Material» e «Derivation»
+
+A «Mediation» é a base para uma relação «Material».
+
+### Exemplo completo:
+
+```
+«Kind» Pessoa
+«Kind» Empresa
+«Relator» Contrato de Trabalho
+
+Pessoa -- «Mediation» -- Contrato de Trabalho
+Empresa -- «Mediation» -- Contrato de Trabalho
+
+Pessoa -- «Material» trabalha para -- Empresa
+Contrato de Trabalho -- «Derivation» -- trabalha para
+```
+
+Nesse exemplo:
+
+- o Contrato de Trabalho conecta Pessoa e Empresa;
+- as relações «Mediation» indicam os participantes do contrato;
+- a relação trabalha para é uma relação «Material»;
+- a relação «Derivation» indica que a relação material deriva do relator.
+
+## Restrições
+
+A relação «Mediation» deve envolver obrigatoriamente um «Relator».
+Ou seja, um dos lados da associação deve ser um relator.
+
+### Exemplo correto:
+
+```
+«Relator» Matrícula
+«Kind» Pessoa
+«Kind» Escola
+
+Pessoa -- «Mediation» -- Matrícula
+Escola -- «Mediation» -- Matrícula
+```
+
+### Exemplo inadequado:
+
+```
+Pessoa -- «Mediation» -- Escola
+```
+
+Nesse caso, falta o «Relator». Se a pessoa estuda na escola, o mais adequado seria:
+
+```
+«Relator» Matrícula
+Pessoa -- «Mediation» -- Matrícula
+Escola -- «Mediation» -- Matrícula
+```
+
+Além disso, um «Relator» deve mediar pelo menos dois participantes, ainda que possam ser do mesmo tipo.
+
+### Exemplo:
+
+```
+«Relator» Casamento
+Pessoa -- «Mediation» -- Casamento
+Pessoa -- «Mediation» -- Casamento
+```
+
+O casamento depende da participação de duas pessoas.
+
+## Questões comuns
+
+### Qual é a diferença entre Mediation e Material?
+
+- A «Mediation» liga o «Relator» aos participantes.
+- A «Material» liga diretamente os participantes, mas é derivada do relator.
+
+**Exemplo:**
+
+```
+Pessoa -- «Mediation» -- Contrato
+Empresa -- «Mediation» -- Contrato
+
+Pessoa -- «Material» trabalha para -- Empresa
+```
+
+- A mediação mostra a estrutura interna do vínculo.
+- A relação material mostra a relação derivada entre os participantes.
+
+### Qual é a diferença entre Mediation e Derivation?
+
+- A «Mediation» liga o relator aos participantes.
+- A «Derivation» liga o relator à relação material derivada dele.
+
+**Exemplo:**
+
+```
+Pessoa -- «Mediation» -- Contrato
+Empresa -- «Mediation» -- Contrato
+
+Contrato -- «Derivation» -- trabalha para
+```
+
+### Todo Relator precisa de Mediation?
+
+Sim. O «Relator» é existencialmente dependente dos participantes que ele media. Por isso, deve estar conectado a eles por relações de «Mediation».
+
+**Exemplo:**
+
+```
+«Relator» Benefício Previdenciário
+Beneficiário -- «Mediation» -- Benefício Previdenciário
+INSS -- «Mediation» -- Benefício Previdenciário
+```
+
+### A Mediation pode ligar um relator a um papel?
+
+Sim. Frequentemente, a mediação liga o relator a classes estereotipadas como «Role».
+
+**Exemplo:**
+
+```
+«Kind» Pessoa
+    «Role» Contratante
+    «Role» Contratado
+
+«Relator» Contrato
+
+Contratante -- «Mediation» -- Contrato
+Contratado -- «Mediation» -- Contrato
+```
+
+Nesse caso, os papéis Contratante e Contratado existem em razão do próprio contrato.
+
+## Exemplos
+
+### Exemplo 1 — Contrato
+```
+«Kind» Pessoa
+    «Role» Contratante
+    «Role» Contratado
+
+«Relator» Contrato
+
+Contratante -- «Mediation» -- Contrato
+Contratado -- «Mediation» -- Contrato
+```
+
+- A Mediation mostra que contratante e contratado participam do contrato.
+
+### Exemplo 2 — Matrícula escolar
+```
+«Kind» Pessoa
+    «Role» Aluno
+
+«Kind» Escola
+«Relator» Matrícula
+
+Aluno -- «Mediation» -- Matrícula
+Escola -- «Mediation» -- Matrícula
+```
+
+- A matrícula media a relação entre aluno e escola.
+
+### Exemplo 3 — Casamento
+```
+«Kind» Pessoa
+    «Role» Cônjuge
+
+«Relator» Casamento
+
+Cônjuge -- «Mediation» -- Casamento
+Cônjuge -- «Mediation» -- Casamento
+```
+
+- O casamento media os cônjuges envolvidos na relação conjugal.
+
+### Exemplo 4 — Direito previdenciário
+```
+«Kind» Pessoa
+    «Role» Beneficiário
+
+«Kind» INSS
+«Relator» Benefício Previdenciário
+
+Beneficiário -- «Mediation» -- Benefício Previdenciário
+INSS -- «Mediation» -- Benefício Previdenciário
+```
+
+- O benefício previdenciário media a relação jurídica entre beneficiário e INSS.
+
+## Resumo final
+
+A relação «Mediation» deve ser usada para conectar um «Relator» aos seus participantes. Ela é essencial para modelar relações materiais, pois mostra quem está vinculado pelo relator. Exemplos comuns são Pessoa–Contrato, Empresa–Contrato, Aluno–Matrícula, Escola–Matrícula, Beneficiário–Benefício Previdenciário e INSS–Benefício Previdenciário.

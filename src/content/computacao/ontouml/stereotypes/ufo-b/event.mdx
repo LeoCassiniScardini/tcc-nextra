@@ -1,0 +1,231 @@
+# Stereotype «Event» — resumo curto
+
+O «Event» representa um acontecimento, ocorrência ou processo que acontece no tempo. Diferente dos objetos da UFO-A, como Pessoa, Contrato, Veículo ou Organização, o evento não é algo que permanece inteiro em cada momento. Ele se estende no tempo e é composto por partes temporais. A especificação de UFO-B define eventos como indivíduos compostos por partes temporais, que acontecem no tempo acumulando essas partes.
+
+## Exemplos simples:
+
+- «Event» Nascimento
+- «Event» Casamento
+- «Event» Reunião
+- «Event» Aula
+- «Event» Perícia Médica
+- «Event» Protocolo de Requerimento
+- «Event» Concessão de Benefício
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | Perdurant |
+| Prove identidade | Sim |
+| Princípio de identidade | Temporal |
+| Rigidez | Rígido |
+| Dependência | Obrigatória |
+| Supertipos permitidos | Event, Complex Event, Atomic Event, conforme o nível de especialização |
+| Subtipos permitidos | Atomic Event, Complex Event e especializações de eventos |
+| Relação típica | Participation |
+| Elementos relacionados | Object, Situation, Time Interval, Participation |
+
+## Definição
+
+Um «Event» deve ser usado quando a classe representa algo que ocorre, acontece, começa, termina e pode envolver participantes.
+
+### Exemplo:
+
+```
+«Kind» Pessoa
+«Event» Nascimento
+
+Pessoa -- participa de -- Nascimento
+```
+
+O nascimento não é uma pessoa, nem uma qualidade da pessoa. Ele é um acontecimento que ocorre em determinado intervalo temporal e envolve participantes.
+
+### Outro exemplo:
+
+```
+«Kind» Servidor Público
+«Event» Posse em Cargo Público
+
+Servidor Público -- participa de -- Posse em Cargo Público
+```
+
+A posse é um evento: acontece em uma data ou intervalo, altera uma situação e envolve participantes.
+
+## Diferença entre objeto e evento
+
+Na UFO, objetos são endurants: estão no tempo, mas permanecem inteiros em cada momento em que existem. A especificação explica que endurants são completamente presentes sempre que estão presentes.
+
+Eventos são perdurants: acontecem no tempo e possuem partes temporais.
+
+### Exemplo:
+
+```
+«Kind» Pessoa
+«Event» Aula
+```
+
+- A Pessoa existe ao longo do tempo e pode estar inteira presente em diferentes momentos.
+- A Aula, por outro lado, possui partes temporais: início, desenvolvimento e fim.
+
+## Restrições
+
+Um «Event» deve ter alguma conexão com participantes. Em UFO-B, eventos são ontologicamente dependentes de seus participantes para existir. Essa participação é representada pela noção de Participation.
+
+### Exemplo correto:
+
+```
+«Kind» Pessoa
+«Kind» Instituição de Ensino
+«Event» Matrícula
+
+Pessoa -- participa de -- Matrícula
+Instituição de Ensino -- participa de -- Matrícula
+```
+
+### Exemplo inadequado:
+
+```
+«Event» Matrícula
+```
+
+Nesse caso, o modelo está incompleto, porque não informa quem participa do evento.
+
+## Eventos atômicos e complexos
+
+Em UFO-B, um evento pode ser mais simples ou mais composto.
+
+### Evento atômico
+
+Um evento atômico não possui partes impróprias. A especificação descreve Atomic Event como evento que não possui partes impróprias.
+
+**Exemplo:**
+
+```
+«Atomic Event» Assinatura de Documento
+```
+
+### Evento complexo
+
+Um evento complexo é uma agregação de pelo menos dois eventos, que podem ser atômicos ou também complexos.
+
+**Exemplo:**
+
+```
+«Complex Event» Processo Administrativo
+    «Event» Protocolo do Requerimento
+    «Event» Análise Documental
+    «Event» Decisão Administrativa
+    «Event» Comunicação da Decisão
+```
+
+## Questões comuns
+
+### Qual é a diferença entre Event e Relator?
+
+- O «Relator» fundamenta uma relação entre indivíduos e permanece enquanto aquela relação existir.
+- O «Event» é uma ocorrência temporal.
+
+**Exemplo:**
+
+```
+«Relator» Contrato
+«Event» Assinatura do Contrato
+```
+
+- O contrato é a entidade relacional.
+- A assinatura do contrato é o evento que pode dar origem ao contrato.
+
+### Qual é a diferença entre Event e Phase?
+
+- O «Phase» representa um estado temporário de um objeto.
+- O «Event» representa a ocorrência que pode levar a uma mudança de estado.
+
+**Exemplo:**
+
+```
+«Phase» Benefício Ativo
+«Phase» Benefício Cessado
+«Event» Cessação do Benefício
+```
+
+- A cessação é o evento.
+- O benefício cessado é a fase posterior.
+
+### Todo processo é um evento?
+
+Depende do modelo. Se o processo for tratado como algo que acontece no tempo, com início, desenvolvimento e fim, pode ser modelado como «Event» ou «Complex Event».
+
+**Exemplo:**
+
+```
+«Complex Event» Processo Judicial
+    «Event» Protocolo da Petição Inicial
+    «Event» Citação
+    «Event» Audiência
+    «Event» Sentença
+```
+
+Nesse caso, o processo judicial é visto como uma sequência ou composição de eventos.
+
+### Evento pode mudar situações?
+
+Sim. Em UFO-B, eventos normalmente conectam uma situação anterior a uma situação posterior. A especificação menciona pre state e post state como variáveis associadas a Event.
+
+**Exemplo:**
+
+```
+Situação antes: Benefício em análise
+«Event» Concessão do Benefício
+Situação depois: Benefício concedido
+```
+
+## Exemplos
+
+### Exemplo 1 — Educação
+```
+«Kind» Pessoa
+«Kind» Escola
+«Event» Aula
+
+Pessoa -- participa de -- Aula
+Escola -- participa de -- Aula
+```
+
+- A Aula é um evento porque acontece em determinado período e envolve participantes.
+
+### Exemplo 2 — Direito previdenciário
+```
+«Kind» Pessoa
+«Kind» INSS
+«Event» Protocolo de Requerimento
+«Event» Análise Administrativa
+«Event» Concessão de Benefício
+«Event» Cessação de Benefício
+```
+
+- Esses eventos representam acontecimentos dentro do ciclo administrativo previdenciário.
+
+### Exemplo 3 — Contrato
+```
+«Relator» Contrato
+«Event» Assinatura do Contrato
+«Event» Rescisão do Contrato
+```
+
+- A assinatura e a rescisão são eventos.
+- O contrato é o relator que fundamenta a relação jurídica entre as partes.
+
+### Exemplo 4 — Saúde
+```
+«Kind» Pessoa
+«Event» Consulta Médica
+«Event» Perícia Médica
+«Event» Cirurgia
+```
+
+- Consulta, perícia e cirurgia são eventos porque ocorrem no tempo, possuem participantes e podem alterar situações.
+
+## Resumo final
+
+O «Event» deve ser usado para representar acontecimentos, ocorrências ou processos temporais. Ele pertence à UFO-B, possui partes temporais, depende de participantes e pode transformar uma situação anterior em uma situação posterior. Exemplos comuns são Nascimento, Aula, Consulta, Perícia, Protocolo de Requerimento, Concessão de Benefício, Assinatura de Contrato e Sentença.

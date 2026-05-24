@@ -36,7 +36,7 @@ Um «Kind» representa um conceito que:
 
 ### Exemplo:
 
-**«Kind» Pessoa**
+![kind 1](./assets/kind.png)
 
 A classe Pessoa fornece a identidade dos indivíduos. Uma pessoa pode mudar de fase ou papel, mas continua sendo a mesma pessoa.
 
@@ -71,49 +71,28 @@ O Kind fornece a identidade. O Subkind apenas especializa essa identidade.
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Subkind» Mulher
-    «Subkind» Homem
-```
+![kind 2](./assets/kind2.png)
 
 Mulher e Homem continuam seguindo o princípio de identidade de Pessoa.
 
 ## Exemplos
 
 ### Exemplo 1 — Pessoa
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «Role» Servidor Público
-    «Phase» Criança
-    «Phase» Adulto
-```
+![kind 3](./assets/kind3.png)
 
 - Pessoa é o Kind, pois fornece a identidade.
 - Aluno e Servidor Público são papéis.
 - Criança e Adulto são fases da vida da pessoa.
 
 ### Exemplo 2 — Veículo
-```
-«Kind» Veículo
-    «Subkind» Carro
-    «Subkind» Moto
-    «Role» Veículo Alugado
-```
+![kind 4](./assets/kind4.png)
 
 - Veículo fornece a identidade.
 - Carro e Moto são especializações rígidas.
 - Veículo Alugado é um papel, pois depende de uma relação de aluguel.
 
 ### Exemplo 3 — Organização
-```
-«Kind» Organização
-    «Subkind» Escola
-    «Subkind» Empresa
-    «Role» Contratante
-    «Role» Prestadora de Serviço
-```
+![kind 5](./assets/kind5.png)
 
 - Organização é o tipo essencial.
 - Escola e Empresa são subtipos.

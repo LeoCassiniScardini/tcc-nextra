@@ -1,0 +1,262 @@
+# «ComponentOf»
+
+A relação «ComponentOf» representa uma relação parte-todo entre complexos funcionais. Ela deve ser usada quando uma entidade é componente funcional de outra, ou seja, quando a parte contribui para o funcionamento, estrutura ou organização do todo.
+
+## Exemplos simples:
+
+- Motor -- «ComponentOf» -- Carro
+- Mão -- «ComponentOf» -- Braço
+- Coração -- «ComponentOf» -- Sistema Circulatório
+- Processador -- «ComponentOf» -- Computador
+- Secretaria -- «ComponentOf» -- Prefeitura
+
+A documentação da OntoUML define «ComponentOf» como uma relação de parte-todo entre dois complexos funcionais, como motor de carro, mão de braço e coração de sistema circulatório.
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | Relação parte-todo |
+| Tipo de todo | Complexo funcional |
+| Tipo de parte | Complexo funcional |
+| Direcionada | Sim |
+| Multiplicidade da origem | 1..* |
+| Multiplicidade do destino | 0..* |
+| Reflexiva | Não |
+| Transitiva | Não necessariamente |
+| Simétrica | Não |
+| Cíclica | Não |
+| Exemplos típicos | Motor–Carro, Mão–Braço, Coração–Sistema Circulatório |
+
+## Definição
+
+A relação «ComponentOf» deve ser usada quando o todo e a parte são entidades funcionais, e a parte desempenha alguma função dentro do todo.
+
+### Exemplo:
+
+```
+«Kind» Carro
+«Kind» Motor
+
+Motor -- «ComponentOf» -- Carro
+```
+
+O Motor é componente do Carro porque participa da estrutura funcional do veículo.
+
+### Outro exemplo:
+
+```
+«Kind» Computador
+«Kind» Processador
+
+Processador -- «ComponentOf» -- Computador
+```
+
+O Processador é componente do Computador porque exerce uma função dentro do sistema computacional.
+
+## Diferença entre ComponentOf, MemberOf e SubQuantityOf
+
+A OntoUML diferencia vários tipos de relações parte-todo. O «ComponentOf» é usado para complexos funcionais; «MemberOf» e «SubCollectionOf» são usados para coletivos; e «SubQuantityOf» é usado para quantidades ou massas.
+
+### ComponentOf
+
+Usado quando a parte tem função dentro de um todo funcional.
+
+```
+Motor -- «ComponentOf» -- Carro
+```
+
+### MemberOf
+
+Usado quando um indivíduo é membro de um coletivo.
+
+```
+Aluno -- «MemberOf» -- Turma
+```
+
+### SubQuantityOf
+
+Usado quando uma quantidade é parte de outra quantidade.
+
+```
+Porção de Água -- «SubQuantityOf» -- Quantidade de Água
+```
+
+## Restrições
+
+A principal restrição é que os dois lados da relação devem representar complexos funcionais. A documentação afirma que as classes ligadas pelos dois extremos da relação «ComponentOf» devem representar universais cujas instâncias são complexos funcionais.
+
+### Exemplo correto:
+
+```
+«Kind» Carro
+«Kind» Motor
+
+Motor -- «ComponentOf» -- Carro
+```
+
+### Exemplo inadequado:
+
+```
+Aluno -- «ComponentOf» -- Turma
+```
+
+Nesse caso, Turma é melhor modelada como «Collective», e Aluno como membro da turma:
+
+```
+Aluno -- «MemberOf» -- Turma
+```
+
+### Outro exemplo inadequado:
+
+```
+Areia -- «ComponentOf» -- Praia
+```
+
+Se o foco for uma quantidade de areia como parte de outra quantidade ou região material, provavelmente será melhor usar relações próprias de quantidade, como «SubQuantityOf» ou «Containment», dependendo do caso.
+
+## Princípio da suplementação fraca
+
+A relação «ComponentOf» obedece ao princípio da suplementação fraca: para haver um todo composto, deve haver pelo menos duas partes. Essas partes podem ser de tipos diferentes.
+
+### Exemplo:
+
+```
+«Kind» Carro
+«Kind» Motor
+«Kind» Roda
+«Kind» Chassi
+
+Motor -- «ComponentOf» -- Carro
+Roda -- «ComponentOf» -- Carro
+Chassi -- «ComponentOf» -- Carro
+```
+
+O carro não é composto apenas por um componente; ele possui uma estrutura funcional formada por várias partes.
+
+## Questões comuns
+
+### Qual é a diferença entre ComponentOf e composição UML comum?
+
+Na UML comum, composição indica uma relação forte de parte-todo. Na OntoUML, «ComponentOf» é mais específico: ele só deve ser usado quando a parte e o todo forem complexos funcionais.
+
+**Exemplo:**
+
+```
+Motor -- «ComponentOf» -- Carro
+```
+
+### A relação ComponentOf é sempre transitiva?
+
+Não necessariamente. A documentação informa que a transitividade pode valer em certos casos, mas depende do contexto.
+
+**Exemplo:**
+
+```
+Parafuso -- «ComponentOf» -- Motor
+Motor -- «ComponentOf» -- Carro
+```
+
+Pode fazer sentido dizer que o parafuso é parte do carro, mas nem sempre a função da parte se preserva da mesma forma em todos os níveis do todo.
+
+### Quando devo usar ComponentOf?
+
+Use quando a parte tiver uma função dentro do todo.
+
+**Exemplos:**
+
+- Motor de um carro
+- Teclado de um computador
+- Coração de um sistema circulatório
+- Departamento de uma organização
+- Secretaria de uma prefeitura
+
+### Quando não devo usar ComponentOf?
+
+Não use quando a parte for apenas membro de um conjunto homogêneo.
+
+**Exemplo inadequado:**
+
+```
+Aluno -- «ComponentOf» -- Turma
+```
+
+**Melhor:**
+
+```
+Aluno -- «MemberOf» -- Turma
+```
+
+Também não use quando estiver tratando de porções de matéria.
+
+**Exemplo inadequado:**
+
+```
+Porção de Água -- «ComponentOf» -- Quantidade de Água
+```
+
+**Melhor:**
+
+```
+Porção de Água -- «SubQuantityOf» -- Quantidade de Água
+```
+
+## Exemplos
+
+### Exemplo 1 — Carro
+```
+«Kind» Carro
+«Kind» Motor
+«Kind» Roda
+«Kind» Chassi
+
+Motor -- «ComponentOf» -- Carro
+Roda -- «ComponentOf» -- Carro
+Chassi -- «ComponentOf» -- Carro
+```
+
+- O carro é um complexo funcional. Motor, rodas e chassi são componentes funcionais do carro.
+
+### Exemplo 2 — Corpo humano
+```
+«Kind» Corpo Humano
+«Kind» Coração
+«Kind» Pulmão
+«Kind» Rim
+
+Coração -- «ComponentOf» -- Corpo Humano
+Pulmão -- «ComponentOf» -- Corpo Humano
+Rim -- «ComponentOf» -- Corpo Humano
+```
+
+- Os órgãos são componentes funcionais do corpo.
+
+### Exemplo 3 — Computador
+```
+«Kind» Computador
+«Kind» Processador
+«Kind» Memória
+«Kind» Placa-Mãe
+
+Processador -- «ComponentOf» -- Computador
+Memória -- «ComponentOf» -- Computador
+Placa-Mãe -- «ComponentOf» -- Computador
+```
+
+- Cada componente exerce uma função dentro do computador.
+
+### Exemplo 4 — Administração pública
+```
+«Kind» Prefeitura
+«Kind» Secretaria Municipal
+«Kind» Setor Administrativo
+
+Secretaria Municipal -- «ComponentOf» -- Prefeitura
+Setor Administrativo -- «ComponentOf» -- Secretaria Municipal
+```
+
+- A secretaria é componente funcional da prefeitura, e o setor administrativo é componente funcional da secretaria.
+
+## Resumo final
+
+A relação «ComponentOf» deve ser usada para representar partes funcionais de um todo funcional. Ela é adequada para relações como Motor–Carro, Coração–Corpo, Processador–Computador e Secretaria–Prefeitura. Não deve ser usada para membros de coletivos, como Aluno–Turma, nem para porções de matéria, como Água–Quantidade de Água.

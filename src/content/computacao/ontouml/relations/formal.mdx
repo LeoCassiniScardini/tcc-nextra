@@ -1,0 +1,191 @@
+# «Formal»
+
+A relação «Formal» representa uma relação comparativa ou formal, que existe diretamente entre dois ou mais indivíduos, sem precisar de um «Relator» para fundamentá-la.
+
+Ela é usada principalmente para relações que podem ser explicadas pela comparação de valores de qualidades dos indivíduos relacionados, como idade, peso, preço, altura, data ou quantidade. A documentação da OntoUML define «Formal» como uma relação formal comparativa de domínio, reduzível à comparação de valores de qualidades dos indivíduos relacionados.
+
+## Exemplos simples:
+
+- Pessoa é mais velha que Pessoa
+- Produto é mais caro que Produto
+- Objeto é mais pesado que Objeto
+- Aluno tem nota maior que Aluno
+- Processo é anterior a Processo
+
+## Categorias principais
+
+| Propriedade | Valor |
+|---|---|
+| Categoria | Relação formal |
+| Direcionada | Não |
+| Multiplicidade da origem | 0..* |
+| Multiplicidade do destino | 0..* |
+| Depende de Relator | Não |
+| Pode ser derivada de qualidades | Sim |
+| Exemplo típico | mais velho que, mais pesado que, mais barato que |
+| Restrições específicas | Não possui restrições ontológicas fortes na OntoUML |
+
+## Definição
+
+Uma relação «Formal» deve ser usada quando a associação entre os indivíduos pode ser explicada por uma comparação direta entre propriedades ou qualidades.
+
+### Exemplo:
+
+```
+«Kind» Pessoa
+«Quality» Idade
+
+Pessoa -- «Formal» mais velha que -- Pessoa
+```
+
+A relação mais velha que pode ser reduzida à comparação entre as idades das pessoas.
+
+### Outro exemplo:
+
+```
+«Kind» Produto
+«Quality» Preço
+
+Produto -- «Formal» mais caro que -- Produto
+```
+
+A relação mais caro que pode ser reduzida à comparação entre os preços dos produtos.
+
+## Diferença entre Formal e Material
+
+A documentação da OntoUML diferencia relações formais e materiais. Relações formais ligam entidades diretamente, sem um indivíduo intermediário. Relações materiais, por outro lado, possuem uma estrutura própria e são mediadas por «Relator», como contrato, matrícula, emprego ou compromisso.
+
+### Exemplo de relação formal:
+
+```
+Pessoa -- «Formal» mais velha que -- Pessoa
+```
+
+Não existe uma entidade intermediária chamada "mais velhice". A relação decorre diretamente da comparação entre idades.
+
+### Exemplo de relação material:
+
+```
+Pessoa -- trabalha para -- Empresa
+
+«Relator» Contrato de Trabalho
+```
+
+Nesse caso, a relação entre pessoa e empresa é fundamentada por um contrato ou vínculo de trabalho.
+
+## Restrições
+
+A documentação informa que a relação «Formal» não possui restrições ontológicas específicas em OntoUML. Mesmo assim, recomenda-se verificar se a relação modelada é realmente comparativa e se pode ser reduzida a uma comparação entre valores.
+
+### Exemplo adequado:
+
+```
+Pessoa -- «Formal» mais jovem que -- Pessoa
+```
+
+Essa relação pode ser derivada da comparação entre as idades.
+
+### Exemplo inadequado:
+
+```
+Pessoa -- «Formal» trabalha para -- Empresa
+```
+
+Trabalha para normalmente não é uma relação formal, porque depende de um vínculo, contrato ou emprego. O mais adequado seria modelar um «Relator», como:
+
+```
+«Relator» Vínculo de Emprego
+
+Pessoa -- «Mediation» -- Vínculo de Emprego
+Empresa -- «Mediation» -- Vínculo de Emprego
+```
+
+## Questões comuns
+
+### Toda relação sem relator é Formal?
+
+Não necessariamente. O ponto principal é verificar se a relação é direta, formal ou comparativa. Se a relação depende de um vínculo social, jurídico, administrativo ou institucional, provavelmente não é Formal, mas sim Material.
+
+### Quando devo usar Formal?
+
+Use quando a relação puder ser explicada por uma comparação como:
+
+- maior que
+- menor que
+- mais velho que
+- mais novo que
+- mais caro que
+- mais barato que
+- mais pesado que
+- mais leve que
+- anterior a
+- posterior a
+
+### Preciso representar a qualidade usada na comparação?
+
+É recomendável. A documentação sugere pensar em como a relação pode ser reduzida a uma comparação entre valores e representar as propriedades necessárias.
+
+**Exemplo:**
+
+```
+«Kind» Pessoa
+«Quality» Idade
+
+Pessoa -- «Formal» mais velha que -- Pessoa
+```
+
+Aqui, Idade explica a base da comparação.
+
+### A relação Formal pode ser derivada?
+
+Sim. Relações formais comparativas podem ser derivadas por uma regra, por exemplo, usando OCL. A documentação apresenta esse tipo de derivação para explicar relações como "mais leve que" ou "mais pesado que".
+
+## Exemplos
+
+### Exemplo 1 — Pessoas por idade
+```
+«Kind» Pessoa
+«Quality» Idade
+
+Pessoa -- «Formal» mais velha que -- Pessoa
+Pessoa -- «Formal» mais jovem que -- Pessoa
+```
+
+- A relação é formal porque depende da comparação entre idades.
+
+### Exemplo 2 — Produtos por preço
+```
+«Kind» Produto
+«Quality» Preço
+
+Produto -- «Formal» mais caro que -- Produto
+Produto -- «Formal» mais barato que -- Produto
+```
+
+- A comparação decorre do valor do preço.
+
+### Exemplo 3 — Objetos por peso
+```
+«Kind» Objeto
+«Quality» Peso
+
+Objeto -- «Formal» mais pesado que -- Objeto
+Objeto -- «Formal» mais leve que -- Objeto
+```
+
+- A relação é formal porque pode ser reduzida à comparação entre pesos.
+
+### Exemplo 4 — Processos por data
+```
+«Relator» Processo Judicial
+«Quality» Data de Distribuição
+
+Processo Judicial -- «Formal» anterior a -- Processo Judicial
+Processo Judicial -- «Formal» posterior a -- Processo Judicial
+```
+
+- Um processo pode ser anterior ou posterior a outro conforme a data de distribuição.
+
+## Resumo final
+
+A relação «Formal» deve ser usada para representar relações diretas, formais ou comparativas, que não dependem de um «Relator». Ela é adequada para relações como mais velho que, mais caro que, mais pesado que, anterior a e posterior a, especialmente quando podem ser derivadas da comparação entre qualidades dos indivíduos relacionados.
