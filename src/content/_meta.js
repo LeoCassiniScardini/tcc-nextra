@@ -1,10 +1,10 @@
 export default {
   computacao: {
     type: 'separator',
-    title: '💻 Computação - Domínio'
+    title: 'Ontologia, modelagem'
   },
   direito: {
     type: 'separator',
-    title: '⚖️ Direito - Domínio'
+    title: 'Domínio'
   },
 };
