@@ -35,15 +35,7 @@ Um «HistoricalRoleMixin» deve ser usado quando uma classe representa um papel 
 
 ### Exemplo:
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-
-«Event» Processo Seletivo
-
-«HistoricalRoleMixin» Aprovado em Processo Seletivo
-```
+![historialrolemixin](./assets/historicalrolemixin/image.png)
 
 Nesse caso, tanto uma Pessoa quanto uma Organização poderiam, dependendo do domínio, ser classificadas como aprovadas em um processo seletivo. A classificação decorre de um evento passado: a participação no processo seletivo.
 
@@ -55,13 +47,7 @@ O «HistoricalRoleMixin» não fornece identidade própria. A identidade continu
 
 ### Exemplo:
 
-```
-«Category» Entidade Jurídica
-    «Kind» Pessoa
-    «Kind» Organização
-
-«HistoricalRoleMixin» Ex-Parte Contratual
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy.png)
 
 Ex-Parte Contratual não define o que a entidade é essencialmente. Apenas registra uma condição histórica.
 
@@ -69,19 +55,11 @@ Além disso, ele deve estar relacionado a algum «Event» por participação. Pa
 
 ### Exemplo correto:
 
-```
-«Event» Assinatura de Contrato
-
-«HistoricalRoleMixin» Signatário Histórico
-
-Signatário Histórico -- «Participation» -- Assinatura de Contrato
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy2.png)
 
 ### Exemplo inadequado:
 
-```
-«HistoricalRoleMixin» Signatário Histórico
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy3.png)
 
 Nesse caso, o modelo está incompleto, pois não mostra qual evento histórico fundamenta esse papel.
 
@@ -94,24 +72,13 @@ Nesse caso, o modelo está incompleto, pois não mostra qual evento histórico f
 
 **Exemplo com HistoricalRole:**
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Ex-Aluno
-
-«Event» Matrícula Escolar
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy4.png)
 
 Ex-Aluno é um papel histórico de Pessoa.
 
 **Exemplo com HistoricalRoleMixin:**
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-
-«HistoricalRoleMixin» Ex-Contratante
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy5.png)
 
 Ex-Contratante pode reunir pessoas e organizações que participaram historicamente de contratos.
 
@@ -122,10 +89,7 @@ Ex-Contratante pode reunir pessoas e organizações que participaram historicame
 
 **Exemplo:**
 
-```
-«RoleMixin» Parte Contratual
-«HistoricalRoleMixin» Ex-Parte Contratual
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy6.png)
 
 - Parte Contratual representa quem exerce atualmente ou contextualmente um papel em uma relação contratual.
 - Ex-Parte Contratual representa quem participou historicamente de um contrato, mas não necessariamente mantém a relação atual.
@@ -137,10 +101,7 @@ Ex-Contratante pode reunir pessoas e organizações que participaram historicame
 
 **Exemplo:**
 
-```
-«PhaseMixin» Entidade Suspensa
-«HistoricalRoleMixin» Entidade Autuada
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy7.png)
 
 - Entidade Suspensa decorre de um estado atual da entidade.
 - Entidade Autuada decorre de participação em um evento anterior, como uma autuação administrativa.
@@ -166,62 +127,12 @@ Use quando a classificação:
 ## Exemplos
 
 ### Exemplo 1 — Processo administrativo
-```
-«Category» Entidade Administrada
-    «Kind» Pessoa
-    «Kind» Organização
-
-«Event» Autuação Administrativa
-
-«HistoricalRoleMixin» Entidade Autuada
-
-Entidade Autuada -- «Participation» -- Autuação Administrativa
-```
+![historialrolemixin](./assets/historicalrolemixin/imagecopy8.png)
 
 - Entidade Autuada é um papel histórico porque decorre da participação em uma autuação administrativa.
 
-### Exemplo 2 — Licitação
-```
-«Category» Agente Econômico
-    «Kind» Pessoa
-    «Kind» Empresa
-
-«Event» Participação em Licitação
-
-«HistoricalRoleMixin» Ex-Participante de Licitação
-
-Ex-Participante de Licitação -- «Participation» -- Participação em Licitação
-```
-
-- Uma pessoa ou empresa pode ser classificada como ex-participante de licitação em razão de um evento passado.
-
-### Exemplo 3 — Direito previdenciário
-```
-«Category» Agente Previdenciário
-    «Kind» Pessoa
-    «Kind» Organização
-
-«Event» Concessão de Benefício
-«Event» Cessação de Benefício
-
-«HistoricalRoleMixin» Ex-Beneficiário
-«HistoricalRoleMixin» Entidade Pagadora Histórica
-```
-
-- Ex-Beneficiário representa alguém que participou historicamente de uma relação previdenciária, mas não necessariamente mantém o benefício ativo.
-
-### Exemplo 4 — Produção intelectual
-```
-«Category» Agente Criador
-    «Kind» Pessoa
-    «Kind» Organização
-
-«Event» Criação de Obra
-
-«HistoricalRoleMixin» Criador Histórico
-
-Criador Histórico -- «Participation» -- Criação de Obra
-```
+### Exemplo 2 — Produção intelectual
+![historialrolemixin](./assets/historicalrolemixin/imagecopy9.png)
 
 - Criador Histórico pode abranger pessoas ou organizações que participaram do evento de criação de uma obra.
 

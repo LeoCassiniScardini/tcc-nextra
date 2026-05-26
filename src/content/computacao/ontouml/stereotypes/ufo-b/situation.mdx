@@ -33,24 +33,13 @@ Um «Situation» deve ser usado quando se deseja representar uma condição do m
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-«Kind» Escola
-«Relator» Matrícula
-
-«Situation» Pessoa Matriculada
-```
+![situation](./assets/situation/image.png)
 
 A situação Pessoa Matriculada representa o estado em que uma pessoa possui vínculo de matrícula com uma escola.
 
 ### Outro exemplo:
 
-```
-«Relator» Benefício Previdenciário
-
-«Situation» Benefício Ativo
-«Situation» Benefício Cessado
-```
+![situation](./assets/situation/imagecopy.png)
 
 Essas situações descrevem estados possíveis de um benefício previdenciário.
 
@@ -60,13 +49,7 @@ Eventos normalmente mudam situações.
 
 ### Exemplo:
 
-```
-«Situation» Benefício em Análise
-
-«Event» Concessão de Benefício
-
-«Situation» Benefício Ativo
-```
+![situation](./assets/situation/imagecopy2.png)
 
 - A concessão é o evento.
 - Benefício em Análise é a situação anterior.
@@ -74,13 +57,7 @@ Eventos normalmente mudam situações.
 
 ### Outro exemplo:
 
-```
-«Situation» Contrato Vigente
-
-«Event» Rescisão Contratual
-
-«Situation» Contrato Rescindido
-```
+![situation](./assets/situation/imagecopy3.png)
 
 A rescisão contratual transforma a situação de vigência em situação de contrato rescindido.
 
@@ -90,33 +67,23 @@ O «Situation» não deve ser usado para representar objetos, papéis ou eventos
 
 ### Exemplo inadequado:
 
-```
-«Situation» Pessoa
-```
+![situation](./assets/situation/imagecopy4.png)
 
 Pessoa não é situação; é um objeto persistente, normalmente modelado como:
 
-```
-«Kind» Pessoa
-```
+![situation](./assets/situation/imagecopy5.png)
 
 ### Exemplo inadequado:
 
-```
-«Situation» Assinatura de Contrato
-```
+![situation](./assets/situation/imagecopy6.png)
 
 A assinatura não é uma situação; é um acontecimento. O correto seria:
 
-```
-«Event» Assinatura de Contrato
-```
+![situation](./assets/situation/imagecopy7.png)
 
 ### Exemplo adequado:
 
-```
-«Situation» Contrato Assinado
-```
+![situation](./assets/situation/imagecopy8.png)
 
 Aqui sim há uma situação, pois se representa o estado resultante da assinatura.
 
@@ -129,10 +96,7 @@ Aqui sim há uma situação, pois se representa o estado resultante da assinatur
 
 **Exemplo:**
 
-```
-«Event» Cessação do Benefício
-«Situation» Benefício Cessado
-```
+![situation](./assets/situation/imagecopy9.png)
 
 - A cessação é o evento.
 - O benefício cessado é a situação resultante.
@@ -144,10 +108,7 @@ Aqui sim há uma situação, pois se representa o estado resultante da assinatur
 
 **Exemplo:**
 
-```
-«Phase» Benefício Ativo
-«Situation» Segurado Recebendo Benefício Ativo
-```
+![situation](./assets/situation/imagecopy10.png)
 
 - Benefício Ativo pode ser uma fase do benefício.
 - Segurado Recebendo Benefício Ativo é uma situação envolvendo segurado, benefício e relação de recebimento.
@@ -168,72 +129,11 @@ Ou seja, quando a ideia principal for um estado de coisas, e não um objeto ou e
 
 ## Exemplos
 
-### Exemplo 1 — Previdenciário
-```
-«Kind» Pessoa
-«Relator» Benefício Previdenciário
-
-«Situation» Benefício em Análise
-«Situation» Benefício Concedido
-«Situation» Benefício Ativo
-«Situation» Benefício Cessado
-
-«Event» Protocolo do Requerimento
-«Event» Concessão do Benefício
-«Event» Cessação do Benefício
-```
-
-- O protocolo, a concessão e a cessação são eventos.
-- As demais classes representam situações administrativas do benefício.
-
-### Exemplo 2 — Educação
-```
-«Kind» Pessoa
-«Kind» Escola
-«Relator» Matrícula
-
-«Situation» Pessoa Matriculada
-«Situation» Matrícula Cancelada
-«Situation» Aluno Frequente
-
-«Event» Efetivação da Matrícula
-«Event» Cancelamento da Matrícula
-```
+### Exemplo 1 — Educação
+![situation](./assets/situation/imagecopy11.png)
 
 - A efetivação e o cancelamento são eventos.
 - As situações representam estados resultantes desses eventos.
-
-### Exemplo 3 — Contrato
-```
-«Relator» Contrato
-
-«Situation» Contrato em Negociação
-«Situation» Contrato Vigente
-«Situation» Contrato Rescindido
-
-«Event» Assinatura do Contrato
-«Event» Rescisão Contratual
-```
-
-- O contrato pode passar por diferentes situações ao longo do tempo.
-
-### Exemplo 4 — Processo judicial
-```
-«Relator» Processo Judicial
-
-«Situation» Processo em Tramitação
-«Situation» Processo Suspenso
-«Situation» Processo Sentenciado
-«Situation» Processo Arquivado
-
-«Event» Distribuição da Ação
-«Event» Decisão de Suspensão
-«Event» Sentença
-«Event» Arquivamento
-```
-
-- As situações descrevem o estado processual.
-- Os eventos representam os atos que modificam esse estado.
 
 ## Resumo final
 

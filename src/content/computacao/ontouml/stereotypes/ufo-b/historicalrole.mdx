@@ -36,24 +36,13 @@ Um «HistoricalRole» deve ser usado quando uma classe representa uma condição
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Ex-Aluno
-
-«Event» Matrícula Escolar
-«Event» Conclusão de Curso
-```
+![historialrole](./assets/historicalrole/image.png)
 
 A pessoa é Ex-Aluno porque participou de eventos educacionais anteriores, como matrícula, frequência ou conclusão de curso.
 
 ### Outro exemplo:
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Vítima de Acidente
-
-«Event» Acidente
-```
+![historialrole](./assets/historicalrole/imagecopy.png)
 
 A pessoa é classificada como Vítima de Acidente porque participou historicamente do evento Acidente.
 
@@ -63,10 +52,7 @@ O «HistoricalRole» não fornece identidade própria. Ele herda a identidade de
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Ex-Servidor Público
-```
+![historialrole](./assets/historicalrole/imagecopy2.png)
 
 Ex-Servidor Público não define a identidade da pessoa. A identidade continua sendo fornecida por Pessoa.
 
@@ -74,21 +60,11 @@ Além disso, o «HistoricalRole» deve ser fundamentado por participação em ev
 
 ### Exemplo correto:
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Ex-Beneficiário
-
-«Event» Cessação de Benefício
-
-Pessoa -- participa de -- Cessação de Benefício
-```
+![historialrole](./assets/historicalrole/imagecopy3.png)
 
 ### Exemplo incompleto:
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Ex-Beneficiário
-```
+![historialrole](./assets/historicalrole/imagecopy4.png)
 
 Nesse caso, falta indicar o evento que fundamenta a condição histórica.
 
@@ -101,11 +77,7 @@ Nesse caso, falta indicar o evento que fundamenta a condição histórica.
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «HistoricalRole» Ex-Aluno
-```
+![historialrole](./assets/historicalrole/imagecopy5.png)
 
 - Aluno depende de uma matrícula ou vínculo educacional atual.
 - Ex-Aluno depende de uma participação passada em eventos educacionais.
@@ -117,20 +89,11 @@ Nesse caso, falta indicar o evento que fundamenta a condição histórica.
 
 **Exemplo:**
 
-```
-«Kind» Pessoa
-    «HistoricalRole» Ex-Aluno
-```
+![historialrole](./assets/historicalrole/imagecopy6.png)
 
 Aqui, o papel histórico é específico de Pessoa.
 
-```
-«Category» Agente
-    «Kind» Pessoa
-    «Kind» Organização
-
-«HistoricalRoleMixin» Ex-Contratante
-```
+![historialrole](./assets/historicalrole/imagecopy7.png)
 
 Aqui, o papel histórico pode ser exercido por pessoa ou organização.
 
@@ -141,10 +104,7 @@ Aqui, o papel histórico pode ser exercido por pessoa ou organização.
 
 **Exemplo:**
 
-```
-«Phase» Pessoa Idosa
-«HistoricalRole» Pessoa Aposentada
-```
+![historialrole](./assets/historicalrole/imagecopy8.png)
 
 - Pessoa Idosa depende da idade.
 - Pessoa Aposentada depende de um evento histórico de concessão de aposentadoria.
@@ -169,56 +129,16 @@ Use quando a classificação:
 ## Exemplos
 
 ### Exemplo 1 — Educação
-```
-«Kind» Pessoa
-    «Role» Aluno
-    «HistoricalRole» Ex-Aluno
-
-«Event» Matrícula
-«Event» Conclusão de Curso
-«Event» Cancelamento de Matrícula
-```
+![historialrole](./assets/historicalrole/imagecopy9.png)
 
 - Aluno representa o papel atual.
 - Ex-Aluno representa uma condição histórica resultante de eventos anteriores.
 
-### Exemplo 2 — Previdenciário
-```
-«Kind» Pessoa
-    «Role» Beneficiário
-    «HistoricalRole» Ex-Beneficiário
-
-«Event» Concessão de Benefício
-«Event» Cessação de Benefício
-```
-
-- Beneficiário é o papel atual da pessoa vinculada a um benefício.
-- Ex-Beneficiário decorre da participação anterior em eventos de concessão e cessação.
-
-### Exemplo 3 — Trabalho
-```
-«Kind» Pessoa
-    «Role» Empregado
-    «HistoricalRole» Ex-Empregado
-
-«Event» Admissão
-«Event» Demissão
-```
+### Exemplo 2 — Trabalho
+![historialrole](./assets/historicalrole/imagecopy10.png)
 
 - Empregado depende da relação de trabalho atual.
 - Ex-Empregado depende da participação histórica em eventos trabalhistas.
-
-### Exemplo 4 — Processo judicial
-```
-«Kind» Pessoa
-    «HistoricalRole» Participante de Audiência
-    «HistoricalRole» Testemunha Ouvida
-
-«Event» Audiência
-«Event» Oitiva de Testemunha
-```
-
-- A pessoa é classificada como participante de audiência ou testemunha ouvida porque participou de eventos processuais anteriores.
 
 ## Resumo final
 

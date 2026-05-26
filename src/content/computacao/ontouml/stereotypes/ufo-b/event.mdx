@@ -32,23 +32,13 @@ Um «Event» deve ser usado quando a classe representa algo que ocorre, acontece
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-«Event» Nascimento
-
-Pessoa -- participa de -- Nascimento
-```
+![event](./assets/event/image.png)
 
 O nascimento não é uma pessoa, nem uma qualidade da pessoa. Ele é um acontecimento que ocorre em determinado intervalo temporal e envolve participantes.
 
 ### Outro exemplo:
 
-```
-«Kind» Servidor Público
-«Event» Posse em Cargo Público
-
-Servidor Público -- participa de -- Posse em Cargo Público
-```
+![event](./assets/event/imagecopy.png)
 
 A posse é um evento: acontece em uma data ou intervalo, altera uma situação e envolve participantes.
 
@@ -60,10 +50,7 @@ Eventos são perdurants: acontecem no tempo e possuem partes temporais.
 
 ### Exemplo:
 
-```
-«Kind» Pessoa
-«Event» Aula
-```
+![event](./assets/event/imagecopy2.png)
 
 - A Pessoa existe ao longo do tempo e pode estar inteira presente em diferentes momentos.
 - A Aula, por outro lado, possui partes temporais: início, desenvolvimento e fim.
@@ -74,50 +61,13 @@ Um «Event» deve ter alguma conexão com participantes. Em UFO-B, eventos são 
 
 ### Exemplo correto:
 
-```
-«Kind» Pessoa
-«Kind» Instituição de Ensino
-«Event» Matrícula
-
-Pessoa -- participa de -- Matrícula
-Instituição de Ensino -- participa de -- Matrícula
-```
+![event](./assets/event/imagecopy3.png)
 
 ### Exemplo inadequado:
 
-```
-«Event» Matrícula
-```
+![event](./assets/event/imagecopy4.png)
 
 Nesse caso, o modelo está incompleto, porque não informa quem participa do evento.
-
-## Eventos atômicos e complexos
-
-Em UFO-B, um evento pode ser mais simples ou mais composto.
-
-### Evento atômico
-
-Um evento atômico não possui partes impróprias. A especificação descreve Atomic Event como evento que não possui partes impróprias.
-
-**Exemplo:**
-
-```
-«Atomic Event» Assinatura de Documento
-```
-
-### Evento complexo
-
-Um evento complexo é uma agregação de pelo menos dois eventos, que podem ser atômicos ou também complexos.
-
-**Exemplo:**
-
-```
-«Complex Event» Processo Administrativo
-    «Event» Protocolo do Requerimento
-    «Event» Análise Documental
-    «Event» Decisão Administrativa
-    «Event» Comunicação da Decisão
-```
 
 ## Questões comuns
 
@@ -128,10 +78,7 @@ Um evento complexo é uma agregação de pelo menos dois eventos, que podem ser 
 
 **Exemplo:**
 
-```
-«Relator» Contrato
-«Event» Assinatura do Contrato
-```
+![event](./assets/event/imagecopy5.png)
 
 - O contrato é a entidade relacional.
 - A assinatura do contrato é o evento que pode dar origem ao contrato.
@@ -143,86 +90,26 @@ Um evento complexo é uma agregação de pelo menos dois eventos, que podem ser 
 
 **Exemplo:**
 
-```
-«Phase» Benefício Ativo
-«Phase» Benefício Cessado
-«Event» Cessação do Benefício
-```
+![event](./assets/event/imagecopy6.png)
 
 - A cessação é o evento.
 - O benefício cessado é a fase posterior.
 
-### Todo processo é um evento?
-
-Depende do modelo. Se o processo for tratado como algo que acontece no tempo, com início, desenvolvimento e fim, pode ser modelado como «Event» ou «Complex Event».
-
-**Exemplo:**
-
-```
-«Complex Event» Processo Judicial
-    «Event» Protocolo da Petição Inicial
-    «Event» Citação
-    «Event» Audiência
-    «Event» Sentença
-```
-
-Nesse caso, o processo judicial é visto como uma sequência ou composição de eventos.
-
-### Evento pode mudar situações?
-
-Sim. Em UFO-B, eventos normalmente conectam uma situação anterior a uma situação posterior. A especificação menciona pre state e post state como variáveis associadas a Event.
-
-**Exemplo:**
-
-```
-Situação antes: Benefício em análise
-«Event» Concessão do Benefício
-Situação depois: Benefício concedido
-```
-
 ## Exemplos
 
 ### Exemplo 1 — Educação
-```
-«Kind» Pessoa
-«Kind» Escola
-«Event» Aula
-
-Pessoa -- participa de -- Aula
-Escola -- participa de -- Aula
-```
+![event](./assets/event/imagecopy7.png)
 
 - A Aula é um evento porque acontece em determinado período e envolve participantes.
 
-### Exemplo 2 — Direito previdenciário
-```
-«Kind» Pessoa
-«Kind» INSS
-«Event» Protocolo de Requerimento
-«Event» Análise Administrativa
-«Event» Concessão de Benefício
-«Event» Cessação de Benefício
-```
-
-- Esses eventos representam acontecimentos dentro do ciclo administrativo previdenciário.
-
-### Exemplo 3 — Contrato
-```
-«Relator» Contrato
-«Event» Assinatura do Contrato
-«Event» Rescisão do Contrato
-```
+### Exemplo 2 — Contrato
+![event](./assets/event/imagecopy8.png)
 
 - A assinatura e a rescisão são eventos.
 - O contrato é o relator que fundamenta a relação jurídica entre as partes.
 
-### Exemplo 4 — Saúde
-```
-«Kind» Pessoa
-«Event» Consulta Médica
-«Event» Perícia Médica
-«Event» Cirurgia
-```
+### Exemplo 3 — Saúde
+![event](./assets/event/imagecopy9.png)
 
 - Consulta, perícia e cirurgia são eventos porque ocorrem no tempo, possuem participantes e podem alterar situações.
 
