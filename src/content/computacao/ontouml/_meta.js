@@ -1,4 +1,4 @@
 export default {
+  'stereotypes': "Estereótipos",
   'relations': "Relações",
-  'stereotypes': "Estereótipos"
 };
