@@ -1,76 +1,93 @@
 # SABiO - Systematic Approach for Building Ontologies
 
-## O que é SABiO?
+![sabio](./assets/image.png)
 
-**SABiO** (Systematic Approach for Building Ontologies) é uma metodologia rigorosa e sistemática para construção de ontologias. Ela proporciona um conjunto estruturado de atividades, decisões e diretrizes para garantir qualidade, consistência e rastreabilidade durante todo o processo de desenvolvimento.
+## 1. Levantamento de Requisitos e Identificação de Propósito
 
-## Fases do SABiO
+Nesta etapa, define-se o objetivo da ontologia e o problema que ela pretende resolver.
 
-### **1. Fase de Escopo**
+São identificados:
 
-Define o propósito, escopo e público-alvo da ontologia:
+- o domínio da ontologia;
+- a finalidade do modelo;
+- o público-alvo;
+- o escopo da representação;
+- os requisitos da ontologia;
+- as questões de competência.
 
-- **Identificação do Propósito**: Por que a ontologia está sendo construída?
-- **Definição do Escopo**: Que conceitos e relações devem ser cobertos?
-- **Identificação de Stakeholders**: Quem usará a ontologia?
-- **Recolha de Requisitos**: Que questões de competência a ontologia deve responder?
+Essa etapa responde à pergunta principal: **para que a ontologia será construída?**
 
-### **2. Fase de Captura Conceitual**
+## 2. Captura e Formalização da Ontologia
 
-Extrai e organiza os conceitos relevantes:
+Nesta etapa, o conhecimento do domínio é coletado, analisado e organizado.
 
-- **Identificação de Conceitos**: Que classes, atributos e relacionamentos existem?
-- **Análise de Taxonomia**: Como os conceitos se organizam hierarquicamente?
-- **Documentação**: Descrição clara de cada conceito
-- **Validação com Especialistas**: Confirmação com domain experts
+São levantados:
 
-### **3. Fase de Formalização**
+- conceitos principais;
+- relações entre conceitos;
+- propriedades;
+- restrições;
+- regras do domínio;
+- termos relevantes.
 
-Expressa os conceitos em linguagem formal:
+Após a captura, ocorre a formalização, em que os elementos identificados são estruturados de maneira mais precisa e rigorosa.
 
-- **Escolha de Linguagem**: OntoUML, OWL, RDF, etc.
-- **Definições Formais**: Uso de lógicas descritivas
-- **Restrições**: Regras de integridade e constraints
-- **Propriedades**: Atributos e relacionamentos formalizados
+## 3. Ontologia de Referência
 
-### **4. Fase de Implementação**
+A **ontologia de referência** é o modelo conceitual resultante da captura e formalização.
 
-Codifica a ontologia em tecnologias específicas:
+Ela representa o domínio em alto nível, com foco na clareza conceitual e na fidelidade ao domínio, sem se preocupar diretamente com detalhes de implementação computacional.
 
-- **Codificação**: Em linguagens como OWL, RDF, etc.
-- **Integração de Ferramentas**: Com sistemas e aplicações
-- **Validação Sintática**: Verificação de erros de formato
-- **Testes**: Verificação de integridade da ontologia
+Essa ontologia serve como base para as etapas seguintes do processo.
 
-### **5. Fase de Manutenção e Evolução**
+## 4. Design
 
-Gerencia mudanças e evolução contínua:
+Na etapa de **design**, a ontologia de referência é preparada para ser implementada.
 
-- **Monitoring**: Identificação de necessidades de mudança
-- **Evolução**: Adição de novos conceitos e relacionamentos
-- **Versionamento**: Gestão de versões diferentes
-- **Documentação de Mudanças**: Registro de histórico
+Aqui são tomadas decisões sobre:
 
-## Componentes Transversais do SABiO
+- organização da ontologia;
+- modularização;
+- padrões de modelagem;
+- nomes de classes e relações;
+- estrutura técnica;
+- reaproveitamento de modelos existentes.
 
-| Componente | Descrição |
-|-----------|-----------|
-| **Reusabilidade** | Aproveita ontologias existentes como base |
-| **Documentação** | Mantém documentação clara em todas as fases |
-| **Rastreabilidade** | Documenta decisões e justificativas |
-| **Validação** | Verifica qualidade em cada fase |
-| **Conformidade** | Segue padrões e boas práticas |
+O objetivo é transformar a ontologia de referência em um modelo mais próximo da implementação.
 
-## Aplicação ao Projeto
+## 5. Implementação
 
-Este TCC seguirá rigorosamente as fases do SABiO para garantir que a ontologia de Juizado Especial Cível seja:
+Na implementação, a ontologia é construída em uma linguagem ou ferramenta específica.
 
-1. ✅ Bem fundamentada nos requisitos do domínio
-2. ✅ Formalmente correta e validada
-3. ✅ Documentada e rastreável
-4. ✅ Preparada para manutenção futura
-5. ✅ Reutilizável em outros contextos legais
+Nessa etapa, o modelo conceitual passa a existir como um artefato computacional.
 
-## Status no Projeto
+Exemplos de linguagens e ferramentas:
 
-> Documentação detalhada de cada fase será adicionada conforme progredimos no desenvolvimento.
+- OWL;
+- OntoUML;
+- Protégé;
+- OLED;
+- Visual Paradigm.
+
+A implementação pode gerar diferentes artefatos, como uma **ontologia operacional** ou um **modelo relacional de dados**.
+
+## 6. Teste
+
+A etapa de teste verifica se a ontologia implementada atende aos requisitos definidos no início do processo.
+
+São analisados aspectos como:
+
+- consistência;
+- clareza;
+- completude;
+- ausência de contradições;
+- adequação ao domínio;
+- capacidade de responder às questões de competência.
+
+O teste permite identificar erros, lacunas e ajustes necessários antes da utilização final da ontologia.
+
+## Conclusão
+
+O processo de desenvolvimento do **SABiO** conduz a construção da ontologia de forma organizada.
+
+Primeiro, define-se o propósito e os requisitos. Depois, o conhecimento do domínio é capturado e formalizado, gerando uma ontologia de referência. Em seguida, essa ontologia passa pelo design, implementação e teste, garantindo maior clareza, consistência e utilidade ao modelo.

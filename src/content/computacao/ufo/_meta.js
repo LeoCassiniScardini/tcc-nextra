@@ -1,7 +1,6 @@
 export default {
-  'index': "Definição",
-  'ufo-a': "UFO-A",
-  'ufo-b': "UFO-B",
-  'ufo-c': "UFO-C",
+  'ufoa': "UFO-A",
+  'ufob': "UFO-B",
+  'ufoc': "UFO-C",
   'comparison': "Comparação"
 };
