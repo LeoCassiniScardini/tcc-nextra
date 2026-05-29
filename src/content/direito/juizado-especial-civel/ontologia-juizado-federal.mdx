@@ -1,0 +1,624 @@
+# Ontologia do Juizado Especial Federal Cível
+
+## Resumo
+
+A ontologia a ser construída tem como objetivo representar, de forma conceitual e estruturada, o domínio do **Juizado Especial Federal Cível**, identificando seus principais sujeitos, atos, documentos, fases procedimentais, decisões e efeitos jurídicos.
+
+A proposta parte da modelagem das entidades centrais do processo judicial federal de menor complexidade, com foco nas causas de competência da Justiça Federal submetidas ao rito simplificado da Lei nº 10.259/2001.
+
+A ontologia permitirá compreender como uma ação federal é proposta, como se transforma em processo, quais sujeitos participam, quais atos são praticados, quais fases compõem o procedimento e quais resultados podem surgir, como acordo, sentença, recurso, cumprimento de obrigação, implantação de benefício ou pagamento por RPV.
+
+---
+
+## 1. Escopo da ontologia
+
+A ontologia será voltada ao funcionamento básico do **Juizado Especial Federal Cível**, contemplando principalmente:
+
+* estrutura do processo judicial federal;
+* tipos de ação de competência do JEF;
+* sujeitos processuais;
+* papéis exercidos pelas partes;
+* procedimento e suas fases;
+* atos processuais;
+* conciliação;
+* produção de provas;
+* sentença;
+* recursos;
+* cumprimento de sentença;
+* regras básicas de competência, tramitação e encerramento processual.
+
+O foco não será representar todo o Direito Processual Civil nem toda a Justiça Federal, mas sim um recorte específico: o caminho típico de uma demanda no **Juizado Especial Federal Cível**, desde a propositura da ação até a sua solução ou cumprimento.
+
+---
+
+## 2. Entidades que serão construídas
+
+A ontologia será formada por entidades principais, que representam os conceitos fundamentais do domínio.
+
+---
+
+### 2.1 Processo no Juizado Especial Federal Cível
+
+O **Processo no Juizado Especial Federal Cível** será uma entidade central da ontologia. Ele representará a estrutura jurídica em que os atos processuais são praticados para solucionar uma lide de competência federal, de menor complexidade e com valor limitado a 60 salários mínimos.
+
+**Atributos:**
+
+* número do processo;
+* data de abertura;
+* data de distribuição;
+* valor da causa;
+* matéria discutida;
+* ente federal envolvido;
+* status processual;
+* data de encerramento.
+
+**Relacionamentos:**
+
+O Processo se relacionará com a Ação Federal, as Partes, o Juiz Federal, o Procedimento, os Atos Processuais e, eventualmente, com a Sentença, o Recurso, o Acordo e o Cumprimento da Sentença.
+
+---
+
+### 2.2 Ação Federal
+
+A **Ação Federal** representará a pretensão levada ao Juizado Especial Federal Cível. Ela indicará o tipo de conflito submetido ao Poder Judiciário Federal.
+
+**Tipos de ação:**
+
+* ação previdenciária;
+* ação assistencial;
+* ação de concessão de benefício;
+* ação de restabelecimento de benefício;
+* ação de revisão de benefício;
+* ação contra o INSS;
+* ação contra a União;
+* ação contra a Caixa Econômica Federal;
+* ação contra autarquia federal;
+* ação contra fundação pública federal;
+* ação de obrigação de fazer;
+* ação de cobrança de pequeno valor;
+* ação indenizatória contra ente federal;
+* ação relacionada ao FGTS;
+* ação relacionada a contrato habitacional da Caixa Econômica Federal.
+
+**Atributos principais:**
+
+* tipo da ação;
+* descrição;
+* causa de pedir;
+* pedido;
+* data de ajuizamento;
+* valor da causa;
+* matéria federal;
+* grau de complexidade.
+
+---
+
+### 2.3 Parte
+
+A entidade **Parte** representará a pessoa física, jurídica ou entidade pública que participa do processo com interesse jurídico no resultado.
+
+**Papéis processuais:**
+
+* Autor;
+* Réu Federal;
+* Litisconsorte;
+* Terceiro, quando admitido e compatível com o rito.
+
+**Possíveis autores:**
+
+* pessoa física;
+* microempresa;
+* empresa de pequeno porte.
+
+**Possíveis réus federais:**
+
+* União;
+* INSS;
+* Caixa Econômica Federal;
+* autarquias federais;
+* fundações públicas federais;
+* empresas públicas federais.
+
+**Atributos:**
+
+* nome;
+* CPF ou CNPJ;
+* endereço;
+* tipo de pessoa;
+* contato;
+* papel exercido no processo;
+* representação por advogado;
+* vínculo com a matéria discutida.
+
+**Relacionamentos:**
+
+A Parte poderá propor a Ação Federal, figurar no polo passivo, apresentar documentos, participar de conciliação, produzir provas, interpor recurso ou cumprir obrigação determinada judicialmente.
+
+---
+
+### 2.4 Sujeitos processuais
+
+A ontologia também representará os sujeitos que atuam no processo.
+
+* **Juiz Federal**: conduz o processo, analisa a competência, determina provas, profere decisões e sentença;
+* **Advogado**: representa tecnicamente a parte, sendo indispensável na fase recursal;
+* **Procurador Federal ou Advogado Público**: representa o ente ou entidade federal;
+* **Conciliador**: atua na tentativa de composição entre as partes;
+* **Servidor Judicial**: pratica atos de secretaria, movimentação e comunicação processual;
+* **Oficial de Justiça**: cumpre mandados e diligências, quando necessário;
+* **Perito**: produz prova técnica, médica, social, contábil ou especializada;
+* **Testemunha**: presta informações sobre fatos relevantes;
+* **Turma Recursal**: julga o recurso inominado;
+* **Turma Regional de Uniformização**: atua em divergência regional de interpretação de lei federal;
+* **Turma Nacional de Uniformização**: atua em divergência nacional de interpretação de lei federal.
+
+---
+
+### 2.5 Procedimento e Fase
+
+O **Procedimento** representará a marcha processual, ou seja, a sequência lógica de atos que organizam o processo no Juizado Especial Federal Cível.
+
+**Fases do procedimento:**
+
+* instauração;
+* análise inicial;
+* citação e defesa;
+* conciliação;
+* instrução;
+* julgamento;
+* sentença;
+* fase pós-sentença;
+* cumprimento.
+
+**Atributos de cada fase:**
+
+* nome;
+* ordem;
+* descrição;
+* prazo padrão;
+* responsável;
+* atos vinculados;
+* possíveis desfechos.
+
+---
+
+### 2.6 Ato Processual
+
+O **Ato Processual** representará cada manifestação, decisão ou providência praticada dentro do processo.
+
+**Especialidades:**
+
+* **Atos do Juiz Federal**: despacho, decisão interlocutória, tutela provisória, determinação de perícia, sentença, homologação de acordo e requisição de pagamento;
+* **Atos das Partes**: petição inicial, contestação, manifestação, juntada de documentos, proposta de acordo, recurso inominado, embargos de declaração, contrarrazões e pedido de uniformização;
+* **Atos dos Serventuários**: distribuição, autuação, citação, intimação, certidão, expedição de mandado, expedição de requisição e movimentação processual;
+* **Atos dos Auxiliares**: conciliação, perícia, elaboração de laudo, depoimento testemunhal e cumprimento de diligência.
+
+**Atributos principais:**
+
+* tipo do ato;
+* data;
+* responsável;
+* descrição;
+* fase em que ocorre;
+* documento associado;
+* efeitos jurídicos.
+
+---
+
+### 2.7 Sentença
+
+A **Sentença** será modelada como a decisão que resolve ou encerra a demanda.
+
+**Componentes:**
+
+* texto da decisão;
+* data;
+* fundamentação;
+* resultado;
+* procedência, improcedência ou procedência parcial;
+* extinção sem resolução do mérito;
+* homologação de acordo;
+* informação sobre trânsito em julgado.
+
+**Relacionamentos:**
+
+A Sentença poderá estar relacionada a um Recurso, a um Acordo, ao início do Cumprimento da Sentença, à implantação ou revisão de benefício, à obrigação de fazer ou ao pagamento por RPV.
+
+---
+
+### 2.8 Recurso
+
+O **Recurso** representará o meio de impugnação da decisão judicial no sistema dos Juizados Especiais Federais.
+
+**Tipos de recurso ou impugnação:**
+
+* embargos de declaração;
+* recurso inominado;
+* pedido de uniformização regional;
+* pedido de uniformização nacional;
+* recurso extraordinário, em hipótese excepcional.
+
+**Atributos:**
+
+* tipo;
+* data de interposição;
+* parte recorrente;
+* parte recorrida;
+* fundamentação;
+* status;
+* decisão recorrida;
+* órgão julgador.
+
+**Relacionamentos:**
+
+O Recurso será interposto por uma Parte, impugnará uma decisão e será julgado pela Turma Recursal, Turma Regional de Uniformização, Turma Nacional de Uniformização ou Supremo Tribunal Federal, conforme o caso.
+
+---
+
+### 2.9 Acordo e Conciliação
+
+A **Conciliação** será representada como ato ou fase voltada à tentativa de solução consensual do conflito.
+
+O **Acordo** será o resultado possível da conciliação ou de proposta apresentada no processo, celebrado pelas partes e, quando homologado pelo juiz, apto a encerrar total ou parcialmente a demanda.
+
+**Componentes do Acordo:**
+
+* data;
+* partes envolvidas;
+* proposta apresentada;
+* condições;
+* valor;
+* obrigação assumida;
+* prazo de cumprimento;
+* informação sobre homologação;
+* consequências processuais.
+
+---
+
+### 2.10 Cumprimento da Sentença
+
+O **Cumprimento da Sentença** representará a fase destinada à efetivação da decisão judicial.
+
+No Juizado Especial Federal Cível, essa entidade é relevante porque muitas sentenças geram obrigação de fazer contra ente público federal, especialmente em ações previdenciárias e assistenciais.
+
+**Formas de cumprimento:**
+
+* implantação de benefício;
+* restabelecimento de benefício;
+* revisão de benefício;
+* pagamento de atrasados;
+* expedição de RPV;
+* cumprimento de obrigação de fazer;
+* apresentação de cálculos;
+* comprovação de cumprimento;
+* arquivamento.
+
+**Atributos:**
+
+* tipo de obrigação;
+* responsável pelo cumprimento;
+* prazo;
+* data de início;
+* data de cumprimento;
+* existência de valores atrasados;
+* valor requisitado;
+* status.
+
+---
+
+## 3. Visões da ontologia
+
+Para facilitar a construção e a compreensão do modelo, a ontologia pode ser organizada em diferentes visões.
+
+---
+
+### 3.1 Visão estrutural
+
+A visão estrutural mostrará as principais classes da ontologia e suas relações estáticas.
+
+**Entidades representadas:**
+
+* Processo no Juizado Especial Federal Cível;
+* Ação Federal;
+* Parte;
+* Juiz Federal;
+* Advogado;
+* Procurador Federal;
+* Procedimento;
+* Fase;
+* Ato Processual;
+* Sentença;
+* Recurso;
+* Acordo;
+* Cumprimento da Sentença.
+
+**Pergunta respondida:** Quais são os principais elementos existentes no domínio do Juizado Especial Federal Cível?
+
+**Exemplo de leitura:**
+
+Um Processo no Juizado Especial Federal Cível instancia uma Ação Federal, envolve um Autor e um Réu Federal, é conduzido por um Juiz Federal, segue um Procedimento simplificado, é composto por Atos Processuais e pode resultar em Acordo, Sentença, Recurso ou Cumprimento de Sentença.
+
+---
+
+### 3.2 Visão dos sujeitos e papéis processuais
+
+Essa visão destacará quem participa do processo e qual função cada sujeito exerce.
+
+**Papéis da Parte:**
+
+* Autor;
+* Réu Federal;
+* Litisconsorte;
+* Terceiro.
+
+**Outros sujeitos:**
+
+* Juiz Federal;
+* Advogado;
+* Procurador Federal;
+* Conciliador;
+* Perito;
+* Testemunha;
+* Oficial de Justiça;
+* Servidor Judicial;
+* Turma Recursal;
+* Turma Regional de Uniformização;
+* Turma Nacional de Uniformização.
+
+**Importância:**
+
+Uma mesma pessoa pode existir fora do processo, mas assumir um papel específico dentro dele. Por exemplo, uma pessoa física pode assumir o papel de Autor em uma ação previdenciária contra o INSS.
+
+No Juizado Especial Federal Cível, a presença do Réu Federal é elemento essencial para a competência, pois a causa normalmente envolve União, autarquia federal, fundação pública federal ou empresa pública federal.
+
+---
+
+### 3.3 Visão procedimental
+
+A visão procedimental representará a sequência de fases do Juizado Especial Federal Cível.
+
+**Estrutura básica:**
+
+Petição Inicial
+↓
+Distribuição / Autuação
+↓
+Análise Inicial
+↓
+Citação do Réu Federal
+↓
+Contestação / Juntada do Processo Administrativo
+↓
+Tentativa de Conciliação ou Proposta de Acordo
+↓
+Instrução
+↓
+Perícia, quando necessária
+↓
+Manifestação das Partes
+↓
+Sentença
+↓
+Recurso Inominado ou Trânsito em Julgado
+↓
+Cumprimento da Sentença
+↓
+Implantação, Revisão, Obrigação de Fazer ou RPV
+↓
+Arquivamento
+
+**Pergunta respondida:** Como o processo se desenvolve no tempo?
+
+**Utilidade:**
+
+Representar a ordem dos atos processuais e as dependências entre as fases, permitindo compreender o fluxo típico de uma demanda federal no JEF Cível.
+
+---
+
+### 3.4 Visão dos atos processuais
+
+Essa visão detalhará os atos praticados durante o processo e seus responsáveis.
+
+**Classificação dos atos:**
+
+Ato Processual
+
+* Ato do Juiz Federal
+
+  * Despacho
+  * Decisão Interlocutória
+  * Tutela Provisória
+  * Determinação de Perícia
+  * Sentença
+  * Homologação de Acordo
+  * Requisição de Pagamento
+
+* Ato da Parte
+
+  * Petição Inicial
+  * Juntada de Documentos
+  * Manifestação
+  * Contestação
+  * Impugnação ao Laudo
+  * Recurso Inominado
+  * Embargos de Declaração
+  * Contrarrazões
+  * Pedido de Uniformização
+
+* Ato do Servidor Judicial
+
+  * Distribuição
+  * Autuação
+  * Citação
+  * Intimação
+  * Certidão
+  * Expedição de Mandado
+  * Expedição de RPV
+  * Movimentação Processual
+
+* Ato do Auxiliar da Justiça
+
+  * Conciliação
+  * Perícia
+  * Elaboração de Laudo
+  * Depoimento Testemunhal
+  * Cumprimento de Diligência
+
+**Utilidade:**
+
+Identificar quem pratica cada ato, em qual fase ele ocorre e quais efeitos jurídicos produz.
+
+---
+
+### 3.5 Visão decisória
+
+A visão decisória representará os possíveis resultados do processo.
+
+**Formas de encerramento ou solução:**
+
+* acordo homologado;
+* sentença de procedência;
+* sentença de improcedência;
+* sentença de procedência parcial;
+* extinção sem resolução do mérito;
+* implantação de benefício;
+* revisão de benefício;
+* restabelecimento de benefício;
+* pagamento por RPV;
+* cumprimento de obrigação de fazer;
+* arquivamento.
+
+**Exemplo:**
+
+Sentença
+
+* pode resolver a ação;
+* pode homologar acordo;
+* pode conceder benefício;
+* pode determinar revisão;
+* pode determinar pagamento de atrasados;
+* pode ser impugnada por recurso;
+* pode gerar cumprimento de sentença;
+* pode levar ao arquivamento.
+
+---
+
+### 3.6 Visão recursal
+
+A visão recursal representará os meios de impugnação das decisões no Juizado Especial Federal Cível.
+
+Nessa visão, o Recurso será associado à decisão impugnada, ao sujeito que o interpõe e ao órgão julgador competente.
+
+**Exemplo:**
+
+Parte vencida
+↓
+interpõe
+↓
+Recurso Inominado
+↓
+impugna
+↓
+Sentença
+↓
+é julgado por
+↓
+Turma Recursal
+↓
+gera
+↓
+Acórdão
+
+**Outras possibilidades:**
+
+* Embargos de Declaração contra sentença ou acórdão;
+* Pedido de Uniformização quando houver divergência de interpretação de lei federal;
+* Recurso Extraordinário quando houver questão constitucional.
+
+**Importância:**
+
+Demonstra que a sentença não encerra necessariamente o processo, pois pode abrir uma nova etapa de reanálise perante a Turma Recursal ou, em hipóteses específicas, perante órgãos de uniformização.
+
+---
+
+### 3.7 Visão de cumprimento
+
+A visão de cumprimento representará como a decisão judicial é efetivada.
+
+**Possíveis objetos de cumprimento:**
+
+* obrigação de implantar benefício;
+* obrigação de restabelecer benefício;
+* obrigação de revisar benefício;
+* obrigação de pagar atrasados;
+* obrigação de fazer;
+* expedição de RPV;
+* comprovação do cumprimento;
+* arquivamento.
+
+**Exemplo de leitura:**
+
+Após o trânsito em julgado, a Sentença pode gerar uma obrigação para o Réu Federal. Se a obrigação for de fazer, o ente federal deverá cumprir a determinação, como implantar ou revisar um benefício. Se houver valores atrasados, poderá ser expedida RPV para pagamento.
+
+---
+
+### 3.8 Visão de regras e restrições
+
+A ontologia também deverá conter regras de integridade e restrições conceituais.
+
+**Regras relevantes:**
+
+* todo Processo deve ter pelo menos um Autor e um Réu Federal;
+* uma Ação Federal deve estar associada a um Processo;
+* o Réu Federal deve ser União, autarquia federal, fundação pública federal ou empresa pública federal;
+* o valor da causa deve respeitar o limite de 60 salários mínimos, salvo renúncia ao excedente;
+* o Processo deve ser de competência da Justiça Federal;
+* o JEF Cível não deve abranger causas expressamente excluídas pela legislação;
+* uma Parte pode ou não estar assistida por Advogado em primeiro grau;
+* a atuação de Advogado é necessária na fase recursal;
+* uma Sentença deve ser proferida por Juiz Federal;
+* um Recurso deve impugnar uma decisão;
+* o Recurso Inominado deve ser julgado pela Turma Recursal;
+* o Pedido de Uniformização deve tratar de divergência de interpretação de lei federal;
+* um Acordo deve envolver ao menos Autor e Réu Federal;
+* a Conciliação pode ocorrer em audiência ou por proposta apresentada no processo;
+* a Sentença pode ou não transitar em julgado;
+* o Cumprimento da Sentença deve decorrer de decisão judicial;
+* a RPV deve estar vinculada a obrigação de pagar quantia certa;
+* o Processo deve ser arquivado após o cumprimento integral da decisão ou acordo.
+
+---
+
+## 4. Competência do Juizado Especial Federal Cível
+
+A ontologia deverá representar a competência como elemento estruturante do domínio.
+
+### 4.1 Competência por valor
+
+O Juizado Especial Federal Cível julga causas de competência da Justiça Federal cujo valor não ultrapasse 60 salários mínimos.
+
+### 4.2 Competência por pessoa
+
+A competência está relacionada à presença de ente ou entidade federal no processo.
+
+**Possíveis réus:**
+
+* União;
+* INSS;
+* Caixa Econômica Federal;
+* autarquias federais;
+* fundações públicas federais;
+* empresas públicas federais.
+
+### 4.3 Competência por matéria
+
+São exemplos de matérias comuns no Juizado Especial Federal Cível:
+
+* benefícios previdenciários;
+* benefícios assistenciais;
+* FGTS;
+* contratos habitacionais da Caixa Econômica Federal;
+* questões administrativas federais;
+* responsabilidade civil da União;
+* obrigações de fazer contra entes federais;
+* cobranças de pequeno valor contra entes federais.
