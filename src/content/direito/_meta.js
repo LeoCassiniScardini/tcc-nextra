@@ -2,6 +2,6 @@ export default {
   'taxonomia': 'Taxonomia',
   'juizado-especial-civel': {
     type: 'page',
-    title: 'Juizado Especial Cível'
+    title: 'Juizado Especial Federal Cível'
   },
 };

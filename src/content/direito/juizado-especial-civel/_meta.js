@@ -1,6 +1,6 @@
 export default {
-  'juizado-especial-civel': "Definição",
-  'sobre-ontologia': "Sobre a Ontologia",
-  'juizado-especial-federal': "Juizado Especial Federal Cível",
-  'ontologia-juizado-federal': "Ontologia Juizado Especial Federal Cível",
+  'juizado-especial-civel': {title: "Definição", display: "hidden"},
+  'sobre-ontologia': {title: "Sobre a Ontologia", display: "hidden"},
+  'juizado-especial-federal': {title: "Definição"},
+  'ontologia-juizado-federal': {title: "Sobre a Ontologia"},
 };
