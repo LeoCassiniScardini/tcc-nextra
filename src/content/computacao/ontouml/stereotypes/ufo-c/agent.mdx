@@ -32,7 +32,7 @@ Na UFO-C, o conceito de Agent é central porque permite representar entidades qu
 
 ### Exemplo:
 
-`«Agent» Pessoa`
+![agent](./assets/agent/image.png)
 
 A classe Pessoa representa uma entidade capaz de agir, perceber eventos e possuir momentos intencionais.
 
@@ -53,7 +53,7 @@ Esses momentos não existem isoladamente. Eles existem porque pertencem a um age
 
 ### Exemplo:
 
-`«Agent» Pessoa --inheres in--> «Intentional Moment» Intenção de concluir uma tarefa`
+![agent](./assets/agent/imagecopy.png)
 
 Neste exemplo, a intenção depende da pessoa para existir. A intenção é um momento intencional que inere no agente.
 
@@ -97,21 +97,37 @@ A UFO-C também admite agentes não humanos, como animais e robôs, além de age
 
 **Exemplo:**
 
-`«Agent» Pessoa`
-
-`«Agent» Robô`
-
-`«Agent» Organização`
+![agent](./assets/agent/imagecopy2.png)
 
 ### Uma organização pode ser Agent?
 
-Sim. Uma organização pode ser considerada um Agent quando atua, percebe e comunica por meio de agentes internos.
+Sim. Uma organização pode ser considerada um Institutional Agent quando atua, percebe e comunica por meio de agentes internos.
 
 **Exemplo:**
 
-`«Agent» Empresa --internal agent--> «Agent» Representante`
+![agent](./assets/agent/imagecopy3.png)
 
-`«Agent» Empresa --creates--> «Event» Emissão de comunicado`
+### Qual a diferença entre Agent e kind?
+
+A diferença está na agentividade.
+
+Um **Agent** pode agir, perceber e possuir estados mentais.
+
+Um **kind** não possui agentividade.
+
+**Exemplo:**
+
+![agent](./assets/agent/imagecopy4.png)
+
+### Qual a diferença entre Physical Agent e Institutional Agent?
+
+O **Physical Agent** é uma entidade física concreta capaz de agir diretamente.
+
+O **Institutional Agent** é uma entidade social que age por meio de agentes internos.
+
+**Exemplo:**
+
+![agent](./assets/agent/imagecopy5.png)
 
 ## Quando devo usar Agent?
 
@@ -119,11 +135,7 @@ Use «Agent» quando a classe representar uma entidade capaz de agir ou particip
 
 **Exemplo:**
 
-`«Agent» Pessoa`
-
-`«Agent» Organização`
-
-`«Agent» Robô`
+![agent](./assets/agent/imagecopy6.png)
 
 Não use «Agent» para objetos passivos ou meramente físicos que não possuem capacidade agentiva.
 
@@ -139,33 +151,15 @@ Não use «Agent» para objetos passivos ou meramente físicos que não possuem 
 
 ### Exemplo 1 — Pessoa como Agent
 
-`«Agent» Pessoa`
-
-`«Agent» Pessoa --inheres in--> «belief» Crença`
-
-`«Agent» Pessoa --creates--> «Event» Abrir porta`
+![agent](./assets/agent/imagecopy7.png)
 
 Pessoa é um agente físico capaz de possuir estados mentais e realizar ações.
 
-### Exemplo 2 — Robô como Agent
+### Exemplo 2 — Organização como Institutional Agent
 
-`«Agent» Robô`
+![agent](./assets/agent/imagecopy8.png)
 
-`«Agent» Robô --perceives--> «Event» Obstáculo detectado`
-
-`«Agent» Robô --creates--> «Event» Desviar de obstáculo`
-
-Robô pode ser modelado como Agent quando possui capacidade de perceber eventos e executar ações.
-
-### Exemplo 3 — Organização como Agent
-
-`«Agent» Organização`
-
-`«Agent» Organização --internal agent--> «Agent» Diretor`
-
-`«Agent» Organização --creates--> «Event» Emissão de decisão`
-
-Organização pode ser modelada como Agent porque atua por meio de agentes internos.
+Organização pode ser modelada como Institutional Agent porque atua por meio de agentes internos.
 
 ## Resumo prático
 
