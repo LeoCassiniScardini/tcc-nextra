@@ -3,6 +3,6 @@ export default {
   'belief': "<<belief>>",
   'desire': "<<desire>>",
   'intention': "<<intention>>",
-  'proposition': {title: "<<proposition>>", display: "hidden"},
+  'proposition': {title: "<<proposition>>",},
   'goal': "<<goal>>",
 };

@@ -33,7 +33,7 @@ Uma Proposition representa um conceito que:
 
 ### Exemplo:
 
-`«Proposition» A porta está aberta`
+![proposition](./assets/proposition/image.png)
 
 Neste exemplo, “A porta está aberta” representa um conteúdo proposicional. Esse conteúdo pode ser acreditado, desejado ou pretendido por um agente.
 
@@ -77,7 +77,7 @@ Proposition é o conteúdo acreditado.
 
 **Exemplo:**
 
-`«Belief» Crença de que o documento foi enviado --propositional content of--> «Proposition» O documento foi enviado`
+![proposition](./assets/proposition/imagecopy.png)
 
 ### Proposition é o mesmo que Desire?
 
@@ -89,7 +89,7 @@ Proposition é o conteúdo desejado.
 
 **Exemplo:**
 
-`«Desire» Desejo de que o documento seja enviado --propositional content of--> «Proposition» O documento foi enviado`
+![proposition](./assets/proposition/imagecopy2.png)
 
 ### Proposition é o mesmo que Intention?
 
@@ -101,7 +101,7 @@ Proposition é o conteúdo pretendido.
 
 **Exemplo:**
 
-`«Intention» Intenção de enviar o documento --propositional content of--> «Proposition» O documento foi enviado`
+![proposition](./assets/proposition/imagecopy3.png)
 
 ### Proposition é o mesmo que Goal?
 
@@ -113,7 +113,9 @@ Toda Goal pode ser tratada como Proposition, mas nem toda Proposition é necessa
 
 **Exemplo:**
 
-`«Goal» Tarefa concluída --subtype of--> «Proposition»`
+![proposition](./assets/proposition/imagecopy4.png)
+
+Tarefa concluída é um tipo de proposition
 
 ### Proposition precisa ser verdadeira?
 
@@ -123,7 +125,7 @@ Uma Proposition pode ser conteúdo de uma crença falsa, de um desejo ainda não
 
 **Exemplo:**
 
-`«Belief» Crença de que a reunião começou --propositional content of--> «Proposition» A reunião começou`
+![proposition](./assets/proposition/imagecopy5.png)
 
 Essa Proposition pode ser falsa em relação à Situation real.
 
@@ -142,7 +144,7 @@ Use «Proposition» quando precisar representar o conteúdo de:
 
 **Exemplo:**
 
-`«Proposition» A tarefa foi concluída`
+![proposition](./assets/proposition/imagecopy6.png)
 
 Use Proposition quando o foco estiver no conteúdo formulado, e não no agente, no evento ou na situação concreta.
 
@@ -150,21 +152,13 @@ Use Proposition quando o foco estiver no conteúdo formulado, e não no agente, 
 
 ### Exemplo 1 — Proposition como conteúdo de Belief
 
-`«Agent» Pessoa`
-
-`«Belief» Crença de que a porta está aberta --inheres in--> «Agent» Pessoa`
-
-`«Belief» Crença de que a porta está aberta --propositional content of--> «Proposition» A porta está aberta`
+![proposition](./assets/proposition/imagecopy8.png)
 
 A Proposition é o conteúdo acreditado pela Pessoa.
 
 ### Exemplo 2 — Proposition como conteúdo de Desire
 
-`«Agent» Pessoa`
-
-`«Desire» Desejo de que o relatório seja finalizado --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de que o relatório seja finalizado --propositional content of--> «Proposition» O relatório foi finalizado`
+![proposition](./assets/proposition/imagecopy7.png)
 
 A Proposition é o conteúdo desejado pela Pessoa.
 
@@ -174,18 +168,18 @@ Use «Proposition» quando quiser representar um conteúdo proposicional.
 
 A estrutura básica é:
 
-`«Mental Moment» Estado mental --propositional content of--> «Proposition» Conteúdo proposicional`
+`«Mental Moment» Estado mental --propositional content of-- «Proposition» Conteúdo proposicional`
 
 Exemplos:
 
-`«Belief» Crença --propositional content of--> «Proposition» Conteúdo acreditado`
+`«Belief» Crença --propositional content of-- «Proposition» Conteúdo acreditado`
 
-`«Desire» Desejo --propositional content of--> «Proposition» Conteúdo desejado`
+`«Desire» Desejo --propositional content of-- «Proposition» Conteúdo desejado`
 
-`«Intention» Intenção --propositional content of--> «Proposition» Conteúdo pretendido`
+`«Intention» Intenção --propositional content of-- «Proposition» Conteúdo pretendido`
 
 Quando o conteúdo for um objetivo, use:
 
-`«Goal» Objetivo --subtype of--> «Proposition»`
+`«Goal» Objetivo`
 
 Não use Proposition para representar o estado mental em si. Use Proposition para representar o conteúdo ao qual o estado mental se refere.

@@ -31,9 +31,7 @@ Um Belief representa um conceito que:
 
 ### Exemplo:
 
-`«Agent» Pessoa`
-
-`«Belief» Crença de que a porta está aberta --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/image.png)
 
 A crença de que a porta está aberta depende da pessoa que possui essa crença. A crença não existe isoladamente.
 
@@ -45,17 +43,17 @@ Isso significa que a crença pertence ao agente e depende dele para existir.
 
 ### Exemplo:
 
-`«Belief» Crença de que a reunião começou --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/imagecopy.png)
 
 Neste exemplo, a crença é um Mental Moment da Pessoa.
 
 A forma mais adequada da relação é:
 
-`«Belief» Crença --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/imagecopy2.png)
 
 E não:
 
-`«Agent» Pessoa --inheres in--> «Belief» Crença`
+![belief](./assets/belief/imagecopy3.png)
 
 Porque quem inere é o momento mental no agente, e não o agente no momento mental.
 
@@ -95,7 +93,7 @@ Proposition é o conteúdo desse estado mental.
 
 **Exemplo:**
 
-`«Belief» Crença de que o documento foi enviado --propositional content of--> «Proposition» O documento foi enviado`
+![belief](./assets/belief/imagecopy4.png)
 
 ### Belief precisa ser verdadeiro?
 
@@ -105,7 +103,7 @@ Belief representa aquilo que o agente acredita, mesmo que a proposição seja fa
 
 **Exemplo:**
 
-`«Belief» Crença de que a reunião começou --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/imagecopy5.png)
 
 Essa crença pode existir ainda que a reunião não tenha começado.
 
@@ -127,9 +125,7 @@ Intention representa aquilo que o agente pretende realizar.
 
 **Exemplo:**
 
-`«Belief» Crença de que a tarefa está pendente --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de concluir a tarefa --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/imagecopy6.png)
 
 ### Belief é o mesmo que Desire?
 
@@ -141,9 +137,7 @@ Desire representa um estado desejado pelo agente.
 
 **Exemplo:**
 
-`«Belief» Crença de que a sala está escura --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de que a sala esteja iluminada --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/imagecopy7.png)
 
 ## Quando devo usar Belief?
 
@@ -151,7 +145,7 @@ Use «Belief» quando precisar representar aquilo que um agente acredita.
 
 **Exemplo:**
 
-`«Belief» Crença de que a informação é verdadeira --inheres in--> «Agent» Pessoa`
+![belief](./assets/belief/imagecopy8.png)
 
 Use Belief quando a crença for importante para explicar:
 
@@ -165,44 +159,20 @@ Use Belief quando a crença for importante para explicar:
 
 ## Exemplos
 
-### Exemplo 1 — Pessoa com crença simples
+### Exemplo 1 — Crença formada por percepção
 
-`«Agent» Pessoa`
-
-`«Belief» Crença de que a porta está aberta --inheres in--> «Agent» Pessoa`
-
-`«Belief» Crença de que a porta está aberta --propositional content of--> «Proposition» A porta está aberta`
-
-A Pessoa possui uma crença cujo conteúdo é a proposição “A porta está aberta”.
-
-### Exemplo 2 — Crença formada por percepção
-
-`«Agent» Pessoa --perceives--> «Event» Telefone tocando`
-
-`«Belief» Crença de que alguém está ligando --inheres in--> «Agent» Pessoa`
-
-`«Belief» Crença de que alguém está ligando --propositional content of--> «Proposition» Alguém está ligando`
+![belief](./assets/belief/imagecopy9.png)
 
 A percepção do evento pode contribuir para a formação da crença.
 
-### Exemplo 3 — Belief influenciando Intention
+### Exemplo 2 — Belief influenciando Intention
 
-`«Belief» Crença de que o documento não foi enviado --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de enviar o documento --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de enviar o documento --propositional content of--> «Goal» Documento enviado`
+![belief](./assets/belief/imagecopy10.png)
 
 A crença de que o documento não foi enviado pode motivar a intenção de enviá-lo.
 
 ## Resumo prático
 
 Use «Belief» quando quiser representar uma crença de um agente.
-
-A estrutura básica é:
-
-`«Belief» Crença --inheres in--> «Agent» Agente`
-
-`«Belief» Crença --propositional content of--> «Proposition» Conteúdo acreditado`
 
 Não use Belief para representar o fato em si. Use Belief para representar que um agente acredita naquele conteúdo.

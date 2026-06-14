@@ -35,9 +35,7 @@ Um Intention representa um conceito que:
 
 ### Exemplo:
 
-`«Agent» Pessoa`
-
-`«Intention» Intenção de concluir uma tarefa --inheres in--> «Agent» Pessoa`
+![intention](./assets/intention/image.png)
 
 A intenção de concluir a tarefa depende da pessoa que possui essa intenção. A Intention não existe isoladamente.
 
@@ -79,7 +77,7 @@ Proposition é o conteúdo desse estado mental.
 
 **Exemplo:**
 
-`«Intention» Intenção de enviar documento --propositional content of--> «Proposition» O documento foi enviado`
+![intention](./assets/intention/imagecopy.png)
 
 ### Intention é o mesmo que Goal?
 
@@ -91,9 +89,7 @@ Goal é o objetivo representado como uma proposição.
 
 **Exemplo:**
 
-`«Intention» Intenção de concluir a tarefa --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de concluir a tarefa --propositional content of--> «Goal» Tarefa concluída`
+![intention](./assets/intention/imagecopy2.png)
 
 ### Toda Intention gera um Action Event?
 
@@ -103,7 +99,7 @@ Uma intenção pode existir sem que a ação correspondente ocorra.
 
 **Exemplo:**
 
-`«Intention» Intenção de enviar relatório --inheres in--> «Agent» Pessoa`
+![intention](./assets/intention/imagecopy3.png)
 
 Essa intenção pode existir mesmo que o relatório ainda não tenha sido enviado.
 
@@ -115,9 +111,7 @@ Um Desire pode contribuir para a formação de uma Intention, mas a ontologia n�
 
 **Exemplo:**
 
-`«Desire» Desejo de resolver o problema --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de executar uma solução --inheres in--> «Agent» Pessoa`
+![intention](./assets/intention/imagecopy4.png)
 
 ### Intention é o mesmo que Action Event?
 
@@ -129,9 +123,7 @@ Action Event é um evento produzido por uma ação do agente.
 
 **Exemplo:**
 
-`«Intention» Intenção de abrir a porta --inheres in--> «Agent» Pessoa`
-
-`«Agent» Pessoa --creates--> «Action Event» Abrir porta`
+![intention](./assets/intention/imagecopy5.png)
 
 ## Quando devo usar Intention?
 
@@ -139,7 +131,7 @@ Use «Intention» quando precisar representar aquilo que um agente pretende real
 
 **Exemplo:**
 
-`«Intention» Intenção de alcançar um resultado --inheres in--> «Agent» Pessoa`
+![intention](./assets/intention/imagecopy6.png)
 
 Use Intention quando a intenção for importante para explicar:
 
@@ -154,47 +146,15 @@ Use Intention quando a intenção for importante para explicar:
 
 ### Exemplo 1 — Pessoa com intenção simples
 
-`«Agent» Pessoa`
-
-`«Intention» Intenção de concluir uma tarefa --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de concluir uma tarefa --propositional content of--> «Goal» Tarefa concluída`
+![intention](./assets/intention/imagecopy7.png)
 
 A Pessoa possui uma intenção cujo conteúdo é o objetivo “Tarefa concluída”.
 
 ### Exemplo 2 — Intention relacionada a Goal
 
-`«Agent» Pessoa`
-
-`«Goal» Problema resolvido --subtype of--> «Proposition»`
-
-`«Intention» Intenção de resolver o problema --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de resolver o problema --propositional content of--> «Goal» Problema resolvido`
+![intention](./assets/intention/imagecopy8.png)
 
 A Intention tem como conteúdo um Goal.
-
-### Exemplo 3 — Belief, Desire e Intention
-
-`«Belief» Crença de que a tarefa está pendente --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de concluir a tarefa --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de concluir a tarefa --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de concluir a tarefa --propositional content of--> «Goal» Tarefa concluída`
-
-A crença indica o estado assumido pelo agente, o desejo indica o estado desejado e a intenção indica a orientação prática para alcançar o objetivo.
-
-### Exemplo 4 — Intention e Action Event
-
-`«Intention» Intenção de enviar o documento --inheres in--> «Agent» Pessoa`
-
-`«Agent» Pessoa --creates--> «Action Event» Enviar documento`
-
-`«Action Event» Enviar documento --brings about--> «Situation» Documento enviado`
-
-A Intention pode orientar um Action Event que produz uma nova Situation.
 
 ## Resumo prático
 
@@ -202,16 +162,14 @@ Use «Intention» quando quiser representar uma intenção de um agente.
 
 A estrutura básica é:
 
-`«Intention» Intenção --inheres in--> «Agent» Agente`
-
-`«Intention» Intenção --propositional content of--> «Proposition» Conteúdo pretendido`
+![intention](./assets/intention/imagecopy9.png)
 
 Quando a intenção estiver orientada a um objetivo, use:
 
-`«Intention» Intenção --propositional content of--> «Goal» Objetivo pretendido`
+![intention](./assets/intention/imagecopy10.png)
 
 Quando a intenção orientar uma ação, use:
 
-`«Agent» Agente --creates--> «Action Event» Ação realizada`
+![intention](./assets/intention/imagecopy11.png)
 
 Não use Intention para representar a ação em si. Use Intention para representar que um agente pretende realizar determinado conteúdo ou alcançar determinado objetivo.

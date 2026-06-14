@@ -31,9 +31,7 @@ Um Desire representa um conceito que:
 
 ### Exemplo:
 
-`«Agent» Pessoa`
-
-`«Desire» Desejo de concluir uma tarefa --inheres in--> «Agent» Pessoa`
+![desire](./assets/desire/image.png)
 
 A vontade de concluir a tarefa depende da pessoa que possui esse desejo. O Desire não existe isoladamente.
 
@@ -45,11 +43,7 @@ O desejo aponta para um estado de coisas pretendido, mas esse estado pode ainda 
 
 ### Exemplo:
 
-`«Desire» Desejo de que o documento seja enviado --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de que o documento seja enviado --propositional content of--> «Proposition» O documento foi enviado`
-
-`«Situation» Documento ainda não enviado`
+![desire](./assets/desire/imagecopy.png)
 
 Mesmo que a situação real seja “Documento ainda não enviado”, o Desire pode existir como estado mental da pessoa.
 
@@ -91,7 +85,7 @@ Proposition é o conteúdo desse estado mental.
 
 **Exemplo:**
 
-`«Desire» Desejo de que o documento seja enviado --propositional content of--> «Proposition» O documento foi enviado`
+![desire](./assets/desire/imagecopy2.png)
 
 ### Desire é o mesmo que Goal?
 
@@ -103,9 +97,7 @@ Goal é o objetivo representado como uma proposição.
 
 **Exemplo:**
 
-`«Desire» Desejo de concluir a tarefa --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de concluir a tarefa --propositional content of--> «Goal» Tarefa concluída`
+![desire](./assets/desire/imagecopy3.png)
 
 ### Todo Desire vira Intention?
 
@@ -115,7 +107,7 @@ Um agente pode desejar algo sem se comprometer a agir para realizar esse desejo.
 
 **Exemplo:**
 
-`«Desire» Desejo de viajar --inheres in--> «Agent» Pessoa`
+![desire](./assets/desire/imagecopy4.png)
 
 A pessoa pode desejar viajar, mas não necessariamente terá uma intenção concreta de comprar passagem ou organizar a viagem.
 
@@ -129,9 +121,7 @@ Desire representa aquilo que o agente deseja.
 
 **Exemplo:**
 
-`«Belief» Crença de que a sala está escura --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de que a sala esteja iluminada --inheres in--> «Agent» Pessoa`
+![desire](./assets/desire/imagecopy5.png)
 
 ### Desire precisa ser realizado para existir?
 
@@ -141,7 +131,7 @@ Um desejo pode existir mesmo quando o estado desejado ainda não foi alcançado.
 
 **Exemplo:**
 
-`«Desire» Desejo de que a tarefa seja concluída --inheres in--> «Agent» Pessoa`
+![desire](./assets/desire/imagecopy6.png)
 
 Esse desejo pode existir mesmo antes de a tarefa ser concluída.
 
@@ -151,7 +141,7 @@ Use «Desire» quando precisar representar aquilo que um agente deseja.
 
 **Exemplo:**
 
-`«Desire» Desejo de alcançar um resultado --inheres in--> «Agent» Pessoa`
+![desire](./assets/desire/imagecopy9.png)
 
 Use Desire quando o desejo for importante para explicar:
 
@@ -167,27 +157,13 @@ Use Desire quando o desejo for importante para explicar:
 
 ### Exemplo 1 — Pessoa com desejo simples
 
-`«Agent» Pessoa`
-
-`«Desire» Desejo de concluir uma tarefa --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de concluir uma tarefa --propositional content of--> «Proposition» A tarefa foi concluída`
+![desire](./assets/desire/imagecopy7.png)
 
 A Pessoa possui um desejo cujo conteúdo é a proposição “A tarefa foi concluída”.
 
 ### Exemplo 2 — Dois agentes com o mesmo conteúdo desejado
 
-`«Agent» Pessoa A`
-
-`«Agent» Pessoa B`
-
-`«Desire» Desejo da Pessoa A de que a reunião aconteça --inheres in--> «Agent» Pessoa A`
-
-`«Desire» Desejo da Pessoa B de que a reunião aconteça --inheres in--> «Agent» Pessoa B`
-
-`«Desire» Desejo da Pessoa A de que a reunião aconteça --propositional content of--> «Proposition» A reunião aconteceu`
-
-`«Desire» Desejo da Pessoa B de que a reunião aconteça --propositional content of--> «Proposition» A reunião aconteceu`
+![desire](./assets/desire/imagecopy8.png)
 
 A proposição é a mesma, mas existem dois Desires distintos, um para cada agente.
 
@@ -195,15 +171,5 @@ A proposição é a mesma, mas existem dois Desires distintos, um para cada agen
 ## Resumo prático
 
 Use «Desire» quando quiser representar um desejo de um agente.
-
-A estrutura básica é:
-
-`«Desire» Desejo --inheres in--> «Agent» Agente`
-
-`«Desire» Desejo --propositional content of--> «Proposition» Conteúdo desejado`
-
-Quando o desejo for tratado como um objetivo, use:
-
-`«Desire» Desejo --propositional content of--> «Goal» Objetivo desejado`
 
 Não use Desire para representar o fato em si. Use Desire para representar que um agente deseja determinado conteúdo.

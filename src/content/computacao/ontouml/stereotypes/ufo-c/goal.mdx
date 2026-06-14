@@ -37,7 +37,7 @@ Um Goal representa um conceito que:
 
 ### Exemplo:
 
-`«Goal» Tarefa concluída --subtype of--> «Proposition»`
+![goal](./assets/goal/image.png)
 
 Neste exemplo, “Tarefa concluída” é um objetivo formulado como conteúdo proposicional.
 
@@ -53,7 +53,7 @@ Um Goal, por sua vez, descreve um conteúdo tratado como objetivo.
 
 ### Exemplo:
 
-`«Goal» Documento enviado --subtype of--> «Proposition»`
+![goal](./assets/goal/imagecopy.png)
 
 Neste exemplo, o conteúdo “Documento enviado” não é apenas uma proposição, mas um objetivo a ser alcançado.
 
@@ -99,7 +99,7 @@ Goal é o conteúdo desejado.
 
 **Exemplo:**
 
-`«Desire» Desejo de enviar documento --propositional content of--> «Goal» Documento enviado`
+![goal](./assets/goal/imagecopy8.png)
 
 ### Goal é o mesmo que Intention?
 
@@ -111,7 +111,7 @@ Goal é o objetivo pretendido.
 
 **Exemplo:**
 
-`«Intention» Intenção de enviar documento --propositional content of--> «Goal» Documento enviado`
+![goal](./assets/goal/imagecopy2.png)
 
 ### Goal é o mesmo que Action Event?
 
@@ -123,9 +123,7 @@ Action Event é a ação que pode ser realizada para alcançar esse objetivo.
 
 **Exemplo:**
 
-`«Goal» Porta aberta`
-
-`«Agent» Pessoa --creates--> «Event» Abrir porta`
+![goal](./assets/goal/imagecopy3.png)
 
 ### Goal precisa ser alcançado para existir?
 
@@ -135,9 +133,7 @@ Um Goal pode existir como objetivo mesmo antes de ser alcançado.
 
 **Exemplo:**
 
-`«Goal» Relatório finalizado`
-
-`«Situation» Relatório ainda não finalizado`
+![goal](./assets/goal/imagecopy4.png)
 
 ### Todo Goal precisa estar ligado a uma Intention?
 
@@ -153,7 +149,7 @@ Use «Goal» quando precisar representar um objetivo.
 
 **Exemplo:**
 
-`«Goal» Resultado alcançado`
+![goal](./assets/goal/imagecopy5.png)
 
 Use Goal quando o conteúdo proposicional for:
 
@@ -166,79 +162,17 @@ Use Goal quando o conteúdo proposicional for:
 
 ## Exemplos
 
-### Exemplo 1 — Goal como conteúdo de Desire
+### Exemplo 1 — Goal como conteúdo de Intention
 
-`«Agent» Pessoa`
-
-`«Goal» Tarefa concluída`
-
-`«Desire» Desejo de concluir a tarefa --inheres in--> «Agent» Pessoa`
-
-`«Desire» Desejo de concluir a tarefa --propositional content of--> «Goal» Tarefa concluída`
-
-A Pessoa deseja alcançar o objetivo “Tarefa concluída”.
-
-### Exemplo 2 — Goal como conteúdo de Intention
-
-`«Agent» Pessoa`
-
-`«Goal» Documento enviado`
-
-`«Intention» Intenção de enviar documento --inheres in--> «Agent» Pessoa`
-
-`«Intention» Intenção de enviar documento --propositional content of--> «Goal» Documento enviado`
+![goal](./assets/goal/imagecopy7.png)
 
 A Pessoa possui uma intenção orientada ao Goal “Documento enviado”.
 
-### Exemplo 3 — Goal orientando Action Event
+### Exemplo 2 — Goal orientando Action Event
 
-`«Goal» Sala iluminada`
-
-`«Intention» Intenção de iluminar a sala --propositional content of--> «Goal» Sala iluminada`
-
-`«Agent» Pessoa --creates--> «Action Event» Acender luz`
-
-`«Action Event» Acender luz --brings about--> «Situation» Sala iluminada`
+![goal](./assets/goal/imagecopy6.png)
 
 O Goal orienta a intenção, e a ação produz uma situação correspondente.
-
-### Exemplo 4 — Goal ainda não alcançado
-
-`«Goal» Relatório finalizado`
-
-`«Intention» Intenção de finalizar relatório --propositional content of--> «Goal» Relatório finalizado`
-
-`«Situation» Relatório ainda não finalizado`
-
-O Goal existe mesmo que a situação atual ainda não corresponda ao objetivo.
-
-### Exemplo 5 — Dois agentes com o mesmo Goal
-
-`«Agent» Pessoa A`
-
-`«Agent» Pessoa B`
-
-`«Goal» Projeto concluído`
-
-`«Intention» Intenção da Pessoa A de concluir o projeto --inheres in--> «Agent» Pessoa A`
-
-`«Intention» Intenção da Pessoa A de concluir o projeto --propositional content of--> «Goal» Projeto concluído`
-
-`«Desire» Desejo da Pessoa B de concluir o projeto --inheres in--> «Agent» Pessoa B`
-
-`«Desire» Desejo da Pessoa B de concluir o projeto --propositional content of--> «Goal» Projeto concluído`
-
-O mesmo Goal pode ser conteúdo de diferentes estados mentais em diferentes agentes.
-
-### Exemplo 6 — Goal como conteúdo comunicado
-
-`«Agent» Pessoa --sender--> «Event» Informar meta`
-
-`«Event» Informar meta --receiver--> «Agent» Equipe`
-
-`«Event» Informar meta --communicates--> «Goal» Projeto concluído`
-
-O Goal representa o conteúdo comunicado como meta.
 
 ## Resumo prático
 
@@ -246,20 +180,18 @@ Use «Goal» quando quiser representar um objetivo.
 
 A estrutura básica é:
 
-`«Goal» Objetivo`
+![goal](./assets/goal/imagecopy9.png)
 
 Quando for conteúdo de desejo:
 
-`«Desire» Desejo --propositional content of--> «Goal» Objetivo desejado`
+![goal](./assets/goal/imagecopy10.png)
 
 Quando for conteúdo de intenção:
 
-`«Intention» Intenção --propositional content of--> «Goal» Objetivo pretendido`
+![goal](./assets/goal/imagecopy11.png)
 
 Quando orientar uma ação:
 
-`«Agent» Agente --creates--> «Event» Ação`
-
-`«Event» Ação --brings about--> «Situation» Situação correspondente ao objetivo`
+![goal](./assets/goal/imagecopy12.png)
 
 Não use Goal para representar o desejo, a intenção ou a ação em si. Use Goal para representar o conteúdo objetivo ao qual esses elementos se dirigem.
