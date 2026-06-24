@@ -1,12 +1,12 @@
 # Ontologia do Juizado Especial Federal Cível
 
-## Resumo
+## Propósito da ontologia
 
-A ontologia a ser construída tem como objetivo representar, de forma conceitual e estruturada, o domínio do **Juizado Especial Federal Cível**, identificando seus principais sujeitos, atos, documentos, fases procedimentais, decisões e efeitos jurídicos.
+A ontologia a ser construída tem como objetivo representar, de forma conceitual e estruturada, o domínio do Juizado Especial Federal Cível, permitindo que o cidadão compreenda melhor seus direitos, o funcionamento do processo judicial e os possíveis caminhos para a solução de seu conflito.
 
-A proposta parte da modelagem das entidades centrais do processo judicial federal de menor complexidade, com foco nas causas de competência da Justiça Federal submetidas ao rito simplificado da Lei nº 10.259/2001.
+A proposta organiza os principais sujeitos, atos, documentos, fases procedimentais, decisões e efeitos jurídicos das causas federais de menor complexidade, submetidas ao rito simplificado da Lei nº 10.259/2001.
 
-A ontologia permitirá compreender como uma ação federal é proposta, como se transforma em processo, quais sujeitos participam, quais atos são praticados, quais fases compõem o procedimento e quais resultados podem surgir, como acordo, sentença, recurso, cumprimento de obrigação, implantação de benefício ou pagamento por RPV.
+Além de facilitar a compreensão do cidadão sobre como uma ação é proposta e se desenvolve, a ontologia servirá como base para o desenvolvimento de um software de peticionamento, protocolação, mediação e acompanhamento de processos judiciais.
 
 ---
 
@@ -271,15 +271,15 @@ No Juizado Especial Federal Cível, essa entidade é relevante porque muitas sen
 
 ---
 
-## 3. Visões da ontologia
+## 3. Detalhamento da ontologia
 
 Para facilitar a construção e a compreensão do modelo, a ontologia pode ser organizada em diferentes visões.
 
 ---
 
-### 3.1 Visão estrutural
+### 3.1 Estrutura
 
-A visão estrutural mostrará as principais classes da ontologia e suas relações estáticas.
+A Estrutural representa as principais classes da ontologia e suas relações estáticas.
 
 **Entidades representadas:**
 
@@ -297,17 +297,15 @@ A visão estrutural mostrará as principais classes da ontologia e suas relaçõ
 * Acordo;
 * Cumprimento da Sentença.
 
-**Pergunta respondida:** Quais são os principais elementos existentes no domínio do Juizado Especial Federal Cível?
-
-**Exemplo de leitura:**
+**Exemplo:**
 
 Um Processo no Juizado Especial Federal Cível instancia uma Ação Federal, envolve um Autor e um Réu Federal, é conduzido por um Juiz Federal, segue um Procedimento simplificado, é composto por Atos Processuais e pode resultar em Acordo, Sentença, Recurso ou Cumprimento de Sentença.
 
 ---
 
-### 3.2 Visão dos sujeitos e papéis processuais
+### 3.2 Sujeitos e papéis processuais
 
-Essa visão destacará quem participa do processo e qual função cada sujeito exerce.
+Destaca quem participa do processo e qual função cada sujeito exerce.
 
 **Papéis da Parte:**
 
@@ -340,39 +338,11 @@ No Juizado Especial Federal Cível, a presença do Réu Federal é elemento esse
 
 ### 3.3 Visão procedimental
 
-A visão procedimental representará a sequência de fases do Juizado Especial Federal Cível.
+A visão procedimental representa a sequência de fases do Juizado Especial Federal Cível.
 
 **Estrutura básica:**
 
-Petição Inicial
-↓
-Distribuição / Autuação
-↓
-Análise Inicial
-↓
-Citação do Réu Federal
-↓
-Contestação / Juntada do Processo Administrativo
-↓
-Tentativa de Conciliação ou Proposta de Acordo
-↓
-Instrução
-↓
-Perícia, quando necessária
-↓
-Manifestação das Partes
-↓
-Sentença
-↓
-Recurso Inominado ou Trânsito em Julgado
-↓
-Cumprimento da Sentença
-↓
-Implantação, Revisão, Obrigação de Fazer ou RPV
-↓
-Arquivamento
-
-**Pergunta respondida:** Como o processo se desenvolve no tempo?
+![estrutura](./assets/imagecopy6.png)
 
 **Utilidade:**
 
@@ -380,7 +350,7 @@ Representar a ordem dos atos processuais e as dependências entre as fases, perm
 
 ---
 
-### 3.4 Visão dos atos processuais
+### 3.4 Atos processuais
 
 Essa visão detalhará os atos praticados durante o processo e seus responsáveis.
 
@@ -437,7 +407,7 @@ Identificar quem pratica cada ato, em qual fase ele ocorre e quais efeitos jurí
 
 ### 3.5 Visão decisória
 
-A visão decisória representará os possíveis resultados do processo.
+A visão decisória representa os possíveis resultados do processo.
 
 **Formas de encerramento ou solução:**
 
@@ -468,31 +438,15 @@ Sentença
 
 ---
 
-### 3.6 Visão recursal
+### 3.6 Recursos
 
-A visão recursal representará os meios de impugnação das decisões no Juizado Especial Federal Cível.
+Os recursos representam os meios de impugnação das decisões no Juizado Especial Federal Cível.
 
-Nessa visão, o Recurso será associado à decisão impugnada, ao sujeito que o interpõe e ao órgão julgador competente.
+o Recurso é associado à decisão impugnada, ao sujeito que o interpõe e ao órgão julgador competente.
 
 **Exemplo:**
 
-Parte vencida
-↓
-interpõe
-↓
-Recurso Inominado
-↓
-impugna
-↓
-Sentença
-↓
-é julgado por
-↓
-Turma Recursal
-↓
-gera
-↓
-Acórdão
+![recurso](./assets/imagecopy7.png)
 
 **Outras possibilidades:**
 
@@ -506,9 +460,9 @@ Demonstra que a sentença não encerra necessariamente o processo, pois pode abr
 
 ---
 
-### 3.7 Visão de cumprimento
+### 3.7 Cumprimento
 
-A visão de cumprimento representará como a decisão judicial é efetivada.
+O cumprimento representará como a decisão judicial é efetivada.
 
 **Possíveis objetos de cumprimento:**
 
@@ -527,7 +481,7 @@ Após o trânsito em julgado, a Sentença pode gerar uma obrigação para o Réu
 
 ---
 
-### 3.8 Visão de regras e restrições
+### 3.8 Regras e restrições
 
 A ontologia também deverá conter regras de integridade e restrições conceituais.
 
@@ -551,39 +505,3 @@ A ontologia também deverá conter regras de integridade e restrições conceitu
 * o Cumprimento da Sentença deve decorrer de decisão judicial;
 * a RPV deve estar vinculada a obrigação de pagar quantia certa;
 * o Processo deve ser arquivado após o cumprimento integral da decisão ou acordo.
-
----
-
-## 4. Competência do Juizado Especial Federal Cível
-
-A ontologia deverá representar a competência como elemento estruturante do domínio.
-
-### 4.1 Competência por valor
-
-O Juizado Especial Federal Cível julga causas de competência da Justiça Federal cujo valor não ultrapasse 60 salários mínimos.
-
-### 4.2 Competência por pessoa
-
-A competência está relacionada à presença de ente ou entidade federal no processo.
-
-**Possíveis réus:**
-
-* União;
-* INSS;
-* Caixa Econômica Federal;
-* autarquias federais;
-* fundações públicas federais;
-* empresas públicas federais.
-
-### 4.3 Competência por matéria
-
-São exemplos de matérias comuns no Juizado Especial Federal Cível:
-
-* benefícios previdenciários;
-* benefícios assistenciais;
-* FGTS;
-* contratos habitacionais da Caixa Econômica Federal;
-* questões administrativas federais;
-* responsabilidade civil da União;
-* obrigações de fazer contra entes federais;
-* cobranças de pequeno valor contra entes federais.
