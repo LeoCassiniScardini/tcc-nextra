@@ -41,16 +41,12 @@ A ontologia será formada por entidades principais, que representam os conceitos
 
 O **Processo no Juizado Especial Federal Cível** será uma entidade central da ontologia. Ele representará a estrutura jurídica em que os atos processuais são praticados para solucionar uma lide de competência federal, de menor complexidade e com valor limitado a 60 salários mínimos.
 
-**Atributos:**
+**Especificações:**
 
-* número do processo;
-* data de abertura;
-* data de distribuição;
 * valor da causa;
 * matéria discutida;
 * ente federal envolvido;
-* status processual;
-* data de encerramento.
+* status processual.
 
 **Relacionamentos:**
 
@@ -62,7 +58,7 @@ O Processo se relacionará com a Ação Federal, as Partes, o Juiz Federal, o Pr
 
 A **Ação Federal** representará a pretensão levada ao Juizado Especial Federal Cível. Ela indicará o tipo de conflito submetido ao Poder Judiciário Federal.
 
-**Tipos de ação:**
+**Tipos de ação: (Lista não exeutiva)**
 
 * ação previdenciária;
 * ação assistencial;
@@ -80,16 +76,13 @@ A **Ação Federal** representará a pretensão levada ao Juizado Especial Feder
 * ação relacionada ao FGTS;
 * ação relacionada a contrato habitacional da Caixa Econômica Federal.
 
-**Atributos principais:**
+**Especificações:**
 
 * tipo da ação;
-* descrição;
 * causa de pedir;
 * pedido;
-* data de ajuizamento;
 * valor da causa;
-* matéria federal;
-* grau de complexidade.
+* matéria federal.
 
 ---
 
@@ -119,20 +112,13 @@ A entidade **Parte** representará a pessoa física, jurídica ou entidade públ
 * fundações públicas federais;
 * empresas públicas federais.
 
-**Atributos:**
+**Especificações:**
 
-* nome;
-* CPF ou CNPJ;
-* endereço;
 * tipo de pessoa;
 * contato;
 * papel exercido no processo;
 * representação por advogado;
 * vínculo com a matéria discutida.
-
-**Relacionamentos:**
-
-A Parte poderá propor a Ação Federal, figurar no polo passivo, apresentar documentos, participar de conciliação, produzir provas, interpor recurso ou cumprir obrigação determinada judicialmente.
 
 ---
 
@@ -170,11 +156,9 @@ O **Procedimento** representará a marcha processual, ou seja, a sequência lóg
 * fase pós-sentença;
 * cumprimento.
 
-**Atributos de cada fase:**
+**Especificações:**
 
-* nome;
 * ordem;
-* descrição;
 * prazo padrão;
 * responsável;
 * atos vinculados;
@@ -193,13 +177,10 @@ O **Ato Processual** representará cada manifestação, decisão ou providência
 * **Atos dos Serventuários**: distribuição, autuação, citação, intimação, certidão, expedição de mandado, expedição de requisição e movimentação processual;
 * **Atos dos Auxiliares**: conciliação, perícia, elaboração de laudo, depoimento testemunhal e cumprimento de diligência.
 
-**Atributos principais:**
+**Especificações:**
 
 * tipo do ato;
-* data;
 * responsável;
-* descrição;
-* fase em que ocorre;
 * documento associado;
 * efeitos jurídicos.
 
@@ -209,20 +190,14 @@ O **Ato Processual** representará cada manifestação, decisão ou providência
 
 A **Sentença** será modelada como a decisão que resolve ou encerra a demanda.
 
-**Componentes:**
+**Especificações:**
 
-* texto da decisão;
-* data;
 * fundamentação;
 * resultado;
 * procedência, improcedência ou procedência parcial;
 * extinção sem resolução do mérito;
 * homologação de acordo;
 * informação sobre trânsito em julgado.
-
-**Relacionamentos:**
-
-A Sentença poderá estar relacionada a um Recurso, a um Acordo, ao início do Cumprimento da Sentença, à implantação ou revisão de benefício, à obrigação de fazer ou ao pagamento por RPV.
 
 ---
 
@@ -238,20 +213,15 @@ O **Recurso** representará o meio de impugnação da decisão judicial no siste
 * pedido de uniformização nacional;
 * recurso extraordinário, em hipótese excepcional.
 
-**Atributos:**
+**Especificações:**
 
 * tipo;
-* data de interposição;
 * parte recorrente;
 * parte recorrida;
 * fundamentação;
 * status;
 * decisão recorrida;
 * órgão julgador.
-
-**Relacionamentos:**
-
-O Recurso será interposto por uma Parte, impugnará uma decisão e será julgado pela Turma Recursal, Turma Regional de Uniformização, Turma Nacional de Uniformização ou Supremo Tribunal Federal, conforme o caso.
 
 ---
 
@@ -261,9 +231,8 @@ A **Conciliação** será representada como ato ou fase voltada à tentativa de 
 
 O **Acordo** será o resultado possível da conciliação ou de proposta apresentada no processo, celebrado pelas partes e, quando homologado pelo juiz, apto a encerrar total ou parcialmente a demanda.
 
-**Componentes do Acordo:**
+**Especificações:**
 
-* data;
 * partes envolvidas;
 * proposta apresentada;
 * condições;
@@ -293,14 +262,10 @@ No Juizado Especial Federal Cível, essa entidade é relevante porque muitas sen
 * comprovação de cumprimento;
 * arquivamento.
 
-**Atributos:**
+**Especificações:**
 
 * tipo de obrigação;
 * responsável pelo cumprimento;
-* prazo;
-* data de início;
-* data de cumprimento;
-* existência de valores atrasados;
 * valor requisitado;
 * status.
 
