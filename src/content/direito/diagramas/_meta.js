@@ -5,4 +5,7 @@ export default {
   'demanda-causa-pedido': {
     title: 'Demanda, causa e pedido',
   },
+  'competencia-jef': {
+    title: 'Competência do JEF',
+  },
 };
