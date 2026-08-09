@@ -8,4 +8,7 @@ export default {
   'competencia-jef': {
     title: 'Competência do JEF',
   },
+  'procedimentos': {
+    title: 'Procedimentos',
+  },
 };
