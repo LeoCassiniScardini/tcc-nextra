@@ -1,4 +1,13 @@
 export default {
+  'representantes': {
+    title: 'Representantes',
+  },
+  'serventuarios': {
+    title: 'Serventuários',
+  },
+  'organizacoes': {
+    title: 'Organizações',
+  },
   'sujeitos-e-papeis': {
     title: 'Sujeitos e papéis',
   },
@@ -11,10 +20,8 @@ export default {
   'procedimentos': {
     title: 'Procedimentos',
   },
-  'representantes': {
-    title: 'Representantes',
+  'sentenca': {
+    title: 'Sentença',
   },
-  'serventuarios': {
-    title: 'Serventuários',
-  },
+  
 };
