@@ -11,4 +11,10 @@ export default {
   'procedimentos': {
     title: 'Procedimentos',
   },
+  'representantes': {
+    title: 'Representantes',
+  },
+  'serventuarios': {
+    title: 'Serventuários',
+  },
 };
