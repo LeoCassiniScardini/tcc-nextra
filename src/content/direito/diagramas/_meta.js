@@ -23,5 +23,7 @@ export default {
   'sentenca': {
     title: 'Sentença',
   },
-  
+  'recursos': {
+    title: 'Recursos',
+  },
 };
