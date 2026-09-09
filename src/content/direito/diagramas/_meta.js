@@ -26,4 +26,7 @@ export default {
   'recursos': {
     title: 'Recursos',
   },
+  'cumprimento': {
+    title: 'Cumprimento',
+  },
 };
