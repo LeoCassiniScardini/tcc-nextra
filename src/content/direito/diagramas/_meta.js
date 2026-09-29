@@ -20,6 +20,21 @@ export default {
   'procedimentos': {
     title: 'Procedimentos',
   },
+  'instauracao': {
+    title: 'Instauração',
+  },
+  'contestacao': {
+    title: 'Contestação',
+  },
+  'conciliacao': {
+    title: 'Conciliação',
+  },
+  'producaodeprova': {
+    title: 'Produção de Prova',
+  },
+  'analiseejulgamento': {
+    title: 'Análise e Julgamento',
+  },
   'sentenca': {
     title: 'Sentença',
   },
