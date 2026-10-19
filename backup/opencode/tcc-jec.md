@@ -75,7 +75,7 @@ Fusce ac pretium leo, in convallis augue. Mauris pulvinar elit rhoncus velit auc
 
 Duis elementum dictum tristique. Integer mattis libero sit amet pretium euismod. Cura-bitur auctor eu augue ut ornare. Integer bibendum eros ullamcorper rhoncus convallis. Pellentesque non pretium ligula, sit amet bibendum eros. Nam venenatis ex felis, quis blandit nunc auctor sit amet. Maecenas ut eros pharetra, lobortis neque id, fermentum arcu. Cras neque dui, rhoncus feugiat leo id, semper facilisis lorem. Fusce non ex turpis. Nullam venenatis sed ligula ac lacinia. 
 
-**Palavras-chaves** : lorem. ipsum. dolor. sit. amet. 
+**Palavras-chave**: lorem. ipsum. dolor. sit. amet. 
 
 # Lista de ilustrações 
 
@@ -127,10 +127,12 @@ UML Unified Modeling Language
 |3.5|Reúso de ontologia .................................................................................................................... 30|
 |3.6|Captura e modelagem da ontologia ........................................................................................... 32|
 |3.7|Modularização da ontologia ...................................................................................................... 33|
+|3.8|Verificação por rastreabilidade e instanciação simulada (paginação a atualizar)|
 |4<br>Resul|tados............................................................................................................................................... 35|
 |4.1|Visão geral da ontologia ............................................................................................................ 35|
 |4.2|Pacote Estrutural ........................................................................................................................ 38|
 |4.3|Pacote Procedimental ................................................................................................................ 44|
+|4.4|Rastreabilidade das questões de competência e instanciações simuladas (paginação a atualizar)|
 |5<br>Conc|lusão ............................................................................................................................................... 59|
 |5.1|ConsideraçõesFinais ................................................................................................................... 59|
 |5.2|TrabalhosFuturos ........................................................................................................................ 59|
@@ -146,7 +148,7 @@ No âmbito do Poder Judiciário, essa dificuldade torna-se ainda mais evidente. 
 
 Em um Estado Democrático de Direito, uma justiça eficiente, acessível e compreensível deve constituir objetivo permanente. Com a finalidade de ampliar o acesso à justiça e reduzir obstáculos econômicos e burocráticos, foram criados os Juizados Especiais, destinados à apreciação de causas de menor complexidade. Esses órgãos foram concebidos para oferecer uma forma mais simples, célere e econômica de prestação jurisdicional, especialmente às pessoas que não possuem condições financeiras ou sociais para suportar os custos e a demora inerentes aos procedimentos judiciais tradicionais. Nesse sentido, os Juizados Especiais Federais Cíveis buscam aproximar o cidadão da Justiça Federal, inclusive ao prever, em determinadas hipóteses, a dispensa de advogado e a inexistência de custas em primeiro grau. 
 
-Entretanto, Os documentos, os atos processuais e as informações disponibilizadas nos sistemas judiciais são produzidos predominantemente para operadores do Direito, utilizando linguagem técnica e relações conceituais que não são explicitadas de forma acessível ao cidadão. Dessa maneira, um instrumento criado para reduzir barreiras de acesso pode continuar limitado pela dificuldade de compreensão das informações jurídicas, contribuindo para a baixa utilização ou para o uso inadequado dos mecanismos disponíveis pela sociedade. 
+Entretanto, os documentos, os atos processuais e as informações disponibilizadas nos sistemas judiciais são produzidos predominantemente para operadores do Direito, utilizando linguagem técnica e relações conceituais que não são explicitadas de forma acessível ao cidadão. Dessa maneira, um instrumento criado para reduzir barreiras de acesso pode continuar limitado pela dificuldade de compreensão das informações jurídicas, contribuindo para a baixa utilização ou para o uso inadequado dos mecanismos disponíveis pela sociedade. 
 
 Assim, as ontologias inserem-se em contextos como esse, pois são úteis para representar o conhecimento de forma explícita e formal. Elas possibilitam a categorização dos conceitos relacionados aos Juizados Especiais de maneira estruturada e intuitiva, facilitando o alcance social que esse instituto visa promover. Dessa forma, podem prover conhecimento útil para a compreensão e aplicação de conceitos jurídicos, bem como atuar como artefatos computacionais capazes de auxiliar na implementação de sistemas. 
 
@@ -160,7 +162,7 @@ Portanto, este trabalho visa ao desenvolvimento de uma ontologia de domínio jur
 
 A motivação deste trabalho está relacionada à possibilidade de aplicar os conhecimentos adquiridos ao longo da graduação no desenvolvimento de um artefato conceitual voltado à representação do conhecimento jurídico. A construção de uma ontologia permite aprofundar o estudo teórico do domínio escolhido, ao mesmo tempo em que contribui para tornar seus conceitos, relações e procedimentos mais compreensíveis para outros usuários, especialmente aqueles que não possuem formação jurídica. 
 
-Justifica-se a escolha do domínio do Juizado Especial Federal Cível devido a sua relevância social, uma vez que esse instituto foi criado para facilitar o acesso à justiça, sem necessariamente necessitar de um ente terceiro, nesse sentido, a ontologia proposta poderá servir como base para a organização semântica desse conhecimento, permitindo a identificação e a categorização dos principais elementos envolvidos no procedimento judicial. Além disso, o artefato desenvolvido sera futuramente expandido e consolidado em um sistema voltado à produção de petições, ao peticionamento eletrônico e ao acompanhamento de processos judiciais, contribuindo para a automação e a melhoria do acesso à informação jurídica. 
+Justifica-se a escolha do domínio do Juizado Especial Federal Cível devido à sua relevância social, uma vez que esse instituto foi criado para facilitar o acesso à justiça, sem necessariamente necessitar de um ente terceiro. Nesse sentido, a ontologia proposta poderá servir como base para a organização semântica desse conhecimento, permitindo a identificação e a categorização dos principais elementos envolvidos no procedimento judicial. Além disso, o artefato desenvolvido poderá futuramente ser expandido e consolidado em um sistema voltado à produção de petições, ao peticionamento eletrônico e ao acompanhamento de processos judiciais, contribuindo para a automação e a melhoria do acesso à informação jurídica. 
 
 #### 1.2 Objetivos 
 
@@ -182,7 +184,7 @@ Para alcançar esse objetivo geral, foram definidos os seguintes objetivos espec
 
 O desenvolvimento deste trabalho será realizado por meio das seguintes etapas: 
 
-- i. Realizar pesquisa bibliográfica sobre ontologias, representação do conhecimento, tecnologia envolvidas, ontologias jurídicas e Juizados Especiais Federais Cíveis e analisar normas e materiais jurídicos relacionados ao domínio; 
+- i. Realizar pesquisa bibliográfica sobre ontologias, representação do conhecimento, tecnologias envolvidas, ontologias jurídicas e Juizados Especiais Federais Cíveis e analisar normas e materiais jurídicos relacionados ao domínio; 
 
 - ii. Delimitar o escopo da ontologia, definindo quais conceitos, sujeitos, documentos, atos processuais, pedidos, provas, decisões, recursos e fases procedimentais serão representados; 
 
@@ -190,19 +192,19 @@ O desenvolvimento deste trabalho será realizado por meio das seguintes etapas:
 
 - iv. Modelar a ontologia conceitual, representando classes, relações, papéis, eventos e demais elementos relevantes de forma estruturada e semanticamente consistente; 
 
-- v. Analisar e validar a consistência da modelagem, verificando se os conceitos e relações representados estão coerentes com o domínio jurídico estudado e se a ontologia responde as perguntas de competência; 
+- v. Analisar e validar a consistência da modelagem, verificando se os conceitos e relações representados estão coerentes com o domínio jurídico estudado e se a ontologia responde às perguntas de competência; 
 
 - vi. Ajustar a modelagem, quando necessário, a partir dos problemas ou inconsistências identificados durante a etapa de validação. 
 
 ##### 1.4 Organização da Monografia 
 
-Além desta introdução, este modelo de monografia é composto por outros cinco capítulos: 
+Além desta introdução, esta monografia é composta por outros quatro capítulos: 
 
 - O Capítulo 2 apresenta os aspectos relativos ao conteúdo teórico relevante para o trabalho; 
 
-- O Capítulo 3 apresenta a principal contribuição do trabalho; 
+- O Capítulo 3 descreve os aspectos metodológicos do desenvolvimento da ontologia; 
 
-- O Capítulo 4 apresenta a avaliação da proposta, quando a mesma tiver sido realizada e requeira uma descrição detalhada; 
+- O Capítulo 4 apresenta os resultados, incluindo a organização da ontologia, a descrição dos seus diagramas e a verificação por rastreabilidade e instanciação simulada; 
 
 - O Capítulo 5 apresenta as considerações finais do trabalho; 
 
@@ -210,37 +212,31 @@ Além desta introdução, este modelo de monografia é composto por outros cinco
 
 #### 2.1 Ontologias 
 
-Uma ontologia pode ser entendida como um modelo conceitual utilizado para representar, de forma explicita e estruturada, os tipos de entidades existentes em determinado domínio, suas propriedades e as relações que podem ser estabelecidas entre elas. o termo ontologia aproxima-se de sua origem filosófica, pois busca descrever categorias fundamentais da realidade e auxiliar na construção de modelos capazes de representar conceitos de maneira precisa e semanticamente consistente (GUIZZARDI et al., 2011). Nesse sentido, uma ontologia não se limita a listar termos ou conceitos de um domínio. Ela procura destrinchar o significado desses conceitos e as relações existentes entre eles. Assim, uma ontologia pode auxiliar na resposta a perguntas como: 
+Uma ontologia pode ser entendida como um modelo conceitual utilizado para representar, de forma explícita e estruturada, os tipos de entidades existentes em determinado domínio, suas propriedades e as relações que podem ser estabelecidas entre elas. O termo ontologia aproxima-se de sua origem filosófica, pois busca descrever categorias fundamentais da realidade e auxiliar na construção de modelos capazes de representar conceitos de maneira precisa e semanticamente consistente (GUIZZARDI et al., 2011). Nesse sentido, uma ontologia não se limita a listar termos ou conceitos de um domínio. Ela procura destrinchar o significado desses conceitos e as relações existentes entre eles. Assim, uma ontologia pode auxiliar na resposta a perguntas como: 
 
-   - i. o que é um objeto? 
+- i. O que é um objeto? 
 
-   - ii. O que é um evento? 
+- ii. O que é um evento? 
 
-   - iii. O que é uma pessoa? 
+- iii. O que é uma pessoa? 
 
-- iv. O que diferencia uma pessoa, de um papel que ela pode exercer em determinado 
+- iv. O que diferencia uma pessoa de um papel que ela pode exercer em determinado contexto, como paciente, autor, réu ou advogado? 
 
-- contexto, como paciente, autor, réu ou advogado? 
+- v. Quais propriedades são essenciais para uma entidade e quais são apenas temporárias? 
 
-- v. Quais propriedades são essenciais para uma entidade e quais são apenas 
+- vi. Que tipos de relações podem existir entre as entidades representadas? 
 
-- temporárias? 
+A construção de ontologias é de extrema relevância nos domínios mais complexos, nos quais há grande quantidade de conceitos, regras e relações. No domínio jurídico, essa complexidade é evidente, pois normas, sujeitos, papéis, atos, documentos, decisões e procedimentos se relacionam de maneira dinâmica. Por isso, a representação ontológica pode contribuir para organizar o conhecimento jurídico, reduzir ambiguidades conceituais e favorecer tanto a compreensão humana quanto o uso computacional dessas informações. 
 
-   - vi. Que tipos de relações podem existir entre as entidades representadas? 
-
-A construção de ontologias é de extrema relevancia nos domínios mais complexos, nos quais há grande quantidade de conceitos, regras e relações. No domínio jurídico, essa complexidade é evidente, pois normas, sujeitos, papéis, atos, documentos, decisões e procedimentos se relacionam de maneira dinâmica. Por isso, a representação ontológica pode contribuir para organizar o conhecimento jurídico, reduzir ambiguidades conceituais e favorecer tanto a compreensão humana quanto o uso computacional dessas informações. 
-
-Segundo Scherp (2011) as ontologias podem ser classificadas de acordo com seu grau de generalidade. Entre as classificações, tem-se: 
+Segundo Scherp et al. (2011), as ontologias podem ser classificadas de acordo com seu grau de generalidade. Entre as classificações, tem-se: 
 
 i. Ontologias de fundamentação, essas possuem maior abrangência e descrevem conceitos gerais, independentes de um domínio específico, servindo como base teórica para a construção de modelos conceituais mais precisos como, por exemplo, a Unified Foundational Ontology (UFO); 
 
-ii. Ontologias de nucleo, que por sua vez, representam conceitos estruturais de uma determinada área do conhecimento, possuindo um nível intermediário de generalidade. Elas são mais específicas que as ontologias de fundamentação, mas mais gerais que as ontologias de domínio. No campo jurídico, por exemplo, uma ontologia de núcleo pode representar conceitos comuns a diferentes subdomínios do Direito, como relações jurídicas, sujeitos de direito, 
-
-normas, situações jurídicas e atos jurídicos.; 
+ii. Ontologias de núcleo, que, por sua vez, representam conceitos estruturais de uma determinada área do conhecimento, possuindo um nível intermediário de generalidade. Elas são mais específicas que as ontologias de fundamentação, mas mais gerais que as ontologias de domínio. No campo jurídico, por exemplo, uma ontologia de núcleo pode representar conceitos comuns a diferentes subdomínios do Direito, como relações jurídicas, sujeitos de direito, normas, situações jurídicas e atos jurídicos; 
 
 iii. Ontologias de domínio que são voltadas à representação de um recorte específico da realidade. Elas descrevem conceitos dependentes de determinado domínio, como medicina, educação, biologia ou Direito. No contexto deste trabalho, a ontologia a ser desenvolvida caracteriza-se como uma ontologia de domínio jurídico, pois tem como foco representar o Juizado Especial Federal Cível, abrangendo seus principais sujeitos, papéis processuais, atos, documentos, pedidos, provas, decisões e etapas procedimentais. 
 
-Essa delimitação é crucial devido a complexidade do domínio jurídico. Conforme aponta Griffo (2018), o Direito não pode ser tratado como um sistema fechado de regras, pois envolve diferentes nuances, interpretações e relações. Por isso, é necessário estabelecer um recorte da realidade jurídica a ser representada, selecionando os conceitos e relações considerados relevantes para o objetivo da ontologia (GRIFFO, 2018). 
+Essa delimitação é crucial devido à complexidade do domínio jurídico. Conforme aponta Griffo (2018), o Direito não pode ser tratado como um sistema fechado de regras, pois envolve diferentes nuances, interpretações e relações. Por isso, é necessário estabelecer um recorte da realidade jurídica a ser representada, selecionando os conceitos e relações considerados relevantes para o objetivo da ontologia (GRIFFO, 2018). 
 
 #### 2.2 UFO - Unified Foundational Ontology 
 
@@ -254,7 +250,7 @@ A UFO costuma ser apresentada em três partes principais: UFO-A, UFO-B e UFO-C. 
 
 A UFO-A é a parte da Unified Foundational Ontology voltada à representação de entidades chamadas de endurantes, isto é, entidades que persistem no tempo mantendo sua identidade, ainda que possam sofrer mudanças. Essas entidades são diferentes dos eventos, pois não acontecem no tempo, mas permanecem através dele. Uma pessoa, uma organização, um documento e um processo podem ser analisados como exemplos de entidades que conservam identidade ao longo de sua existência. 
 
-Figura 2 – Taxonomia de UFO-A 
+Figura 1 – Taxonomia de UFO-A 
 
 
 
@@ -273,7 +269,7 @@ No contexto da modelagem conceitual, a distinção entre objetos e eventos é re
 
 modelos, atos, atividades e acontecimentos são tratados como simples objetos ou registros, o que pode gerar perda de significado. A UFO-B contribui para evitar esse problema ao permitir que ocorrências temporais sejam modeladas como eventos, evidenciando sua relação com o tempo, com os participantes envolvidos e com os efeitos que produzem no domínio (GUIZZARDI et al., 2013; GUIZZARDI et al., 2015). 
 
-Figura 3. Taxonomia de UFO-B 
+Figura 2. Taxonomia de UFO-B 
 
 
 
@@ -288,7 +284,7 @@ A representação de eventos também é relevante porque os atos processuais pos
 
 A UFO-C é a parte da Unified Foundational Ontology voltada à representação de aspectos sociais, intencionais e institucionais da realidade. Enquanto a UFO-A trata principalmente de entidades que persistem no tempo e a UFO-B trata de eventos, a UFO-C permite representar agentes, papéis sociais, relações sociais, compromissos, intenções e ações comunicativas. Essa dimensão é especialmente relevante para domínios em que há interação entre pessoas, organizações e instituições, como ocorre no Direito (GUIZZARDI, 2005; GUIZZARDI et al., 2015). 
 
-Figura 4. As categorias da ontologia de agentes UFO-C 0.2. 
+Figura 3. As categorias da ontologia de agentes UFO-C 0.2. 
 
 
 
@@ -305,7 +301,7 @@ A UFO-C também auxilia na compreensão das relações jurídicas e processuais 
 
 A UFO-L é uma ontologia núcleo voltada à representação de aspectos jurídicos, desenvolvida por Griffo (2018) com base na Unified Foundational Ontology (UFO). Sua construção parte da perspectiva das relações jurídicas, relacionando conceitos do Direito às categorias ontológicas fornecidas pela UFO, de modo a estabelecer uma estrutura conceitual reutilizável na construção de ontologias de domínio jurídico. 
 
-Figura 5. Padrão de modelagem para Legal Relator 
+Figura 4. Padrão de modelagem para Legal Relator 
 
 
 
@@ -316,7 +312,7 @@ Fonte: GRIFFO, 2018
 
 A ontologia introduz categorias próprias do domínio jurídico, entre elas Legal Agent, Legal Role, Legal RoleMixin, Legal Moment, Legal Relator e Legal Event. Na UFO-L, os Legal Agents são agentes que podem ocupar posições em relações jurídicas e carregar Legal Moments. Esses momentos representam posições jurídicas, como direitos, deveres, permissões, poderes e sujeições. As relações entre os agentes podem ser reificadas por meio de Legal Relators, que são compostos por momentos jurídicos externamente dependentes. 
 
-A posições jurídicas representadas pela UFO-L não são tratadas de forma isolada. Direitos e deveres, por exemplo, apresentam relações de correlação: um direito atribuído a determinado agente corresponde a um dever jurídico atribuído a outro agente. A UFO-L representa essas posições correlatas como partes de um _Legal Relator_ , permitindo explicitar não somente os participantes de uma relação jurídica, mas também as posições jurídicas que cada um assume no contexto dessa relação. 
+As posições jurídicas representadas pela UFO-L não são tratadas de forma isolada. Direitos e deveres, por exemplo, apresentam relações de correlação: um direito atribuído a determinado agente corresponde a um dever jurídico atribuído a outro agente. A UFO-L representa essas posições correlatas como partes de um _Legal Relator_ , permitindo explicitar não somente os participantes de uma relação jurídica, mas também as posições jurídicas que cada um assume no contexto dessa relação. 
 
 No contexto deste trabalho, a UFO-L fornece conceitos jurídicos de nível intermediário que podem ser reutilizados na construção da ontologia do Juizado Especial Federal. Dessa forma, conceitos específicos do domínio processual podem ser modelados a partir de categorias mais gerais da ontologia núcleo, permitindo representar agentes, papéis jurídicos, relações, posições jurídicas e eventos processuais de maneira fundamentada e semanticamente consistente. 
 
@@ -328,11 +324,11 @@ busca-se reduzir ambiguidades e favorecer a construção de representações mai
 
 ###### 2.4.1 SABiO 
 
-A construção de ontologias exige o uso de metodologias para de orientar o processo de desenvolvimento, desde a identificação do domínio até a avaliação do modelo produzido. Nesse contexto, destaca-se a SABiO, sigla para _Systematic Approach for Building Ontologies_ , proposta por Falbo (2014), que consiste em uma abordagem sistemática para a construção de ontologias de domínio. A SABiO foi desenvolvida com o objetivo de apoiar o processo de engenharia de ontologias, fornecendo atividades, papéis, artefatos e processos de apoio para a elaboração de modelos ontológicos mais consistentes e reutilizáveis. 
+A construção de ontologias exige o uso de metodologias para orientar o processo de desenvolvimento, desde a identificação do domínio até a avaliação do modelo produzido. Nesse contexto, destaca-se a SABiO, sigla para _Systematic Approach for Building Ontologies_ , proposta por Falbo (2014), que consiste em uma abordagem sistemática para a construção de ontologias de domínio. A SABiO foi desenvolvida com o objetivo de apoiar o processo de engenharia de ontologias, fornecendo atividades, papéis, artefatos e processos de apoio para a elaboração de modelos ontológicos mais consistentes e reutilizáveis. 
 
-Segundo Falbo (2014), ontologias se repartem em de referência e ontologias operacionais. As ontologias de referência são voltadas à representação conceitual do domínio, tendo como principal objetivo descrever, com clareza e precisão, os conceitos e relações existentes em determinada área de conhecimento. Já as ontologias operacionais são voltadas ao uso computacional, sendo implementadas em linguagens de modelagem visual e computacionalmente, como OWL. Essa distinção é relevante porque permite separar a fase de compreensão e modelagem conceitual do domínio da fase de implementação da ontologia. 
+Segundo Falbo (2014), as ontologias podem ser distinguidas em ontologias de referência e ontologias operacionais. As ontologias de referência são voltadas à representação conceitual do domínio, tendo como principal objetivo descrever, com clareza e precisão, os conceitos e relações existentes em determinada área de conhecimento. Já as ontologias operacionais são voltadas ao uso computacional, sendo implementadas em linguagens computacionais, como OWL. Essa distinção é relevante porque permite separar a fase de compreensão e modelagem conceitual do domínio da fase de implementação da ontologia. 
 
-Figura 1 – Metodologia SABiO 
+Figura 5 – Metodologia SABiO 
 
 
 
@@ -345,13 +341,13 @@ A primeira etapa proposta pela SABiO consiste na identificação do propósito d
 
 Após a definição dos requisitos, a SABiO propõe a captura e a formalização da ontologia. Essa etapa envolve a identificação dos conceitos relevantes do domínio, suas propriedades, relações e restrições. Para isso, o conhecimento pode ser obtido a partir de especialistas do domínio, materiais bibliográficos, normas, documentos técnicos, modelos de referência e demais fontes consolidadas de conhecimento. 
 
-A SABiO também recomenda que a modelagem conceitual seja orientada por uma ontologia de fundamentação. Nesse sentido, Falbo (2014) destaca a possibilidade de utilização da OntoUML como linguagem de modelagem para ontologias de referência, uma vez que ela incorpora representaçoes ontológicas da Unified Foundational Ontology (UFO). Essa orientação é compatível com a proposta deste trabalho, que utiliza conceitos da UFO-L e da OntoUML para representar o domínio jurídico. 
+A SABiO também recomenda que a modelagem conceitual seja orientada por uma ontologia de fundamentação. Nesse sentido, Falbo (2014) destaca a possibilidade de utilização da OntoUML como linguagem de modelagem para ontologias de referência, uma vez que ela incorpora representações ontológicas da Unified Foundational Ontology (UFO). Essa orientação é compatível com a proposta deste trabalho, que utiliza conceitos da UFO-L e da OntoUML para representar o domínio jurídico. 
 
-Outro ponto relevante da SABiO é a possibilidade de modularização da ontologia. Em domínios complexos, como o jurídico, a repartiçao em módulos ou subontologias pode facilitar o desenvolvimento, a manutenção e a reutilização do modelo. No caso do Juizado Especial Federal Cível, a ontologia pode ser organizada em módulos relacionados, por exemplo, aos sujeitos processuais, à demanda judicial, às competencias, e aos procedimentos. Essa divisão contribui para reduzir a complexidade da modelagem e permite que cada parte do domínio seja analisada de maneira mais clara. 
+Outro ponto relevante da SABiO é a possibilidade de modularização da ontologia. Em domínios complexos, como o jurídico, a repartição em módulos ou subontologias pode facilitar o desenvolvimento, a manutenção e a reutilização do modelo. No caso do Juizado Especial Federal Cível, a ontologia pode ser organizada em módulos relacionados, por exemplo, aos sujeitos processuais, à demanda judicial, às competências e aos procedimentos. Essa divisão contribui para reduzir a complexidade da modelagem e permite que cada parte do domínio seja analisada de maneira mais clara. 
 
 Além das atividades principais de desenvolvimento, a SABiO também recomenda processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração,  avaliação e reuso. A documentação é especialmente importante para registrar as decisões tomadas durante a modelagem, os conceitos definidos e as relações. Já a avaliação busca verificar se a ontologia atende ao propósito para o qual foi construída, se responde às perguntas de competência e se apresenta clareza, coerência e consistência conceitual. 
 
-Dessa forma, a SABiO contribui diretamente para o desenvolvimento deste trabalho, pois oferece um caminho metodológico adequado para a construção da ontologia proposta. As etapas são previstas para serem seguidas como um todo, porem neste trabalho serão trabalhadas apenas os passos relacionado às ontologias de referencias, sendo esses a identificação de requisitos, a definição de perguntas de competência, a captura do conhecimento, a modelagem conceitual, a modularização e a avaliação da ontologia, essa abordagem permite que o modelo seja desenvolvido de forma mais sistemática e alinhada aos objetivos da pesquisa 
+Dessa forma, a SABiO contribui diretamente para o desenvolvimento deste trabalho, pois oferece um caminho metodológico adequado para a construção da ontologia proposta. Neste trabalho, são contempladas as atividades relacionadas à construção de uma ontologia de referência: identificação de requisitos, definição de perguntas de competência, captura do conhecimento, modelagem conceitual, modularização e avaliação da ontologia. Essa abordagem permite que o modelo seja desenvolvido de forma mais sistemática e alinhada aos objetivos da pesquisa. 
 
 ###### 2.4.2 OntoUML 
 
@@ -373,13 +369,13 @@ Quadro 1 – Estereótipos de classes da linguagem OntoUML
 |**_Category_**|Agrega propriedades essenciais, mas não fornece<br>princípio de identidade.|
 |**_Mixin_**|Representa propriedades essenciais para algumas<br>instâncias e ocasionais para outras.|
 |**_RoleMixin_**|Representa um conceito antirrígido e<br>relacionalmente dependente, aplicável a indivíduos<br>com diferentes princípios de identidade.|
-|**_Collective_**|Representa coleções de entidades, sem fornecer<br>princípio de identidade próprio.|
+|**_Collective_**|Representa um tipo que fornece princípio de identidade<br>a coletivos, como um baralho ou um grupo de pessoas.|
 |**_Quantity_**|Representa entidades de massa, como água, areia<br>ou vinho.|
 |**_Relator_**|Representa uma entidade relacional que<br>fundamenta relações entre outras entidades.|
 
 
 
-Fonte: Adaptado de Guimarães et al. (2017). 
+Fonte: Adaptado de Guimarães et al. (2017) e Guizzardi (2005). 
 
 Guimarães et al. (2017) apresentam os principais estereótipos de classes da linguagem OntoUML, os quais permitem distinguir a natureza ontológica dos conceitos representados em um modelo conceitual. O Quadro 1 sintetiza esses estereótipos e suas respectivas funções. 
 
@@ -411,7 +407,7 @@ Para a construção gráfica de modelos conceituais em OntoUML, podem ser utiliz
 
 ontologicamente fundamentados. 
 
-O plugin OntoUML acrescenta ao Visual Paradigm recursos próprios da linguagem, permitindo aplicar às classes e relações os estereótipos apresentados no Quadro 2, como kind, role, relator e mode. Além disso, oferece mecanismos de apoio à modelagem, como sugestões de estereótipos e verificação do modelo segundo as regras da OntoUML. A Figura X exemplifica a representação desses elementos e de suas relações no ambiente de modelagem. 
+O plugin OntoUML acrescenta ao Visual Paradigm recursos próprios da linguagem, permitindo aplicar às classes e relações os estereótipos apresentados nos Quadros 1 e 2, como kind, role, relator e mode. Além disso, oferece mecanismos de apoio à modelagem, como sugestões de estereótipos e verificação do modelo segundo as regras da OntoUML. A Figura 6 exemplifica a representação desses elementos e de suas relações no ambiente de modelagem. 
 
 Figura 6. Exemplo de modelagem OntoUML no Visual Paradigm. 
 
@@ -428,7 +424,7 @@ Fonte: Elaborado pelo autor (2026).
 
 O desenvolvimento da ontologia proposta neste trabalho foi conduzido com base na Systematic Approach for Building Ontologies (SABiO), apresentada por Falbo (2014). A abordagem organiza a construção de ontologias por meio de um processo sistemático, envolvendo atividades de desenvolvimento e processos de apoio que acompanham a construção do artefato ontológico. Conforme apresentado no referencial teórico, o processo de desenvolvimento parte do levantamento dos requisitos e da identificação do propósito da ontologia, avança para a captura e formalização do conhecimento e resulta, inicialmente, na construção de uma ontologia de referência. 
 
-A SABiO prevê ainda etapas posteriores relacionadas ao design e a implementação, nos quais a ontologia de referência pode ser transformada em uma representação voltada ao uso computacional, resultando, por exemplo, em uma ontologia operacional. Apoiando as atividades de desenvolvimento, a abordagem oferece processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração, avaliação e reúso. Esses processos não necessariamente ocorrem de maneira isolada ou estritamente sequencial, podendo acompanhar diferentes momentos do desenvolvimento da ontologia. No próprio referencial deste trabalho, esses processos são apresentados como mecanismos de suporte à construção e à avaliação do modelo. 
+A SABiO prevê ainda etapas posteriores relacionadas ao design e à implementação, nas quais a ontologia de referência pode ser transformada em uma representação voltada ao uso computacional, resultando, por exemplo, em uma ontologia operacional. Apoiando as atividades de desenvolvimento, a abordagem oferece processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração, avaliação e reúso. Esses processos não necessariamente ocorrem de maneira isolada ou estritamente sequencial, podendo acompanhar diferentes momentos do desenvolvimento da ontologia. No próprio referencial deste trabalho, esses processos são apresentados como mecanismos de suporte à construção e à avaliação do modelo. 
 
 Considerando que o objetivo deste trabalho é desenvolver uma ontologia de referência para o domínio do Juizado Especial Federal Cível, foram adotadas principalmente as atividades da SABiO relacionadas à identificação do propósito e levantamento dos requisitos, aquisição do conhecimento, captura e formalização do domínio, reúso, modelagem conceitual e avaliação. As etapas destinadas ao design e à implementação de uma ontologia operacional não integram o escopo deste trabalho. Nas seções seguintes, são descritas as atividades realizadas durante esse processo, iniciando-se pela definição do propósito e pela delimitação do domínio da ontologia, seguida da aquisição do conhecimento, do levantamento das Questões de Competência e da captura e modelagem dos conceitos identificados. 
 
@@ -446,7 +442,7 @@ Essa delimitação orientou tanto a formulação das Questões de Competência q
 
 #### 3.3 Aquisição do conhecimento do domínio 
 
-A No SABiO, a aquisição de conhecimento é caracterizada como um processo de apoio ao desenvolvimento da ontologia, podendo ocorrer ao longo das diferentes atividades de construção do modelo. Neste trabalho, esse processo teve papel especialmente relevante nas etapas de definição dos requisitos e de captura da ontologia, uma vez que forneceu o conhecimento necessário para a identificação dos conceitos, relações e restrições existentes no domínio do Juizado Especial Federal Cível. 
+Na SABiO, a aquisição de conhecimento é caracterizada como um processo de apoio ao desenvolvimento da ontologia, podendo ocorrer ao longo das diferentes atividades de construção do modelo. Neste trabalho, esse processo teve papel especialmente relevante nas etapas de definição dos requisitos e de captura da ontologia, uma vez que forneceu o conhecimento necessário para a identificação dos conceitos, relações e restrições existentes no domínio do Juizado Especial Federal Cível. 
 
 A aquisição do conhecimento necessário à construção da ontologia foi realizada por meio de pesquisa bibliográfica e análise documental. Para a compreensão do domínio jurídico, foram consideradas principalmente a Lei nº 10.259/2001, que institui os Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal, e a Lei nº 9.099/1995, aplicada subsidiariamente aos Juizados Especiais Federais quando não houver conflito com a legislação específica. 
 
@@ -478,11 +474,11 @@ ontologia núcleo para a representação dos aspectos jurídicos, e da OntoRS, u
 
 A UFO-L forneceu estruturas conceituais utilizadas em diferentes partes do modelo. A distinção entre Legal Role e Legal RoleMixin foi empregada na representação dos participantes do processo. Assim, categorias como Participante Processual, Parte Processual e Demandante foram modeladas como roleMixins, enquanto papéis específicos, como Demandado, Representante Processual, Testemunha, Perito e Conciliador, foram representados como roles. Na UFO-L, os agentes jurídicos desempenham papéis jurídicos nas relações das quais participam, e os Legal RoleMixins permitem reunir papéis que podem ser exercidos por diferentes tipos de agentes. 
 
-Também foi reutilizada a concepção de Legal Relator para representar relações jurídicas existentes no domínio processual. A UFO-L trata as relações jurídicas como entidades reificadas que vinculam agentes em determinadas posições jurídicas. A partir dessa analise foram modelados, entre outros, Relação Jurídico-Processual, Representação Processual, Obrigação Judicial, Competência Jurisdicional, Acordo Processual e Relação Recursal. 
+Também foi reutilizada a concepção de Legal Relator para representar relações jurídicas existentes no domínio processual. A UFO-L trata as relações jurídicas como entidades reificadas que vinculam agentes em determinadas posições jurídicas. A partir dessa análise foram modelados, entre outros, Relação Jurídico-Processual, Representação Processual, Obrigação Judicial, Competência Jurisdicional, Acordo Processual e Relação Recursal. 
 
 As posições jurídicas definidas pela UFO-L também foram especializadas no modelo. Os conceitos de Right e Duty fundamentaram a representação de Direito à Prestação e Dever de Prestação, relacionados à Obrigação Judicial, enquanto o conceito de Legal Power foi utilizado na representação do Poder Jurisdicional. Da mesma forma, a estrutura de Legal Norm e sua especialização em Rule foi empregada na representação de Norma Jurídica, Regra Jurídica e de regras específicas, como Regra de Competência e Regra de Prazo Recursal. 
 
-A OntoRS foi considerada por possuir maior proximidade com o domínio deste trabalho, uma vez que representa o Pedido de Uniformização no âmbito dos Juizados Especiais Federais. Alguns de seus conceitos foram reutilizados e especializados. Em particular, a concepção de Judicial Process como relator foi empregada na representação de Processo Judicial Federal, enquanto a concepção de Petition, também modelada como relator na OntoRS, foi adotada para Petição.     ontors A categoria Party também serviu como referência para Parte Processual, posteriormente especializada segundo os papéis existentes no domínio do JEF Cível. 
+A OntoRS foi considerada por possuir maior proximidade com o domínio deste trabalho, uma vez que representa o Pedido de Uniformização no âmbito dos Juizados Especiais Federais. Alguns de seus conceitos foram reutilizados e especializados. Em particular, a concepção de Judicial Process como relator foi empregada na representação de Processo Judicial Federal, enquanto a concepção de Petition, também modelada como relator na OntoRS, foi adotada para Petição. A categoria Party também serviu como referência para Parte Processual, posteriormente especializada segundo os papéis existentes no domínio do JEF Cível. 
 
 O reúso não ocorreu de forma integral. A OntoRS possui escopo específico voltado ao Pedido de Uniformização e à atuação da TNU, enquanto a ontologia proposta neste trabalho busca representar um conjunto mais amplo de elementos do Juizado Especial Federal Cível. Dessa forma, os conceitos reutilizados foram especializados ou adaptados às Questões de Competência e ao escopo definido para a ontologia, e diversas estruturas próprias foram desenvolvidas para representar aspectos não contemplados pela OntoRS. 
 
@@ -517,13 +513,11 @@ Esta etapa corresponde à captura e formalização da ontologia prevista pela SA
 
 Durante esse processo, buscou-se não apenas identificar os elementos presentes no domínio jurídico, mas também compreender a natureza ontológica de cada um deles. Assim, foi necessário distinguir, por exemplo, entidades que possuem identidade própria, papéis assumidos pelos participantes do processo, relações que vinculam esses participantes, eventos que ocorrem durante a tramitação e situações resultantes desses eventos. A UFO forneceu a fundamentação para essas distinções, enquanto a UFO-L auxiliou na representação dos aspectos especificamente jurídicos e a OntoUML foi utilizada como linguagem para expressar graficamente o modelo conceitual. 
 
-A modelagem foi realizada de forma iterativa e incremental. Os conceitos inicialmente identificados foram progressivamente revistos, especializados ou reorganizados conforme novas relações eram identificadas e as Questões de Competência eram avaliadas com o modelo. Dessa forma, a construção dos diagramas não consistiu apenas na transcrição dos termos encontrados na legislação ou na literatura, foi um processo de análise e refinamento conceitual 
-
-focado em aprofundar as entidade e relações relevantes para o domínio. 
+A modelagem foi realizada de forma iterativa e incremental. Os conceitos inicialmente identificados foram progressivamente revistos, especializados ou reorganizados conforme novas relações eram identificadas e as Questões de Competência eram avaliadas com o modelo. Dessa forma, a construção dos diagramas não consistiu apenas na transcrição dos termos encontrados na legislação ou na literatura; foi um processo de análise e refinamento conceitual focado no aprofundamento da compreensão das entidades e relações relevantes para o domínio. 
 
 Esse refinamento é importante, por exemplo, para diferenciar os participantes e papéis processuais na representação de relações jurídico-processuais por meio de relators e na distinção entre atos processuais, modelados como eventos, e as situações produzidas por esses atos. Também foram representados elementos como documentos, normas, pedidos, posições jurídicas, obrigações e poderes, conforme sua natureza e sua função dentro do processo judicial. 
 
-A medida que a modelagem avançou, o número de conceitos e relações tornou inadequada sua representação em um único diagrama. Para preservar a legibilidade e facilitar a compreensão do modelo, a ontologia foi organizada em módulos conceituais inter-relacionados, cada um concentrado em determinado aspecto do domínio. Essa modularização também permitiu relacionar os diferentes grupos de Questões de Competência às partes correspondentes da ontologia e é apresentada na seção seguinte. 
+À medida que a modelagem avançou, o número de conceitos e relações tornou inadequada sua representação em um único diagrama. Para preservar a legibilidade e facilitar a compreensão do modelo, a ontologia foi organizada em módulos conceituais inter-relacionados, cada um concentrado em determinado aspecto do domínio. Essa modularização também permitiu relacionar os diferentes grupos de Questões de Competência às partes correspondentes da ontologia e é apresentada na seção seguinte. 
 
 #### 3.7 Modularização da ontologia 
 
@@ -537,6 +531,16 @@ Essa divisão permitiu representar com maior clareza tanto os aspectos estrutura
 
 enquanto os diagramas de classes apresentam detalhadamente os conceitos e relações pertencentes a cada módulo. 
 
+#### 3.8 Verificação por rastreabilidade e instanciação simulada
+
+Como parte da verificação da ontologia de referência, foram construídos uma matriz de rastreabilidade das 38 Questões de Competência e um conjunto de instanciações com dados inteiramente fictícios. A matriz relaciona cada questão aos conceitos, às relações e aos diagramas que oferecem suporte à sua resposta. As instanciações, por sua vez, exemplificam a aplicação desses elementos em situações hipotéticas, permitindo examinar a distinção entre entidades, papéis, documentos, eventos e situações processuais. Essa atividade segue a orientação da SABiO de verificar a competência da ontologia por correspondência com os requisitos e de utilizar instanciações como instrumento de avaliação conceitual (FALBO, 2014).
+
+O procedimento compreendeu quatro atividades: identificação dos elementos necessários a cada resposta; localização desses elementos nos diagramas; construção de fragmentos de instâncias e relações para seis cenários; e registro das respostas esperadas, das premissas externas e das lacunas observadas. Foram utilizados identificadores estáveis para permitir o acompanhamento de uma mesma entidade em diferentes relações e recortes do cenário. Uma pessoa e o papel por ela exercido não foram representados como dois indivíduos distintos.
+
+A análise distinguiu o suporte direto à descrição de fatos já informados, o suporte parcial e a ausência de suporte suficiente para a decisão solicitada. Essa distinção é relevante porque algumas questões solicitam a identificação de informações, enquanto outras exigem decidir sobre necessidade, possibilidade ou obrigatoriedade jurídica. A existência de uma classe que registra um acontecimento não é suficiente para representar a regra que determina se ele deve ocorrer.
+
+Os resultados são apresentados na Seção 4.4. As instanciações constituem fragmentos conceituais, e não populações completas de todos os diagramas. Não foi executada verificação formal das cardinalidades, da satisfatibilidade ou dos axiomas da OntoUML. As regras jurídicas utilizadas para contextualizar os exemplos foram identificadas separadamente como premissas externas. Portanto, essa atividade não substitui a validação por especialistas nem os testes de uma eventual ontologia operacional.
+
 ## 4 Resultados 
 
 #### 4.1 Visão geral da ontologia 
@@ -547,7 +551,9 @@ As Questões de Competência que foram elaboradas para o desenvolvimento dos art
 
 **1. Sujeitos Processuais:** 
 
-QC1. Quem são os participantes do processo e qual papel processual cada um exerce? QC2. O autor é pessoa física, microempresa ou empresa de pequeno porte? 
+QC1. Quem são os participantes do processo e qual papel processual cada um exerce? 
+
+QC2. O autor é pessoa física, microempresa ou empresa de pequeno porte? 
 
 QC3. O réu é a União, uma autarquia, uma fundação pública federal ou uma empresa pública federal? 
 
@@ -563,7 +569,9 @@ QC7. Qual é o tipo da ação proposta?
 
 QC8. Qual é o pedido principal formulado pelo autor? 
 
-QC9. A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? QC10. Existe requerimento de tutela provisória? 
+QC9. A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? 
+
+QC10. Existe requerimento de tutela provisória? 
 
 **3. Procedimento:** 
 
@@ -758,7 +766,7 @@ Esses conceitos são reutilizados em diferentes partes da ontologia. O Perito pa
 
 dos eventos relacionados à produção de prova pericial, enquanto o <u>Conciliador</u> aparece no modelo de conciliação. Já Servidor Judicial e Oficial de Justiça representam agentes de apoio ao funcionamento e à prática dos atos necessários à tramitação processual. Dessa forma, o diagrama complementa o modelo de <u>Sujeitos e Papéis</u> ao detalhar os papéis institucionais desempenhados por pessoas vinculadas à atividade judiciária. 
 
-Figura 11. Diagrama de Serventuarios. 
+Figura 11. Diagrama de Serventuários. 
 
 
 
@@ -904,7 +912,11 @@ Fonte: elaborado pelo autor (2026)
 
 ###### 4.3.5 Conciliação 
 
-O diagrama Conciliação representa os eventos, participantes, documentos e situações envolvidos na tentativa de composição entre as partes no Juizado Especial Federal Cível. O modelo contempla tanto a realização da audiência e a apresentação de propostas quanto os possíveis resultados da tentativa conciliatória. 
+O diagrama Conciliação representa os eventos, participantes, documentos e situações envolvidos na tentativa de composição entre as partes no Juizado Especial Federal Cível. A versão revisada contempla a determinação da audiência, sua designação ou dispensa, a referência ao dever de comparecimento, a apresentação de propostas e os possíveis resultados da tentativa conciliatória.
+
+A Determinação de Audiência é modelada como `event` e especializa Ato Processual. Esse evento pode levar às `situations` Audiência Designada e Audiência Dispensada. No diagrama, a primeira promove a Audiência de Conciliação, enquanto a segunda impede sua realização no contexto da determinação considerada. Cada vínculo de resultado apresenta multiplicidade `0..1`, mas não foi desenhado um conjunto de exclusão ou uma restrição que obrigue a escolha de exatamente um resultado. Assim, a exclusividade entre designação e dispensa ainda deve ser explicitada caso faça parte da conceituação pretendida.
+
+Também foi acrescentado Dever de Comparecimento, representado como `mode` e ligado à Audiência de Conciliação por caracterização. Essa inclusão oferece um ponto de rastreabilidade para a QC37, mas exige refinamento: o vínculo desenhado caracteriza o evento de audiência e não identifica a pessoa que suporta o dever, sua intimação ou as condições em que deve comparecer. A existência desse elemento não permite concluir, isoladamente, que determinada parte deva comparecer a uma audiência ou perícia futura.
 
 A Audiência de Conciliação é modelada como `event` e especializa <u>Ato Processual.</u> Durante sua realização pode ocorrer a <u>Apresentação de Propostas de Acordo, também</u> representada como `event` . Esse evento envolve a participação de uma ou mais Propostas de <u>Acordo, modeladas como</u> `subkind` de <u>Documento, permitindo representar formalmente as</u> propostas apresentadas pelas partes durante a tentativa de composição. 
 
@@ -914,14 +926,13 @@ Quando a tentativa resulta em consenso entre as partes, ocorre o `event` <u>Cele
 
 A Celebração de Acordo leva à `situation` <u>Conciliação Realizada, indicando que a</u> tentativa de composição foi bem-sucedida. Em sentido contrário, quando não há consenso entre as partes, o modelo contempla a `situation` <u>Conciliação Frustrada. Tanto Conciliação Realizada</u> quanto <u>Conciliação Frustrada</u> especializam <u>Situação Processual, permitindo</u> representar os diferentes estados que podem resultar da tentativa conciliatória. 
 
-Dessa forma, o diagrama evidencia que a conciliação constitui um conjunto de eventos inter-relacionados, envolvendo a audiência, a apresentação de propostas, a participação das partes e do conciliador e, eventualmente, a celebração de um acordo. O modelo fornece suporte às Questões de Competência relacionadas à possibilidade de realização de acordo e à necessidade de audiência de conciliação. 
+Dessa forma, o diagrama evidencia que a conciliação constitui um conjunto de eventos inter-relacionados, envolvendo a determinação da audiência, sua realização ou dispensa, a apresentação de propostas, a participação das partes e do conciliador e, eventualmente, a celebração de um acordo. As QCs relacionadas à necessidade de audiência e ao comparecimento passam a contar com elementos explícitos de suporte parcial, sem que isso represente a implementação de todos os critérios jurídicos ou dos vínculos necessários para identificar o titular do dever.
 
 Figura 17. Diagrama de Conciliação. 
 
 
 
-<!-- Start of picture text -->
-<<event>> <ckind>><br>[Ato Processual Documento<br>aN A<br>a <<event>> -<cevent>> < <<participation>> a <<subkind>><br>Audlencia de Concliagto | Apresentagao de Propostas de Acordo | 1.* | Proposta de Acordo<br>A ccorre em<br>oS D> <chistoricalDependence>>| <<even>> Piovaa<br>Tentativa de Conciliacao Celebracao de Acordo<br>I<br>= = =<br><<role>> I <<relator>> fe<br>Concitiador | | Demandado<crole>>  || | ["<<roleMixin>>Demandante |Acordo Processual [7 <csituation>> — kq Concitacta———heattzad<br>-Mediation:o> Situagao Processual <<situation>><br>-<<Mediation>> Conciliacao Frustada<br>DP trazatona<br>Pievaa<br><!-- End of picture text -->
+![Diagrama de Conciliação revisado](diagramas/conciliacao.png)
 
 Fonte: elaborado pelo autor (2026) 
 
@@ -960,7 +971,11 @@ O <u>Resultado da Análise Probatória</u> é especializado nas `situations` <u>
 
 Quando as provas são consideradas suficientes, a situação Provas Suficientes possibilita a `situation` <u>Apto a Julgamento. Esta representa a condição em que o conjunto probatório</u> existente permite o prosseguimento do processo para decisão. A situação Apto a Julgamento, por sua vez, `triggers` o `event` <u>Julgamento, também especializado a partir de Ato Processual.</u> 
 
-Quando o resultado corresponde a Provas Insuficientes, o modelo prevê a Produção de <u>Prova Complementar, representada como</u> `event` e especialização de Produção de Prova. Essa estrutura permite representar a necessidade de ampliar a instrução antes que o processo esteja apto para julgamento. Após a produção complementar, uma nova Análise das Provas pode ser desencadeada, formando um ciclo de produção e avaliação até que os elementos disponíveis sejam considerados suficientes. 
+Quando o resultado corresponde a Provas Insuficientes, a versão revisada apresenta a relação `leva a` com Produção de Prova Complementar, representada como `event` e especialização de Produção de Prova. A situação Provas Insuficientes também se relaciona ao evento Julgamento por `impossibilita`. A matriz de rastreabilidade registra esses rótulos conforme o diagrama, sem substituir a ligação com a produção complementar por `triggers`.
+
+A relação `impossibilita` oferece suporte explícito à representação de um impedimento no recorte modelado, mas não deve ser interpretada como regra jurídica universal: a insuficiência de prova pode produzir consequências decorrentes do ônus da prova, sem necessariamente impedir todo julgamento. É necessário delimitar qual julgamento está impedido e em quais condições. Do mesmo modo, a produção de prova complementar não deve ser tratada como obrigatória e ilimitada em todos os casos de insuficiência.
+
+O retorno de Produção de Prova Complementar para Análise das Provas permanece rotulado como `triggers` entre dois eventos. Esse uso ainda requer revisão para se alinhar à fundamentação adotada, na qual uma situação desencadeia um evento. A presença gráfica da ligação é documentada, mas não foi reproduzida como uma relação `triggers` válida nas instanciações.
 
 A situação Apto a Julgamento também é representada como especialização de Situação <u>Processual, integrando o resultado da análise probatória aos demais estados assumidos pelo</u> processo ao longo de sua tramitação. Dessa forma, o diagrama evidencia que o julgamento depende não apenas da ocorrência de atos processuais anteriores, mas da existência de condições que permitam considerar a instrução suficiente para a apreciação da demanda. 
 
@@ -970,12 +985,11 @@ Figura 19. Diagrama de Análise Probatória e Julgamento.
 
 
 
-<!-- Start of picture text -->
-P <<event>><br>Ato Processual<br>A<br>a <<event>> <j <<event>><br>Produgao de Prova Produgo de Prova Complementar<br>Y <chistoricalDependence>> 4 <ctriggers>><br>a <<event>> P leva ao a <<situation>> A <<triggers>><br>Y trazatona Andlise das Provas Resultado da Anilise ProbatériaA<br>{disjoint, complete}<br>5 <<situation>> 5 <<situation>><br>Provas Suficientes Provas Insuficientes<br>Y possibilita<br>B <4 fz<br><<event>> <<triggers>> <<situation>><br>Julgamento Apto a Julgamento<br>5<br><<situation>><br>Situagdo Processual |<br><!-- End of picture text -->
+![Diagrama de Análise Probatória e Julgamento revisado](diagramas/analiseejulgamento.png)
 
 Fonte: elaborado pelo autor (2026) 
 
-4.3.8 Sentença 
+###### 4.3.8 Sentença 
 
 O diagrama <u>Sentença</u> representa o resultado do julgamento e os efeitos jurídicos decorrentes da decisão proferida no processo. O modelo articula o evento de julgamento, o documento de sentença, os diferentes tipos de resultado, as obrigações impostas e a formação das posições jurídicas entre Demandante e Demandado. 
 
@@ -1000,7 +1014,7 @@ a<br>eas=a [pastasDireito & Prest Demandante Julgamento <cmans[assesD<br>ono pen
 
 Fonte: elaborado pelo autor (2026) 
 
-4.3.9 Recursos 
+###### 4.3.9 Recursos 
 
 O diagrama Recursos representa os principais elementos envolvidos na impugnação da sentença, desde a abertura do prazo recursal até o julgamento do recurso pela Turma Recursal. O modelo contempla tanto a hipótese de interposição do recurso quanto a ausência de manifestação recursal, além dos participantes, documentos, prazos e situações decorrentes dessa etapa do processo. 
 
@@ -1056,6 +1070,209 @@ fz<br><<situation>><br>Sentenca Transitada em Julgado<br>lV <ctriggers>><br><<ev
 
 Fonte: elaborado pelo autor (2026) 
 
+#### 4.4 Rastreabilidade das questões de competência e instanciações simuladas
+
+Esta seção apresenta a verificação documental das 38 QCs e sua aplicação a seis cenários com dados simulados. Todos os participantes, documentos, identificadores de processos, valores e acontecimentos específicos dos exemplos são fictícios. A referência à União indica apenas sua posição no cenário hipotético, sem atribuir a ela um fato real. Não foram utilizados números CNJ, documentos pessoais ou registros profissionais reais.
+
+###### 4.4.1 Matriz de rastreabilidade das 38 QCs
+
+As questões mantêm a numeração e a formulação apresentadas na Seção 4.1. A matriz apresenta apenas o número da QC, a pergunta, os elementos e relações rastreados e sua localização no trabalho. O símbolo `>` indica a passagem de leitura entre os elementos, com a relação identificada no percurso; a barra `/` separa alternativas ou ramificações e o ponto e vírgula separa percursos distintos. Esses percursos não introduzem novas relações ou regras de inferência. Os ensaios, as respostas esperadas, as classificações de suporte e as limitações permanecem registrados nas demais partes da avaliação e no material de instanciação.
+
+**Sujeitos processuais — QC1 a QC6**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 1 | Quem são os participantes do processo e qual papel processual cada um exerce? | Relação Jurídico-Processual > mediação > Participante Processual > especializações > Parte Processual / Representante Processual / Auxiliar da Justiça / Testemunha; Parte Processual > especializações > Demandante / Demandado. | Figuras 8–12; Seções 4.2.1–4.2.5. |
+| 2 | O autor é pessoa física, microempresa ou empresa de pequeno porte? | Processo Judicial Federal > mediação > Demandante > especializações > Pessoa Física Autora / Microempresa Autora / Empresa de Pequeno Porte Autora. | Figuras 8, 9 e 12. |
+| 3 | O réu é a União, uma autarquia, uma fundação pública federal ou uma empresa pública federal? | Processo Judicial Federal > mediação > Demandado > supertipo > Organização Federal > especializações > União Federal / Autarquia Federal / Fundação Pública Federal / Empresa Pública Federal. | Figuras 8, 9 e 12. |
+| 4 | Quem representa juridicamente as partes? | Parte Processual > mediada por > Representação Processual > mediação > Representante Processual > especializações > Representante Designado / Advogado Constituído / Defensor Público Federal / Representante Jurídico Federal. | Figuras 8, 10 e 12. |
+| 5 | Há advogado constituído ou é necessária representação por advogado na fase atual? | Representação Processual > mediação > Representante Processual > especialização > Advogado Constituído; Representação Recursal > especialização de > Representação Processual > mediação > Parte Processual / Representante Processual. | Figuras 10 e 21. |
+| 6 | Há perito, conciliador, testemunha ou outro auxiliar da justiça vinculado ao processo? | Perito > participação > Realização de Perícia; Conciliador > participação > Tentativa de Conciliação; Testemunha > participação > Oitiva de Testemunha; Serventuário da Justiça > especializações > Servidor Judicial / Oficial de Justiça / Perito / Conciliador. | Figuras 8, 11, 17 e 18. |
+
+**Ação judicial — QC7 a QC10**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 7 | Qual é o tipo da ação proposta? | Processo Judicial Federal > especializações por matéria > Processo Previdenciário / Processo Assistencial / Processo Indenizatório. | Figura 13; Seção 4.3.1. |
+| 8 | Qual é o pedido principal formulado pelo autor? | Processo Judicial Federal > possui > Demanda > possui > Pedido Processual; Documento de Petição Inicial > formula > Pedido Processual. | Figuras 13 e 15. |
+| 9 | A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? | Demanda > possui > Pedido Processual > especializações > Pedido de Fazer / Pedido de Não Fazer / Pedido de Pagar / Pedido de Outra Providência. | Figura 13. |
+| 10 | Existe requerimento de tutela provisória? | Demanda > possui > Pedido de Tutela Provisória; Documento de Petição Inicial > formula > Pedido de Tutela Provisória. | Figuras 13 e 15. |
+
+**Procedimento — QC11 a QC15**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 11 | Em qual status ou fase o processo se encontra? | Ato Processual > produz > Situação Processual > especializações > Processo Instaurado / Demandado Citado / Contestação Apresentada / Apto a Julgamento / Cumprimento Concluído; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada. | Figuras 14–22. |
+| 12 | O réu apresentou contestação? | Demandado / Contestação > participação > Apresentação de Contestação > produz > Contestação Apresentada; Prazo de Contestação em Curso > triggers > Decurso do Prazo de Contestação > produz > Ausência de Contestação. | Figura 16. |
+| 13 | Pode haver proposta ou realização de acordo entre as partes? | Proposta de Acordo > participação > Apresentação de Propostas de Acordo; Celebração de Acordo > creation > Acordo Processual > mediação > Demandante / Demandado. | Figuras 10 e 17. |
+| 14 | É necessária audiência de conciliação? | Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada; Audiência Designada > promove > Audiência de Conciliação; Audiência Dispensada > impede > Audiência de Conciliação. | Figura 17; Seção 4.3.5. |
+| 15 | Há necessidade de produção de provas? | Produção de Prova > antecedente de > Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > leva a > Produção de Prova Complementar. | Figuras 18 e 19; Seções 4.3.6 e 4.3.7. |
+
+**Provas — QC16 a QC19**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 16 | Quais provas foram apresentadas pelas partes? | Parte Processual / Documento Probatório > participação > Juntada de Documento > produz > Documento Juntado; Realização de Perícia > creation > Laudo Pericial; Oitiva de Testemunha > produz > Testemunho Colhido. | Figura 18. |
+| 17 | Há testemunhas indicadas ou necessidade de produção de prova testemunhal? | Testemunha > participação > Oitiva de Testemunha > produz > Testemunho Colhido. | Figuras 8 e 18. |
+| 18 | As provas disponíveis são suficientes para julgamento antecipado? | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Suficientes > possibilita > Apto a Julgamento > triggers > Julgamento. | Figura 19; Seção 4.3.7. |
+| 19 | A ausência de alguma prova impede o julgamento do pedido? | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > impossibilita > Julgamento; Provas Insuficientes > leva a > Produção de Prova Complementar. | Figura 19; Seção 4.3.7. |
+
+**Sentença e cumprimento — QC20 a QC25**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 20 | Qual foi o resultado da sentença? | Julgamento > creation > Sentença > especializações > Procedência / Procedência Parcial / Improcedência / Sentença Homologatória / Extinção sem Resolução do Mérito. | Figura 20. |
+| 21 | Qual obrigação foi imposta ao réu: pagar, fazer, não fazer ou entregar algo? | Sentença > impõe > Obrigação Judicial > especializações > Obrigação de Pagar / Obrigação de Fazer / Obrigação de Não Fazer / Obrigação de Entregar Coisa; Obrigação Judicial > mediação > Demandante / Demandado; Obrigação Judicial > composição > Direito à Prestação / Dever de Prestação. | Figura 20. |
+| 22 | A sentença transitou em julgado? | Sentença > é objeto de > Trânsito em Julgado > produz > Sentença Transitada em Julgado. | Figuras 20 e 21. |
+| 23 | A obrigação reconhecida na sentença foi cumprida? | Cumprimento da Sentença > produz > Resultado do Cumprimento > especializações > Obrigação Cumprida / Obrigação Parcialmente Cumprida / Obrigação Não Cumprida. | Figura 22. |
+| 24 | O cumprimento da sentença foi concluído? | Obrigação Cumprida > triggers > Conclusão do Cumprimento > produz > Cumprimento Concluído. | Figura 22. |
+| 25 | O processo pode ser arquivado por satisfação da obrigação? | Cumprimento Concluído > triggers > Arquivamento do Processo > produz > Processo Arquivado por Satisfação da Obrigação. | Figura 22. |
+
+**Recursos — QC26 a QC30**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 26 | Foi interposto recurso contra a sentença? | Interposição de Recurso > creation > Recurso Inominado > impugna > Sentença Recorrida; Interposição de Recurso > produz > Recurso Interposto. | Figura 21. |
+| 27 | Qual é o prazo para apresentação do recurso? | Regra de Prazo Recursal > regula > Interposição de Recurso; Prazo Recursal > caracterização > Regra de Prazo Recursal. | Figura 21. |
+| 28 | O recurso exige representação por advogado? | Representação Recursal > especialização de > Representação Processual > mediação > Parte Processual / Representante Processual; Representante Processual > especializações > Advogado Constituído / Defensor Público Federal / Representante Jurídico Federal. | Figuras 10 e 21. |
+| 29 | O processo foi encaminhado à Turma Recursal? | Recurso Interposto > triggers > Remessa à Turma Recursal > destina a > Turma Recursal; Remessa à Turma Recursal > produz > Processo Encaminhado à Turma Recursal. | Figura 21. |
+| 30 | Qual foi o resultado do julgamento do recurso? | Julgamento do Recurso > creation > Acórdão; Julgamento do Recurso > produz > Resultado do Julgamento Recursal > especializações > Recurso Provido / Recurso Parcialmente Provido / Recurso Desprovido / Não Conhecido. | Figura 21. |
+
+**Perspectiva do cidadão — QC31 a QC38**
+
+| QC | Pergunta | Elementos e relações rastreados | Localização |
+| --- | --- | --- | --- |
+| 31 | Meu caso pode ser levado ao Juizado Especial Federal? | Valor da Causa > caracterização > Demanda; Processo Judicial Federal > mediação > Demandante / Demandado; Regra de Competência > define > Competência Jurisdicional > mediação > Processo Cabível no JEF / JEF Competente. | Figuras 8, 9, 12 e 13. |
+| 32 | Preciso contratar advogado para iniciar a ação? | Parte Processual > mediada por > Representação Processual > mediação > Representante Processual > especializações > Representante Designado / Advogado Constituído; Representação Recursal > especialização de > Representação Processual. | Figuras 8, 10, 12 e 21. |
+| 33 | Contra qual órgão ou entidade federal devo propor minha ação? | Processo Judicial Federal > mediação > Demandado > supertipo > Organização Federal > especializações > União Federal / Autarquia Federal / Fundação Pública Federal / Empresa Pública Federal. | Figuras 8, 9 e 12. |
+| 34 | Quais documentos preciso reunir para apresentar meu pedido? | Processo Judicial Federal > mediado por > Instrução Documental do Processo > mediação > Documento Necessário ao Processo; Documento de Petição Inicial > formaliza > Demanda. | Figuras 12 e 15. |
+| 35 | O que acontece depois que eu entro com a ação? | Ajuizamento > produz > Processo Instaurado; Ajuizamento > antecedente de > Citação > antecedente de > Apresentação de Contestação; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada; Provas Insuficientes > leva a > Produção de Prova Complementar. | Figuras 14–20. |
+| 36 | Em que fase está meu processo? | Ato Processual > produz > Situação Processual > especializações > Processo Instaurado / Contestação Apresentada / Apto a Julgamento / Processo Encaminhado à Turma Recursal / Cumprimento Concluído; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada. | Figuras 14–22. |
+| 37 | Preciso comparecer a alguma audiência ou perícia? | Determinação de Audiência > leva a > Audiência Designada > promove > Audiência de Conciliação > caracterização > Dever de Comparecimento; Perito > participação > Realização de Perícia > produz > Perícia Realizada. | Figuras 17 e 18; Seções 4.3.5 e 4.3.6. |
+| 38 | O que acontece depois que a sentença reconhece meu direito? | Sentença > impõe > Obrigação Judicial; Sentença > é objeto de > Trânsito em Julgado > produz > Sentença Transitada em Julgado > triggers > Cumprimento da Sentença; Obrigação Cumprida > triggers > Conclusão do Cumprimento > produz > Cumprimento Concluído > triggers > Arquivamento do Processo. | Figuras 20–22. |
+
+###### 4.4.2 Exemplos de instanciação e identidade dos indivíduos
+
+Para complementar a matriz de rastreabilidade, foram elaborados seis cenários de instanciação com dados inteiramente fictícios. Cada cenário reúne indivíduos, classificações e relações que exemplificam um fragmento da ontologia. Os códigos utilizados são identificadores locais do ensaio e não correspondem a processos judiciais, documentos pessoais ou registros profissionais reais. A referência à União no cenário C3 representa somente sua posição em uma situação hipotética, sem atribuir a ela acontecimentos reais.
+
+| Cenário | Descrição dos dados simulados | Aspectos exemplificados |
+| --- | --- | --- |
+| C1 | Pessoa Alfa demanda a Autarquia Previdenciária Simulada Alfa para implantação de benefício. Há tutela provisória requerida, contestação, audiência designada, conciliação frustrada, perícia, oitiva, procedência e cumprimento integral. | Pessoa física autora, representação, pedidos, documentos, provas, obrigação de fazer e arquivamento. |
+| C2 | Microempresa Beta demanda a Empresa Pública Federal Simulada Beta. Solicita R$ 8.000,00, obtém reconhecimento de R$ 6.000,00 e recebe inicialmente R$ 2.000,00, com satisfação posterior do saldo. | Microempresa autora, pedido de pagar, procedência parcial e mudança do estado de cumprimento. |
+| C3 | Empresa Gama, de pequeno porte, demanda a União em pretensão indenizatória hipotética. Após a improcedência, interpõe recurso inominado, posteriormente desprovido. | Empresa de pequeno porte autora, representação recursal, remessa à Turma Recursal, acórdão e resultado do recurso. |
+| C4 | Pessoa Delta, inicialmente por representante designado não advogado nas condições estipuladas, celebra acordo com a Fundação Pública Federal Simulada Delta para entrega de documento. | Determinação e designação da audiência, dever de comparecimento ligado à audiência, acordo, homologação e obrigação ainda não cumprida. |
+| C5 | Pessoa Épsilon demanda a Autarquia Simulada Épsilon. A audiência de conciliação é dispensada, não há contestação e a prova é considerada insuficiente. A perícia complementar é apenas futura. | Dispensa da audiência, ausência de defesa, insuficiência probatória e limites da representação do julgamento e do comparecimento. |
+| C6 | Pessoa Zeta consulta sobre a apresentação de mandado de segurança em caso federal, com valor de dez salários mínimos, antes de qualquer ajuizamento. | Distinção entre consulta pré-processual e processo instaurado; valor da causa insuficiente para determinar, isoladamente, o cabimento no JEF. |
+
+Os exemplos distinguem os fatos registrados das condições assumidas para construí-los. O cabimento positivo de C1, por exemplo, é uma premissa do cenário, não uma consequência automática do valor informado de trinta salários mínimos. De modo semelhante, o prazo recursal, a admissibilidade da representação e as consequências jurídicas da insuficiência da prova dependem de fontes normativas e não são obtidos apenas pela atribuição de um nome de classe a um indivíduo.
+
+**Identidade e classificação dos indivíduos**
+
+Uma instanciação deve mostrar não apenas quais termos ocorrem no cenário, mas também quais indivíduos exemplificam esses termos e como se relacionam. Em C1, C1-AUT identifica uma única pessoa, classificada como Pessoa Física Autora e Demandante no contexto do processo. Não foi criado um segundo indivíduo para representar o papel dessa pessoa. C1-REP-A, por outro lado, identifica a relação de representação, distinta da autora e da advogada. As classificações listadas correspondem ao fragmento considerado e não pretendem representar um histórico formal completo de todos os papéis assumidos pelo indivíduo.
+
+| Identificador | Classificação no fragmento | Interpretação simulada |
+| --- | --- | --- |
+| C1-AUT | Pessoa; Pessoa Física Autora; Demandante | Pessoa Alfa no polo ativo. |
+| C1-REU | Organização; Organização Federal; Autarquia Federal; Demandado | Autarquia Previdenciária Simulada Alfa no polo passivo. |
+| C1-ADV | Pessoa; Representante Processual; Advogado Constituído | Advogada da autora. |
+| C1-REP-A | Representação Processual | Relação que media C1-AUT e C1-ADV. |
+| C1-PF | Pessoa; Representante Processual; Procurador Federal | Representante da autarquia ré. |
+| C1-REP-R | Representação Processual | Relação que media C1-REU e C1-PF. |
+| C1-PROC | Processo Judicial Federal; Processo Previdenciário; Processo Cabível no JEF | Relação processual SIM-P01; cabimento estipulado no ensaio. |
+| C1-DEM | Demanda | Pretensão de implantação de benefício simulado. |
+| C1-PED | Pedido de Fazer | Pedido de implantação. |
+| C1-TUT | Pedido de Tutela Provisória | Requerimento provisório, sem decisão sobre seu deferimento. |
+| C1-INI | Documento de Petição Inicial | Documento distinto do relator Petição. |
+| C1-PET | Petição | Relação que envolve a apresentação da pretensão. |
+| C1-DETERMINAR-AUD | Determinação de Audiência | Evento que resulta na designação da audiência do cenário. |
+| C1-AUD-DESIGNADA | Audiência Designada | Situação produzida pela determinação. |
+| C1-AUD | Audiência de Conciliação | Evento de audiência efetivamente realizado no cenário. |
+| C1-PERICIA | Realização de Perícia | Ocorrência efetiva da perícia no cenário. |
+| C1-LAUDO | Documento; Laudo Pericial; Documento Probatório | Artefato criado pela perícia. |
+| C1-SENT | Sentença; Procedência | Documento que registra a decisão. |
+| C1-OBR | Obrigação Judicial; Obrigação de Fazer | Relação que vincula direito da autora e dever da ré. |
+| C1-DIREITO / C1-DEVER | Direito à Prestação / Dever de Prestação | Posições correlatas, partes de C1-OBR, caracterizando as respectivas partes. |
+
+As relações exemplificadas abaixo utilizam os elementos dos diagramas. O símbolo `>` indica a passagem de leitura, mantendo a convenção da matriz de rastreabilidade. A barra `/` abrevia ramificações, sem representar um indivíduo composto. Esses percursos registram fatos e classificações informados no ensaio, não novas regras de inferência.
+
+| Fragmento de instâncias | Fundamento no modelo |
+| --- | --- |
+| C1-REP-A > mediação > C1-AUT / C1-ADV | Representação Processual vincula a autora e sua advogada. |
+| C1-PROC > possui > C1-DEM > possui > C1-PED / C1-TUT | O processo se relaciona à demanda e esta aos pedidos; sua prioridade é informada no cenário. |
+| C1-DETERMINAR-AUD > leva a > C1-AUD-DESIGNADA > promove > C1-AUD | Distinguem-se determinação, situação de designação e ocorrência da audiência. |
+| C1-PERICIA > creation > C1-LAUDO | O evento de perícia cria um documento. |
+| C1-ANALISE > leva ao > C1-SUF > possibilita > C1-APTO | O resultado da análise é uma situação de suficiência estipulada no cenário. |
+| C1-APTO > triggers > C1-JULGAR > creation > C1-SENT | Uma situação desencadeia um evento, que cria o documento de decisão. |
+| C1-SENT > impõe > C1-OBR; C1-OBR > mediação > C1-AUT / C1-REU | A obrigação reconhecida relaciona as partes. |
+| C1-CUMPRIR > leva a > C1-CUMPRIDA > triggers > C1-CONCLUIR | Distinguem-se ocorrência do cumprimento, situação de satisfação e conclusão. |
+
+**Recortes temporais e cumprimento da obrigação**
+
+Os recortes identificam o momento do cenário ao qual uma resposta se refere. Em C1, C1-TI corresponde ao momento posterior ao ajuizamento, à citação e à designação da audiência; C1-TP corresponde ao término da instrução e da análise das provas; C1-TF corresponde ao cumprimento integral e ao arquivamento. Os marcos utilizados no material de instanciação são ordinais locais, não datas ou dias de prazo judicial.
+
+O cenário C2 evidencia a importância dessa distinção. Pedido, obrigação reconhecida e pagamento possuem valores diferentes: R$ 8.000,00 foram pedidos, R$ 6.000,00 foram reconhecidos e o pagamento se desenvolve em dois recortes. O valor final pago é acumulado, não uma parcela adicional a ser novamente somada.
+
+| Recorte | Obrigação reconhecida | Pagamento acumulado | Saldo | Situação registrada |
+| --- | --- | --- | --- | --- |
+| C2-TP | R$ 6.000,00 | R$ 2.000,00 | R$ 4.000,00 | C2-PARCIAL: Obrigação Parcialmente Cumprida, com prosseguimento do cumprimento. |
+| C2-TF | R$ 6.000,00 | R$ 6.000,00 | R$ 0,00 | C2-CUMPRIDA: Obrigação Cumprida; C2-CONCLUIDO: Cumprimento Concluído. |
+
+A permanência das duas situações no histórico não autoriza tratá-las como estados simultâneos da mesma obrigação. A resposta à QC23 depende do recorte solicitado, enquanto a QC24 identifica a ocorrência posterior da conclusão. Os valores monetários são informações da simulação, não atributos já especificados no diagrama. Nenhum arquivamento foi estipulado para C2-TF; concluir o cumprimento no exemplo não equivale a afirmar que o processo já foi arquivado.
+
+**Instanciação de recurso, acordo e dever de comparecimento**
+
+Em C3, C3-TR corresponde ao momento em que o recurso foi interposto e remetido, mas ainda não julgado; C3-TF corresponde ao resultado recursal. C3-RECURSO é um documento criado por C3-INTERPOR, evento de Interposição de Recurso, enquanto C3-INTERPOSTO é a situação resultante. Posteriormente, C3-JULGAR-REC produz C3-ACORDAO e C3-DESPROVIDO. Nenhum desses elementos foi confundido com Trânsito em Julgado. A duração de dez dias úteis atribuída a C3-PRAZO é informação normativa fornecida ao exemplo, não resultado de cálculo de calendário ou de inferência da ontologia.
+
+Em C4, a determinação da audiência é distinguida de sua designação e realização. Também se diferenciam a Proposta de Acordo, documento, a Celebração de Acordo, evento, o Acordo Processual, relator, e a Sentença Homologatória, documento de decisão. Os principais percursos são os seguintes:
+
+| Fragmento de instâncias | Interpretação no cenário |
+| --- | --- |
+| C4-DETERMINAR-AUD > leva a > C4-AUD-DESIGNADA > promove > C4-AUD | A audiência foi designada e efetivamente realizada. |
+| C4-DEVER-COMP > caracterização > C4-AUD | Reproduz-se o vínculo de Dever de Comparecimento com a audiência, conforme desenhado, sem atribuir silenciosamente esse dever à autora. |
+| C4-CELEBRAR > creation > C4-ACORDO > mediação > C4-AUT / C4-REU | A celebração constitui a relação de acordo entre as partes. |
+| C4-JULGAR > creation > C4-SENT > impõe > C4-OBR | A decisão homologatória registra uma obrigação de entrega de documento no exemplo. |
+
+O vínculo entre os termos do acordo e a sentença foi descrito como anotação quando não explicitado graficamente. De modo semelhante, C4-DEVER-COMP documenta o novo elemento do diagrama, mas sua associação à audiência não identifica a pessoa que suporta o dever, a respectiva intimação ou sua vigência. Assim, a presença dessa instância não permite concluir que a autora ainda precise comparecer no recorte final. C4-TI descreve o contexto inicial, com audiência designada; C4-TF registra acordo homologado, trânsito estipulado e obrigação ainda não cumprida.
+
+**Casos de dispensa, insuficiência probatória e consulta pré-processual**
+
+Em C5, C5-DETERMINAR-AUD leva a C5-AUD-DISPENSADA. Não foi criada uma ocorrência de Audiência de Conciliação para preencher a extremidade da relação `impede`, pois isso confundiria uma hipótese impedida com um evento efetivamente ocorrido. C5-TF reúne a dispensa da audiência, a ausência de contestação e a insuficiência probatória; nenhuma sentença ou perícia realizada foi registrada até esse recorte.
+
+A relação `Provas Insuficientes > impossibilita > Julgamento` é documentada pela anotação C5-A04 no contexto do julgamento hipotético considerado. Não foi criada uma instância de julgamento ocorrido para servir de alvo ao impedimento, nem se atribuiu à relação o alcance de regra jurídica universal. A ligação com Produção de Prova Complementar também não foi convertida em ocorrência de perícia: a complementação, seu agendamento e a intimação permanecem informações futuras estipuladas em C5-A02. O Dever de Comparecimento desenhado para a audiência não foi estendido automaticamente à perícia. O `triggers` entre os eventos Produção de Prova Complementar e Análise das Provas não foi reproduzido como relação válida nos dados.
+
+Por fim, C6-T0 representa uma consulta anterior ao ajuizamento. A pretensão e seu valor são descritos por C6-DEM, C6-CAUSA, C6-PED e C6-VAL, mas não foram atribuídos à pessoa os papéis de Demandante ou Demandado, nem criada uma instância de Processo Judicial Federal. A hipótese de mandado de segurança permanece excluída do JEF Cível, apesar do valor inferior ao limite, conforme a premissa normativa utilizada no ensaio. Essa conclusão depende da legislação externa, não somente da existência de Regra de Competência no modelo.
+
+Essas instanciações permitem examinar se os conceitos e relações selecionados distinguem adequadamente participantes, papéis, documentos, acontecimentos e situações. Elas também explicitam onde a resposta às QCs depende de informação contextual ou normativa adicional. Por serem fragmentos simulados, não demonstram, por si só, satisfação de todas as cardinalidades, consistência formal da ontologia ou validação jurídica por especialistas.
+
+###### 4.4.5 Síntese dos resultados e lacunas identificadas
+
+Todas as 38 QCs foram rastreadas e receberam um cenário, um recorte e uma resposta esperada, inclusive quando a resposta consiste em reconhecer insuficiência do modelo. A classificação documental resultou em:
+
+| Classificação | Quantidade | Interpretação |
+| --- | --- | --- |
+| D | 16 | Suporte direto à descrição de fatos informados, no recorte examinado. |
+| P | 22 | Suporte parcial; há dependência de informação, relação ou regra adicional. |
+| N | 0 | Nenhuma QC permanece nessa categoria após a revisão dos dois diagramas; isso não implica atendimento integral. |
+| Total | 38 | Rastreabilidade completa das questões, sem equivalência a atendimento integral dos requisitos. |
+
+Os resultados evidenciam maior suporte à identificação de participantes, classificação de pedidos e registro de acontecimentos e resultados. As principais lacunas concentram-se na distinção de pedido principal, na associação uniforme de atos e situações ao processo, na seleção do estado atual e na explicitação de critérios jurídicos de necessidade, permissão e obrigatoriedade. As QCs voltadas ao cidadão requerem, ainda, distinguir a descrição de fatos já conhecidos da orientação sobre um caso ainda não proposto.
+
+Com a revisão dos diagramas de Conciliação e Análise Probatória e Julgamento, as QCs 14, 19 e 37 passam de N para P. A QC14 passa a rastrear a determinação, a designação e a dispensa da audiência; a QC19 passa a contar com a relação explícita de impedimento; e a QC37 passa a rastrear Dever de Comparecimento. O suporte permanece parcial: faltam critérios e restrições para os resultados da determinação, delimitação jurídica do impedimento ao julgamento e identificação do titular do dever e de sua intimação, inclusive na hipótese de perícia.
+
+As prioridades de refinamento decorrentes do ensaio são: revisar a representação de Juiz e órgão julgador; explicitar o contexto e a temporalidade dos vínculos; diferenciar fatos processuais de decisões normativas; representar a prioridade dos pedidos; especificar as condições de competência, representação e contagem de prazo; e refinar a caracterização de Dever de Comparecimento, identificando a pessoa obrigada e as condições aplicáveis à audiência ou perícia. Também é necessário rever o encadeamento que torna a contestação pressuposto universal do julgamento, o `triggers` entre Produção de Prova Complementar e Análise das Provas e os demais usos de relações de eventos incompatíveis com as categorias conectadas.
+
+A presença de lacunas não invalida a rastreabilidade. Ela impede, porém, a afirmação de que a ontologia responde integralmente a todas as QCs na versão examinada. As classificações apresentadas devem ser reavaliadas após os ajustes conceituais e confrontadas com a análise dos especialistas do domínio.
+
+###### 4.4.6 Registro dos artefatos e alcance da verificação
+
+O inventário dos indivíduos, as relações declaradas, os recortes, as anotações externas e as 38 respostas esperadas estão disponíveis em [`avaliacao/dados-simulados.json`](avaliacao/dados-simulados.json). O guia [`avaliacao/instanciacoes-simuladas.md`](avaliacao/instanciacoes-simuladas.md) explica os cenários e a leitura dos identificadores. Esses arquivos documentam a instanciação de referência; seu formato JSON não representa uma implementação operacional da ontologia.
+
+O conjunto atualizado contém 155 indivíduos, 163 triplas de relações declaradas e 11 recortes distribuídos pelos seis cenários. Foram acrescentadas instâncias de determinação, designação e dispensa da audiência e de Dever de Comparecimento. A quantidade de indivíduos da simulação não deve ser confundida com a quantidade de termos do dicionário ou de classes da ontologia. A conferência de integridade foi executada com sucesso para esse conjunto, no alcance restrito descrito a seguir.
+
+O script [`avaliacao/verificar-dados.py`](avaliacao/verificar-dados.py) verifica a integridade desses artefatos: identificadores e referências, uso das categorias catalogadas, relações temporais básicas selecionadas, não utilização de evidências futuras nos recortes, conciliação dos valores simulados, preservação da numeração e das perguntas na matriz e correspondência entre as 38 respostas e as classificações de suporte registradas no guia de instanciações. A presença de um nome de classe no texto é uma conferência lexical, não uma certificação de sua adequação ontológica. O script não executa consultas para produzir as respostas esperadas; elas foram elaboradas por inspeção documental dos fragmentos.
+
+Consequentemente, a execução bem-sucedida dessa conferência não deve ser relatada como aprovação de 38 testes de inferência ou prova de consistência da ontologia. Permanecem fora de seu alcance a verificação formal de cardinalidades e generalizações, a validade dos padrões de reúso, a correção jurídica das decisões e a adequação para usuários reais. Os exemplos foram construídos para examinar elementos selecionados e não cobrem exaustivamente todas as classes, todos os resultados recursais ou todas as modalidades de obrigação.
+
 # 5 Conclusão 
 
 Neste capítulo devem ser realizadas as considerações finais do trabalho, sendo apresentadas suas principais contribuições, limitações, lições aprendidas durante o desenvolvimento do trabalho, dificuldades enfrentadas e perspectivas de trabalhos futuros. O capítulo deve ter entre 3 e 5 páginas. 
@@ -1078,11 +1295,11 @@ SOUZA, V. E. S. et al. Awareness Requirements. In: LEMOS, R. et al. (Ed.). _Soft
 
 SOUZA, V. E. S.; MYLOPOULOS, J. Designing an adaptive computer-aided ambulance dispatch system with Zanshin: an experience report. _Software: Practice and Experience (online first: http://dx.doi.org/10.1002/spe.2245)_ , Wiley, 2013. Citado 5 vezes nas páginas 8, 9, 24, 25 e 26 
 
-#### Anexo A – Dicionario de Termos 
+#### Anexo A – Dicionário de Termos 
 
-O quadro a seguir apresenta os 154 termos que compõem a Ontologia de Referência do Juizado Rspecial Federal Civel, com suas respectivas definições e fontes de informação. Os termos estão ordenados alfabeticamente. 
+O quadro a seguir apresenta os 154 termos que compõem a Ontologia de Referência do Juizado Especial Federal Cível, com suas respectivas definições e fontes de informação. Os termos estão ordenados alfabeticamente. 
 
-<u>Quadro 5: Dicionario de Termos</u> 
+<u>Quadro 5: Dicionário de Termos</u> 
 
 |Termo|Descrição|
 |---|---|
@@ -1113,7 +1330,7 @@ O quadro a seguir apresenta os 154 termos que compõem a Ontologia de Referênci
 |Citação|Ato processual pelo qual o demandado é formalmente<br>chamado a integrar o processo e exercer sua defesa.|
 |Competência Jurisdicional|Relação que atribui a determinado órgão judicial o<br>poder de processar e julgar uma causa segundo as regras<br>de competência aplicáveis.|
 |Comprovante de Protocolo|Documento produzido na protocolização que comprova<br>o registro da demanda, identificando seu número de<br>protocolo e a data e hora do ato.|
-|Conciliação Frustada|Situação processual resultante da tentativa de<br>conciliação sem obtenção de acordo entre as partes.|
+|Conciliação Frustrada|Situação processual resultante da tentativa de<br>conciliação sem obtenção de acordo entre as partes.|
 |Conciliação Realizada|Situação processual resultante da celebração de acordo<br>entre as partes.|
 |Conciliador|Participante responsável por auxiliar as partes na busca<br>de solução consensual para o conflito.|
 |Conclusão do Cumprimento|Evento que encerra a fase de cumprimento após a<br>satisfação integral da obrigação judicial.|
@@ -1152,7 +1369,7 @@ O quadro a seguir apresenta os 154 termos que compõem a Ontologia de Referênci
 
 
 
-||processojudicial.|
+||processo judicial.|
 |---|---|
 |Interesse de Agir|Necessidade de recorrer ao Poder Judiciário para<br>obtenção da tutela pretendida diante de situação que<br>justifique a atuação jurisdicional.|
 |Interposição de Recurso|Evento processual pelo qual a parte apresenta<br>formalmente recurso contra a sentença.|
@@ -1201,7 +1418,7 @@ O quadro a seguir apresenta os 154 termos que compõem a Ontologia de Referênci
 
 
 
-||documento depetição inicial elaborado.|
+||documento de petição inicial elaborado.|
 |---|---|
 |Peticionamento|Ato processual de elaboração e apresentação da petição<br>inicial que formaliza a demanda, expõe a causa de pedir<br>e formula os pedidos processuais.|
 |Poder Jurisdicional|Poder atribuído ao órgão judicial para exercer a<br>jurisdição e decidir as causas submetidas à sua<br>competência.|
