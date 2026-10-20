@@ -1,7 +1,7 @@
 {
   "metadados": {
-    "versao": "1.1",
-    "revisao": "Atualizada após revisão dos diagramas de Conciliação e Análise Probatória e Julgamento; QCs 14, 19 e 37 com suporte parcial.",
+    "versao": "1.2",
+    "revisao": "Atualizada com Resultado da Determinação de Audiência, os dois deveres de comparecimento, Prova Complementar Produzida, Não Apto a Julgamento e o novo diagrama de Análise de Cabimento no JEF (pretencao.png).",
     "dados_inteiramente_ficticios": true,
     "finalidade": "Instanciação conceitual de fragmentos da ontologia de referência; não é uma ontologia operacional.",
     "tempo": "Marcos ordinais locais a cada cenário. Não representam dias, datas ou contagem de prazo judicial.",
@@ -19,25 +19,26 @@
     "agente": ["Pessoa", "Pessoa Física Autora", "Organização", "Organização Federal", "Autarquia Federal", "Empresa Pública Federal", "Fundação Pública Federal", "União Federal", "Microempresa Autora", "Empresa de Pequeno Porte Autora", "Demandante", "Demandado", "Advogado Constituído", "Procurador Federal", "Advogado de Empresa Pública Federal", "Advogado da União", "Representante Designado", "Representante Processual", "Perito", "Testemunha", "Conciliador", "Servidor Judicial", "Juizado Especial Federal", "JEF Competente", "Turma Recursal"],
     "relator": ["Processo Judicial Federal", "Processo Previdenciário", "Processo Indenizatório", "Processo Assistencial", "Processo Cabível no JEF", "Relação Jurídico-Processual", "Representação Processual", "Representação Recursal", "Petição", "Instrução Documental do Processo", "Competência Jurisdicional", "Obrigação Judicial", "Obrigação de Fazer", "Obrigação de Pagar", "Obrigação de Entregar Coisa", "Acordo Processual", "Relação Recursal"],
     "documento": ["Documento", "Documento de Petição Inicial", "Documento de Requerimento Administrativo", "Documento Necessário ao Processo", "Documento Probatório", "Comprovante de Protocolo", "Contestação", "Laudo Pericial", "Sentença", "Procedência", "Procedência Parcial", "Improcedência", "Sentença Homologatória", "Sentença Recorrida", "Recurso Inominado", "Acórdão", "Proposta de Acordo"],
-    "evento": ["Requerimento Administrativo", "Peticionamento", "Protocolização", "Ajuizamento", "Citação", "Apresentação de Contestação", "Decurso do Prazo de Contestação", "Determinação de Audiência", "Audiência de Conciliação", "Tentativa de Conciliação", "Apresentação de Propostas de Acordo", "Celebração de Acordo", "Realização de Perícia", "Oitiva de Testemunha", "Juntada de Documento", "Análise das Provas", "Julgamento", "Decurso do Prazo Recursal", "Trânsito em Julgado", "Cumprimento da Sentença", "Prosseguimento do Cumprimento", "Conclusão do Cumprimento", "Arquivamento do Processo", "Interposição de Recurso", "Remessa à Turma Recursal", "Julgamento do Recurso"],
-    "situacao": ["Indeferimento Administrativo", "Processo Instaurado", "Demanda Protocolizada", "Demandado Citado", "Contestação Apresentada", "Ausência de Contestação", "Prazo de Contestação em Curso", "Conciliação Frustrada", "Conciliação Realizada", "Perícia Realizada", "Testemunho Colhido", "Documento Juntado", "Provas Suficientes", "Provas Insuficientes", "Apto a Julgamento", "Ausência de Recurso", "Sentença Transitada em Julgado", "Obrigação Cumprida", "Obrigação Parcialmente Cumprida", "Obrigação Não Cumprida", "Cumprimento Concluído", "Processo Arquivado por Satisfação da Obrigação", "Recurso Interposto", "Processo Encaminhado à Turma Recursal", "Recurso Desprovido", "Audiência Designada", "Audiência Dispensada"],
-    "outro": ["Demanda", "Causa de Pedir", "Pedido de Fazer", "Pedido de Pagar", "Pedido de Outra Providência", "Pedido de Tutela Provisória", "Valor da Causa", "Regra de Competência", "Regra de Prazo Recursal", "Prazo Recursal", "Poder Jurisdicional", "Direito à Prestação", "Dever de Prestação", "Dever de Comparecimento"]
+    "evento": ["Requerimento Administrativo", "Peticionamento", "Protocolização", "Ajuizamento", "Citação", "Apresentação de Contestação", "Decurso do Prazo de Contestação", "Determinação de Audiência", "Audiência de Conciliação", "Tentativa de Conciliação", "Apresentação de Propostas de Acordo", "Celebração de Acordo", "Realização de Perícia", "Oitiva de Testemunha", "Juntada de Documento", "Análise das Provas", "Produção de Prova Complementar", "Análise de Cabimento no JEF", "Julgamento", "Decurso do Prazo Recursal", "Trânsito em Julgado", "Cumprimento da Sentença", "Prosseguimento do Cumprimento", "Conclusão do Cumprimento", "Arquivamento do Processo", "Interposição de Recurso", "Remessa à Turma Recursal", "Julgamento do Recurso"],
+    "situacao": ["Indeferimento Administrativo", "Processo Instaurado", "Demanda Protocolizada", "Demandado Citado", "Contestação Apresentada", "Ausência de Contestação", "Prazo de Contestação em Curso", "Conciliação Frustrada", "Conciliação Realizada", "Perícia Realizada", "Testemunho Colhido", "Documento Juntado", "Resultado da Análise Probatória", "Provas Suficientes", "Provas Insuficientes", "Prova Complementar Produzida", "Apto a Julgamento", "Não Apto a Julgamento", "Ausência de Recurso", "Sentença Transitada em Julgado", "Obrigação Cumprida", "Obrigação Parcialmente Cumprida", "Obrigação Não Cumprida", "Cumprimento Concluído", "Processo Arquivado por Satisfação da Obrigação", "Recurso Interposto", "Processo Encaminhado à Turma Recursal", "Recurso Desprovido", "Resultado da Determinação de Audiência", "Audiência Designada", "Audiência Dispensada", "Resultado da Análise de Cabimento", "Cabível no JEF", "Não Cabível no JEF"],
+    "outro": ["Demanda", "Pretensão Jurídica", "Causa de Pedir", "Pedido de Fazer", "Pedido de Pagar", "Pedido de Outra Providência", "Pedido de Tutela Provisória", "Valor da Causa", "Regra de Competência", "Regra de Prazo Recursal", "Prazo Recursal", "Poder Jurisdicional", "Direito à Prestação", "Dever de Prestação", "Dever de Comparecimento à Audiência", "Dever de Comparecimento à Perícia"]
   },
   "relacoes_do_modelo": {
     "media": "mediation: relator -> entidade mediada; Figuras 8, 12, 15, 17, 20 e 21",
     "possui_demanda": "possui: Processo Judicial Federal -> Demanda; Figura 13",
     "fundamenta_se_em": "fundamenta-se em: Demanda -> Causa de Pedir; Figura 13",
-    "possui_pedido": "possui: Demanda -> Pedido Processual ou especialização; Figura 13",
-    "caracteriza": "characterization: propriedade -> portador; Figuras 12, 13, 17, 20 e 21; em C4, Dever de Comparecimento caracteriza o evento Audiência conforme o desenho revisado, vínculo cuja adequação ontológica continua pendente",
+    "possui_pedido": "possui: Demanda ou Pretensão Jurídica -> Pedido Processual ou especialização; Figura 13 e diagrama pretencao.png",
+    "possui_causa": "possui: Pretensão Jurídica -> Causa de Pedir; diagrama pretencao.png",
+    "demanda_para": "demanda para: Pretensão Jurídica -> Organização Federal; diagrama pretencao.png; não equivale à determinação da legitimidade passiva em qualquer procedimento",
+    "caracteriza": "characterization: propriedade -> portador; Figuras 12, 13, 17, 20 e 21 e diagrama pretencao.png; Dever de Comparecimento à Audiência permanece associado ao evento conforme o PNG, sem validação ontológica desse portador",
     "promove": "promove: Audiência Designada -> Audiência de Conciliação; Figura 17 revisada",
-    "impede": "impede: Audiência Dispensada -> Audiência de Conciliação; Figura 17 revisada; não se instancia uma audiência ocorrida apenas para servir de alvo de impedimento",
-    "impossibilita": "impossibilita: Provas Insuficientes -> Julgamento; Figura 19 revisada; a restrição é descrita em C5-A04 sem criar um julgamento efetivamente ocorrido e sem afirmar regra jurídica universal",
+    "associa_nao_aptidao": "associação sem rótulo: Provas Insuficientes -> Não Apto a Julgamento; Figura 19 atual; nome auxiliar de leitura, não regra adicional de causalidade",
     "documentada_por": "é documentada por: Petição -> Documento de Petição Inicial; Figura 15",
     "formaliza": "formaliza: Documento de Petição Inicial -> Demanda; Figura 15",
     "formula": "formula: Documento de Petição Inicial -> pedido; Figura 15",
     "expoe": "expõe: Documento de Petição Inicial -> Causa de Pedir; Figura 15",
     "creation": "creation: evento -> entidade criada; Figuras 14, 15, 17, 18, 20 e 21",
-    "participa_de": "participation: participante -> evento; Figuras 14 a 18; direção de leitura adotada no ensaio",
+    "participa_de": "participation: participante -> evento; Figuras 14 a 18 e Análise de Cabimento no JEF em pretencao.png; direção de leitura adotada no ensaio",
     "brings_about": "brings about/leva a: evento -> situação; módulos procedimentais",
     "triggers": "triggers: situação -> evento; Figuras 16, 19, 21 e 22",
     "historical_dependence": "historicalDependence: evento dependente -> evento antecedente; sem generalizar sua obrigatoriedade para todo processo",
@@ -48,7 +49,7 @@
     "satisfaz": "satisfaz: Cumprimento da Sentença -> Obrigação Judicial; Figura 22; utilizado apenas no fragmento de satisfação integral",
     "impugna": "impugna: Recurso Inominado -> Sentença Recorrida; Figura 21",
     "destina_a": "destina a: Remessa à Turma Recursal -> Turma Recursal; Figura 21",
-    "regula": "regula: Regra de Prazo Recursal -> Interposição de Recurso; Figura 21",
+    "regula": "regula: Regra de Prazo Recursal -> Interposição de Recurso (Figura 21) ou Regra de Competência -> Análise de Cabimento no JEF (pretencao.png)",
     "define": "define: Regra de Competência -> Competência Jurisdicional; Figura 12"
   },
   "premissas_externas": [
@@ -85,6 +86,10 @@
         "C1-REG-COMP": {"classes": ["Regra de Competência"], "rotulo": "Referência descritiva a PN01; não é um axioma executável", "marco": 0},
         "C1-PODER": {"classes": ["Poder Jurisdicional"], "marco": 1},
         "C1-DEM": {"classes": ["Demanda"], "rotulo": "Pretensão de implantação de benefício simulado", "marco": 0},
+        "C1-PRET": {"classes": ["Pretensão Jurídica"], "rotulo": "Intenção de obter a implantação do benefício, distinta da Demanda e do Processo", "marco": 0},
+        "C1-VAL-PRET": {"classes": ["Valor da Causa"], "valor": {"quantidade": 30, "unidade": "salários mínimos na análise simulada"}, "marco": 0},
+        "C1-ANALISAR-CAB": {"classes": ["Análise de Cabimento no JEF"], "marco": 1},
+        "C1-CABIVEL": {"classes": ["Resultado da Análise de Cabimento", "Cabível no JEF"], "marco": 1},
         "C1-CAUSA": {"classes": ["Causa de Pedir"], "rotulo": "Indeferimento administrativo e alegação de preenchimento de requisitos", "marco": 0},
         "C1-VAL": {"classes": ["Valor da Causa"], "valor": {"quantidade": 30, "unidade": "salários mínimos na propositura simulada"}, "marco": 0},
         "C1-PED": {"classes": ["Pedido de Fazer"], "rotulo": "Implantar o benefício simulado", "marco": 0},
@@ -105,7 +110,7 @@
         "C1-CONTESTADA": {"classes": ["Contestação Apresentada"], "marco": 3},
         "C1-AUD": {"classes": ["Audiência de Conciliação"], "marco": 3},
         "C1-DETERMINAR-AUD": {"classes": ["Determinação de Audiência"], "marco": 2},
-        "C1-AUD-DESIGNADA": {"classes": ["Audiência Designada"], "marco": 2},
+        "C1-AUD-DESIGNADA": {"classes": ["Resultado da Determinação de Audiência", "Audiência Designada"], "marco": 2},
         "C1-TENT": {"classes": ["Tentativa de Conciliação"], "marco": 3},
         "C1-SEM-ACORDO": {"classes": ["Conciliação Frustrada"], "marco": 3},
         "C1-PERICIA": {"classes": ["Realização de Perícia"], "marco": 4},
@@ -118,7 +123,7 @@
         "C1-JUNTADA-LAUDO": {"classes": ["Juntada de Documento"], "marco": 4},
         "C1-LAUDO-JUNTADO": {"classes": ["Documento Juntado"], "marco": 4},
         "C1-ANALISE": {"classes": ["Análise das Provas"], "marco": 5},
-        "C1-SUF": {"classes": ["Provas Suficientes"], "marco": 5},
+        "C1-SUF": {"classes": ["Resultado da Análise Probatória", "Provas Suficientes"], "marco": 5},
         "C1-APTO": {"classes": ["Apto a Julgamento"], "marco": 5},
         "C1-JULGAR": {"classes": ["Julgamento"], "marco": 6},
         "C1-SENT": {"classes": ["Sentença", "Procedência"], "rotulo": "Sentença simulada de procedência", "marco": 6},
@@ -147,6 +152,13 @@
         ["C1-PROC", "possui_demanda", "C1-DEM"], ["C1-DEM", "fundamenta_se_em", "C1-CAUSA"],
         ["C1-DEM", "possui_pedido", "C1-PED"], ["C1-DEM", "possui_pedido", "C1-TUT"],
         ["C1-VAL", "caracteriza", "C1-DEM"],
+        ["C1-PRET", "caracteriza", "C1-AUT"], ["C1-PRET", "demanda_para", "C1-REU"],
+        ["C1-PRET", "possui_pedido", "C1-PED"], ["C1-PRET", "possui_pedido", "C1-TUT"],
+        ["C1-PRET", "possui_causa", "C1-CAUSA"], ["C1-VAL-PRET", "caracteriza", "C1-PRET"],
+        ["C1-REU", "participa_de", "C1-ANALISAR-CAB"], ["C1-PED", "participa_de", "C1-ANALISAR-CAB"],
+        ["C1-TUT", "participa_de", "C1-ANALISAR-CAB"], ["C1-CAUSA", "participa_de", "C1-ANALISAR-CAB"],
+        ["C1-VAL-PRET", "participa_de", "C1-ANALISAR-CAB"], ["C1-REG-COMP", "regula", "C1-ANALISAR-CAB"],
+        ["C1-ANALISAR-CAB", "brings_about", "C1-CABIVEL"],
         ["C1-PET", "media", "C1-AUT"], ["C1-PET", "media", "C1-ADV"],
         ["C1-PET", "documentada_por", "C1-INI"], ["C1-INI", "formaliza", "C1-DEM"],
         ["C1-INI", "formula", "C1-PED"], ["C1-INI", "formula", "C1-TUT"], ["C1-INI", "expoe", "C1-CAUSA"],
@@ -187,7 +199,7 @@
       ],
       "anotacoes": [
         {"id": "C1-A01", "marco": 0, "descricao": "Pedido principal estipulado: C1-PED. O modelo não distingue principal de acessório. Os dois pedidos foram inventariados integralmente; a tutela é apenas requerida, sem decisão simulada sobre ela.", "referencias": ["C1-PED", "C1-TUT"]},
-        {"id": "C1-A02", "marco": 1, "descricao": "Cabimento positivo assumido: autora e ré admitidas, 30 salários mínimos, matéria previdenciária não excluída e demais requisitos tidos como presentes. Não é inferência da classe Processo Cabível no JEF.", "referencias": ["C1-PROC", "C1-VAL", "C1-JEF"]},
+        {"id": "C1-A02", "marco": 1, "descricao": "A análise de cabimento tem resultado positivo informado: partes admitidas, 30 salários mínimos, matéria não excluída e demais requisitos tidos como presentes. Cabível no JEF é situação distinta do papel Processo Cabível no JEF. Não se acrescenta uma relação automática entre resultado e processo, nem entre Pretensão Jurídica e Demanda. Os dois valores de causa são propriedades distintas de portadores distintos, embora tenham valor literal igual.", "referencias": ["C1-PROC", "C1-PRET", "C1-VAL", "C1-VAL-PRET", "C1-ANALISAR-CAB", "C1-CABIVEL"]},
         {"id": "C1-A03", "marco": 2, "descricao": "A vinculação dos eventos, da relação jurídico-processual e dos recortes ao mesmo processo é fornecida pelo agrupamento C1; falta explicitação uniforme dessas ligações nos diagramas.", "referencias": ["C1-PROC", "C1-RJP"]},
         {"id": "C1-A04", "marco": 1, "descricao": "Documentação inicial selecionada apenas para este exemplo: petição e cópia administrativa. Não constitui lista legal universal nem prova de completude documental real.", "referencias": ["C1-INI", "C1-DOC-ADM"]},
         {"id": "C1-A05", "marco": 8, "descricao": "Decurso e trânsito são fatos estipulados; ciência da sentença, calendário e inexistência de causas impeditivas foram assumidos, não calculados.", "referencias": ["C1-DECURSO", "C1-TRANSITO"]},
@@ -320,8 +332,8 @@
         "C4-PROC": {"classes": ["Processo Judicial Federal"], "rotulo": "SIM-P04", "marco": 0},
         "C4-AUD": {"classes": ["Audiência de Conciliação"], "marco": 1},
         "C4-DETERMINAR-AUD": {"classes": ["Determinação de Audiência"], "marco": 0},
-        "C4-AUD-DESIGNADA": {"classes": ["Audiência Designada"], "marco": 0},
-        "C4-DEVER-COMP": {"classes": ["Dever de Comparecimento"], "marco": 1},
+        "C4-AUD-DESIGNADA": {"classes": ["Resultado da Determinação de Audiência", "Audiência Designada"], "marco": 0},
+        "C4-DEVER-COMP": {"classes": ["Dever de Comparecimento à Audiência"], "marco": 1},
         "C4-TENT": {"classes": ["Tentativa de Conciliação"], "marco": 1},
         "C4-APRESENTAR": {"classes": ["Apresentação de Propostas de Acordo"], "marco": 1},
         "C4-PROPOSTA": {"classes": ["Proposta de Acordo"], "rotulo": "Entrega consensual do documento simulado", "marco": 1},
@@ -359,14 +371,14 @@
         {"id": "C4-A01", "marco": 0, "descricao": "A autora não contratou advogado, e o representante designado foi estipulado como não advogado. Não se deduz ausência de habilitação apenas do tipo Representante Designado. Admissibilidade dessa atuação é premissa externa PN02.", "referencias": ["C4-AUT", "C4-REP"]},
         {"id": "C4-A02", "marco": 3, "descricao": "O acordo foi homologado e seus termos fundamentam a obrigação de entrega, conforme narrativa estipulada. A ligação direta acordo-sentença não está explícita no fragmento gráfico; é anotação, não relação acrescentada ao modelo.", "referencias": ["C4-ACORDO", "C4-SENT", "C4-OBR"]},
         {"id": "C4-A03", "marco": 4, "descricao": "Trânsito estipulado, sem simular cabimento de recurso inominado contra homologação de conciliação; observar PN06.", "referencias": ["C4-SENT", "C4-TRANSITO"]},
-        {"id": "C4-A04", "marco": 1, "descricao": "A determinação e a designação são fatos estipulados, sem inferir sua necessidade jurídica. Dever de Comparecimento foi ligado à audiência conforme o PNG revisado, não à autora: faltam identificação do titular, intimação e validade temporal do dever. A instanciação dessa associação não certifica sua adequação ontológica.", "referencias": ["C4-DETERMINAR-AUD", "C4-AUD-DESIGNADA", "C4-DEVER-COMP", "C4-AUD"]}
+        {"id": "C4-A04", "marco": 1, "descricao": "Audiência Designada especializa Resultado da Determinação de Audiência, agora com partição disjunta e completa. O evento ainda admite 0..1 resultado, de modo que a partição não obriga a existência do resultado. Dever de Comparecimento à Audiência continua ligado ao evento, sem titular, intimação ou vigência. Dever de Comparecimento à Perícia também aparece ligado à Audiência de Conciliação no PNG: essa ligação não foi interpretada como vínculo com uma perícia nem foi instanciada neste caso sem perícia.", "referencias": ["C4-DETERMINAR-AUD", "C4-AUD-DESIGNADA", "C4-DEVER-COMP", "C4-AUD"]}
       ]
     },
     {
       "id": "C5",
-      "titulo": "Ausência de contestação, prova insuficiente e perícia apenas agendada",
+      "titulo": "Ausência de contestação, não aptidão e produção complementar seguida de nova análise",
       "processo": "C5-PROC",
-      "descricao": "Pessoa Épsilon propõe demanda assistencial contra Autarquia Simulada Épsilon. Não houve contestação até o recorte. A prova disponível foi considerada insuficiente. Não foi proferida sentença.",
+      "descricao": "Pessoa Épsilon propõe demanda assistencial contra Autarquia Simulada Épsilon. A primeira análise indica provas insuficientes e não aptidão. Posteriormente há produção complementar e nova análise com provas suficientes e aptidão. Não há sentença ou perícia realizada estipulada.",
       "instancias": {
         "C5-AUT": {"classes": ["Pessoa", "Pessoa Física Autora", "Demandante"], "rotulo": "Pessoa Épsilon", "marco": 0},
         "C5-REU": {"classes": ["Organização", "Organização Federal", "Autarquia Federal", "Demandado"], "rotulo": "Autarquia Simulada Épsilon", "marco": 0},
@@ -374,14 +386,20 @@
         "C5-CIT": {"classes": ["Citação"], "marco": 2},
         "C5-PRAZO": {"classes": ["Prazo de Contestação em Curso"], "marco": 2},
         "C5-DETERMINAR-AUD": {"classes": ["Determinação de Audiência"], "marco": 2},
-        "C5-AUD-DISPENSADA": {"classes": ["Audiência Dispensada"], "marco": 2},
+        "C5-AUD-DISPENSADA": {"classes": ["Resultado da Determinação de Audiência", "Audiência Dispensada"], "marco": 2},
         "C5-DECURSO": {"classes": ["Decurso do Prazo de Contestação"], "marco": 3},
         "C5-SEM-CONTESTACAO": {"classes": ["Ausência de Contestação"], "marco": 3},
         "C5-DOC": {"classes": ["Documento", "Documento Probatório"], "rotulo": "Documento probatório inicial Épsilon", "marco": 1},
         "C5-JUNTAR": {"classes": ["Juntada de Documento"], "marco": 3},
         "C5-JUNTADO": {"classes": ["Documento Juntado"], "marco": 3},
         "C5-ANALISE": {"classes": ["Análise das Provas"], "marco": 4},
-        "C5-INSUF": {"classes": ["Provas Insuficientes"], "marco": 4}
+        "C5-INSUF": {"classes": ["Resultado da Análise Probatória", "Provas Insuficientes"], "marco": 4},
+        "C5-NAO-APTO": {"classes": ["Não Apto a Julgamento"], "marco": 4},
+        "C5-COMPLEMENTAR": {"classes": ["Produção de Prova Complementar"], "marco": 5},
+        "C5-COMPLEMENTO-PRODUZIDO": {"classes": ["Prova Complementar Produzida"], "marco": 5},
+        "C5-REANALISE": {"classes": ["Análise das Provas"], "marco": 6},
+        "C5-SUF": {"classes": ["Resultado da Análise Probatória", "Provas Suficientes"], "marco": 6},
+        "C5-APTO": {"classes": ["Apto a Julgamento"], "marco": 6}
       },
       "relacoes": [
         ["C5-PROC", "media", "C5-AUT"], ["C5-PROC", "media", "C5-REU"],
@@ -389,16 +407,22 @@
         ["C5-CIT", "brings_about", "C5-PRAZO"], ["C5-PRAZO", "triggers", "C5-DECURSO"],
         ["C5-DECURSO", "brings_about", "C5-SEM-CONTESTACAO"],
         ["C5-AUT", "participa_de", "C5-JUNTAR"], ["C5-DOC", "participa_de", "C5-JUNTAR"],
-        ["C5-JUNTAR", "brings_about", "C5-JUNTADO"], ["C5-ANALISE", "brings_about", "C5-INSUF"]
+        ["C5-JUNTAR", "brings_about", "C5-JUNTADO"], ["C5-ANALISE", "brings_about", "C5-INSUF"],
+        ["C5-INSUF", "associa_nao_aptidao", "C5-NAO-APTO"], ["C5-INSUF", "triggers", "C5-COMPLEMENTAR"],
+        ["C5-COMPLEMENTAR", "brings_about", "C5-COMPLEMENTO-PRODUZIDO"],
+        ["C5-COMPLEMENTO-PRODUZIDO", "triggers", "C5-REANALISE"],
+        ["C5-REANALISE", "brings_about", "C5-SUF"], ["C5-SUF", "possibilita", "C5-APTO"]
       ],
       "recortes": [
-        {"id": "C5-TF", "marco": 4, "situacoes": ["C5-SEM-CONTESTACAO", "C5-INSUF", "C5-AUD-DISPENSADA"], "descricao": "Audiência dispensada; instrução ainda insuficiente no caso; não há perícia realizada nem julgamento registrado."}
+        {"id": "C5-TI", "marco": 4, "situacoes": ["C5-SEM-CONTESTACAO", "C5-INSUF", "C5-NAO-APTO", "C5-AUD-DISPENSADA"], "descricao": "Primeira análise: prova insuficiente e não aptidão; a produção complementar ainda não ocorreu."},
+        {"id": "C5-TC", "marco": 6, "situacoes": ["C5-SEM-CONTESTACAO", "C5-SUF", "C5-APTO", "C5-COMPLEMENTO-PRODUZIDO", "C5-AUD-DISPENSADA"], "descricao": "Após produção complementar e nova análise: provas suficientes e aptidão; sem julgamento ou perícia realizada estipulados."}
       ],
       "anotacoes": [
         {"id": "C5-A01", "marco": 4, "descricao": "Inventário completo de atos até o recorte: nenhuma sentença, oitiva ou perícia ocorreu. Insuficiência é avaliação estipulada; não se infere procedência, revelia com efeitos materiais ou impedimento universal ao julgamento.", "referencias": ["C5-INSUF", "C5-SEM-CONTESTACAO"]},
-        {"id": "C5-A02", "marco": 4, "descricao": "Hipótese externa de complementação: decisão determinou perícia futura, agendamento e intimação da autora para comparecimento pessoal. O novo Dever de Comparecimento está ligado à audiência no diagrama de conciliação, não cobre os vínculos de intimação e titularidade nem foi estendido silenciosamente à perícia. Nenhuma Realização de Perícia foi criada, pois o evento não ocorreu.", "referencias": ["C5-AUT", "C5-PROC"]},
-        {"id": "C5-A03", "marco": 2, "descricao": "A audiência de conciliação foi dispensada pela determinação simulada. A relação impede é rastreável no diagrama, mas não se cria uma ocorrência de audiência impedida para preencher sua extremidade.", "referencias": ["C5-DETERMINAR-AUD", "C5-AUD-DISPENSADA"]},
-        {"id": "C5-A04", "marco": 4, "descricao": "No recorte hipotético, a insuficiência obsta o julgamento considerado, conforme a relação impossibilita da Figura 19 revisada. A ligação leva a para produção complementar é documentada sem instanciar evento futuro como ocorrido. O alcance jurídico do impedimento depende de PN05; não se infere impedimento de todo julgamento nem se reproduz triggers entre dois eventos.", "referencias": ["C5-INSUF", "C5-ANALISE"]}
+        {"id": "C5-A02", "marco": 4, "descricao": "No primeiro recorte há indicação de complementação. Sua modalidade, o mérito e a necessidade jurídica foram estipulados; não se afirma agendamento, intimação ou ocorrência de perícia. A produção complementar efetiva será registrada somente no marco 5.", "referencias": ["C5-AUT", "C5-PROC", "C5-INSUF"]},
+        {"id": "C5-A03", "marco": 2, "descricao": "A dispensa é um resultado da determinação. A ligação impede da versão anterior foi removida do PNG; não se preserva esse predicado nem se cria uma ocorrência de audiência dispensada.", "referencias": ["C5-DETERMINAR-AUD", "C5-AUD-DISPENSADA"]},
+        {"id": "C5-A04", "marco": 4, "descricao": "O PNG atual associa Provas Insuficientes a Não Apto a Julgamento, sem rótulo nessa associação. O nome auxiliar associa_nao_aptidao não acrescenta causalidade nem regra universal de impedimento. Não Apto a Julgamento e Apto a Julgamento são situações distintas, não subclasses que se tenha presumido formar uma partição completa.", "referencias": ["C5-INSUF", "C5-NAO-APTO", "C5-ANALISE"]},
+        {"id": "C5-A05", "marco": 6, "descricao": "Produção complementar, situação produzida e reanálise têm instâncias distintas. O novo resultado suficiente substitui o insuficiente na seleção do estado atual do caso; o histórico anterior é preservado. Aptidão não equivale à ocorrência de Julgamento nem demonstra julgamento antecipado.", "referencias": ["C5-COMPLEMENTAR", "C5-COMPLEMENTO-PRODUZIDO", "C5-REANALISE", "C5-SUF", "C5-APTO"]}
       ]
     },
     {
@@ -408,20 +432,30 @@
       "descricao": "Pessoa Zeta pretende impetrar mandado de segurança em caso federal, com valor de dez salários mínimos. Trata-se de consulta hipotética anterior ao ajuizamento, não de um processo já instaurado.",
       "instancias": {
         "C6-PESSOA": {"classes": ["Pessoa"], "rotulo": "Pessoa Zeta", "marco": 0},
-        "C6-DEM": {"classes": ["Demanda"], "rotulo": "Pretensão descrita na consulta simulada", "marco": 0},
+        "C6-PRET": {"classes": ["Pretensão Jurídica"], "rotulo": "Pretensão mandamental da pessoa consulente", "marco": 0},
+        "C6-ORG": {"classes": ["Organização", "Organização Federal", "Autarquia Federal"], "rotulo": "Autarquia Simulada Zeta, contexto institucional da autoridade mencionada", "marco": 0},
+        "C6-REG-COMP": {"classes": ["Regra de Competência"], "rotulo": "Exclusão de mandado de segurança, PN08; descrição, não axioma executável", "marco": 0},
+        "C6-ANALISAR-CAB": {"classes": ["Análise de Cabimento no JEF"], "marco": 1},
+        "C6-NAO-CABIVEL": {"classes": ["Resultado da Análise de Cabimento", "Não Cabível no JEF"], "marco": 1},
         "C6-CAUSA": {"classes": ["Causa de Pedir"], "rotulo": "Alegada ilegalidade atribuída a autoridade federal", "marco": 0},
         "C6-PED": {"classes": ["Pedido de Outra Providência"], "rotulo": "Providência mandamental descrita pelo consulente", "marco": 0},
         "C6-VAL": {"classes": ["Valor da Causa"], "valor": {"quantidade": 10, "unidade": "salários mínimos na hipótese"}, "marco": 0}
       },
       "relacoes": [
-        ["C6-DEM", "fundamenta_se_em", "C6-CAUSA"], ["C6-DEM", "possui_pedido", "C6-PED"],
-        ["C6-VAL", "caracteriza", "C6-DEM"]
+        ["C6-PRET", "caracteriza", "C6-PESSOA"], ["C6-PRET", "demanda_para", "C6-ORG"],
+        ["C6-PRET", "possui_causa", "C6-CAUSA"], ["C6-PRET", "possui_pedido", "C6-PED"],
+        ["C6-VAL", "caracteriza", "C6-PRET"],
+        ["C6-ORG", "participa_de", "C6-ANALISAR-CAB"], ["C6-PED", "participa_de", "C6-ANALISAR-CAB"],
+        ["C6-CAUSA", "participa_de", "C6-ANALISAR-CAB"], ["C6-VAL", "participa_de", "C6-ANALISAR-CAB"],
+        ["C6-REG-COMP", "regula", "C6-ANALISAR-CAB"], ["C6-ANALISAR-CAB", "brings_about", "C6-NAO-CABIVEL"]
       ],
       "recortes": [
-        {"id": "C6-T0", "marco": 0, "situacoes": [], "descricao": "Consulta anterior a qualquer ajuizamento."}
+        {"id": "C6-T0", "marco": 0, "situacoes": [], "descricao": "Consulta anterior a qualquer ajuizamento e ao resultado da análise."},
+        {"id": "C6-TA", "marco": 1, "situacoes": ["C6-NAO-CABIVEL"], "descricao": "Consulta pré-processual após registro do resultado negativo da análise de cabimento."}
       ],
       "anotacoes": [
-        {"id": "C6-A01", "marco": 0, "descricao": "A natureza mandado de segurança é informação do enunciado, não um subtipo próprio existente nos diagramas. PN08 exclui o JEF mesmo com valor inferior ao limite. Nenhuma pessoa foi classificada como Demandante/Demandado e nenhum Processo Judicial Federal foi criado.", "referencias": ["C6-PESSOA", "C6-DEM", "C6-VAL"]}
+        {"id": "C6-A01", "marco": 0, "descricao": "A natureza mandado de segurança é informação do enunciado, não subtipo próprio dos diagramas. A organização federal é contexto institucional e entrada da análise, não uma decisão de legitimidade passiva no mandado de segurança. Não se atribuem papéis de Demandante/Demandado nem se cria Processo Judicial Federal.", "referencias": ["C6-PESSOA", "C6-PRET", "C6-ORG", "C6-VAL"]},
+        {"id": "C6-A02", "marco": 1, "descricao": "O resultado Não Cabível no JEF foi informado com fundamento em PN08, apesar do valor de dez salários mínimos. O novo diagrama permite registrar a análise e seu resultado; não implementa por si só as condições lógicas de todas as regras de competência.", "referencias": ["C6-ANALISAR-CAB", "C6-NAO-CABIVEL", "C6-REG-COMP", "C6-PRET"]}
       ]
     }
   ],
@@ -437,14 +471,14 @@
     {"qc": 9, "suporte": "D", "cenario": "C2", "recorte": "C2-TP", "evidencias": ["C2-DEM", "C2-PED"], "anotacoes": [], "premissas": [], "resposta": "A demanda contém Pedido de Pagar: reparação de R$ 8.000,00. Isso é pedido, não o valor acolhido na sentença."},
     {"qc": 10, "suporte": "D", "cenario": "C1", "recorte": "C1-TI", "evidencias": ["C1-DEM", "C1-TUT"], "anotacoes": ["C1-A01"], "premissas": [], "resposta": "Sim, existe pedido de tutela provisória. Não se afirma que foi deferido."},
     {"qc": 11, "suporte": "P", "cenario": "C2", "recorte": "C2-TP", "evidencias": ["C2-PARCIAL", "C2-PROSSEGUIR"], "anotacoes": ["C2-A02"], "premissas": [], "resposta": "No recorte parcial há cumprimento em prosseguimento. A escolha da fase atual usa o recorte externo; não basta selecionar qualquer situação histórica."},
-    {"qc": 12, "suporte": "D", "cenario": "C5", "recorte": "C5-TF", "evidencias": ["C5-DECURSO", "C5-SEM-CONTESTACAO"], "anotacoes": ["C5-A01"], "premissas": [], "resposta": "Não houve contestação até o recorte, conforme situação explícita Ausência de Contestação. C1 contém o caso positivo."},
+    {"qc": 12, "suporte": "D", "cenario": "C5", "recorte": "C5-TI", "evidencias": ["C5-DECURSO", "C5-SEM-CONTESTACAO"], "anotacoes": ["C5-A01"], "premissas": [], "resposta": "Não houve contestação até a primeira análise, conforme situação explícita Ausência de Contestação. C1 contém o caso positivo."},
     {"qc": 13, "suporte": "P", "cenario": "C4", "recorte": "C4-TF", "evidencias": ["C4-PROPOSTA", "C4-APRESENTAR", "C4-CELEBRAR", "C4-ACORDO", "C4-CONCILIADA"], "anotacoes": ["C4-A02"], "premissas": [], "resposta": "Neste cenário houve proposta e acordo. A existência do acordo não demonstra regra geral de autorização para qualquer caso."},
-    {"qc": 14, "suporte": "P", "cenario": "C4", "recorte": "C4-TF", "evidencias": ["C4-DETERMINAR-AUD", "C4-AUD-DESIGNADA", "C4-AUD"], "anotacoes": ["C4-A04"], "premissas": [], "resposta": "A audiência foi designada pela determinação informada; C5 exemplifica dispensa. O modelo agora registra esses resultados e promove/impede, mas não explicita todos os critérios jurídicos nem a exclusividade e a exaustividade da escolha."},
-    {"qc": 15, "suporte": "P", "cenario": "C5", "recorte": "C5-TF", "evidencias": ["C5-ANALISE", "C5-INSUF"], "anotacoes": ["C5-A02", "C5-A04"], "premissas": ["PN05"], "resposta": "Provas Insuficientes leva a Produção de Prova Complementar no desenho revisado; a perícia é complementação futura estipulada. Não se assume complementação obrigatória e ilimitada nem se cria evento futuro como ocorrido."},
+    {"qc": 14, "suporte": "P", "cenario": "C4", "recorte": "C4-TF", "evidencias": ["C4-DETERMINAR-AUD", "C4-AUD-DESIGNADA", "C4-AUD"], "anotacoes": ["C4-A04"], "premissas": [], "resposta": "Há resultado informado de designação; C5 exemplifica dispensa. Os resultados agora pertencem à partição disjunta e completa de Resultado da Determinação de Audiência. O evento admite 0..1 resultado e os critérios jurídicos de escolha continuam externos."},
+    {"qc": 15, "suporte": "P", "cenario": "C5", "recorte": "C5-TI", "evidencias": ["C5-ANALISE", "C5-INSUF", "C5-NAO-APTO"], "anotacoes": ["C5-A02", "C5-A04"], "premissas": ["PN05"], "resposta": "A primeira análise registra insuficiência e não aptidão. No novo diagrama, Provas Insuficientes desencadeia Produção de Prova Complementar. A realização posterior aparece somente em C5-TC; não se usa esse fato futuro como evidência do primeiro recorte nem se presume complementação ilimitada."},
     {"qc": 16, "suporte": "P", "cenario": "C1", "recorte": "C1-TP", "evidencias": ["C1-DOC-ADM", "C1-LAUDO", "C1-JUNTADA", "C1-JUNTADA-LAUDO", "C1-OITIVA", "C1-TEST-COLHIDO"], "anotacoes": ["C1-A04"], "premissas": [], "resposta": "Há cópia administrativa, laudo e testemunho colhido. O conteúdo do testemunho e sua indicação pela parte não estão explicitados por um artefato próprio."},
     {"qc": 17, "suporte": "P", "cenario": "C1", "recorte": "C1-TP", "evidencias": ["C1-TEST", "C1-OITIVA", "C1-TEST-COLHIDO"], "anotacoes": [], "premissas": [], "resposta": "Houve oitiva da Testemunha Alfa. Isso não equivale a representar arrolamento anterior nem a decidir necessidade de futura prova testemunhal."},
-    {"qc": 18, "suporte": "P", "cenario": "C1", "recorte": "C1-TP", "evidencias": ["C1-SUF", "C1-APTO", "C1-PERICIA", "C1-OITIVA"], "anotacoes": [], "premissas": ["PN05"], "resposta": "As provas são suficientes para julgamento no cenário após a instrução. Não se conclui que esse julgamento seja antecipado."},
-    {"qc": 19, "suporte": "P", "cenario": "C5", "recorte": "C5-TF", "evidencias": ["C5-INSUF", "C5-ANALISE"], "anotacoes": ["C5-A01", "C5-A04"], "premissas": ["PN05"], "resposta": "O desenho agora explicita Provas Insuficientes impossibilita Julgamento. O cenário restringe o impedimento ao julgamento considerado; delimitação jurídica e diferença entre ausência e insuficiência de prova continuam pendentes. Não é regra universal nem inferência executada."},
+    {"qc": 18, "suporte": "P", "cenario": "C5", "recorte": "C5-TC", "evidencias": ["C5-COMPLEMENTAR", "C5-COMPLEMENTO-PRODUZIDO", "C5-REANALISE", "C5-SUF", "C5-APTO"], "anotacoes": ["C5-A05"], "premissas": ["PN05"], "resposta": "Depois da complementação, nova análise registra provas suficientes e aptidão. O retorno é mediado pela situação Prova Complementar Produzida. Não se conclui que o julgamento seja antecipado ou já tenha ocorrido."},
+    {"qc": 19, "suporte": "P", "cenario": "C5", "recorte": "C5-TI", "evidencias": ["C5-INSUF", "C5-NAO-APTO", "C5-ANALISE"], "anotacoes": ["C5-A01", "C5-A04"], "premissas": ["PN05"], "resposta": "A primeira análise tem resultado insuficiente associado a Não Apto a Julgamento. A antiga relação impossibilita foi retirada do diagrama. O modelo descreve a não aptidão informada no caso; não estabelece que toda ausência de prova impeça qualquer julgamento."},
     {"qc": 20, "suporte": "D", "cenario": "C2", "recorte": "C2-TP", "evidencias": ["C2-JULGAR", "C2-SENT"], "anotacoes": [], "premissas": [], "resposta": "Procedência parcial: pedido de R$ 8.000,00 e obrigação reconhecida de R$ 6.000,00 no enunciado simulado."},
     {"qc": 21, "suporte": "D", "cenario": "C4", "recorte": "C4-TF", "evidencias": ["C4-SENT", "C4-OBR", "C4-AUT", "C4-REU"], "anotacoes": [], "premissas": [], "resposta": "Obrigação de Entregar Coisa, com objeto descritivo documento simulado. C1 exemplifica fazer e C2, pagar."},
     {"qc": 22, "suporte": "D", "cenario": "C1", "recorte": "C1-TF", "evidencias": ["C1-SENT", "C1-TRANSITO", "C1-TRANSITADA"], "anotacoes": ["C1-A05"], "premissas": [], "resposta": "Sim, há evento e situação de trânsito em julgado declarados. A regularidade de sua formação não foi calculada."},
@@ -456,13 +490,13 @@
     {"qc": 28, "suporte": "P", "cenario": "C3", "recorte": "C3-TR", "evidencias": ["C3-REP-A", "C3-ADV", "C3-REP-R", "C3-ADV-REU"], "anotacoes": ["C3-A02"], "premissas": ["PN03"], "resposta": "Sim, por PN03. As instâncias mostram representantes habilitados, mas a obrigatoriedade não é consequência automática do diagrama."},
     {"qc": 29, "suporte": "D", "cenario": "C3", "recorte": "C3-TR", "evidencias": ["C3-REMETER", "C3-TURMA", "C3-ENCAMINHADO"], "anotacoes": [], "premissas": [], "resposta": "Sim, houve remessa à Turma Recursal Simulada Gama."},
     {"qc": 30, "suporte": "D", "cenario": "C3", "recorte": "C3-TF", "evidencias": ["C3-JULGAR-REC", "C3-ACORDAO", "C3-DESPROVIDO"], "anotacoes": ["C3-A03"], "premissas": [], "resposta": "Recurso desprovido, mantendo-se a improcedência estipulada. Não se afirma trânsito em julgado."},
-    {"qc": 31, "suporte": "P", "cenario": "C6", "recorte": "C6-T0", "evidencias": ["C6-DEM", "C6-PED", "C6-VAL"], "anotacoes": ["C6-A01"], "premissas": ["PN01", "PN08"], "resposta": "Não para o JEF: a hipótese é mandado de segurança, excluído por PN08 apesar de dez salários mínimos. Essa conclusão depende da regra externa; C1 é exemplo positivo assumido."},
+    {"qc": 31, "suporte": "P", "cenario": "C6", "recorte": "C6-TA", "evidencias": ["C6-PRET", "C6-ORG", "C6-PED", "C6-CAUSA", "C6-VAL", "C6-REG-COMP", "C6-ANALISAR-CAB", "C6-NAO-CABIVEL"], "anotacoes": ["C6-A01", "C6-A02"], "premissas": ["PN01", "PN08"], "resposta": "A análise tem resultado informado Não Cabível no JEF: mandado de segurança excluído por PN08 apesar de dez salários mínimos. O novo diagrama registra a pretensão, as entradas da análise, a regra e o resultado, mas não executa as condições legais. C1 contém resultado positivo informado."},
     {"qc": 32, "suporte": "P", "cenario": "C4", "recorte": "C4-TI", "evidencias": ["C4-AUT", "C4-REP", "C4-REP-A"], "anotacoes": ["C4-A01"], "premissas": ["PN02", "PN03"], "resposta": "No contexto inicial estipulado, a autora não contratou advogado e utiliza representante designado não advogado. A permissão é premissa jurídica externa e não se estende ao recurso."},
-    {"qc": 33, "suporte": "P", "cenario": "C1", "recorte": "C1-TI", "evidencias": ["C1-REU", "C1-PROC"], "anotacoes": [], "premissas": [], "resposta": "A autarquia Alfa é a ré indicada neste processo simulado. Determinar o sujeito passivo de um novo caso exige fatos e critérios jurídicos adicionais."},
+    {"qc": 33, "suporte": "P", "cenario": "C1", "recorte": "C1-TI", "evidencias": ["C1-REU", "C1-PROC", "C1-PRET", "C1-ANALISAR-CAB"], "anotacoes": ["C1-A02"], "premissas": [], "resposta": "A autarquia Alfa é a ré indicada no processo e a organização relacionada à pretensão analisada. O vínculo demanda para do novo diagrama não decide por si só a legitimidade passiva em qualquer procedimento."},
     {"qc": 34, "suporte": "P", "cenario": "C1", "recorte": "C1-TI", "evidencias": ["C1-INSTR", "C1-INI", "C1-DOC-ADM"], "anotacoes": ["C1-A04"], "premissas": [], "resposta": "O fragmento seleciona petição e cópia administrativa como documentos necessários. A ontologia não fornece uma lista normativa completa para toda demanda."},
     {"qc": 35, "suporte": "P", "cenario": "C1", "recorte": "C1-TI", "evidencias": ["C1-AJUIZ", "C1-CIT", "C1-INST", "C1-CITADO"], "anotacoes": ["C1-A03"], "premissas": [], "resposta": "No percurso exemplificado seguem-se ciência do réu, resposta, eventual conciliação, instrução e julgamento. É explicação de um cenário, não previsão obrigatória de todos os processos."},
-    {"qc": 36, "suporte": "P", "cenario": "C5", "recorte": "C5-TF", "evidencias": ["C5-INSUF", "C5-ANALISE"], "anotacoes": ["C5-A01", "C5-A02"], "premissas": [], "resposta": "O cenário encontra-se em instrução, com complementação estipulada. A fase é síntese do recorte, não consulta a um processo judicial real nem atributo já formalizado."},
-    {"qc": 37, "suporte": "P", "cenario": "C4", "recorte": "C4-TF", "evidencias": ["C4-DEVER-COMP", "C4-AUD", "C4-AUT", "C4-AUD-DESIGNADA"], "anotacoes": ["C4-A04"], "premissas": [], "resposta": "Há Dever de Comparecimento associado à audiência no desenho revisado, mas não se identifica seu titular ou intimação, nem se conclui que a autora ainda deva comparecer no recorte final. Para perícia futura, C5-A02 continua sendo anotação externa; suporte parcial, não resposta individual automática."},
+    {"qc": 36, "suporte": "P", "cenario": "C5", "recorte": "C5-TC", "evidencias": ["C5-COMPLEMENTO-PRODUZIDO", "C5-REANALISE", "C5-SUF", "C5-APTO"], "anotacoes": ["C5-A05"], "premissas": [], "resposta": "No segundo recorte, a complementação já ocorreu e a nova análise registra aptidão. A não aptidão anterior permanece histórica, não atual. A atribuição de fase usa o recorte externo, não consulta um sistema judicial real."},
+    {"qc": 37, "suporte": "P", "cenario": "C4", "recorte": "C4-TF", "evidencias": ["C4-DEVER-COMP", "C4-AUD", "C4-AUT", "C4-AUD-DESIGNADA"], "anotacoes": ["C4-A04"], "premissas": [], "resposta": "Há Dever de Comparecimento à Audiência. O PNG também inclui Dever de Comparecimento à Perícia, porém ambos estão ligados à Audiência de Conciliação. Não se identifica titular, intimação ou dever atual da autora; não se inventa um vínculo com Realização de Perícia."},
     {"qc": 38, "suporte": "P", "cenario": "C1", "recorte": "C1-TF", "evidencias": ["C1-SENT", "C1-OBR", "C1-TRANSITADA", "C1-CUMPRIR", "C1-CONCLUIDO", "C1-ARQUIVADO"], "anotacoes": ["C1-A05", "C1-A06"], "premissas": ["PN07"], "resposta": "Neste percurso houve trânsito, cumprimento da obrigação de fazer, conclusão e arquivamento. O procedimento de satisfação depende da obrigação e da disciplina legal; o exemplo não cobre integralmente ofício, RPV ou precatório."}
   ]
 }

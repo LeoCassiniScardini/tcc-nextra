@@ -14,6 +14,9 @@ export default {
   'demanda-causa-pedido': {
     title: 'Demanda, causa e pedido',
   },
+  'pretencao': {
+    title: 'Pretensão',
+  },
   'competencia-jef': {
     title: 'Competência do JEF',
   },

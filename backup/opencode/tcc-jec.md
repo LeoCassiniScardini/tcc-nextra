@@ -1078,6 +1078,8 @@ Esta seção apresenta a verificação documental das 38 QCs e sua aplicação a
 
 As questões mantêm a numeração e a formulação apresentadas na Seção 4.1. A matriz apresenta apenas o número da QC, a pergunta, os elementos e relações rastreados e sua localização no trabalho. O símbolo `>` indica a passagem de leitura entre os elementos, com a relação identificada no percurso; a barra `/` separa alternativas ou ramificações e o ponto e vírgula separa percursos distintos. Esses percursos não introduzem novas relações ou regras de inferência. Os ensaios, as respostas esperadas, as classificações de suporte e as limitações permanecem registrados nas demais partes da avaliação e no material de instanciação.
 
+Nesta revisão, os percursos consideram diretamente as versões atuais de `diagramas/conciliacao.png` e `diagramas/analiseejulgamento.png`, correspondentes às Figuras 17 e 19, e o novo diagrama Análise de Cabimento no JEF, disponível em `diagramas/pretencao.png`. Este último representa Pretensão Jurídica, suas entradas para análise e os resultados Cabível no JEF e Não Cabível no JEF. Esses resultados são situações e não se confundem com o papel Processo Cabível no JEF do diagrama de Competência. A associação entre Provas Insuficientes e Não Apto a Julgamento aparece sem rótulo no desenho; a matriz a identifica dessa forma, sem lhe atribuir uma nova relação causal.
+
 **Sujeitos processuais — QC1 a QC6**
 
 | QC | Pergunta | Elementos e relações rastreados | Localização |
@@ -1094,19 +1096,19 @@ As questões mantêm a numeração e a formulação apresentadas na Seção 4.1.
 | QC | Pergunta | Elementos e relações rastreados | Localização |
 | --- | --- | --- | --- |
 | 7 | Qual é o tipo da ação proposta? | Processo Judicial Federal > especializações por matéria > Processo Previdenciário / Processo Assistencial / Processo Indenizatório. | Figura 13; Seção 4.3.1. |
-| 8 | Qual é o pedido principal formulado pelo autor? | Processo Judicial Federal > possui > Demanda > possui > Pedido Processual; Documento de Petição Inicial > formula > Pedido Processual. | Figuras 13 e 15. |
-| 9 | A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? | Demanda > possui > Pedido Processual > especializações > Pedido de Fazer / Pedido de Não Fazer / Pedido de Pagar / Pedido de Outra Providência. | Figura 13. |
-| 10 | Existe requerimento de tutela provisória? | Demanda > possui > Pedido de Tutela Provisória; Documento de Petição Inicial > formula > Pedido de Tutela Provisória. | Figuras 13 e 15. |
+| 8 | Qual é o pedido principal formulado pelo autor? | Processo Judicial Federal > possui > Demanda > possui > Pedido Processual; Pretensão Jurídica > possui > Pedido Processual; Documento de Petição Inicial > formula > Pedido Processual. | Figuras 13 e 15; [Análise de Cabimento no JEF](diagramas/pretencao.png). |
+| 9 | A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? | Demanda / Pretensão Jurídica > possui > Pedido Processual > especializações > Pedido de Fazer / Pedido de Não Fazer / Pedido de Pagar / Pedido de Outra Providência. | Figura 13; [Análise de Cabimento no JEF](diagramas/pretencao.png). |
+| 10 | Existe requerimento de tutela provisória? | Demanda / Pretensão Jurídica > possui > Pedido Processual > especialização > Pedido de Tutela Provisória; Documento de Petição Inicial > formula > Pedido de Tutela Provisória. | Figuras 13 e 15; [Análise de Cabimento no JEF](diagramas/pretencao.png). |
 
 **Procedimento — QC11 a QC15**
 
 | QC | Pergunta | Elementos e relações rastreados | Localização |
 | --- | --- | --- | --- |
-| 11 | Em qual status ou fase o processo se encontra? | Ato Processual > produz > Situação Processual > especializações > Processo Instaurado / Demandado Citado / Contestação Apresentada / Apto a Julgamento / Cumprimento Concluído; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada. | Figuras 14–22. |
+| 11 | Em qual status ou fase o processo se encontra? | Ato Processual > produz > Situação Processual > especializações > Processo Instaurado / Contestação Apresentada / Apto a Julgamento / Cumprimento Concluído; Determinação de Audiência > leva a > Resultado da Determinação de Audiência > especializações > Audiência Designada / Audiência Dispensada; Provas Insuficientes > associação sem rótulo > Não Apto a Julgamento. | Figuras 14–22. |
 | 12 | O réu apresentou contestação? | Demandado / Contestação > participação > Apresentação de Contestação > produz > Contestação Apresentada; Prazo de Contestação em Curso > triggers > Decurso do Prazo de Contestação > produz > Ausência de Contestação. | Figura 16. |
 | 13 | Pode haver proposta ou realização de acordo entre as partes? | Proposta de Acordo > participação > Apresentação de Propostas de Acordo; Celebração de Acordo > creation > Acordo Processual > mediação > Demandante / Demandado. | Figuras 10 e 17. |
-| 14 | É necessária audiência de conciliação? | Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada; Audiência Designada > promove > Audiência de Conciliação; Audiência Dispensada > impede > Audiência de Conciliação. | Figura 17; Seção 4.3.5. |
-| 15 | Há necessidade de produção de provas? | Produção de Prova > antecedente de > Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > leva a > Produção de Prova Complementar. | Figuras 18 e 19; Seções 4.3.6 e 4.3.7. |
+| 14 | É necessária audiência de conciliação? | Determinação de Audiência > leva a > Resultado da Determinação de Audiência > especializações disjuntas e completas > Audiência Designada / Audiência Dispensada; Audiência Designada > promove > Audiência de Conciliação. | Figura 17; [Conciliação atualizada](diagramas/conciliacao.png). |
+| 15 | Há necessidade de produção de provas? | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > triggers > Produção de Prova Complementar > leva a > Prova Complementar Produzida > triggers > Análise das Provas. | Figuras 18 e 19; [Análise Probatória e Julgamento atualizada](diagramas/analiseejulgamento.png). |
 
 **Provas — QC16 a QC19**
 
@@ -1115,7 +1117,7 @@ As questões mantêm a numeração e a formulação apresentadas na Seção 4.1.
 | 16 | Quais provas foram apresentadas pelas partes? | Parte Processual / Documento Probatório > participação > Juntada de Documento > produz > Documento Juntado; Realização de Perícia > creation > Laudo Pericial; Oitiva de Testemunha > produz > Testemunho Colhido. | Figura 18. |
 | 17 | Há testemunhas indicadas ou necessidade de produção de prova testemunhal? | Testemunha > participação > Oitiva de Testemunha > produz > Testemunho Colhido. | Figuras 8 e 18. |
 | 18 | As provas disponíveis são suficientes para julgamento antecipado? | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Suficientes > possibilita > Apto a Julgamento > triggers > Julgamento. | Figura 19; Seção 4.3.7. |
-| 19 | A ausência de alguma prova impede o julgamento do pedido? | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > impossibilita > Julgamento; Provas Insuficientes > leva a > Produção de Prova Complementar. | Figura 19; Seção 4.3.7. |
+| 19 | A ausência de alguma prova impede o julgamento do pedido? | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > associação sem rótulo > Não Apto a Julgamento; Provas Insuficientes > triggers > Produção de Prova Complementar. | Figura 19; [Análise Probatória e Julgamento atualizada](diagramas/analiseejulgamento.png). |
 
 **Sentença e cumprimento — QC20 a QC25**
 
@@ -1142,13 +1144,13 @@ As questões mantêm a numeração e a formulação apresentadas na Seção 4.1.
 
 | QC | Pergunta | Elementos e relações rastreados | Localização |
 | --- | --- | --- | --- |
-| 31 | Meu caso pode ser levado ao Juizado Especial Federal? | Valor da Causa > caracterização > Demanda; Processo Judicial Federal > mediação > Demandante / Demandado; Regra de Competência > define > Competência Jurisdicional > mediação > Processo Cabível no JEF / JEF Competente. | Figuras 8, 9, 12 e 13. |
+| 31 | Meu caso pode ser levado ao Juizado Especial Federal? | Pretensão Jurídica > caracterização > Pessoa; Pretensão Jurídica > possui > Pedido Processual / Causa de Pedir; Valor da Causa > caracterização > Pretensão Jurídica; Organização Federal / Pedido Processual / Causa de Pedir / Valor da Causa > participação > Análise de Cabimento no JEF; Regra de Competência > regula > Análise de Cabimento no JEF > resulta em > Resultado da Análise de Cabimento > especializações > Cabível no JEF / Não Cabível no JEF. | [Análise de Cabimento no JEF](diagramas/pretencao.png); Figura 12 para a competência do processo instaurado. |
 | 32 | Preciso contratar advogado para iniciar a ação? | Parte Processual > mediada por > Representação Processual > mediação > Representante Processual > especializações > Representante Designado / Advogado Constituído; Representação Recursal > especialização de > Representação Processual. | Figuras 8, 10, 12 e 21. |
-| 33 | Contra qual órgão ou entidade federal devo propor minha ação? | Processo Judicial Federal > mediação > Demandado > supertipo > Organização Federal > especializações > União Federal / Autarquia Federal / Fundação Pública Federal / Empresa Pública Federal. | Figuras 8, 9 e 12. |
+| 33 | Contra qual órgão ou entidade federal devo propor minha ação? | Pretensão Jurídica > demanda para > Organização Federal; Organização Federal > participação > Análise de Cabimento no JEF; Processo Judicial Federal > mediação > Demandado > supertipo > Organização Federal > especializações > União Federal / Autarquia Federal / Fundação Pública Federal / Empresa Pública Federal. | [Análise de Cabimento no JEF](diagramas/pretencao.png); Figuras 8, 9 e 12. |
 | 34 | Quais documentos preciso reunir para apresentar meu pedido? | Processo Judicial Federal > mediado por > Instrução Documental do Processo > mediação > Documento Necessário ao Processo; Documento de Petição Inicial > formaliza > Demanda. | Figuras 12 e 15. |
-| 35 | O que acontece depois que eu entro com a ação? | Ajuizamento > produz > Processo Instaurado; Ajuizamento > antecedente de > Citação > antecedente de > Apresentação de Contestação; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada; Provas Insuficientes > leva a > Produção de Prova Complementar. | Figuras 14–20. |
-| 36 | Em que fase está meu processo? | Ato Processual > produz > Situação Processual > especializações > Processo Instaurado / Contestação Apresentada / Apto a Julgamento / Processo Encaminhado à Turma Recursal / Cumprimento Concluído; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada. | Figuras 14–22. |
-| 37 | Preciso comparecer a alguma audiência ou perícia? | Determinação de Audiência > leva a > Audiência Designada > promove > Audiência de Conciliação > caracterização > Dever de Comparecimento; Perito > participação > Realização de Perícia > produz > Perícia Realizada. | Figuras 17 e 18; Seções 4.3.5 e 4.3.6. |
+| 35 | O que acontece depois que eu entro com a ação? | Ajuizamento > produz > Processo Instaurado; Determinação de Audiência > leva a > Resultado da Determinação de Audiência > especializações > Audiência Designada / Audiência Dispensada; Provas Insuficientes > triggers > Produção de Prova Complementar > leva a > Prova Complementar Produzida > triggers > Análise das Provas. | Figuras 14–20. |
+| 36 | Em que fase está meu processo? | Análise das Provas > leva ao > Resultado da Análise Probatória > especializações > Provas Suficientes / Provas Insuficientes; Provas Suficientes > possibilita > Apto a Julgamento; Provas Insuficientes > associação sem rótulo > Não Apto a Julgamento; Determinação de Audiência > leva a > Resultado da Determinação de Audiência > especializações > Audiência Designada / Audiência Dispensada. | Figuras 14–22. |
+| 37 | Preciso comparecer a alguma audiência ou perícia? | Determinação de Audiência > leva a > Resultado da Determinação de Audiência > especialização > Audiência Designada > promove > Audiência de Conciliação > caracterização > Dever de Comparecimento à Audiência / Dever de Comparecimento à Perícia; Perito > participação > Realização de Perícia > produz > Perícia Realizada. | [Conciliação atualizada](diagramas/conciliacao.png), com ambos os deveres ligados à audiência; Figura 18 para a realização de perícia. |
 | 38 | O que acontece depois que a sentença reconhece meu direito? | Sentença > impõe > Obrigação Judicial; Sentença > é objeto de > Trânsito em Julgado > produz > Sentença Transitada em Julgado > triggers > Cumprimento da Sentença; Obrigação Cumprida > triggers > Conclusão do Cumprimento > produz > Cumprimento Concluído > triggers > Arquivamento do Processo. | Figuras 20–22. |
 
 ###### 4.4.2 Exemplos de instanciação e identidade dos indivíduos
@@ -1157,14 +1159,14 @@ Para complementar a matriz de rastreabilidade, foram elaborados seis cenários d
 
 | Cenário | Descrição dos dados simulados | Aspectos exemplificados |
 | --- | --- | --- |
-| C1 | Pessoa Alfa demanda a Autarquia Previdenciária Simulada Alfa para implantação de benefício. Há tutela provisória requerida, contestação, audiência designada, conciliação frustrada, perícia, oitiva, procedência e cumprimento integral. | Pessoa física autora, representação, pedidos, documentos, provas, obrigação de fazer e arquivamento. |
+| C1 | Pessoa Alfa demanda a Autarquia Previdenciária Simulada Alfa para implantação de benefício. A análise de cabimento tem resultado positivo informado; há tutela provisória requerida, contestação, audiência designada, conciliação frustrada, perícia, oitiva, procedência e cumprimento integral. | Pretensão Jurídica, resultado Cabível no JEF distinto do processo, pessoa física autora, representação, provas e obrigação de fazer. |
 | C2 | Microempresa Beta demanda a Empresa Pública Federal Simulada Beta. Solicita R$ 8.000,00, obtém reconhecimento de R$ 6.000,00 e recebe inicialmente R$ 2.000,00, com satisfação posterior do saldo. | Microempresa autora, pedido de pagar, procedência parcial e mudança do estado de cumprimento. |
 | C3 | Empresa Gama, de pequeno porte, demanda a União em pretensão indenizatória hipotética. Após a improcedência, interpõe recurso inominado, posteriormente desprovido. | Empresa de pequeno porte autora, representação recursal, remessa à Turma Recursal, acórdão e resultado do recurso. |
-| C4 | Pessoa Delta, inicialmente por representante designado não advogado nas condições estipuladas, celebra acordo com a Fundação Pública Federal Simulada Delta para entrega de documento. | Determinação e designação da audiência, dever de comparecimento ligado à audiência, acordo, homologação e obrigação ainda não cumprida. |
-| C5 | Pessoa Épsilon demanda a Autarquia Simulada Épsilon. A audiência de conciliação é dispensada, não há contestação e a prova é considerada insuficiente. A perícia complementar é apenas futura. | Dispensa da audiência, ausência de defesa, insuficiência probatória e limites da representação do julgamento e do comparecimento. |
-| C6 | Pessoa Zeta consulta sobre a apresentação de mandado de segurança em caso federal, com valor de dez salários mínimos, antes de qualquer ajuizamento. | Distinção entre consulta pré-processual e processo instaurado; valor da causa insuficiente para determinar, isoladamente, o cabimento no JEF. |
+| C4 | Pessoa Delta, inicialmente por representante designado não advogado nas condições estipuladas, celebra acordo com a Fundação Pública Federal Simulada Delta para entrega de documento. | Resultado da Determinação de Audiência, designação, Dever de Comparecimento à Audiência, acordo, homologação e obrigação ainda não cumprida. |
+| C5 | Pessoa Épsilon demanda a Autarquia Simulada Épsilon. Há audiência dispensada e ausência de contestação. Uma análise inicial indica insuficiência e não aptidão; após produção complementar e nova análise, há suficiência e aptidão. | Prova Complementar Produzida como situação intermediária; mudança de resultado em dois recortes, sem julgamento ou perícia realizada estipulados. |
+| C6 | Pessoa Zeta consulta sobre mandado de segurança em caso federal, com valor de dez salários mínimos, antes de qualquer ajuizamento. A análise registra resultado negativo informado. | Pretensão Jurídica sem processo ou papéis processuais constituídos; entradas da análise, regra e resultado Não Cabível no JEF. |
 
-Os exemplos distinguem os fatos registrados das condições assumidas para construí-los. O cabimento positivo de C1, por exemplo, é uma premissa do cenário, não uma consequência automática do valor informado de trinta salários mínimos. De modo semelhante, o prazo recursal, a admissibilidade da representação e as consequências jurídicas da insuficiência da prova dependem de fontes normativas e não são obtidos apenas pela atribuição de um nome de classe a um indivíduo.
+Os exemplos distinguem os fatos registrados das condições assumidas para construí-los. C1 agora instancia uma Análise de Cabimento no JEF e seu resultado Cabível no JEF, mas o conteúdo positivo continua informado a partir das premissas do exemplo, não calculado automaticamente com base nos trinta salários mínimos. O resultado é uma situação, enquanto Processo Cabível no JEF é uma classificação do processo. O diagrama não estabelece uma transformação automática da Pretensão Jurídica em Demanda ou do resultado em processo. O prazo recursal e a admissibilidade da representação também dependem de fontes normativas, não apenas dos nomes das classes.
 
 **Identidade e classificação dos indivíduos**
 
@@ -1180,12 +1182,16 @@ Uma instanciação deve mostrar não apenas quais termos ocorrem no cenário, ma
 | C1-REP-R | Representação Processual | Relação que media C1-REU e C1-PF. |
 | C1-PROC | Processo Judicial Federal; Processo Previdenciário; Processo Cabível no JEF | Relação processual SIM-P01; cabimento estipulado no ensaio. |
 | C1-DEM | Demanda | Pretensão de implantação de benefício simulado. |
+| C1-PRET | Pretensão Jurídica | Estado intencional atribuído à Pessoa Alfa; não é o mesmo indivíduo que C1-DEM ou C1-PROC. |
+| C1-VAL-PRET | Valor da Causa | Propriedade da pretensão avaliada, com valor informado de trinta salários mínimos. |
+| C1-ANALISAR-CAB | Análise de Cabimento no JEF | Evento regulado por C1-REG-COMP, com participação da organização, pedidos, causa e valor da pretensão. |
+| C1-CABIVEL | Resultado da Análise de Cabimento; Cabível no JEF | Situação de resultado positivo informado, distinta do papel Processo Cabível no JEF. |
 | C1-PED | Pedido de Fazer | Pedido de implantação. |
 | C1-TUT | Pedido de Tutela Provisória | Requerimento provisório, sem decisão sobre seu deferimento. |
 | C1-INI | Documento de Petição Inicial | Documento distinto do relator Petição. |
 | C1-PET | Petição | Relação que envolve a apresentação da pretensão. |
 | C1-DETERMINAR-AUD | Determinação de Audiência | Evento que resulta na designação da audiência do cenário. |
-| C1-AUD-DESIGNADA | Audiência Designada | Situação produzida pela determinação. |
+| C1-AUD-DESIGNADA | Resultado da Determinação de Audiência; Audiência Designada | Um único resultado classificado pelo tipo geral e pelo subtipo da partição disjunta e completa. |
 | C1-AUD | Audiência de Conciliação | Evento de audiência efetivamente realizado no cenário. |
 | C1-PERICIA | Realização de Perícia | Ocorrência efetiva da perícia no cenário. |
 | C1-LAUDO | Documento; Laudo Pericial; Documento Probatório | Artefato criado pela perícia. |
@@ -1199,6 +1205,8 @@ As relações exemplificadas abaixo utilizam os elementos dos diagramas. O símb
 | --- | --- |
 | C1-REP-A > mediação > C1-AUT / C1-ADV | Representação Processual vincula a autora e sua advogada. |
 | C1-PROC > possui > C1-DEM > possui > C1-PED / C1-TUT | O processo se relaciona à demanda e esta aos pedidos; sua prioridade é informada no cenário. |
+| C1-PRET > caracterização > C1-AUT; C1-PRET > demanda para > C1-REU | A pessoa porta a pretensão, relacionada à organização federal considerada. |
+| C1-REU / C1-PED / C1-TUT / C1-CAUSA / C1-VAL-PRET > participação > C1-ANALISAR-CAB > resulta em > C1-CABIVEL | As entradas da análise são distinguidas de seu resultado; a regra regula o evento. |
 | C1-DETERMINAR-AUD > leva a > C1-AUD-DESIGNADA > promove > C1-AUD | Distinguem-se determinação, situação de designação e ocorrência da audiência. |
 | C1-PERICIA > creation > C1-LAUDO | O evento de perícia cria um documento. |
 | C1-ANALISE > leva ao > C1-SUF > possibilita > C1-APTO | O resultado da análise é uma situação de suficiência estipulada no cenário. |
@@ -1228,19 +1236,34 @@ Em C4, a determinação da audiência é distinguida de sua designação e reali
 | Fragmento de instâncias | Interpretação no cenário |
 | --- | --- |
 | C4-DETERMINAR-AUD > leva a > C4-AUD-DESIGNADA > promove > C4-AUD | A audiência foi designada e efetivamente realizada. |
-| C4-DEVER-COMP > caracterização > C4-AUD | Reproduz-se o vínculo de Dever de Comparecimento com a audiência, conforme desenhado, sem atribuir silenciosamente esse dever à autora. |
+| C4-DEVER-COMP > caracterização > C4-AUD | Reproduz-se o vínculo de Dever de Comparecimento à Audiência com o evento, sem atribuí-lo silenciosamente à autora. |
 | C4-CELEBRAR > creation > C4-ACORDO > mediação > C4-AUT / C4-REU | A celebração constitui a relação de acordo entre as partes. |
 | C4-JULGAR > creation > C4-SENT > impõe > C4-OBR | A decisão homologatória registra uma obrigação de entrega de documento no exemplo. |
 
-O vínculo entre os termos do acordo e a sentença foi descrito como anotação quando não explicitado graficamente. De modo semelhante, C4-DEVER-COMP documenta o novo elemento do diagrama, mas sua associação à audiência não identifica a pessoa que suporta o dever, a respectiva intimação ou sua vigência. Assim, a presença dessa instância não permite concluir que a autora ainda precise comparecer no recorte final. C4-TI descreve o contexto inicial, com audiência designada; C4-TF registra acordo homologado, trânsito estipulado e obrigação ainda não cumprida.
+O resultado C4-AUD-DESIGNADA pertence agora a Resultado da Determinação de Audiência e à partição `{disjoint, complete}` de designação e dispensa. Isso classifica os resultados existentes, mas não obriga que todo evento possua um resultado, pois o vínculo do evento continua `0..1`. O vínculo entre os termos do acordo e a sentença permanece anotação quando não explicitado graficamente.
+
+C4-DEVER-COMP foi atualizado para Dever de Comparecimento à Audiência. O desenho também inclui Dever de Comparecimento à Perícia, mas ambos os modos estão associados à Audiência de Conciliação. Não se inventou uma associação do segundo modo com Realização de Perícia, nem se instanciou esse dever no cenário C4, que não contém perícia. Permanecem sem identificação a pessoa obrigada, sua intimação e a vigência do dever. Assim, a instância não permite concluir que a autora ainda precise comparecer no recorte final. C4-TI registra o contexto inicial e C4-TF registra acordo homologado, trânsito estipulado e obrigação ainda não cumprida.
 
 **Casos de dispensa, insuficiência probatória e consulta pré-processual**
 
-Em C5, C5-DETERMINAR-AUD leva a C5-AUD-DISPENSADA. Não foi criada uma ocorrência de Audiência de Conciliação para preencher a extremidade da relação `impede`, pois isso confundiria uma hipótese impedida com um evento efetivamente ocorrido. C5-TF reúne a dispensa da audiência, a ausência de contestação e a insuficiência probatória; nenhuma sentença ou perícia realizada foi registrada até esse recorte.
+Em C5, C5-DETERMINAR-AUD leva a C5-AUD-DISPENSADA, classificada como Resultado da Determinação de Audiência. A associação `impede` foi retirada do diagrama atual e não é mantida no inventário de relações. Não se cria uma audiência ocorrida para representar a dispensa.
 
-A relação `Provas Insuficientes > impossibilita > Julgamento` é documentada pela anotação C5-A04 no contexto do julgamento hipotético considerado. Não foi criada uma instância de julgamento ocorrido para servir de alvo ao impedimento, nem se atribuiu à relação o alcance de regra jurídica universal. A ligação com Produção de Prova Complementar também não foi convertida em ocorrência de perícia: a complementação, seu agendamento e a intimação permanecem informações futuras estipuladas em C5-A02. O Dever de Comparecimento desenhado para a audiência não foi estendido automaticamente à perícia. O `triggers` entre os eventos Produção de Prova Complementar e Análise das Provas não foi reproduzido como relação válida nos dados.
+A versão atual de Análise Probatória e Julgamento também substituiu o impedimento genérico por Não Apto a Julgamento e introduziu Prova Complementar Produzida. O cenário foi ampliado para percorrer esse ciclo, distinguindo os seguintes recortes:
 
-Por fim, C6-T0 representa uma consulta anterior ao ajuizamento. A pretensão e seu valor são descritos por C6-DEM, C6-CAUSA, C6-PED e C6-VAL, mas não foram atribuídos à pessoa os papéis de Demandante ou Demandado, nem criada uma instância de Processo Judicial Federal. A hipótese de mandado de segurança permanece excluída do JEF Cível, apesar do valor inferior ao limite, conforme a premissa normativa utilizada no ensaio. Essa conclusão depende da legislação externa, não somente da existência de Regra de Competência no modelo.
+| Recorte | Resultado da análise | Aptidão e produção complementar |
+| --- | --- | --- |
+| C5-TI, marco 4 | C5-INSUF: Provas Insuficientes | C5-NAO-APTO: Não Apto a Julgamento. A produção complementar ainda não ocorreu. |
+| C5-TC, marco 6 | C5-SUF: Provas Suficientes, após C5-REANALISE | C5-COMPLEMENTO-PRODUZIDO: Prova Complementar Produzida, no marco 5; C5-APTO: Apto a Julgamento, no marco 6. |
+
+O percurso instanciado é `C5-INSUF > triggers > C5-COMPLEMENTAR > leva a > C5-COMPLEMENTO-PRODUZIDO > triggers > C5-REANALISE > leva ao > C5-SUF > possibilita > C5-APTO`. O primeiro e o segundo eventos de análise possuem identidades diferentes. A ligação de retorno agora passa por uma situação e não mais por `triggers` entre dois eventos. A associação sem rótulo entre Provas Insuficientes e Não Apto a Julgamento é registrada como tal, sem criar um axioma universal de impedimento. Aptidão não equivale a julgamento antecipado nem a julgamento já ocorrido. Os resultados insuficiente e suficiente pertencem a avaliações e recortes distintos.
+
+Por fim, o novo diagrama de cabimento permite representar C6 sem pressupor uma demanda judicial instaurada. C6-PRET é Pretensão Jurídica caracterizando C6-PESSOA e relacionada à organização C6-ORG. Ela possui C6-PED e C6-CAUSA e é caracterizada por C6-VAL. A organização, o pedido, a causa e o valor participam de C6-ANALISAR-CAB, regulado por C6-REG-COMP. O evento resulta em C6-NAO-CABIVEL, uma instância de Resultado da Análise de Cabimento e Não Cabível no JEF. C6-T0 é o recorte anterior ao resultado; C6-TA registra o resultado da análise, ainda antes de qualquer processo.
+
+O arquivo do novo diagrama é apresentado abaixo para identificação da fonte dos percursos de cabimento:
+
+![Análise de Cabimento no JEF: pretensão, entradas e resultados](diagramas/pretencao.png)
+
+A exclusão da hipótese de mandado de segurança, apesar de dez salários mínimos, continua fundamentada na premissa normativa do ensaio. A regra genérica do diagrama não executa automaticamente todas as condições legais. A organização considerada na consulta não é automaticamente classificada como Demandado; não se decide, por esse vínculo, a legitimidade passiva no mandado de segurança. Também não se cria Processo Judicial Federal para registrar o resultado negativo. Em C1, o resultado positivo C1-CABIVEL é igualmente distinto de C1-PROC. C1-VAL-PRET e C1-VAL são propriedades de portadores distintos, com valores literais iguais, e não a mesma propriedade intrínseca atribuída simultaneamente à pretensão e à demanda.
 
 Essas instanciações permitem examinar se os conceitos e relações selecionados distinguem adequadamente participantes, papéis, documentos, acontecimentos e situações. Elas também explicitam onde a resposta às QCs depende de informação contextual ou normativa adicional. Por serem fragmentos simulados, não demonstram, por si só, satisfação de todas as cardinalidades, consistência formal da ontologia ou validação jurídica por especialistas.
 
@@ -1252,14 +1275,14 @@ Todas as 38 QCs foram rastreadas e receberam um cenário, um recorte e uma respo
 | --- | --- | --- |
 | D | 16 | Suporte direto à descrição de fatos informados, no recorte examinado. |
 | P | 22 | Suporte parcial; há dependência de informação, relação ou regra adicional. |
-| N | 0 | Nenhuma QC permanece nessa categoria após a revisão dos dois diagramas; isso não implica atendimento integral. |
+| N | 0 | Nenhuma QC permanece nessa categoria na presente revisão; isso não implica atendimento integral. |
 | Total | 38 | Rastreabilidade completa das questões, sem equivalência a atendimento integral dos requisitos. |
 
 Os resultados evidenciam maior suporte à identificação de participantes, classificação de pedidos e registro de acontecimentos e resultados. As principais lacunas concentram-se na distinção de pedido principal, na associação uniforme de atos e situações ao processo, na seleção do estado atual e na explicitação de critérios jurídicos de necessidade, permissão e obrigatoriedade. As QCs voltadas ao cidadão requerem, ainda, distinguir a descrição de fatos já conhecidos da orientação sobre um caso ainda não proposto.
 
-Com a revisão dos diagramas de Conciliação e Análise Probatória e Julgamento, as QCs 14, 19 e 37 passam de N para P. A QC14 passa a rastrear a determinação, a designação e a dispensa da audiência; a QC19 passa a contar com a relação explícita de impedimento; e a QC37 passa a rastrear Dever de Comparecimento. O suporte permanece parcial: faltam critérios e restrições para os resultados da determinação, delimitação jurídica do impedimento ao julgamento e identificação do titular do dever e de sua intimação, inclusive na hipótese de perícia.
+Nesta revisão, foram reconhecidos três avanços: a partição disjunta e completa de Resultado da Determinação de Audiência; a situação Prova Complementar Produzida entre produção e nova análise, corrigindo o antigo `triggers` entre eventos; e o novo evento de Análise de Cabimento no JEF com resultados positivos e negativos representáveis sem pressupor um processo. A relação genérica `impossibilita` e a ligação `impede` da versão anterior não integram os novos percursos. As QCs 14, 19, 31 e 37 permanecem parciais porque registrar uma decisão ou resultado informado não equivale a implementar todos os critérios jurídicos para obtê-lo.
 
-As prioridades de refinamento decorrentes do ensaio são: revisar a representação de Juiz e órgão julgador; explicitar o contexto e a temporalidade dos vínculos; diferenciar fatos processuais de decisões normativas; representar a prioridade dos pedidos; especificar as condições de competência, representação e contagem de prazo; e refinar a caracterização de Dever de Comparecimento, identificando a pessoa obrigada e as condições aplicáveis à audiência ou perícia. Também é necessário rever o encadeamento que torna a contestação pressuposto universal do julgamento, o `triggers` entre Produção de Prova Complementar e Análise das Provas e os demais usos de relações de eventos incompatíveis com as categorias conectadas.
+Permanecem como prioridades: identificar o titular dos deveres de comparecimento e corrigir o fato de ambos estarem associados à audiência; especificar as condições e os vínculos temporais de sua exigibilidade; explicitar as regras de cabimento, representação e prazo; distinguir pedido principal; e integrar atos e situações ao processo. O `{disjoint, complete}` entre Conciliação Realizada e Conciliação Frustrada também deve ter seu alcance conferido, pois foi desenhado sob Situação Processual, categoria geral utilizada por outros módulos. A conferência dos dados simulados não valida a completude global dessa hierarquia. As demais questões estruturais, como Juiz/órgão julgador e a contestação tratada como antecedente universal, não foram corrigidas apenas pela atualização das instanciações.
 
 A presença de lacunas não invalida a rastreabilidade. Ela impede, porém, a afirmação de que a ontologia responde integralmente a todas as QCs na versão examinada. As classificações apresentadas devem ser reavaliadas após os ajustes conceituais e confrontadas com a análise dos especialistas do domínio.
 
@@ -1267,7 +1290,7 @@ A presença de lacunas não invalida a rastreabilidade. Ela impede, porém, a af
 
 O inventário dos indivíduos, as relações declaradas, os recortes, as anotações externas e as 38 respostas esperadas estão disponíveis em [`avaliacao/dados-simulados.json`](avaliacao/dados-simulados.json). O guia [`avaliacao/instanciacoes-simuladas.md`](avaliacao/instanciacoes-simuladas.md) explica os cenários e a leitura dos identificadores. Esses arquivos documentam a instanciação de referência; seu formato JSON não representa uma implementação operacional da ontologia.
 
-O conjunto atualizado contém 155 indivíduos, 163 triplas de relações declaradas e 11 recortes distribuídos pelos seis cenários. Foram acrescentadas instâncias de determinação, designação e dispensa da audiência e de Dever de Comparecimento. A quantidade de indivíduos da simulação não deve ser confundida com a quantidade de termos do dicionário ou de classes da ontologia. A conferência de integridade foi executada com sucesso para esse conjunto, no alcance restrito descrito a seguir.
+O conjunto atualizado contém 169 indivíduos, 190 triplas de relações declaradas e 13 recortes distribuídos pelos seis cenários. Foram acrescentados os resultados tipados da determinação de audiência, o ciclo efetivo de produção complementar e reanálise e os dois resultados de cabimento. A quantidade de indivíduos da simulação não deve ser confundida com a quantidade de termos do dicionário ou de classes da ontologia. A conferência de integridade foi executada com sucesso para esse conjunto, no alcance restrito descrito a seguir.
 
 O script [`avaliacao/verificar-dados.py`](avaliacao/verificar-dados.py) verifica a integridade desses artefatos: identificadores e referências, uso das categorias catalogadas, relações temporais básicas selecionadas, não utilização de evidências futuras nos recortes, conciliação dos valores simulados, preservação da numeração e das perguntas na matriz e correspondência entre as 38 respostas e as classificações de suporte registradas no guia de instanciações. A presença de um nome de classe no texto é uma conferência lexical, não uma certificação de sua adequação ontológica. O script não executa consultas para produzir as respostas esperadas; elas foram elaboradas por inspeção documental dos fragmentos.
 

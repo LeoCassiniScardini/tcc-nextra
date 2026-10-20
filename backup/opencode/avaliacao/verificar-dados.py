@@ -68,7 +68,14 @@ def verificar():
         {"Provas Suficientes", "Provas Insuficientes"},
         {"Conciliação Realizada", "Conciliação Frustrada"},
         {"Audiência Designada", "Audiência Dispensada"},
+        {"Apto a Julgamento", "Não Apto a Julgamento"},
+        {"Cabível no JEF", "Não Cabível no JEF"},
     ]
+    particoes_resultado = {
+        "Resultado da Determinação de Audiência": {"Audiência Designada", "Audiência Dispensada"},
+        "Resultado da Análise de Cabimento": {"Cabível no JEF", "Não Cabível no JEF"},
+        "Resultado da Análise Probatória": {"Provas Suficientes", "Provas Insuficientes"},
+    }
 
     for cenario in dados["cenarios"]:
         cid = cenario["id"]
@@ -85,6 +92,14 @@ def verificar():
                    f"Classificação repetida: {iid}")
             exigir(type(instancia["marco"]) is int and instancia["marco"] >= 0,
                    f"Marco inválido: {iid}")
+            tipos = set(instancia["classes"])
+            for geral, alternativas in particoes_resultado.items():
+                if geral in tipos or tipos & alternativas:
+                    exigir(geral in tipos and len(tipos & alternativas) == 1,
+                           f"Resultado sem classificação única na partição declarada: {iid}")
+            exigir(not ({"Cabível no JEF", "Não Cabível no JEF"} & tipos
+                        and "Processo Judicial Federal" in tipos),
+                   f"Resultado de cabimento confundido com o processo: {iid}")
 
         processo = cenario["processo"]
         if processo is not None:
@@ -96,6 +111,10 @@ def verificar():
                    f"Consulta pré-processual contém processo: {cid}")
             exigir(not any(set(i["classes"]) & {"Demandante", "Demandado"} for i in instancias.values()),
                    f"Consulta pré-processual já atribui papéis de parte: {cid}")
+            exigir(any("Pretensão Jurídica" in i["classes"] for i in instancias.values()),
+                   f"Consulta pré-processual sem Pretensão Jurídica: {cid}")
+            exigir(not any("Demanda" in i["classes"] for i in instancias.values()),
+                   f"Consulta pré-processual confundida com demanda judicial: {cid}")
 
         vistas = set()
         for relacao in cenario["relacoes"]:
@@ -134,6 +153,42 @@ def verificar():
                 exigir(a["marco"] <= b["marco"], f"Participante ainda inexistente: {relacao}")
             elif predicado == "media":
                 exigir(categoria(a, "relator"), f"Origem da mediação não é relator: {relacao}")
+            elif predicado == "associa_nao_aptidao":
+                exigir("Provas Insuficientes" in a["classes"]
+                       and "Não Apto a Julgamento" in b["classes"],
+                       f"Associação de não aptidão fora do fragmento desenhado: {relacao}")
+                exigir(a["marco"] <= b["marco"], f"Não aptidão anterior à avaliação: {relacao}")
+            elif predicado == "possibilita":
+                exigir("Provas Suficientes" in a["classes"] and "Apto a Julgamento" in b["classes"],
+                       f"Possibilita fora do fragmento de aptidão: {relacao}")
+                exigir(a["marco"] <= b["marco"], f"Aptidão anterior à suficiência: {relacao}")
+
+        for iid, instancia in instancias.items():
+            portadores = {destino for origem, predicado, destino in cenario["relacoes"]
+                          if origem == iid and predicado == "caracteriza"}
+            exigir(len(portadores) <= 1, f"Uma propriedade intrínseca com portadores distintos: {iid}")
+            if "Determinação de Audiência" in instancia["classes"]:
+                resultados = {destino for origem, predicado, destino in cenario["relacoes"]
+                              if origem == iid and predicado == "brings_about"
+                              and "Resultado da Determinação de Audiência" in instancias[destino]["classes"]}
+                exigir(len(resultados) <= 1, f"Determinação com mais de um resultado: {iid}")
+            if "Análise de Cabimento no JEF" in instancia["classes"]:
+                entradas = [instancias[origem] for origem, predicado, destino in cenario["relacoes"]
+                            if destino == iid and predicado == "participa_de"]
+                for classe in ("Organização Federal", "Causa de Pedir", "Valor da Causa"):
+                    exigir(any(classe in entrada["classes"] for entrada in entradas),
+                           f"Entrada de cabimento ausente ({classe}): {iid}")
+                exigir(any(any(classe.startswith("Pedido") for classe in entrada["classes"])
+                           for entrada in entradas), f"Análise sem pedido: {iid}")
+                exigir(any(destino == iid and predicado == "regula"
+                           and "Regra de Competência" in instancias[origem]["classes"]
+                           for origem, predicado, destino in cenario["relacoes"]),
+                       f"Análise sem regra de competência: {iid}")
+                resultados = [destino for origem, predicado, destino in cenario["relacoes"]
+                              if origem == iid and predicado == "brings_about"
+                              and "Resultado da Análise de Cabimento" in instancias[destino]["classes"]]
+                exigir(len(resultados) == 1,
+                       f"A análise concluída do ensaio deve ter um resultado informado: {iid}")
 
         recortes = {}
         for recorte in cenario["recortes"]:
@@ -150,7 +205,8 @@ def verificar():
                 exigir(instancias[sid]["marco"] <= recorte["marco"],
                        f"Situação futura usada no recorte: {rid}: {sid}")
                 tipos_no_recorte.update(instancias[sid]["classes"])
-            # Os cenários presentes possuem no máximo uma obrigação por processo.
+            # Os cenários presentes possuem no máximo uma obrigação e uma pretensão
+            # e selecionam uma avaliação atual por dimensão no recorte.
             # Este teste de recorte não implementa a semântica geral de disjunção.
             for grupo in grupos_exclusivos_no_recorte:
                 exigir(len(tipos_no_recorte & grupo) <= 1,
@@ -208,8 +264,14 @@ def verificar():
                    f"Anotação futura usada: QC{qc}: {referencia}")
         exigir(set(resposta["premissas"]) <= set(premissas), f"Premissa não encontrada: QC{qc}")
 
-    secao_matriz = texto.split("###### 4.4.3 Matriz de rastreabilidade das 38 QCs", 1)[1]
-    secao_matriz = secao_matriz.split("###### 4.4.4", 1)[0]
+    titulo_matriz = re.search(
+        r"(?m)^#{1,6}\s+4\.4\.\d+\s+Matriz de rastreabilidade das 38 QCs[^\n]*\n", texto
+    )
+    exigir(titulo_matriz is not None, "Seção da matriz de rastreabilidade não encontrada.")
+    secao_matriz = texto[titulo_matriz.end():]
+    proximo_titulo = re.search(r"(?m)^#{1,6}\s+", secao_matriz)
+    if proximo_titulo:
+        secao_matriz = secao_matriz[:proximo_titulo.start()]
     linhas_matriz = re.findall(
         r"^\| (\d+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|$",
         secao_matriz,
@@ -227,12 +289,17 @@ def verificar():
         exigir(bool(localizacao.strip()), f"Localização ausente: QC{numero}")
 
     guia = (raiz / "avaliacao" / "instanciacoes-simuladas.md").read_text(encoding="utf-8")
-    linhas_suporte = re.findall(r"^\| QC(\d+) \|.*\| ([DPN]) \|$", guia, re.MULTILINE)
-    exigir(len(linhas_suporte) == 38 and len({n for n, _ in linhas_suporte}) == 38,
+    linhas_suporte = re.findall(
+        r"^\| QC(\d+) \| ([^|]+) \| [^|]+ \| ([DPN]) \|$", guia, re.MULTILINE
+    )
+    exigir(len(linhas_suporte) == 38 and len({n for n, _, _ in linhas_suporte}) == 38,
            "O guia deve preservar as classificações de suporte das 38 QCs.")
-    exigir({int(n): suporte for n, suporte in linhas_suporte}
+    exigir({int(n): suporte for n, _, suporte in linhas_suporte}
            == {r["qc"]: r["suporte"] for r in respostas},
            "O guia de instanciações e o JSON divergem na classificação de suporte.")
+    exigir({int(n): recorte.strip() for n, recorte, _ in linhas_suporte}
+           == {r["qc"]: r["recorte"] for r in respostas},
+           "O guia de instanciações e o JSON divergem nos recortes das QCs.")
 
     contagem = Counter(r["suporte"] for r in respostas)
     print("Integridade dos artefatos: OK")
