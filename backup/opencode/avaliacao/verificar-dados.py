@@ -281,12 +281,21 @@ def verificar():
     exigir([int(linha[0]) for linha in linhas_matriz] == list(range(1, 39)),
            "A matriz deve usar apenas os números de 1 a 38, sem repetição e em ordem.")
     perguntas = {int(n): pergunta.strip() for n, pergunta in
-                 re.findall(r"^QC(\d+)\. (.+)$", texto, re.MULTILINE)}
+                  re.findall(r"^QC(\d+)\. (.+)$", texto, re.MULTILINE)}
+    inicio_corpo = re.search(r"(?m)^# 1 ", texto)
+    exigir(inicio_corpo is not None, "Início do corpo da monografia não encontrado.")
+    legendas = re.findall(r"(?m)^Figura (\d+)[. –-]", texto[inicio_corpo.start():])
+    numeros_figuras = [int(numero) for numero in legendas]
+    exigir(numeros_figuras == list(range(1, len(numeros_figuras) + 1)),
+           "As legendas das figuras devem ser sequenciais e sem duplicação.")
     for numero, pergunta, elementos, localizacao in linhas_matriz:
         exigir(pergunta.strip() == perguntas[int(numero)],
                f"Pergunta da matriz diverge da formulação original: QC{numero}")
         exigir(">" in elementos, f"Percurso sem separador >: QC{numero}")
-        exigir(bool(localizacao.strip()), f"Localização ausente: QC{numero}")
+        exigir(re.fullmatch(r"Figuras? \d+(?:, \d+)*(?: e \d+)?\.", localizacao.strip()) is not None,
+               f"A localização deve conter somente referências a figuras: QC{numero}")
+        exigir(all(int(n) in numeros_figuras for n in re.findall(r"\d+", localizacao)),
+               f"Figura da localização sem legenda na monografia: QC{numero}")
 
     guia = (raiz / "avaliacao" / "instanciacoes-simuladas.md").read_text(encoding="utf-8")
     linhas_suporte = re.findall(

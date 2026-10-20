@@ -12,7 +12,7 @@ Este material documenta uma **instanciação conceitual parcial com dados inteir
 
 **Não confundir:** rastrear 38 questões não significa demonstrar atendimento integral às 38 questões. A revisão atual considera Conciliação, Análise Probatória e Julgamento e o novo diagrama Análise de Cabimento no JEF. Permanecem 16 QCs com suporte descritivo direto e 22 com suporte parcial: os novos resultados são representáveis, mas suas condições jurídicas não são automaticamente executadas. A classificação resulta de inspeção documental, não de um reasoner.
 
-O conjunto atualizado registra **169 indivíduos, 190 relações declaradas e 13 recortes em seis cenários**, na versão 1.2 do JSON. Esses números descrevem os dados simulados, não o número de classes ou termos da ontologia. As fontes imediatas são [`Conciliação`](../diagramas/conciliacao.png), [`Análise Probatória e Julgamento`](../diagramas/analiseejulgamento.png) e [`Análise de Cabimento no JEF`](../diagramas/pretencao.png). Os PNGs e o PDF não foram modificados nesta revisão.
+O conjunto atualizado registra **169 indivíduos, 190 relações declaradas e 13 recortes em seis cenários**, na versão 1.2 do JSON. Esses números descrevem os dados simulados, não o número de classes ou termos da ontologia. As fontes imediatas são Conciliação, Análise Probatória e Julgamento e Análise de Cabimento no JEF. Os PNGs e o PDF não foram modificados nesta revisão.
 
 ## 2. Convenções de leitura
 
