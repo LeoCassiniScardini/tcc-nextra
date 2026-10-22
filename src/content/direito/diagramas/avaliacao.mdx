@@ -1,12 +1,12 @@
 ## Avaliação da Ontologia
 
-Esta seção apresenta a verificação documental das 38 QCs e sua aplicação a seis cenários com dados simulados. Todos os participantes fictícios, documentos, identificadores de processos, valores e acontecimentos específicos foram construídos para o ensaio. A referência à União em C3 utiliza uma entidade real apenas como participante de uma hipótese inventada, sem lhe atribuir um fato ocorrido. Não foram utilizados números CNJ, documentos pessoais ou registros profissionais reais.
+Esta seção apresenta um quadro de verificação do modelo com base nas 38 QCs e sua aplicação em seis cenários com dados simulados. Todos os dados são fictícios, participantes, documentos, identificadores de processos, os valores e acontecimentos específicos foram construídos para o teste.
 
-### Matriz de rastreabilidade das 38 QCs
+### Quadro de rastreabilidade das 38 QCs
 
-A matriz preserva a numeração e a formulação das questões da Seção 4.1. O símbolo `>` indica um percurso de leitura, `/` separa alternativas e `;` separa percursos. A leitura inversa de uma associação é indicada quando necessário. Esses percursos não acrescentam relações ao modelo nem constituem consultas executadas. A presença de elementos rastreáveis não demonstra, por si só, atendimento integral à questão.
+A matriz preserva a numeração e a formulação das questões de competencia. O símbolo `>` indica um percurso de leitura, `/` separa alternativas e `;` separa percursos. A leitura inversa de uma associação é indicada quando necessário. Esses percursos não acrescentam relações ao modelo nem constituem consultas executadas.
 
-Matriz de rastreabilidade das 38 QCs.
+Quadro de rastreabilidade das 38 QCs.
 
 | QC | Pergunta                                                                                            | Elementos e relações rastreados                                                                                                                                                                                                                                                                                                      | Localização                |
 | -- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
@@ -52,7 +52,7 @@ Matriz de rastreabilidade das 38 QCs.
 
 ### Instanciação e identidade dos indivíduos
 
-Os seis cenários empregam identificadores locais, sem correspondência com processos reais. Os marcos são ordinais de cada cenário e não representam dias ou datas judiciais. Os fragmentos exemplificam relações selecionadas, sem preencher todas as mediações, cardinalidades ou classificações exigíveis de uma população completa.
+Os seis cenários seguintes empregam identificadores locais, sem correspondência com processos reais. Os dados são unicos de cada cenário.
 
 Cenários de instanciação.
 
@@ -65,7 +65,7 @@ Cenários de instanciação.
 | C5       | Pessoa Épsilon demanda a Autarquia Simulada Épsilon. Há audiência dispensada e ausência de contestação. A análise inicial indica necessidade de complementação; após sua produção, uma nova análise registra suficiência e aptidão.                           | Dispensa sem ocorrência de audiência; Prova Complementar Produzida; resultados históricos e atuais distintos. Não se estipula julgamento ou perícia realizada.      |
 | C6       | Pessoa Zeta consulta sobre mandado de segurança em caso federal de dez salários mínimos, antes de qualquer ajuizamento. A análise tem resultado negativo informado.                                                                                                       | Pretensão sem processo ou papéis processuais; Não Cabível no JEF por exclusão legal, apesar do valor inferior ao limite.                                            |
 
-**Identidade e classificação.** Um mesmo indivíduo pode ser classificado como Pessoa e Pessoa Física Autora no contexto de um processo. Isso não cria duas pessoas. Já a relação de representação, o documento e o ato de apresentá-lo são indivíduos distintos. O Quadro 7 explicita parte do inventário de C1; os identificadores restantes podem ser consultados no JSON.
+**Identidade e classificação.** Um mesmo indivíduo pode ser classificado como Pessoa e Pessoa Física Autora no contexto de um processo. Isso não cria duas pessoas. Já a relação de representação, o documento e o ato de apresentá-lo são indivíduos distintos.
 
 Identidade e classificação dos indivíduos.
 
@@ -97,7 +97,7 @@ Identidade e classificação dos indivíduos.
 | C1-DIREITO / C1-DEVER | Direito à Prestação / Dever de Prestação                                 | Duas posições distintas e correlatas, partes de C1-OBR.                        |
 
 
-Relações entre instâncias.
+Relações entre instâncias. As relações exemplificadas abaixo utilizam os elementos dos diagramas. O símbolo > indica a passagem de leitura, mantendo a convenção da matriz de rastreabilidade. A barra / abrevia ramificações, sem representar um indivíduo composto. Esses percursos registram fatos e classificações informados no ensaio.
 
 | Fragmento                                                                                                      | Interpretação                                                                                     |
 | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -135,11 +135,9 @@ Instanciação de recurso, acordo e comparecimento.
 | C4-CELEBRAR > creation > C4-ACORDO > mediação > C4-AUT / C4-REU        | A celebração constitui uma relação entre as partes.                                                                      |
 | C4-JULGAR > creation > C4-SENT > impõe > C4-OBR                         | A decisão homologatória registra uma obrigação de entrega de documento no exemplo.                                       |
 
-Insuficiência probatória e reanálise.
+Instanciação recurso, acordo e dever de comparecimento
 
 | Recorte        | Resultado da análise                          | Aptidão e produção complementar                                                       |
 | -------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | C5-TI, marco 4 | C5-INSUF: Provas Insuficientes                 | C5-NAO-APTO: Não Apto a Julgamento. A produção complementar ainda não ocorreu.       |
 | C5-TC, marco 6 | C5-SUF: Provas Suficientes, após C5-REANALISE | C5-COMPLEMENTO-PRODUZIDO ocorreu no marco 5; a nova análise informa C5-APTO no marco 6. |
-
-Em C6, o valor de dez salários mínimos não afasta a exclusão do mandado de segurança da competência do JEF Cível (BRASIL, 2001, art. 3º, § 1º, I). O cenário não cria Processo Judicial Federal, Demanda, Demandante ou Demandado para representar a consulta pré-processual. O resultado negativo é informado com essa premissa normativa, não inferido por execução de Regra de Competência. Em C1 ocorre o mesmo cuidado com o resultado positivo informado.
