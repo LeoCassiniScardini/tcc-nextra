@@ -272,11 +272,17 @@ def verificar():
     proximo_titulo = re.search(r"(?m)^#{1,6}\s+", secao_matriz)
     if proximo_titulo:
         secao_matriz = secao_matriz[:proximo_titulo.start()]
-    linhas_matriz = re.findall(
-        r"^\| (\d+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|$",
-        secao_matriz,
-        re.MULTILINE,
-    )
+    linhas_matriz = []
+    for linha in secao_matriz.splitlines():
+        if not linha.lstrip().startswith("|"):
+            continue
+        celulas = [celula.strip() for celula in linha.strip().strip("|").split("|")]
+        exigir(len(celulas) == 4, "A matriz deve conter quatro colunas.")
+        identificacao = re.fullmatch(r"QC(\d+)\.\s+(.+)", celulas[0])
+        if identificacao:
+            numero, pergunta = identificacao.groups()
+            classes_rastreadas, elementos, localizacao = celulas[1:]
+            linhas_matriz.append((numero, pergunta, classes_rastreadas, elementos, localizacao))
     exigir(len(linhas_matriz) == 38, "A matriz no TCC deve conter exatamente 38 linhas de QCs.")
     exigir([int(linha[0]) for linha in linhas_matriz] == list(range(1, 39)),
            "A matriz deve usar apenas os números de 1 a 38, sem repetição e em ordem.")
@@ -288,10 +294,24 @@ def verificar():
     numeros_figuras = [int(numero) for numero in legendas]
     exigir(numeros_figuras == list(range(1, len(numeros_figuras) + 1)),
            "As legendas das figuras devem ser sequenciais e sem duplicação.")
-    for numero, pergunta, elementos, localizacao in linhas_matriz:
+    inicio_dicionario = re.search(r"(?m)^#{1,6}\s+Apêndice A[^\n]*", texto)
+    exigir(inicio_dicionario is not None, "Dicionário de termos não encontrado.")
+    termos_dicionario = {
+        linha.split("|")[1].strip()
+        for linha in texto[inicio_dicionario.end():].splitlines()
+        if linha.lstrip().startswith("|")
+    }
+    for numero, pergunta, classes_rastreadas, elementos, localizacao in linhas_matriz:
         exigir(pergunta.strip() == perguntas[int(numero)],
                f"Pergunta da matriz diverge da formulação original: QC{numero}")
-        exigir(">" in elementos, f"Percurso sem separador >: QC{numero}")
+        nomes_classes = [nome.strip() for nome in classes_rastreadas.split(",")]
+        exigir(all(nomes_classes) and len(nomes_classes) == len(set(nomes_classes)),
+               f"Lista de classes vazia ou com repetição: QC{numero}")
+        exigir(set(nomes_classes) <= termos_dicionario,
+               f"Classe da matriz ausente do dicionário: QC{numero}")
+        exigir(bool(elementos.strip()), f"Descrição do percurso vazia: QC{numero}")
+        exigir(not any(simbolo in elementos for simbolo in (">", "/", ";")),
+               f"O percurso deve ser descrito por extenso, sem separadores simbólicos: QC{numero}")
         exigir(re.fullmatch(r"Figuras? \d+(?:, \d+)*(?: e \d+)?\.", localizacao.strip()) is not None,
                f"A localização deve conter somente referências a figuras: QC{numero}")
         exigir(all(int(n) in numeros_figuras for n in re.findall(r"\d+", localizacao)),

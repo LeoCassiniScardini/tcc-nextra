@@ -1,1494 +1,1522 @@
-# UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO
 
-CENTRO TECNOLÓGICO — COLEGIADO DO CURSO DE CIÊNCIA DA COMPUTAÇÃO
 
-Léo Cassini Scardini
+<!-- Start of picture text -->
+xexDEPAL D0 So<br>$ %<br>gL3 BeoO<br>5<br>> ><br>z =<br>i) J<br>QA ee©<br>Te ounes®<br><!-- End of picture text -->
 
-**[Título definitivo do trabalho — preencher]**
+###### UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO CENTRO TECNOLÓGICO 
 
-Vitória, ES — [ano da defesa]
+###### COLEGIADO DO CURSO DE CIÊNCIA DA COMPUTAÇÃO 
 
-> **Nota editorial desta versão:** os campos entre colchetes dependem de confirmação do autor. O título descritivo sugerido é “OntoJEF: uma ontologia de referência para o Juizado Especial Federal Cível”. A revisão textual não altera os modelos do Visual Paradigm nem certifica sua consistência. As limitações e correções pendentes nos diagramas estão explicitadas na Seção 4.4.4. Retirar esta nota após a consolidação da versão final.
+Léo Cassini Scardini 
 
-## Folha de rosto
+### Título do Trabalho 
 
-Léo Cassini Scardini
+São Mateus, ES 
 
-**[Título definitivo do trabalho]**
+2026 
 
-Monografia apresentada ao Curso de Ciência da Computação do Centro Tecnológico da Universidade Federal do Espírito Santo, como requisito parcial para obtenção do grau de Bacharel em Ciência da Computação.
+##### Título do Trabalho 
 
-Orientador: [nome e titulação — preencher].
+Monografia apresentada ao Curso de Ciência da Computação do Centro Tecnológico da Universidade Federal do Espírito Santo, como requisito parcial para obtenção do Grau de Bacharel em Ciência da Computação. 
 
-Coorientador: [preencher, se houver].
+Universidade Federal do Espírito Santo – UFES 
 
-Vitória, ES — [ano da defesa].
+###### Centro Tecnológico 
 
-## Ficha catalográfica
+Colegiado do Curso de Ciência da Computação 
 
-[Inserir a ficha catalográfica emitida para a versão final. A paginação e a classificação bibliográfica não devem ser copiadas do modelo de monografia.]
+Orientador: Nome do Orientador Coorientador: Nome do Co-orientador 
 
-## Folha de aprovação
+São Mateus, ES 
 
-Léo Cassini Scardini — **[Título definitivo do trabalho]**.
+2026 
 
-Monografia apresentada ao Curso de Ciência da Computação do Centro Tecnológico da Universidade Federal do Espírito Santo, como requisito parcial para obtenção do grau de Bacharel em Ciência da Computação.
+Vitória, ES 2020 
 
-Data de aprovação: [preencher após a aprovação].
+_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada laoreet leo at interdum. Nullam neque eros, dignissim sed ipsum sed, sagittis laoreet nisi._ 
 
-- Orientador: [nome, titulação e instituição].
-- Membro da banca: [nome, titulação e instituição].
-- Membro da banca: [nome, titulação e instituição].
-
-## Agradecimentos
-
-[Texto pessoal do autor, se desejar incluir esta seção.]
-
-## Resumo
-
-A compreensão do funcionamento do Juizado Especial Federal Cível envolve normas, sujeitos, papéis, documentos e acontecimentos processuais cuja articulação nem sempre é explícita nas informações disponibilizadas ao cidadão. Este trabalho apresenta uma ontologia de referência destinada a organizar conceitualmente esse domínio, abrangendo a análise de cabimento, a instauração do processo, a defesa, a conciliação, a produção de provas, o julgamento, o recurso inominado e o cumprimento da decisão. O desenvolvimento adota atividades da SABiO, fundamentação na Unified Foundational Ontology (UFO), modelagem em OntoUML e reúso conceitual de estruturas da UFO-L e da OntoRS. A aquisição do conhecimento combina pesquisa bibliográfica e análise documental, tendo como fontes normativas centrais as Leis nº 10.259/2001 e nº 9.099/1995. O resultado é organizado em 16 diagramas de classes e um diagrama de pacotes, acompanhados de dicionário de termos e matriz de rastreabilidade de 38 questões de competência. A avaliação documental utiliza seis cenários inteiramente fictícios e distingue 16 questões com suporte descritivo direto e 22 com suporte parcial. Os resultados evidenciam a possibilidade de representar fragmentos relevantes do domínio, mas também lacunas de integração, restrições jurídicas ainda não explicitadas e decisões de modelagem que requerem revisão. Não foi produzida uma ontologia operacional nem demonstrada consistência formal ou melhoria efetiva do acesso à justiça. A contribuição consiste em uma base conceitual documentada para refinamento e posterior desenvolvimento de sistemas de informação jurídica.
-
-**Palavras-chave:** ontologia de referência; Juizado Especial Federal Cível; OntoUML; UFO-L; SABiO.
-
-## Abstract
-
-Understanding the Federal Special Civil Court involves legal norms, participants, roles, documents, and procedural events whose connections are not always explicit in the information available to citizens. This work presents a reference ontology intended to organize this domain conceptually, covering the assessment of jurisdictional eligibility, case initiation, defense, conciliation, evidence production, judgment, appeals, and enforcement. Its development adopts activities from SABiO, foundations provided by the Unified Foundational Ontology (UFO), OntoUML modeling, and conceptual reuse of structures from UFO-L and OntoRS. Knowledge acquisition combines a literature review and document analysis, with Brazilian Laws No. 10,259/2001 and No. 9,099/1995 as the main normative sources. The resulting artifact comprises 16 class diagrams and a package diagram, a term dictionary, and a traceability matrix for 38 competency questions. A documentary evaluation uses six entirely fictitious scenarios and identifies 16 questions with direct descriptive support and 22 with partial support. The results demonstrate the representation of relevant domain fragments while exposing integration gaps, legal constraints not yet explicitly represented, and modeling decisions requiring revision. No operational ontology was implemented, and neither formal consistency nor an actual improvement in access to justice was demonstrated. The contribution is a documented conceptual basis for further refinement and the future development of legal information systems.
-
-**Keywords:** reference ontology; Federal Special Civil Court; OntoUML; UFO-L; SABiO.
-
-## Lista de ilustrações
-
-- Figura 1 — Taxonomia de UFO-A.
-- Figura 2 — Taxonomia de UFO-B.
-- Figura 3 — Fragmento de UFO-C.
-- Figura 4 — Padrão de modelagem para Legal Relator.
-- Figura 5 — Metodologia SABiO.
-- Figura 6 — Exemplo de modelagem OntoUML no Visual Paradigm.
-- Figura 7 — Diagrama de pacotes.
-- Figura 8 — Sujeitos e Papéis.
-- Figura 9 — Organizações.
-- Figura 10 — Representantes.
-- Figura 11 — Serventuários.
-- Figura 12 — Cabimento no JEF.
-- Figura 13 — Competência.
-- Figura 14 — Demanda, Causa e Pedido.
-- Figura 15 — Procedimentos.
-- Figura 16 — Instauração.
-- Figura 17 — Contestação.
-- Figura 18 — Conciliação.
-- Figura 19 — Produção de Prova.
-- Figura 20 — Análise Probatória e Julgamento.
-- Figura 21 — Sentença.
-- Figura 22 — Recursos.
-- Figura 23 — Cumprimento e Encerramento.
+# Agradecimentos 
 
-## Lista de quadros
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada laoreet leo at interdum. Nullam neque eros, dignissim sed ipsum sed, sagittis laoreet nisi. Duis a pulvinar nisl. Aenean varius nisl eu magna facilisis porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut mattis tortor nisi, facilisis molestie arcu hendrerit sed. Donec placerat velit at odio dignissim luctus. Suspendisse potenti. Integer tristique mattis arcu, ut venenatis nulla tempor non. Donec at tincidunt nulla. Cras ac dignissim neque. Morbi in odio nulla. Donec posuere sem finibus, auctor nisl eu, posuere nisl. Duis sit amet neque id massa vehicula commodo dapibus eu elit. Sed nec leo eu sem viverra aliquet. Nam at nunc nec massa rutrum aliquam sed ac ante. 
 
-- Quadro 1 — Estereótipos de classes utilizados na modelagem.
-- Quadro 2 — Relações utilizadas na modelagem.
-- Quadro 3 — Mapeamento do reúso conceitual.
-- Quadro 4 — Visão geral dos diagramas.
-- Quadro 5 — Matriz de rastreabilidade das 38 QCs.
-- Quadro 6 — Cenários de instanciação.
-- Quadro 7 — Identidade e classificação dos indivíduos.
-- Quadro 8 — Relações entre instâncias.
-- Quadro 9 — Recortes temporais do cumprimento.
-- Quadro 10 — Instanciação de recurso, acordo e comparecimento.
-- Quadro 11 — Insuficiência probatória e reanálise.
-- Quadro 12 — Síntese do suporte às questões de competência.
-- Quadro 13 — Inconsistências e refinamentos necessários.
-- Quadro 14 — Dicionário de termos e fontes.
+Vivamus nec quam iaculis, tempus ipsum eu, cursus ante. Phasellus cursus euismod auctor. Fusce luctus mauris id tortor cursus, volutpat cursus lacus ornare. Proin tristique metus sed est semper, id finibus neque efficitur. Cras venenatis augue ac venenatis mollis. Maecenas nec tellus quis libero consequat suscipit. Aliquam enim leo, pretium non elementum sit amet, vestibulum ut diam. Maecenas vitae diam ligula. 
 
-## Lista de abreviaturas e siglas
+Fusce ac pretium leo, in convallis augue. Mauris pulvinar elit rhoncus velit auctor finibus. Praesent et commodo est, eu luctus arcu. Vivamus ut porta tortor, eget facilisis ex. Nunc aliquet tristique mauris id sollicitudin. Donec quis commodo metus, sit amet accumsan nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
 
-| Sigla   | Significado                                                                             |
-| ------- | --------------------------------------------------------------------------------------- |
-| BPMN    | Business Process Model and Notation                                                     |
-| CF      | Constituição Federal                                                                  |
-| CPC     | Código de Processo Civil                                                               |
-| FGTS    | Fundo de Garantia do Tempo de Serviço                                                  |
-| JEF     | Juizado Especial Federal                                                                |
-| OntoJEF | Denominação utilizada no diagrama de pacotes da ontologia proposta                    |
-| OntoRS  | Ontologia de referência do Pedido de Uniformização de Interpretação de Lei Federal |
-| OWL     | Web Ontology Language                                                                   |
-| QC      | Questão de Competência                                                                |
-| RDF     | Resource Description Framework                                                          |
-| RPV     | Requisição de Pequeno Valor                                                           |
-| SABiO   | Systematic Approach for Building Ontologies                                             |
-| TNU     | Turma Nacional de Uniformização                                                       |
-| UFO     | Unified Foundational Ontology                                                           |
-| UFO-L   | Ontologia núcleo de aspectos jurídicos fundamentada na UFO                            |
-| UML     | Unified Modeling Language                                                               |
+_“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada laoreet leo at interdum. Nullam neque eros, dignissim sed ipsum sed, sagittis laoreet nisi. (Lipsum generator)_ 
 
-## Sumário
+# Resumo 
 
-1. Introdução
-   - 1.1 Motivação e Justificativa
-   - 1.2 Objetivos
-   - 1.3 Método de Desenvolvimento do Trabalho
-   - 1.4 Organização da Monografia
-2. Referencial Teórico e Tecnologias Utilizadas
-   - 2.1 Ontologias
-   - 2.2 UFO — Unified Foundational Ontology
-   - 2.3 Ontologia núcleo UFO-L
-   - 2.4 Engenharia de Ontologias
-   - 2.5 Juizado Especial Federal Cível
-   - 2.6 Trabalhos relacionados e posição da proposta
-3. Aspectos Metodológicos
-   - 3.1 Abordagem para desenvolvimento da ontologia
-   - 3.2 Propósito e delimitação do domínio
-   - 3.3 Aquisição do conhecimento do domínio
-   - 3.4 Levantamento dos requisitos
-   - 3.5 Reúso de ontologias
-   - 3.6 Captura e modelagem da ontologia
-   - 3.7 Modularização da ontologia
-   - 3.8 Verificação por rastreabilidade e instanciação simulada
-4. Resultados
-   - 4.1 Visão geral da ontologia
-   - 4.2 Pacote Estrutural
-   - 4.3 Pacote Procedimental
-   - 4.4 Avaliação da Ontologia
-5. Conclusão
-   - 5.1 Considerações Finais
-   - 5.2 Trabalhos Futuros
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada laoreet leo at interdum. Nullam neque eros, dignissim sed ipsum sed, sagittis laoreet nisi. Duis a pulvinar nisl. Aenean varius nisl eu magna facilisis porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut mattis tortor nisi, facilisis molestie arcu hendrerit sed. Donec placerat velit at odio dignissim luctus. Suspendisse potenti. Integer tristique mattis arcu, ut venenatis nulla tempor non. Donec at tincidunt nulla. Cras ac dignissim neque. Morbi in odio nulla. Donec posuere sem finibus, auctor nisl eu, posuere nisl. Duis sit amet neque id massa vehicula commodo dapibus eu elit. Sed nec leo eu sem viverra aliquet. Nam at nunc nec massa rutrum aliquam sed ac ante. 
 
-Referências
+Vivamus nec quam iaculis, tempus ipsum eu, cursus ante. Phasellus cursus euismod auctor. Fusce luctus mauris id tortor cursus, volutpat cursus lacus ornare. Proin tristique metus sed est semper, id finibus neque efficitur. Cras venenatis augue ac venenatis mollis. Maecenas nec tellus quis libero consequat suscipit. Aliquam enim leo, pretium non elementum sit amet, vestibulum ut diam. Maecenas vitae diam ligula. 
 
-Apêndice A — Dicionário de Termos
+Fusce ac pretium leo, in convallis augue. Mauris pulvinar elit rhoncus velit auctor finibus. Praesent et commodo est, eu luctus arcu. Vivamus ut porta tortor, eget facilisis ex. Nunc aliquet tristique mauris id sollicitudin. Donec quis commodo metus, sit amet accumsan nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
 
-<!-- Gerar sumário e listas com paginação automaticamente na versão diagramada. -->
+Duis elementum dictum tristique. Integer mattis libero sit amet pretium euismod. Cura-bitur auctor eu augue ut ornare. Integer bibendum eros ullamcorper rhoncus convallis. Pellentesque non pretium ligula, sit amet bibendum eros. Nam venenatis ex felis, quis blandit nunc auctor sit amet. Maecenas ut eros pharetra, lobortis neque id, fermentum arcu. Cras neque dui, rhoncus feugiat leo id, semper facilisis lorem. Fusce non ex turpis. Nullam venenatis sed ligula ac lacinia. 
 
-# 1 Introdução
+**Palavras-chaves** : lorem. ipsum. dolor. sit. amet. 
 
-O acesso à justiça não se resume à possibilidade formal de apresentar uma demanda: envolve condições para compreender os mecanismos de proteção de direitos e participar adequadamente do procedimento judicial. No ordenamento brasileiro, a inafastabilidade da apreciação jurisdicional e a assistência jurídica aos que comprovem insuficiência de recursos encontram fundamento no art. 5º, incisos XXXV e LXXIV, da Constituição Federal (BRASIL, 1988). Ribeiro e Sanzovo (2011) discutem a contribuição dos Juizados Especiais Federais para esse acesso, destacando a simplificação procedimental e a redução de barreiras econômicas. A esses aspectos soma-se o desafio informacional de compreender uma rede de normas, sujeitos, documentos e acontecimentos jurídicos.
+# Lista de ilustrações 
 
-Um processo judicial pode envolver autor, réu, juiz, representantes, peritos, testemunhas e servidores, além de atos, documentos, provas e decisões de naturezas distintas. A disponibilização desses registros não torna explícitas, por si só, as relações entre seus elementos. Zorzanelli Costa, Guizzardi e Almeida (2022) identificam a linguagem especializada, a ambiguidade da linguagem natural e os aspectos procedimentais implícitos como obstáculos à transparência de procedimentos jurídicos. Zorzanelli Costa et al. (2023) discutem, nesse contexto, a representação semântica de dados judiciais como meio de ampliar suas possibilidades de consulta e utilização.
+Figura 1 – Taxonomia de UFO-A......................................................................................... 24 Figura 2 – Exemplo de figura em modo paisagem: um modelo de objetivos (SOUZA; MYLOPOULOS, 2013). ..................................................................................... 25 
 
-Os Juizados Especiais são orientados pelos critérios da oralidade, simplicidade, informalidade, economia processual e celeridade (BRASIL, 1995, art. 2º). No âmbito federal, a Lei nº 10.259/2001 estabelece disciplina própria para as causas de competência da Justiça Federal de até sessenta salários mínimos, observadas as exclusões e as condições legais, e prevê a aplicação da Lei nº 9.099/1995 no que não houver conflito (BRASIL, 2001, arts. 1º e 3º). O regime inclui a possibilidade de atuação inicial sem contratação de advogado nas hipóteses admitidas e o acesso ao primeiro grau independentemente do pagamento inicial de custas, sem que isso implique dispensa irrestrita de representação técnica ou de quaisquer despesas em todas as fases (BRASIL, 2001, art. 10; BRASIL, 1995, arts. 41, § 2º, 54 e 55).
+# Lista de tabelas 
 
-Mesmo nesse rito simplificado, a compreensão do procedimento exige distinguir, por exemplo, a pessoa do papel de autora, a petição do ato de apresentá-la e a sentença dos efeitos jurídicos que dela decorrem. O problema investigado neste trabalho é como organizar explicitamente esses conceitos e relações em um modelo de referência do Juizado Especial Federal Cível. Não se pretende medir a utilização dos Juizados pela população nem atribuir a dificuldades informacionais uma relação causal que não tenha sido investigada empiricamente.
+| Tabela | Descrição |
+| --- | --- |
+| Tabela 1 – | Exemplo de tabela com diferentes alinhamentos de conteúdo......................24 |
+| Tabela 2 – | Exemplo que especifica largura de coluna e usa lista enumerada (adaptada de (SOUZA; MYLOPOULOS, 2013))....................................................24 |
+| Tabela 3 – | Exemplo que mostra equações em duas colunas (adaptada de (SOUZA; MYLOPOULOS, 2013))..................................................................................26 |
+| Tabela 4 – | Exemplo que utiliza o pacotetabularx, extraído de um artigo ainda não publicado.....................................................................................................26 |
 
-Ontologias de referência oferecem uma forma de explicitar uma conceituação do domínio, distinguindo categorias de entidades e suas relações. Quando fundamentadas ontologicamente, podem apoiar a comunicação, a análise conceitual e a construção posterior de sistemas de informação (GUIZZARDI et al., 2011; FALBO, 2014). Sua contribuição à compreensão por cidadãos, contudo, depende de aplicações e avaliações com usuários; não decorre automaticamente da existência de diagramas.
 
-Entre os níveis de generalidade relevantes para este trabalho estão as ontologias de fundamentação, que tratam de categorias gerais; as ontologias de núcleo, que organizam estruturas compartilhadas por diferentes domínios de aplicação; e as ontologias de domínio, que representam um recorte específico. Essa distinção orienta a utilização da UFO como fundamentação, da UFO-L como núcleo jurídico e da ontologia proposta como representação do domínio do JEF Cível (SCHERP et al., 2011; BECCALLI, 2018).
 
-O reúso de conceitos e padrões permite aproveitar decisões ontológicas anteriores, desde que se registrem as adaptações e se examine sua adequação ao novo domínio. Uma ontologia de referência também pode originar versões operacionais, mediante decisões adicionais de projeto e implementação (FALBO, 2014). Neste trabalho, a representação conceitual é o resultado pretendido; não foram implementados mecanismos automáticos de decisão jurídica.
+## Lista de abreviaturas e siglas 
 
-Portanto, este trabalho apresenta uma ontologia de referência para o Juizado Especial Federal Cível, destinada a organizar seus principais sujeitos, papéis, relações e acontecimentos processuais. A ampliação do acesso à informação jurídica constitui uma motivação e uma possibilidade de aplicação futura, e não um benefício empiricamente demonstrado pela presente pesquisa.
+UML Unified Modeling Language 
 
-## 1.1 Motivação e Justificativa
+# Sumário 
 
-A motivação deste trabalho está relacionada à possibilidade de aplicar os conhecimentos adquiridos ao longo da graduação à representação do conhecimento jurídico. A construção da ontologia permite aprofundar o estudo do domínio e produzir uma base conceitual que poderá apoiar ferramentas de informação. A compreensão por usuários sem formação jurídica constitui uma finalidade a investigar posteriormente, não um efeito já medido neste trabalho.
+##### Sumário 
 
-Justifica-se a escolha do Juizado Especial Federal Cível por sua relevância para o acesso à justiça e pelas particularidades de seu procedimento e de suas partes admitidas (RIBEIRO; SANZOVO, 2011; BRASIL, 2001). A possibilidade de atuação pessoal em determinadas hipóteses reforça a importância de informações compreensíveis, mas não elimina a necessidade de apoio jurídico quando exigido ou recomendável. A ontologia poderá, após refinamento e avaliação, servir de base para sistemas de consulta, orientação informacional, apoio à elaboração de petições e acompanhamento processual. Tais aplicações não integram os resultados implementados neste trabalho nem substituem a análise jurídica de casos concretos.
+| Seção | Página indicada |
+| --- | --- |
+| Título do Trabalho | 2 |
+| Agradecimentos | 4 |
+| Resumo | 6 |
+| Lista de ilustrações | 7 |
+| Lista de tabelas | 8 |
+| Sumário | 10 |
+| 1 Introdução | 12 |
+| 1.1 Motivação e Justificativa | 13 |
+| 1.2 Objetivos | 13 |
+| 1.3 Método de Desenvolvimento do Trabalho | 14 |
+| 1.4 Organização da Monografia | 15 |
+| 2 Referencial Teórico e Tecnologias Utilizadas | 16 |
+| 2.1 Ontologias | 16 |
+| 2.2 UFO - Unified Foundational Ontology | 17 |
+| 2.3 Core Ontology UFO-L | 20 |
+| 2.4 Engenharia de Ontologia | 21 |
+| 2.5 Juizado Especial Federal Cível | A atualizar |
+| 3 Aspectos Metodológicos | 27 |
+| 3.1 Abordagem para desenvolvimento da ontologia | 27 |
+| 3.2 Propósito e delimitação do domínio | 27 |
+| 3.3 Aquisição do conhecimento do domínio | 28 |
+| 3.4 Levantamento dos requisitos | 29 |
+| 3.5 Reúso de ontologia | 29 |
+| 3.6 Captura e modelagem da ontologia | 30 |
+| 3.7 Modularização da ontologia | 31 |
+| 3.8 Verificação por rastreabilidade e instanciação simulada | 32 |
+| 4 Resultados | 33 |
+| 4.1 Visão geral da ontologia | 33 |
+| 4.2 Reúso das ontologias | 36 |
+| 4.3 Pacote Estrutural | 37 |
+| 4.4 Pacote Procedimental | 45 |
+| 4.5 Avaliação da Ontologia | 60 |
+| 5 Conclusão | 73 |
+| 5.1 Considerações Finais | 73 |
+| 5.2 Trabalhos Futuros | 74 |
+| Referências | 75 |
+| Anexo A – Dicionario de Termos | 77 |
 
-## 1.2 Objetivos
 
-O objetivo geral deste trabalho é desenvolver e avaliar documentalmente uma ontologia de referência do Juizado Especial Federal Cível, explicitando seus principais conceitos, sujeitos, papéis, documentos, relações e acontecimentos processuais, com apoio da UFO, da UFO-L e da OntoUML.
 
-Para alcançar esse objetivo geral, foram definidos os seguintes objetivos específicos:
+# 1 Introdução 
 
-- i. identificar os principais conceitos jurídicos e processuais relacionados ao Juizado Especial Federal Cível e analisar os sujeitos, papéis processuais, atos, documentos, pedidos, provas, decisões e recursos presentes nesse domínio;
-- ii. levantar os requisitos necessários para a construção da ontologia, considerando o escopo e as perguntas de competência do modelo;
-- iii. obter conhecimento do domínio por meio da análise de normas, literatura jurídica e materiais relacionados ao funcionamento dos Juizados Especiais Federais Cíveis;
-- iv. modelar o domínio e documentar a fundamentação, o reúso conceitual e as definições dos termos, organizando os diagramas em módulos inter-relacionados;
-- v. verificar o suporte às questões de competência por rastreabilidade e instanciações simuladas, identificando limitações e refinamentos necessários, sem confundir essa avaliação com demonstração de consistência formal ou validação jurídica integral.
+O domínio do Direito é caracterizado por elevada complexidade, em razão da grande quantidade de normas, conceitos, procedimentos e relações jurídicas que precisam ser compreendidos para que o cidadão possa conhecer, reivindicar e exercer seus direitos. Nesse contexto, o acesso à justiça busca assegurar a efetividade de princípios fundamentais, especialmente a isonomia. Entretanto, esse princípio nem sempre é plenamente concretizado, pois parcela significativa da população encontra dificuldades para compreender e aplicar as normas jurídicas, seja pela falta de conhecimento técnico, seja pela ausência de ferramentas que facilitem a identificação e a utilização dos meios adequados para a proteção de seus direitos, Ribeiro e Sanzovo (2011) discutem a contribuição dos Juizados Especiais Federais para esse acesso, destacando a simplificação procedimental e também a redução de barreiras econômicas. 
 
-## 1.3 Método de Desenvolvimento do Trabalho
+Um processo judicial pode envolver autor, réu, juiz, representantes, peritos, testemunhas e servidores, além de atos, documentos, provas e decisões de naturezas distintas. A disponibilização desses registros não torna explícitas, por si só, as relações entre seus elementos. Zorzanelli Costa, Guizzardi e Almeida (2022) identificam a linguagem especializada, a ambiguidade da linguagem natural e os aspectos procedimentais implícitos como obstáculos à transparência de procedimentos jurídicos. Zorzanelli Costa et al. (2023) discutem, nesse contexto, a representação semântica de dados judiciais como meio de ampliar suas possibilidades de consulta e utilização. Embora esses dados sejam registradas e disponibilizadas ao público por meio de sistemas e documentos processuais, elas geralmente não são organizadas de forma semanticamente estruturada, voltada à compreensão do cidadão comum. Como consequência, a interpretação, a localização e a utilização dessas informações podem se tornar difíceis para pessoas sem formação jurídica. 
 
-O desenvolvimento foi organizado nas seguintes etapas, descritas em detalhe no Capítulo 3:
+Em um Estado Democrático de Direito, uma justiça eficiente, acessível e compreensível deve constituir objetivo permanente. Com a finalidade de ampliar o acesso à justiça e reduzir obstáculos econômicos e burocráticos, foram criados os Juizados Especiais, destinados à apreciação de causas de menor complexidade. Esses órgãos foram concebidos para oferecer uma forma mais simples, célere e econômica de prestação jurisdicional, especialmente às pessoas que não possuem condições financeiras ou sociais para suportar os custos e a demora inerentes aos procedimentos judiciais tradicionais. Nesse sentido, os Juizados Especiais Federais Cíveis buscam aproximar o cidadão da Justiça Federal, inclusive ao prever, em determinadas hipóteses, a dispensa de advogado e a inexistência de custas em primeiro grau. 
 
-- i. pesquisa bibliográfica sobre ontologias, representação do conhecimento, ontologias jurídicas e Juizados Especiais Federais Cíveis, acompanhada de análise documental das fontes do domínio;
-- ii. delimitação do escopo, definindo os conceitos, sujeitos, documentos, atos, pedidos, provas, decisões e etapas contemplados;
-- iii. formulação de questões de competência para orientar a captura e a avaliação do domínio;
-- iv. modelagem conceitual de classes, relações, papéis, eventos e situações, com análise de sua fundamentação e organização modular;
-- v. exame da correspondência entre diagramas e requisitos, com matriz de rastreabilidade e seis cenários fictícios com respostas esperadas às QCs;
-- vi. documentação dos ajustes identificados e das limitações remanescentes. A conferência dos dados de instanciação não substitui a análise formal do modelo nem uma validação documentada com especialistas.
+Entretanto, os documentos, os atos processuais e as informações disponibilizadas nos sistemas judiciais são produzidos predominantemente para operadores do Direito, utilizando linguagem técnica e relações conceituais que não são explicitadas de forma acessível ao cidadão. Dessa maneira, um instrumento criado para reduzir barreiras de acesso pode continuar limitado pela dificuldade de compreensão das informações jurídicas, contribuindo para a baixa utilização ou para o uso inadequado dos mecanismos disponíveis pela sociedade. 
 
-## 1.4 Organização da Monografia
+As ontologias de referência oferecem uma forma de explicitar uma conceituação do domínio, distinguindo categorias de entidades e suas relações. Quando fundamentadas ontologicamente, podem apoiar a comunicação, a análise conceitual e a construção posterior de sistemas de informação (GUIZZARDI et al., 2011; FALBO, 2014). Sua contribuição à compreensão por cidadãos, contudo, depende de aplicações e avaliações com usuários; não decorre automaticamente da existência de diagramas. 
 
-Além desta introdução, esta monografia é composta por outros quatro capítulos:
+As ontologias podem ser compreendidas como formas de categorizar conceitos e relações de um domínio de conhecimento. Elas podem ser organizadas em três níveis, conforme seu grau de abrangência: ontologias de fundamentação, voltadas a conceitos mais gerais e independentes de domínio; ontologias de núcleo, direcionadas a conceitos compartilhados por diferentes domínios; e ontologias de domínio, destinadas à <u>representação de conceitos</u> específicos de determinada área de conhecimento. 
 
-- O Capítulo 2 apresenta os aspectos relativos ao conteúdo teórico relevante para o trabalho;
-- O Capítulo 3 descreve os aspectos metodológicos do desenvolvimento da ontologia;
-- O Capítulo 4 apresenta os resultados, incluindo a organização da ontologia, a descrição dos seus diagramas e a verificação por rastreabilidade e instanciação simulada;
-- O Capítulo 5 relaciona os resultados aos objetivos, discute as limitações e apresenta trabalhos futuros. O Apêndice A reúne o dicionário de termos e suas fontes.
+Ademais, as ontologias podem ser expandidas e reutilizadas em modelos de mesma ênfase ou em domínios relacionados. Também podem ser desenvolvidas como ontologias operacionais, sendo utilizadas como artefatos para compor a lógica de uma aplicação, como ocorre em abordagens baseadas em regras de negócio. Desse modo, contribuem para a representação de relações mais precisas, consistentes e semanticamente estruturadas entre os conceitos presentes em determinado domínio. 
 
-# 2 Referencial Teórico e Tecnologias Utilizadas
+Portanto, este trabalho visa ao desenvolvimento de uma ontologia de domínio jurídico com foco no Juizado Especial Federal Cível, abordando e expondo os benefícios trazidos pela Lei nº 10.259, de 12 de julho de 2001, especialmente quanto à ampliação do acesso à justiça, à simplificação procedimental e à aproximação do cidadão com a Justiça Federal. 
 
-## 2.1 Ontologias
+##### 1.1 Motivação e Justificativa 
 
-Uma ontologia de referência é um modelo conceitual utilizado para representar, de forma explícita e estruturada, entidades de um domínio, suas propriedades, relações e restrições. Sua fundamentação aproxima-se do sentido filosófico de ontologia, como sistema de categorias empregado para articular uma conceituação (GUIZZARDI et al., 2011). Uma lista de termos, isoladamente, não constitui essa representação: é necessário explicitar seus significados e suas conexões. A análise ontológica envolve, por exemplo, perguntas como:
+A motivação deste trabalho está relacionada à possibilidade de aplicar os conhecimentos adquiridos ao longo da graduação no desenvolvimento de um artefato conceitual voltado à representação do conhecimento jurídico. A construção de uma ontologia permite aprofundar o estudo teórico do domínio escolhido, ao mesmo tempo em que contribui para tornar seus conceitos, relações e procedimentos mais compreensíveis para outros usuários, especialmente aqueles que não possuem formação jurídica. 
 
-- O que é um objeto?
-- O que é um evento?
-- O que é uma pessoa?
-- O que diferencia uma pessoa dos papéis que pode exercer em determinado contexto, como paciente, autora, ré ou advogada?
-- Quais propriedades são essenciais para uma entidade e quais são contingentes?
-- Que tipos de relações podem existir entre as entidades representadas?
+Justifica-se a escolha do domínio do Juizado Especial Federal Cível devido à sua relevância social, uma vez que esse instituto foi criado para facilitar o acesso à justiça, sem necessariamente necessitar de um ente terceiro. Nesse sentido, a ontologia proposta poderá servir como base para a organização semântica desse conhecimento, permitindo a identificação e a categorização dos principais elementos envolvidos no procedimento judicial. Além disso, o artefato desenvolvido poderá futuramente ser expandido e consolidado em um sistema voltado à produção de petições, ao peticionamento eletrônico e ao acompanhamento de processos judiciais, contribuindo para a automação e a melhoria do acesso à informação jurídica. 
 
-A construção de ontologias é de extrema relevância nos domínios mais complexos, nos quais há grande quantidade de conceitos, regras e relações. No domínio jurídico, essa complexidade é evidente, pois normas, sujeitos, papéis, atos, documentos, decisões e procedimentos se relacionam de maneira dinâmica. Por isso, a representação ontológica pode contribuir para organizar o conhecimento jurídico, reduzir ambiguidades conceituais e favorecer tanto a compreensão humana quanto o uso computacional dessas informações.
+1.2 Objetivos 
 
-Segundo Scherp et al. (2011), as ontologias podem ser classificadas de acordo com seu grau de generalidade. Entre as classificações, tem-se:
+O objetivo geral deste trabalho é desenvolver uma ontologia de domínio jurídico com foco no Juizado Especial Federal Cível, visando representar seus principais conceitos, relações, sujeitos, documentos e etapas processuais de forma estruturada e semanticamente consistente. 
 
-1. Ontologias de fundamentação descrevem categorias gerais, independentes de um domínio específico, como as categorias da UFO.
-2. Ontologias de núcleo organizam estruturas de uma área, compartilháveis por diferentes domínios de aplicação. No campo jurídico, podem representar agentes, relações, posições e normas, em um nível intermediário de generalidade.
-3. Ontologias de domínio representam um recorte específico. A proposta deste trabalho é uma ontologia de domínio jurídico, pois trata dos sujeitos, papéis, atos, documentos, pedidos, provas, decisões e etapas do JEF Cível.
+Para alcançar esse objetivo geral, foram definidos os seguintes objetivos específicos: 
 
-Essa delimitação é relevante no domínio jurídico. Beccalli (2018), autora também conhecida na literatura como Cristine Griffo, fundamenta a UFO-L na análise das relações e posições jurídicas, e não apenas na representação de regras isoladas. O recorte adotado deve, portanto, explicitar quais agentes, relações e posições serão representados e quais aspectos permanecem fora do escopo.
+- i. Identificar os principais conceitos jurídicos e processuais relacionados ao Juizado Especial Federal Cível e analisar os sujeitos, papéis processuais, atos, documentos, pedidos, provas, decisões e recursos presentes nesse domínio; 
 
-## 2.2 UFO - Unified Foundational Ontology
+- ii. levantar os requisitos necessários para a construção da ontologia, considerando o escopo e as perguntas de competência do modelo; 
 
-A construção de ontologias de domínio exige uma base conceitual capaz de orientar a identificação dos tipos de entidades existentes, suas propriedades e suas relações. Para isso, podem ser utilizadas ontologias de fundamentação, que fornecem categorias gerais aplicáveis a diferentes áreas do conhecimento. Entre essas ontologias, destaca-se a Unified Foundational Ontology (UFO), proposta como uma ontologia de fundamentação voltada ao apoio da modelagem conceitual e à representação semanticamente precisa de domínios complexos (GUIZZARDI, 2005; GUIZZARDI et al., 2015).
+- iii. obter conhecimento do domínio por meio da análise de normas, literatura jurídica e materiais relacionados ao funcionamento dos Juizados Especiais Federais Cíveis; 
 
-A UFO tem como objetivo oferecer categorias ontológicas capazes de auxiliar a modelagem a distinguir diferentes elementos da realidade, como objetos, eventos, propriedades, papéis, relações e entidades sociais. Essa distinção é importante porque, em muitos domínios, os conceitos não possuem a mesma natureza, alguns representam entidades que mantêm sua identidade ao longo do tempo, enquanto outros representam papéis temporários, eventos que ocorrem em determinado momento ou relações dependentes de outros elementos.
+- iv. modelar e ampliar a ontologia de domínio, representando os conceitos e relações identificados de forma clara e consistente; 
 
-A UFO é apresentada, nas referências adotadas, em três camadas: UFO-A, relativa aos endurantes e às suas propriedades e relações; UFO-B, relativa a eventos e situações; e UFO-C, relativa a entidades sociais e intencionais (GUIZZARDI et al., 2011, 2015). Essas camadas são complementares, não categorias mutuamente exclusivas: um agente social é também um endurante, e uma ação comunicativa é também um evento. Essa integração é necessária para representar o domínio jurídico.
+- v. validar a ontologia proposta por meio de testes, análise de consistência e verificação das perguntas de competência definidas para o modelo. 
 
-### 2.2.1 UFO-A
+##### 1.3 Método de Desenvolvimento do Trabalho 
 
-A UFO-A trata de endurantes, entidades que estão integralmente presentes nos momentos em que existem e podem sofrer mudanças sem perder sua identidade (GUIZZARDI, 2005). Pessoas, organizações e documentos são exemplos pertinentes ao domínio. A palavra “processo” exige uma distinção adicional: neste trabalho, Processo Judicial Federal representa uma relação reificada que persiste no tempo; a sequência de atividades da tramitação é representada separadamente por eventos. Não se identifica, portanto, todo processo, em qualquer sentido, com um endurante.
+O desenvolvimento deste trabalho será realizado por meio das seguintes etapas: 
 
-Figura 1 – Taxonomia de UFO-A.
+- i. Realizar pesquisa bibliográfica sobre ontologias, representação do conhecimento, tecnologias envolvidas, ontologias jurídicas e Juizados Especiais Federais Cíveis e analisar normas e materiais jurídicos relacionados ao domínio; 
 
-![Taxonomia de UFO-A](diagramas/referencial/ufo-a.png)
+- ii. Delimitar o escopo da ontologia, definindo quais conceitos, sujeitos, documentos, atos processuais, pedidos, provas, decisões, recursos e fases procedimentais serão representados; 
 
-Fonte: GUIZZARDI, 2005
+- iii. Definir perguntas de competência para orientar a construção da ontologia e verificar se o modelo é capaz de responder às principais questões do domínio; 
 
-Um dos conceitos centrais da UFO-A é a distinção entre tipos que fornecem identidade e tipos que apenas classificam uma entidade em determinado contexto. Essa distinção é essencial para a modelagem conceitual, pois permite compreender que nem todo conceito atribuído a uma entidade define aquilo que ela é. Alguns conceitos indicam apenas papéis temporários ou classificações contextuais. No domínio jurídico, essa diferença pode ser observada na distinção entre “Pessoa” e “Autor”. Uma pessoa é uma entidade que possui identidade própria, independentemente de participar ou não de um processo judicial. Já “Autor” é um papel exercido por uma pessoa ou organização quando ocupa o polo ativo de uma demanda judicial. Assim, a pessoa não deixa de ser pessoa quando o processo termina, mas deixa de exercer o papel de autora naquele contexto específico. O mesmo raciocínio pode ser aplicado aos papéis de réu, advogado, testemunha ou perito.
+- iv. Modelar a ontologia conceitual, representando classes, relações, papéis, eventos e demais elementos relevantes de forma estruturada e semanticamente consistente; 
 
-### 2.2.2 UFO-B
+- v. Analisar e validar a consistência da modelagem, verificando se os conceitos e 
 
-A UFO-B é a parte da Unified Foundational Ontology voltada à representação de eventos, isto é, entidades que ocorrem no tempo. Diferentemente dos objetos, que permanecem ao longo do tempo mantendo sua identidade, os eventos possuem natureza temporal, pois acontecem, desenvolvem-se e se encerram em determinado intervalo. Assim, enquanto uma pessoa, uma organização ou um documento podem ser analisados como entidades que persistem, uma audiência, uma perícia, uma citação ou a prolação de uma sentença devem ser compreendidas como acontecimentos processuais.
+relações representados estão coerentes com o domínio jurídico estudado e se a ontologia responde às perguntas de competência; 
 
-No contexto da modelagem conceitual, a distinção entre objetos e eventos é relevante porque permite representar adequadamente a dinâmica dos domínios analisados. Em muitos modelos, atos, atividades e acontecimentos são tratados como simples objetos ou registros, o que pode gerar perda de significado. A UFO-B contribui para evitar esse problema ao permitir que ocorrências temporais sejam modeladas como eventos, evidenciando sua relação com o tempo, com os participantes envolvidos e com os efeitos que produzem no domínio (GUIZZARDI et al., 2013; GUIZZARDI et al., 2015).
+- vi. Ajustar a modelagem, quando necessário, a partir dos problemas ou inconsistências identificados durante a etapa de validação. 
 
-Figura 2 – Taxonomia de UFO-B.
+##### 1.4 Organização da Monografia 
 
-![Taxonomia de UFO-B](diagramas/referencial/ufo-b.png)
+Além desta introdução, esta monografia é composta por outros quatro capítulos: 
 
-Fonte: GUIZZARDI et al., 2013
+- O Capítulo 2 apresenta os aspectos relativos ao conteúdo teórico relevante para o trabalho; 
 
-A representação de eventos também é relevante porque os atos processuais possuem relação direta com prazos, fases e consequências jurídicas. O ajuizamento, a apresentação de contestação, a tentativa de conciliação ou o cumprimento de uma decisão são acontecimentos que podem alterar o andamento do processo. Desse modo, a UFO-B fornece suporte para modelar não apenas quais elementos existem no domínio, mas também como eles se desenvolvem ao longo do tempo.
+- O Capítulo 3 descreve os aspectos metodológicos do desenvolvimento da ontologia; 
 
-### 2.2.3 UFO-C
+- O Capítulo 4 apresenta os resultados, incluindo a organização da ontologia, a descrição dos seus diagramas e a verificação por rastreabilidade e instanciação simulada; 
 
-A UFO-C estende as categorias das camadas anteriores para representar aspectos sociais, intencionais e institucionais, incluindo agentes, momentos intencionais, papéis sociais, compromissos e ações comunicativas (GUIZZARDI et al., 2011, 2015). Um estado intencional, como uma intenção, pertence a um agente e tem um conteúdo; não se confunde com a condição jurídica de exercício de um direito. Essa distinção será retomada na análise de Interesse de Agir.
+- O Capítulo 5 apresenta as considerações finais do trabalho; 
 
-Figura 3 – Fragmento de UFO-C.
+# 2 Referencial Teórico e Tecnologias Utilizadas 
 
-![Fragmento de UFO-C reproduzido na tese de Beccalli](diagramas/referencial/ufo-c.png)
+#### 2.1 Ontologias 
 
-Fonte: Almeida e Guizzardi (2012 apud BECCALLI, 2018, p. 77, Figura 17). A fonte consultada foi a tese de Beccalli.
+Uma ontologia pode ser entendida como um modelo conceitual utilizado para representar, de forma explícita e estruturada, os tipos de entidades existentes em determinado domínio, suas propriedades e as relações que podem ser estabelecidas entre elas. O termo ontologia aproxima-se de sua origem filosófica, pois busca descrever categorias fundamentais da realidade e auxiliar na construção de modelos capazes de representar conceitos de maneira precisa e semanticamente consistente (GUIZZARDI et al., 2011). Nesse sentido, uma ontologia não se limita a listar termos ou conceitos de um domínio. Ela procura destrinchar o significado desses conceitos e as relações existentes entre eles. Assim, uma ontologia pode auxiliar na resposta a perguntas como: 
 
-A noção de agente é central para as relações sociais e institucionais. Pessoas e organizações podem desempenhar papéis juridicamente relevantes sem que esses papéis forneçam novas identidades aos seus portadores (GUIZZARDI et al., 2015; BECCALLI, 2018). Uma pessoa que atua como juíza, por exemplo, não se transforma em uma organização: é preciso distinguir o magistrado, o órgão jurisdicional e o exercício da função de julgar.
+   - i. O que é um objeto? 
 
-A UFO-C também auxilia na compreensão das relações jurídicas e processuais como relações socialmente reconhecidas e normativamente estruturadas. A relação entre autor e réu, por exemplo, não é uma simples associação entre duas entidades, mas uma relação processual gerada a partir de uma demanda judicial. Essa relação envolve direitos, deveres, poderes, faculdades e ônus processuais que decorrem do ordenamento jurídico e dos atos praticados no processo.
+   - ii. O que é um evento? 
 
-## 2.3 Ontologia núcleo UFO-L
+   - iii. O que é uma pessoa? 
 
-A UFO-L é uma ontologia núcleo de aspectos jurídicos, desenvolvida por Beccalli (2018) com base na UFO. Sua construção parte da perspectiva das relações jurídicas, articulando agentes, papéis, posições jurídicas e relações reificadas. Esse nível intermediário permite reutilizar estruturas jurídicas gerais na construção de ontologias de domínio sem pretender que todos os conceitos do Direito tenham sido esgotados.
+- iv. O que diferencia uma pessoa de um papel que ela pode exercer em determinado 
 
-Figura 4 – Padrão de modelagem para Legal Relator.
+- contexto, como paciente, autor, réu ou advogado? 
 
-![Padrão de modelagem para Legal Relator](diagramas/referencial/ufo-l.png)
+- v. Quais propriedades são essenciais para uma entidade e quais são apenas 
 
-Fonte: Beccalli (2018, p. 135, Figura 33).
+- temporárias? 
 
-A ontologia introduz categorias próprias do domínio jurídico, entre elas Legal Agent, Legal Role, Legal RoleMixin, Legal Moment, Legal Relator e Legal Event. Na UFO-L, os Legal Agents são agentes que podem ocupar posições em relações jurídicas e carregar Legal Moments. Esses momentos representam posições jurídicas, como direitos, deveres, permissões, poderes e sujeições. As relações entre os agentes podem ser reificadas por meio de Legal Relators, que são compostos por momentos jurídicos externamente dependentes.
+   - vi. Que tipos de relações podem existir entre as entidades representadas? 
 
-As posições jurídicas não são tratadas isoladamente. Na acepção específica de Right adotada pela UFO-L, o direito de exigir uma ação ou omissão corresponde a um Duty de outro agente. Essa correlação não deve ser generalizada indistintamente a todas as posições chamadas de “direitos” na linguagem comum: poder e sujeição, por exemplo, formam outro par. As posições correlatas são partes de um Legal Relator e dependem tanto de seus portadores quanto, externamente, dos agentes correlatos (BECCALLI, 2018, p. 112–118).
+A construção de ontologias é de extrema relevância nos domínios mais complexos, nos quais há grande quantidade de conceitos, regras e relações. No domínio jurídico, essa complexidade é evidente, pois normas, sujeitos, papéis, atos, documentos, decisões e procedimentos se relacionam de maneira dinâmica. Por isso, a representação ontológica pode contribuir para organizar o conhecimento jurídico, reduzir ambiguidades conceituais e favorecer tanto a compreensão humana quanto o uso computacional dessas informações. 
 
-A UFO-L também distingue Legal Norm, o significado normativo, de Legal Normative Description, o enunciado ou texto que o expressa. Rule e Principle são espécies de norma, e não tipos de arquivo ou de documento legislativo. Essa separação evita confundir a regra aplicada a um caso com a página ou o documento em que sua formulação é encontrada (BECCALLI, 2018, p. 105–108).
+Segundo Scherp et al. (2011), as ontologias podem ser classificadas de acordo com seu grau de generalidade. Entre as classificações, tem-se: 
 
-No contexto deste trabalho, a UFO-L fornece conceitos jurídicos de nível intermediário que podem ser reutilizados na construção da ontologia do Juizado Especial Federal. Dessa forma, conceitos específicos do domínio processual podem ser modelados a partir de categorias mais gerais da ontologia núcleo, permitindo representar agentes, papéis jurídicos, relações, posições jurídicas e eventos processuais de maneira fundamentada e semanticamente consistente.
+i. Ontologias de fundamentação, essas possuem maior abrangência e descrevem conceitos gerais, independentes de um domínio específico, servindo como base teórica para a construção de modelos conceituais mais precisos como, por exemplo, a Unified Foundational Ontology (UFO); 
 
-## 2.4 Engenharia de Ontologias
+ii. Ontologias de núcleo, que, por sua vez, representam conceitos estruturais de uma determinada área do conhecimento, possuindo um nível intermediário de generalidade. Elas são mais específicas que as ontologias de fundamentação, mas mais gerais que as ontologias de domínio. No campo jurídico, por exemplo, uma ontologia de núcleo pode representar conceitos comuns a diferentes subdomínios do Direito, como relações jurídicas, sujeitos de direito, 
 
-A Engenharia de Ontologias compreende o conjunto de métodos, técnicas e atividades utilizados para apoiar a construção sistemática de ontologias. Seu processo envolve não apenas a identificação e a representação dos conceitos de um domínio, mas também a definição do propósito e do escopo da ontologia, a aquisição do conhecimento, a especificação de requisitos, a modelagem conceitual, a documentação e a avaliação do modelo produzido. Dessa forma, busca-se reduzir ambiguidades e favorecer a construção de representações mais claras, consistentes e reutilizáveis do conhecimento (FALBO, 2014). O desenvolvimento de uma ontologia também pode envolver diferentes recursos metodológicos e tecnológicos, cada um desempenhando uma função específica durante o processo de construção.
+normas, situações jurídicas e atos jurídicos; 
 
-### 2.4.1 SABiO
+iii. Ontologias de domínio que são voltadas à representação de um recorte específico da realidade. Elas descrevem conceitos dependentes de determinado domínio, como medicina, educação, biologia ou Direito. No contexto deste trabalho, a ontologia a ser desenvolvida caracteriza-se como uma ontologia de domínio jurídico, pois tem como foco representar o Juizado Especial Federal Cível, abrangendo seus principais sujeitos, papéis processuais, atos, documentos, pedidos, provas, decisões e etapas procedimentais. 
 
-A construção de ontologias exige o uso de metodologias para orientar o processo de desenvolvimento, desde a identificação do domínio até a avaliação do modelo produzido. Nesse contexto, destaca-se a SABiO, sigla para _Systematic Approach for Building Ontologies_ , proposta por Falbo (2014), que consiste em uma abordagem sistemática para a construção de ontologias de domínio. A SABiO foi desenvolvida com o objetivo de apoiar o processo de engenharia de ontologias, fornecendo atividades, papéis, artefatos e processos de apoio para a elaboração de modelos ontológicos mais consistentes e reutilizáveis.
+Essa delimitação é crucial devido à complexidade do domínio jurídico. Conforme aponta Griffo (2018), o Direito não pode ser tratado como um sistema fechado de regras, pois envolve diferentes nuances, interpretações e relações. Por isso, é necessário estabelecer um recorte da realidade jurídica a ser representada, selecionando os conceitos e relações considerados relevantes para o objetivo da ontologia (GRIFFO, 2018). 
 
-Segundo Falbo (2014), as ontologias podem ser distinguidas em ontologias de referência e ontologias operacionais. As ontologias de referência são voltadas à representação conceitual do domínio, tendo como principal objetivo descrever, com clareza e precisão, os conceitos e relações existentes em determinada área de conhecimento. Já as ontologias operacionais são voltadas ao uso computacional, sendo implementadas em linguagens computacionais, como OWL. Essa distinção é relevante porque permite separar a fase de compreensão e modelagem conceitual do domínio da fase de implementação da ontologia.
+#### 2.2 UFO - Unified Foundational Ontology 
 
-Figura 5 – Metodologia SABiO.
+A construção de ontologias de domínio exige uma base conceitual capaz de orientar a identificação dos tipos de entidades existentes, suas propriedades e suas relações. Para isso, podem ser utilizadas ontologias de fundamentação, que fornecem categorias gerais aplicáveis a diferentes áreas do conhecimento. Entre essas ontologias, destaca-se a Unified Foundational Ontology (UFO), proposta como uma ontologia de fundamentação voltada ao apoio da modelagem conceitual e à representação semanticamente precisa de domínios complexos (GUIZZARDI, 2005; GUIZZARDI et al., 2015). 
 
-![Processos de desenvolvimento e de apoio da SABiO](diagramas/referencial/sabio.png)
+A UFO tem como objetivo oferecer categorias ontológicas capazes de auxiliar a modelagem a distinguir diferentes elementos da realidade, como objetos, eventos, propriedades, papéis, relações e entidades sociais. Essa distinção é importante porque, em muitos domínios, os conceitos não possuem a mesma natureza, alguns representam entidades que mantêm sua identidade ao longo do tempo, enquanto outros representam papéis temporários, eventos que ocorrem em determinado momento ou relações dependentes de outros elementos. 
 
-Fonte: FALBO, 2014
+A UFO costuma ser apresentada em três partes principais: UFO-A, UFO-B e UFO-C. A UFO-A trata de entidades substanciais, propriedades, tipos e relações estruturais; a UFO-B aborda eventos e ocorrências temporais; e a UFO-C trata de aspectos sociais e intencionais, como agentes, papéis sociais, compromissos e relações sociais (GUIZZARDI, 2005; GUIZZARDI et al., 2015). Essa divisão permite analisar um domínio a partir de diferentes dimensões, o que é útil para representar áreas complexas, como o Direito. 
 
-A primeira etapa proposta pela SABiO consiste na identificação do propósito da ontologia e no levantamento de requisitos. Nessa fase, são definidos o objetivo da ontologia, seus possíveis usos e as questões que ela deverá ser capaz de responder. Essas questões são denominadas perguntas de competência e funcionam como requisitos funcionais da ontologia, pois delimitam quais conhecimentos devem ser representados no modelo (FALBO, 2014). No caso deste trabalho, exemplos de perguntas de competência seriam: Qual é o tipo da ação proposta? Existe requerimento de tutela provisória? O réu apresentou contestação? Qual foi o resultado da sentença? Em que fase está meu processo?
+###### 2.2.1 UFO-A 
 
-Após a definição dos requisitos, a SABiO propõe a captura e a formalização da ontologia. Essa etapa envolve a identificação dos conceitos relevantes do domínio, suas propriedades, relações e restrições. Para isso, o conhecimento pode ser obtido a partir de especialistas do domínio, materiais bibliográficos, normas, documentos técnicos, modelos de referência e demais fontes consolidadas de conhecimento.
+A UFO-A é a parte da Unified Foundational Ontology voltada à representação de entidades chamadas de endurantes, isto é, entidades que persistem no tempo mantendo sua identidade, ainda que possam sofrer mudanças. Essas entidades são diferentes dos eventos, pois não acontecem no tempo, mas permanecem através dele. Uma pessoa, uma organização, um documento e um processo podem ser analisados como exemplos de entidades que conservam identidade ao longo de sua existência. 
 
-A SABiO também recomenda que a modelagem conceitual seja orientada por uma ontologia de fundamentação. Nesse sentido, Falbo (2014) destaca a possibilidade de utilização da OntoUML como linguagem de modelagem para ontologias de referência, uma vez que ela incorpora representações ontológicas da Unified Foundational Ontology (UFO). Essa orientação é compatível com a proposta deste trabalho, que utiliza conceitos da UFO-L e da OntoUML para representar o domínio jurídico.
+Figura 1 – Taxonomia de UFO-A 
 
-Outro ponto relevante da SABiO é a possibilidade de modularização da ontologia. Em domínios complexos, como o jurídico, a repartição em módulos ou subontologias pode facilitar o desenvolvimento, a manutenção e a reutilização do modelo. No caso do Juizado Especial Federal Cível, a ontologia pode ser organizada em módulos relacionados, por exemplo, aos sujeitos processuais, à demanda judicial, às competências e aos procedimentos. Essa divisão contribui para reduzir a complexidade da modelagem e permite que cada parte do domínio seja analisada de maneira mais clara.
 
-Além das atividades principais de desenvolvimento, a SABiO também recomenda processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração,  avaliação e reuso. A documentação é especialmente importante para registrar as decisões tomadas durante a modelagem, os conceitos definidos e as relações. Já a avaliação busca verificar se a ontologia atende ao propósito para o qual foi construída, se responde às perguntas de competência e se apresenta clareza, coerência e consistência conceitual.
 
-Dessa forma, a SABiO contribui diretamente para o desenvolvimento deste trabalho, pois oferece um caminho metodológico adequado para a construção da ontologia proposta. Neste trabalho, são contempladas as atividades relacionadas à construção de uma ontologia de referência: identificação de requisitos, definição de perguntas de competência, captura do conhecimento, modelagem conceitual, modularização e avaliação da ontologia. Essa abordagem permite que o modelo seja desenvolvido de forma mais sistemática e alinhada aos objetivos da pesquisa.
+<!-- Start of picture text -->
+[rons]<br>A {disjoint, complete}<br>[pawersal [inawiul<br>L\ tasjont) A<br>[a at<br>L\ (sont) As<br>[sertatniversa] [neseuniversa] [sebetontnl] [Moment<br>ra {disjoint} L casio, complete} A<br>A A\ A L\ taint, comolete)<br>(een cme) | noe, comet XK<br>£\ /\<br>[jena] [Semon] [piece] [Role] [fatesory] [Reterce] [ee] [pete] [ee] [Rey<br><!-- End of picture text -->
 
-### 2.4.2 OntoUML
+Fonte: GUIZZARDI, 2005 
 
-A OntoUML é uma linguagem de modelagem conceitual fundamentada na Unified Foundational Ontology (UFO), desenvolvida a partir dos estudos de Guizzardi (2005). Ela permite explicitar distinções ontológicas entre tipos essenciais, papéis, fases, propriedades e relações, em vez de representar todas as classes e associações como elementos de mesma natureza.
+Um dos conceitos centrais da UFO-A é a distinção entre tipos que fornecem identidade e tipos que apenas classificam uma entidade em determinado contexto. Essa distinção é essencial para a modelagem conceitual, pois permite compreender que nem todo conceito atribuído a uma entidade define aquilo que ela é. Alguns conceitos indicam apenas papéis temporários ou classificações contextuais. No domínio jurídico, essa diferença pode ser observada na distinção entre “Pessoa” e “Autor”. Uma pessoa é uma entidade que possui identidade própria, independentemente de participar ou não de um processo judicial. Já “Autor” é um papel exercido por uma pessoa ou organização quando ocupa o polo ativo de uma demanda judicial. Assim, a pessoa não deixa de ser pessoa quando o processo termina, mas deixa de exercer o papel de autora naquele contexto específico. O mesmo raciocínio pode ser aplicado aos papéis de réu, advogado, testemunha ou perito. 
 
-A principal diferença entre a UML tradicional e a OntoUML está no uso de estereótipos ontológicos. Enquanto a UML permite representar classes, atributos, associações e generalizações, a OntoUML permite indicar se determinado conceito corresponde, por exemplo, a um tipo que fornece identidade, a um papel contextual, a uma fase, a uma propriedade, a uma categoria ou a uma entidade relacional. Desse modo, a linguagem não apenas representa os conceitos de um domínio, mas também explicita o tipo de entidade que cada conceito representa.
+###### 2.2.2 UFO-B 
 
-Quadro 1 – Estereótipos de classes da linguagem OntoUML.
+A UFO-B é a parte da Unified Foundational Ontology voltada à representação de eventos, isto é, entidades que ocorrem no tempo. Diferentemente dos objetos, que permanecem ao longo do tempo mantendo sua identidade, os eventos possuem natureza temporal, pois acontecem, desenvolvem-se e se encerram em determinado intervalo. Assim, enquanto uma pessoa, uma organização ou um documento podem ser analisados como entidades que persistem, uma audiência, uma perícia, uma citação ou a prolação de uma sentença devem ser compreendidas como acontecimentos processuais. 
 
-| Estereótipo   | Interpretação                                                                                                                                                               |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `kind`       | Tipo rígido que fornece princípio de identidade aos indivíduos classificados.                                                                                              |
-| `subkind`    | Especialização rígida que herda o princípio de identidade fornecido por seu tipo de identidade, em vez de fornecer um novo princípio.                                    |
-| `role`       | Tipo sortal antirrígido e relacionalmente dependente; classifica o indivíduo no contexto de uma relação.                                                                  |
-| `phase`      | Tipo sortal antirrígido cuja classificação depende de condições intrínsecas do indivíduo. Não equivale, por si só, a uma etapa de um fluxo.                          |
-| `mode`       | Propriedade particularizada intrínseca, dependente de um portador; pode apresentar dependência externa adicional.                                                           |
-| `quality`    | Propriedade particularizada cujo valor pode ser associado a um espaço de qualidades, como uma dimensão monetária. A propriedade não é o próprio número que a expressa. |
-| `category`   | Tipo não sortal rígido que reúne indivíduos com diferentes princípios de identidade.                                                                                     |
-| `mixin`      | Tipo não sortal semirrígido, essencial para algumas instâncias e contingente para outras.                                                                                  |
-| `roleMixin`  | Tipo não sortal antirrígido e relacionalmente dependente que reúne papéis de indivíduos com diferentes princípios de identidade.                                        |
-| `collective` | Tipo de identidade para coletivos, considerados segundo um critério de unidade de seus membros.                                                                              |
-| `quantity`   | Tipo de identidade para porções de matéria ou quantidades, como água ou areia.                                                                                            |
-| `relator`    | Entidade relacional particularizada que fundamenta uma relação material entre os indivíduos mediados.                                                                      |
-| `event`      | Ocorrência que se desenvolve no tempo, podendo envolver participantes e produzir situações.                                                                                |
-| `situation`  | Configuração de entidades e propriedades que pode resultar de eventos ou constituir condição para sua ocorrência.                                                        |
-| `intention`  | Momento intencional de um agente, dirigido a um conteúdo ou objetivo; não representa automaticamente um direito ou requisito processual.                                    |
+No contexto da modelagem conceitual, a distinção entre objetos e eventos é relevante porque permite representar adequadamente a dinâmica dos domínios analisados. Em muitos 
 
-Fonte: síntese com base em Guizzardi (2005), Guizzardi et al. (2013, 2015) e Beccalli (2018). As categorias de eventos, situações e intenções complementam o fragmento estrutural original da OntoUML.
+modelos, atos, atividades e acontecimentos são tratados como simples objetos ou registros, o que pode gerar perda de significado. A UFO-B contribui para evitar esse problema ao permitir que ocorrências temporais sejam modeladas como eventos, evidenciando sua relação com o tempo, com os participantes envolvidos e com os efeitos que produzem no domínio (GUIZZARDI et al., 2013; GUIZZARDI et al., 2015). 
 
-O Quadro 1 sintetiza as distinções empregadas na leitura do modelo. A escolha de um estereótipo exige justificativa conceitual e respeito às restrições da linguagem; utilizar seus rótulos não demonstra, por si só, a correção da modelagem. Os padrões jurídicos da UFO-L também não são intercambiáveis com estereótipos básicos como `role` e `relator`.
+Figura 2. Taxonomia de UFO-B 
 
-Quadro 2 – Estereótipos de Relacionamentos da linguagem OntoUML.
 
-| Relação                     | Interpretação                                                                                                                                         |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `mediation`                 | Vincula um relator aos indivíduos mediados. As mediações devem explicitar o contexto que fundamenta os papéis.                                      |
-| `material`                  | Relação material fundamentada por um relator.                                                                                                         |
-| `derivation`                | Indica o relator do qual uma relação material é derivada.                                                                                            |
-| `characterization`          | Relaciona uma propriedade intrínseca particularizada ao seu portador.                                                                                  |
-| `formal`                    | Relação que não exige um relator como fundamento, como determinadas comparações entre propriedades.                                                |
-| `componentOf`               | Relação todo-parte de composição funcional.                                                                                                         |
-| `memberOf`                  | Relaciona um membro a um coletivo.                                                                                                                      |
-| `subCollectionOf`           | Relaciona um subcoletivo ao coletivo mais abrangente.                                                                                                   |
-| `participation`             | Relaciona um endurante à ocorrência de um evento do qual participa.                                                                                   |
-| `creation`                  | Indica a criação de uma entidade pela ocorrência de um evento.                                                                                       |
-| `brings about` / “leva a” | Relaciona um evento à situação resultante.                                                                                                           |
-| `triggers`                  | Relaciona uma situação ao evento que ela desencadeia. Não deve ser utilizada como simples ligação genérica entre dois eventos.                    |
-| `historicalDependence`      | Registra a dependência histórica entre uma ocorrência e uma ocorrência antecedente; não especifica sozinha todas as regras de um fluxo processual. |
 
-Fonte: síntese com base em Guizzardi (2005) e Guizzardi et al. (2013, 2015). Os rótulos “possui”, “regula” e “impõe”, usados nos diagramas, são associações do domínio e não adquirem automaticamente a semântica de um desses estereótipos.
+<!-- Start of picture text -->
+A<br>A<br>heres n> 1 L\ < beginpoint 1<br>{disjoint<br>( Endurant] : brings about ><br>A a<br>{disjont) A 2 has part<br>L\ 1 1 {disjoint, complete}<br>participatia qctewey 4} 1<br>[amicevent [ stuation |<br>‘7 A<br>. '<br>manfested by ><br>< activates [Fact<br><!-- End of picture text -->
 
-Essa distinção entre tipos, papéis e relações é relevante para a modelagem jurídica. Beccalli (2018) destaca a representação das relações jurídicas e das posições de seus agentes. A fundamentação permite distinguir uma pessoa ou organização dos papéis exercidos em uma relação, bem como o vínculo jurídico das posições de direito, dever, poder ou sujeição que o compõem. Para aproveitar essa contribuição, é preciso documentar quais padrões foram efetivamente utilizados e quais dependências ainda não aparecem no modelo.
+Fonte: GUIZZARDI et al., 2013 
 
-A utilização da OntoUML também se relaciona ao método de desenvolvimento de ontologias adotado neste trabalho. Falbo (2014), ao propor a SABiO, diferencia ontologias de referência e ontologias operacionais, indicando que as ontologias de referência possuem foco na representação conceitual do domínio. Nesse sentido, a OntoUML é adequada para a construção da ontologia proposta, pois permite elaborar um modelo conceitual independente de uma implementação computacional específica, servindo como base para posteriores transformações em ontologias operacionais ou sistemas de apoio jurídico.
+A representação de eventos também é relevante porque os atos processuais possuem relação direta com prazos, fases e consequências jurídicas. O ajuizamento, a apresentação de contestação, a tentativa de conciliação ou o cumprimento de uma decisão são acontecimentos que podem alterar o andamento do processo. Desse modo, a UFO-B fornece suporte para modelar não apenas quais elementos existem no domínio, mas também como eles se desenvolvem ao longo do tempo. 
 
-### 2.4.3 Visual Paradigm e o plugin OntoUML
+###### 2.2.3 UFO-C 
 
-Para a construção gráfica de modelos conceituais em OntoUML, podem ser utilizadas ferramentas de modelagem que ofereçam suporte aos elementos específicos da linguagem. Entre elas está o Visual Paradigm, ambiente voltado à criação de modelos e diagramas, que pode ser estendido por meio do plugin OntoUML, possibilitando a elaboração de modelos conceituais ontologicamente fundamentados.
+A UFO-C é a parte da Unified Foundational Ontology voltada à representação de aspectos sociais, intencionais e institucionais da realidade. Enquanto a UFO-A trata principalmente de entidades que persistem no tempo e a UFO-B trata de eventos, a UFO-C permite representar agentes, papéis sociais, relações sociais, compromissos, intenções e ações comunicativas. Essa dimensão é especialmente relevante para domínios em que há interação entre pessoas, organizações e instituições, como ocorre no Direito (GUIZZARDI, 2005; GUIZZARDI et al., 2015). 
 
-O plugin OntoUML acrescenta ao Visual Paradigm recursos próprios da linguagem, permitindo aplicar às classes e relações os estereótipos apresentados nos Quadros 1 e 2, como kind, role, relator e mode. Além disso, oferece mecanismos de apoio à modelagem, como sugestões de estereótipos e verificação do modelo segundo as regras da OntoUML. A Figura 6 exemplifica a representação desses elementos e de suas relações no ambiente de modelagem.
+Figura 3. As categorias da ontologia de agentes UFO-C 0.2. 
 
-Figura 6 – Exemplo de modelagem OntoUML no Visual Paradigm.
 
-![Exemplo de pessoa, papel, modo e relator no Visual Paradigm](diagramas/referencial/exemplo-ontouml.png)
 
-Fonte: Elaborado pelo autor (2026).
+<!-- Start of picture text -->
+[Physical Object<br>(from UFO-A) .<br>[Moment Individual ZX Event<br>(from OFO-A)<br>{disjoint} perce ZX<br>L\ erodives (from UFO-B)]<br>RelationalMoment Intrinsicry Non-Agentive {disjoint}disjoint; :<br>Moment Object [ActionEvent | Non-Action<br>ZX<br>is LN * inheres in 4 . creates Event<br>Physical<br>OY sisoint) TAN ommunicativeActionEvent<br>Belief Perception +<br>'SocialMoment « Dears |Communicating<br>ZX * 2" Physicalagent Receiver<br>{aisjoint)disjoint’ Dp ommunicatingAgent<br>Commitment Institutional 1."<br>Agent InternalAgent<br>0<br><!-- End of picture text -->
 
-A utilização do ambiente e do plugin como apoio à edição não demonstra que a ontologia tenha sido formalmente verificada. O uso do plugin em ontologias jurídicas é relatado, por exemplo, em Zorzanelli Costa et al. (2023), mas os resultados de verificação daquele trabalho não são transferidos para esta proposta. A versão do Visual Paradigm, a versão do plugin e eventuais relatórios de análise do projeto precisam ser registrados para reprodução do procedimento.
+Fonte: GUIZZARDI; WAGNER, 2005 
 
-## 2.5 Juizado Especial Federal Cível
+A noção de agente é central para a representação de relações sociais e institucionais. Guizzardi e Wagner (2005) destacam que a UFO foi proposta como uma ontologia de fundamentação para a modelagem conceitual, incluindo a fundamentação de conceitos relacionados a agentes. Essa abordagem contribui para a modelagem do domínio jurídico, pois permite diferenciar agentes, como pessoas e organizações, dos papéis que eles exercem no processo judicial, como autor, réu, advogado, juiz ou perito. 
 
-O Juizado Especial Federal Cível integra a Justiça Federal e tem competência definida pela Lei nº 10.259/2001. Essa disciplina não se confunde com a dos Juizados Especiais Cíveis estaduais: a Lei nº 9.099/1995 é aplicável ao JEF apenas no que não conflitar com a lei específica. A motivação de simplificação do acesso deve ser compreendida junto aos critérios legais de competência, de admissão das partes e de procedimento, sem restringir o acesso aos Juizados exclusivamente às pessoas economicamente vulneráveis (BRASIL, 2001, arts. 1º, 3º e 6º; RIBEIRO; SANZOVO, 2011).
+A UFO-C também auxilia na compreensão das relações jurídicas e processuais como relações socialmente reconhecidas e normativamente estruturadas. A relação entre autor e réu, por exemplo, não é uma simples associação entre duas entidades, mas uma relação processual gerada a partir de uma demanda judicial. Essa relação envolve direitos, deveres, poderes, faculdades e ônus processuais que decorrem do ordenamento jurídico e dos atos praticados no processo. 
 
-### 2.5.1 Competência, partes e representação
+#### 2.3 Core Ontology UFO-L 
 
-O art. 3º da Lei nº 10.259/2001 atribui ao JEF Cível o processamento, a conciliação, o julgamento e a execução de suas sentenças em causas de competência da Justiça Federal de até sessenta salários mínimos. O valor, isoladamente, não decide o cabimento. O § 1º contém exclusões materiais, entre elas o mandado de segurança; o § 2º disciplina as obrigações vincendas; e o § 3º estabelece competência absoluta no foro em que estiver instalada Vara do Juizado Especial. A análise deve, portanto, considerar matéria, partes, dimensão econômica e demais condições aplicáveis ao caso (BRASIL, 2001).
+A UFO-L é uma ontologia núcleo voltada à representação de aspectos jurídicos, desenvolvida por Griffo (2018) com base na Unified Foundational Ontology (UFO). Sua construção parte da perspectiva das relações jurídicas, relacionando conceitos do Direito às categorias ontológicas fornecidas pela UFO, de modo a estabelecer uma estrutura conceitual reutilizável na construção de ontologias de domínio jurídico. 
 
-Conforme o art. 6º, podem ser autores pessoas físicas, microempresas e empresas de pequeno porte; no polo passivo, a lei indica União, autarquias, fundações e empresas públicas federais. Um órgão integrante de uma entidade não se confunde com essa pessoa jurídica. Por exemplo, identificar o órgão administrativo que praticou um ato não basta para concluir qual entidade tem legitimidade para figurar como ré. Essa distinção é importante para as QCs sobre participantes, cabimento e polo passivo.
+Figura 4. Padrão de modelagem para Legal Relator 
 
-O art. 10 permite a designação, por escrito, de representante para a causa, advogado ou não, no contexto cível e nas hipóteses admitidas. Essa previsão deve ser distinguida da representação técnica obrigatória em grau recursal, prevista no art. 41, § 2º, da Lei nº 9.099/1995. Tampouco se deve transpor automaticamente para o JEF o limite de vinte salários mínimos do art. 9º da lei dos Juizados estaduais. A ontologia precisa separar a existência de um representante, sua habilitação e as condições normativas que tornam sua atuação necessária (BRASIL, 2001; BRASIL, 1995).
 
-### 2.5.2 Demanda, defesa e prova
 
-O pedido apresentado ao Juizado deve identificar as partes, os fatos e fundamentos, o objeto e seu valor, admitida apresentação oral reduzida a escrito pela Secretaria (BRASIL, 1995, art. 14). No modelo, Demanda designa o conteúdo articulado a partir de causa de pedir e pedidos, enquanto Documento de Petição Inicial designa seu registro documental. O ato de peticionar é distinto de ambos. A representação de uma petição escrita elaborada por representante é um recorte possível, não a única via juridicamente admissível de acesso ao JEF.
+<!-- Start of picture text -->
+L>|_Legal Agent |] {disjoint}<br>Legal RoleMixin ——<br>a cmaterialy 7 -_ Legal RoleMixin<br>1 1 : i afi<br>1 :<br>grounds p :<br>mediates = 1.* 1.* i 1* mediates<br>ae Legal Relator «mediation»<br>1<br>1<br>Lt;<br>«characterization» aT aeons«characterization»<br>externally depends on ‘“characterizauion><br>«characterization<br><!-- End of picture text -->
 
-A defesa pode ser oral ou escrita, conforme o art. 30 da Lei nº 9.099/1995. A entidade pública ré deve fornecer a documentação de que disponha para esclarecimento da causa, e a Lei nº 10.259/2001 prevê exame técnico quando necessário à conciliação ou ao julgamento (arts. 11 e 12). Não se extrai dessas regras uma obrigação de produzir todas as modalidades de prova em todos os processos. A escolha dos meios e a avaliação de sua necessidade dependem das questões controvertidas e da apreciação judicial.
+Fonte: GRIFFO, 2018 
 
-É necessário, ainda, distinguir interesse de agir de vontade subjetiva de ajuizar uma ação. O art. 17 do CPC exige interesse e legitimidade para postular em juízo. Um requerimento administrativo e sua resposta podem ser relevantes para demonstrar a necessidade da tutela em determinadas hipóteses, mas não autorizam afirmar que toda causa exige prévio requerimento ou esgotamento da via administrativa. A aplicação dessa exigência a matérias específicas demanda exame normativo e jurisprudencial próprio, não desenvolvido integralmente neste trabalho (BRASIL, 1988, art. 5º, XXXV; BRASIL, 2015, art. 17).
+A ontologia introduz categorias próprias do domínio jurídico, entre elas Legal Agent, Legal Role, Legal RoleMixin, Legal Moment, Legal Relator e Legal Event. Na UFO-L, os Legal Agents são agentes que podem ocupar posições em relações jurídicas e carregar Legal Moments. Esses momentos representam posições jurídicas, como direitos, deveres, permissões, poderes e sujeições. As relações entre os agentes podem ser reificadas por meio de Legal Relators, que são compostos por momentos jurídicos externamente dependentes. 
 
-### 2.5.3 Conciliação, decisão, recursos e cumprimento
+As posições jurídicas representadas pela UFO-L não são tratadas de forma isolada. Direitos e deveres, por exemplo, apresentam relações de correlação: um direito atribuído a determinado agente corresponde a um dever jurídico atribuído a outro agente. A UFO-L representa essas posições correlatas como partes de um _Legal Relator_ , permitindo explicitar não somente os participantes de uma relação jurídica, mas também as posições jurídicas que cada um assume no contexto dessa relação. 
 
-A conciliação é incentivada pelo rito, e os representantes indicados no art. 10 da Lei nº 10.259/2001 têm autorização legal para conciliar, transigir ou desistir, nos termos desse dispositivo. O consenso das partes, sua formalização e a homologação judicial são elementos distintos; a obtenção de conciliação é reduzida a escrito e homologada por sentença com eficácia executiva (BRASIL, 1995, art. 22, § 1º). Registrar um acordo ocorrido não equivale a formalizar todas as condições de validade de qualquer acordo.
+No contexto deste trabalho, a UFO-L fornece conceitos jurídicos de nível intermediário que podem ser reutilizados na construção da ontologia do Juizado Especial Federal. Dessa forma, conceitos específicos do domínio processual podem ser modelados a partir de categorias mais gerais da ontologia núcleo, permitindo representar agentes, papéis jurídicos, relações, posições jurídicas e eventos processuais de maneira fundamentada e semanticamente consistente. 
 
-O recurso inominado permite a impugnação de sentenças nas hipóteses legais. O art. 41 da Lei nº 9.099/1995 excepciona a sentença homologatória de conciliação ou de laudo arbitral. Seu art. 42 prevê prazo de dez dias a partir da ciência da sentença; o art. 12-A determina contagem em dias úteis, e o art. 50 estabelece a interrupção do prazo pela oposição de embargos de declaração. Esses elementos não se reduzem ao armazenamento de um número: um cálculo concreto exige ciência válida, calendário e análise de causas de interrupção ou suspensão. O modelo representa principalmente o recurso inominado, não o sistema completo de impugnações, uniformização e recurso extraordinário (BRASIL, 1995; BRASIL, 2001, arts. 5º, 14 e 15).
+#### 2.4 Engenharia de Ontologia 
 
-O cumprimento também depende da natureza da prestação. O art. 16 da Lei nº 10.259/2001 trata das obrigações de fazer, não fazer e entregar coisa certa após o trânsito em julgado, mediante ofício. O art. 17 disciplina o pagamento de quantia certa e suas condições, incluindo a requisição e as hipóteses de precatório. Não se deve confundir o limite de competência com o valor final do crédito ou supor que toda condenação será paga por RPV. Neste trabalho, essas regras fundamentam o recorte conceitual, mas o procedimento de requisição e pagamento não foi modelado integralmente (BRASIL, 2001).
+A Engenharia de Ontologias compreende o conjunto de métodos, técnicas e atividades utilizados para apoiar a construção sistemática de ontologias. Seu processo envolve não apenas a identificação e a representação dos conceitos de um domínio, mas também a definição do propósito e do escopo da ontologia, a aquisição do conhecimento, a especificação de requisitos, a modelagem conceitual, a documentação e a avaliação do modelo produzido. Dessa forma, 
 
-## 2.6 Trabalhos relacionados e posição da proposta
+busca-se reduzir ambiguidades e favorecer a construção de representações mais claras, consistentes e reutilizáveis do conhecimento (FALBO, 2014). O desenvolvimento de uma ontologia também pode envolver diferentes recursos metodológicos e tecnológicos, cada um desempenhando uma função específica durante o processo de construção. 
 
-Beccalli (2018) oferece, com a UFO-L, estruturas gerais para analisar relações e posições jurídicas. Trata-se de contribuição de núcleo: sua finalidade não é descrever, por si só, o procedimento completo do JEF Cível. Neste trabalho, ela fundamenta a análise de agentes, papéis, relações, normas e posições correlatas, cujo modo de adaptação é documentado na Seção 3.5.
+###### 2.4.1 SABiO 
 
-Zorzanelli Costa, Guizzardi e Almeida (2022) estudam o Pedido de Uniformização de Interpretação de Lei Federal combinando uma perspectiva estrutural em OntoUML e uma perspectiva comportamental em BPMN. O trabalho também relaciona elementos dos modelos a fragmentos normativos identificados com LexML. A contribuição mostra que modelar entidades e representar o encadeamento de atividades são tarefas complementares, e que a rastreabilidade normativa não deve depender apenas da semelhança entre os nomes de classes e os termos da lei.
+A construção de ontologias exige o uso de metodologias para orientar o processo de desenvolvimento, desde a identificação do domínio até a avaliação do modelo produzido. Nesse contexto, destaca-se a SABiO, sigla para _Systematic Approach for Building Ontologies_ , proposta por Falbo (2014), que consiste em uma abordagem sistemática para a construção de ontologias de domínio. A SABiO foi desenvolvida com o objetivo de apoiar o processo de engenharia de ontologias, fornecendo atividades, papéis, artefatos e processos de apoio para a elaboração de modelos ontológicos mais consistentes e reutilizáveis. 
 
-Zorzanelli Costa et al. (2023) utilizam e estendem a OntoRS, implementam uma versão operacional em OWL com base em gUFO e a empregam na representação de dados extraídos de decisões da TNU. São relatadas consultas SPARQL e avaliação com raciocinador na implementação daquele trabalho. Esses resultados não podem ser atribuídos à ontologia aqui proposta, que permanece no nível de referência e emprega dados fictícios na avaliação.
+Segundo Falbo (2014), as ontologias podem ser distinguidas em ontologias de referência e ontologias operacionais. As ontologias de referência são voltadas à representação conceitual do domínio, tendo como principal objetivo descrever, com clareza e precisão, os conceitos e relações existentes em determinada área de conhecimento. Já as ontologias operacionais são voltadas ao uso computacional, sendo implementadas em linguagens computacionais, como OWL. Essa distinção é relevante porque permite separar a fase de compreensão e modelagem conceitual do domínio da fase de implementação da ontologia. 
 
-A proposta desta monografia diferencia-se pelo recorte do percurso de uma demanda no JEF Cível, incluindo análise pré-processual, sujeitos, defesa, instrução, sentença, recurso inominado e cumprimento. Esse escopo é mais amplo quanto às etapas do primeiro grau, mas menos detalhado quanto ao Pedido de Uniformização e à operação computacional. Não se afirma ter estendido integralmente a OntoRS nem realizado uma comparação exaustiva de todas as ontologias jurídicas existentes. O resultado é uma adaptação conceitual documentada, cuja avaliação evidencia tanto o suporte aos requisitos quanto os pontos a refinar.
+Figura 5 – Metodologia SABiO 
 
-# 3 Aspectos Metodológicos
 
-## 3.1 Abordagem para desenvolvimento da ontologia
 
-O desenvolvimento da ontologia proposta neste trabalho foi conduzido com base na Systematic Approach for Building Ontologies (SABiO), apresentada por Falbo (2014). A abordagem organiza a construção de ontologias por meio de um processo sistemático, envolvendo atividades de desenvolvimento e processos de apoio que acompanham a construção do artefato ontológico. Conforme apresentado no referencial teórico, o processo de desenvolvimento parte do levantamento dos requisitos e da identificação do propósito da ontologia, avança para a captura e formalização do conhecimento e resulta, inicialmente, na construção de uma ontologia de referência.
+<!-- Start of picture text -->
+Processo de desenvolvimento Processo de suporte<br>¥v<br>«—_<br>——_<br>Es<br>a oo<br>——— -—<br><!-- End of picture text -->
 
-A SABiO prevê ainda etapas posteriores relacionadas ao design e à implementação, nas quais a ontologia de referência pode ser transformada em uma representação voltada ao uso computacional, resultando, por exemplo, em uma ontologia operacional. Apoiando as atividades de desenvolvimento, a abordagem oferece processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração, avaliação e reúso. Esses processos não necessariamente ocorrem de maneira isolada ou estritamente sequencial, podendo acompanhar diferentes momentos do desenvolvimento da ontologia. No próprio referencial deste trabalho, esses processos são apresentados como mecanismos de suporte à construção e à avaliação do modelo.
+Fonte: FALBO, 2014 
 
-Considerando que o objetivo deste trabalho é desenvolver uma ontologia de referência para o domínio do Juizado Especial Federal Cível, foram adotadas principalmente as atividades da SABiO relacionadas à identificação do propósito e levantamento dos requisitos, aquisição do conhecimento, captura e formalização do domínio, reúso, modelagem conceitual e avaliação. As etapas destinadas ao design e à implementação de uma ontologia operacional não integram o escopo deste trabalho. Nas seções seguintes, são descritas as atividades realizadas durante esse processo, iniciando-se pela definição do propósito e pela delimitação do domínio da ontologia, seguida da aquisição do conhecimento, do levantamento das Questões de Competência e da captura e modelagem dos conceitos identificados.
+A primeira etapa proposta pela SABiO consiste na identificação do propósito da ontologia e no levantamento de requisitos. Nessa fase, são definidos o objetivo da ontologia, seus possíveis usos e as questões que ela deverá ser capaz de responder. Essas questões são denominadas perguntas de competência e funcionam como requisitos funcionais da ontologia, pois delimitam quais conhecimentos devem ser representados no modelo (FALBO, 2014). No caso deste trabalho, exemplos de perguntas de competência seriam: Qual é o tipo da ação proposta? Existe requerimento de tutela provisória? O réu apresentou contestação? Qual foi o resultado da sentença? Em que fase está meu processo? 
 
-## 3.2 Propósito e delimitação do domínio
+Após a definição dos requisitos, a SABiO propõe a captura e a formalização da ontologia. Essa etapa envolve a identificação dos conceitos relevantes do domínio, suas propriedades, relações e restrições. Para isso, o conhecimento pode ser obtido a partir de especialistas do domínio, materiais bibliográficos, normas, documentos técnicos, modelos de referência e demais fontes consolidadas de conhecimento. 
 
-Esta seção corresponde à etapa de levantamento de requisitos e identificação do propósito da ontologia prevista pela SABiO. Nessa etapa são estabelecidos o objetivo do artefato a ser desenvolvido, o domínio que será representado e os limites de seu escopo, de modo a orientar as atividades posteriores de aquisição de conhecimento e modelagem.
+A SABiO também recomenda que a modelagem conceitual seja orientada por uma ontologia de fundamentação. Nesse sentido, Falbo (2014) destaca a possibilidade de utilização da OntoUML como linguagem de modelagem para ontologias de referência, uma vez que ela incorpora representações ontológicas da Unified Foundational Ontology (UFO). Essa orientação é compatível com a proposta deste trabalho, que utiliza conceitos da UFO-L e da OntoUML para representar o domínio jurídico. 
 
-A ontologia desenvolvida neste trabalho tem como propósito representar, de forma conceitual e estruturada, o domínio do Juizado Especial Federal Cível, organizando os principais elementos envolvidos no funcionamento e na tramitação de uma demanda judicial nesse contexto. Busca-se explicitar os conceitos e relações existentes entre os participantes do processo, seus papéis, as demandas apresentadas, os atos praticados, as provas produzidas, as decisões proferidas e os mecanismos de impugnação e cumprimento.
+Outro ponto relevante da SABiO é a possibilidade de modularização da ontologia. Em domínios complexos, como o jurídico, a repartição em módulos ou subontologias pode facilitar o desenvolvimento, a manutenção e a reutilização do modelo. No caso do Juizado Especial Federal Cível, a ontologia pode ser organizada em módulos relacionados, por exemplo, aos sujeitos processuais, à demanda judicial, às competências e aos procedimentos. Essa divisão contribui para reduzir a complexidade da modelagem e permite que cada parte do domínio seja analisada de maneira mais clara. 
 
-A definição do escopo partiu da necessidade de estabelecer um recorte do domínio jurídico que fosse suficientemente abrangente para representar o funcionamento do Juizado Especial Federal Cível, sem pretender modelar todo o Direito Processual Civil ou toda a estrutura da Justiça Federal. Dessa forma, o trabalho concentrou-se no percurso de uma demanda no JEF Cível, desde sua propositura até os possíveis desdobramentos decorrentes da decisão judicial.
+Além das atividades principais de desenvolvimento, a SABiO também recomenda processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração,  avaliação e reuso. A documentação é especialmente importante para registrar as decisões tomadas durante a modelagem, os conceitos definidos e as relações. Já a avaliação busca verificar se a ontologia atende ao propósito para o qual foi construída, se responde às perguntas de competência e se apresenta clareza, coerência e consistência conceitual. 
 
-Foram considerados no escopo conceitos relacionados aos sujeitos e papéis processuais, ação judicial, competência do Juizado, pedidos, tutela provisória, atos processuais, fases e estados do processo, produção de provas, conciliação, sentença, obrigações decorrentes da decisão, recursos e cumprimento da decisão. Também foram contemplados os órgãos e agentes que participam desses procedimentos, sempre na medida necessária para representar as relações relevantes ao domínio estudado.
+Dessa forma, a SABiO contribui diretamente para o desenvolvimento deste trabalho, pois oferece um caminho metodológico adequado para a construção da ontologia proposta. Neste trabalho, são contempladas as atividades relacionadas à construção de uma ontologia de referência: identificação de requisitos, definição de perguntas de competência, captura do conhecimento, modelagem conceitual, modularização e avaliação da ontologia. Essa abordagem permite que o modelo seja desenvolvido de forma mais sistemática e alinhada aos objetivos da pesquisa. 
 
-Essa delimitação orientou tanto a formulação das Questões de Competência quanto a identificação inicial dos conceitos e relações posteriormente refinados durante a modelagem ontológica. Assim, elementos que não contribuíam diretamente para responder às questões definidas ou que pertenciam a outros ramos e procedimentos da Justiça Federal permaneceram fora do escopo da ontologia.
+###### 2.4.2 OntoUML 
 
-Não foram modelados integralmente os requisitos materiais dos benefícios, a análise jurisprudencial por espécie de causa, o sistema completo de impugnações, o Pedido de Uniformização, a requisição de pagamento ou as hipóteses de sucessão e incidentes processuais. A identificação desses limites não exclui sua relevância jurídica; delimita o alcance do artefato e das respostas avaliadas.
+A OntoUML é uma linguagem de modelagem conceitual fundamentada na Unified 
 
-## 3.3 Aquisição do conhecimento do domínio
+Foundational Ontology (UFO), desenvolvida a partir dos estudos de Guizzardi (2005) sobre fundamentos ontológicos para modelos conceituais estruturais. Seu objetivo é oferecer uma forma mais precisa de representar conceitos de um domínio, permitindo que o modelador diferencie a natureza ontológica dos elementos representados. Assim, a OntoUML não se limita à representação gráfica de classes e associações, mas busca explicitar se determinado elemento corresponde a um tipo essencial, a um papel, a uma fase, a uma propriedade, a uma relação ou a outro tipo de entidade conceitual. 
 
-Na SABiO, a aquisição de conhecimento é caracterizada como um processo de apoio ao desenvolvimento da ontologia, podendo ocorrer ao longo das diferentes atividades de construção do modelo. Neste trabalho, esse processo teve papel especialmente relevante nas etapas de definição dos requisitos e de captura da ontologia, uma vez que forneceu o conhecimento necessário para a identificação dos conceitos, relações e restrições existentes no domínio do Juizado Especial Federal Cível.
+A principal diferença entre a UML tradicional e a OntoUML está no uso de estereótipos ontológicos. Enquanto a UML permite representar classes, atributos, associações e generalizações, a OntoUML permite indicar se determinado conceito corresponde, por exemplo, a um tipo que fornece identidade, a um papel contextual, a uma fase, a uma propriedade, a uma categoria ou a uma entidade relacional. Desse modo, a linguagem não apenas representa os conceitos de um domínio, mas também explicita o tipo de entidade que cada conceito representa. 
 
-A aquisição do conhecimento foi realizada por pesquisa bibliográfica e análise documental. As fontes centrais do domínio foram a Lei nº 10.259/2001 e a Lei nº 9.099/1995, aplicada no que não conflitar com a lei específica (BRASIL, 2001, art. 1º). A Constituição Federal e o CPC fornecem fundamentos complementares para os conceitos explicitados nesta revisão, especialmente interesse de agir, prova, pronunciamentos judiciais e trânsito em julgado, sempre observada a compatibilidade com o rito especial (BRASIL, 1988, 2015). A data de consulta às fontes eletrônicas é indicada nas referências; a futura operacionalização requer controle de vigência e atualização normativa.
+Quadro 1 – Estereótipos de classes da linguagem OntoUML 
 
-Também foram utilizados trabalhos da literatura jurídica voltados ao funcionamento e às características dos Juizados Especiais Federais, especialmente quanto à competência, aos sujeitos processuais, ao procedimento, aos atos praticados e aos mecanismos de acesso à justiça. Entre esses trabalhos, destaca-se o estudo de Ribeiro e Sanzovo (2011), utilizado como apoio para a compreensão da estrutura e das particularidades do Juizado Especial Federal Cível.
+| **Classe** | **Descrição** |
+| --- | --- |
+| **_Kind_** | Representa uma categoria ontológica que fornece princípio de identidade aos seus indivíduos. |
+| **_Subkind_** | Representa uma especialização rígida que herda o princípio de identidade fornecido por seu supertipo. |
+| **_Role_** | Representa um conceito antirrígido que define o papel exercido por uma entidade em determinado contexto. |
+| **_Phase_** | Representa uma fase antirrígida de uma classe que possui princípio de identidade. |
+| **_Mode_** | Representa uma propriedade intrínseca existencialmente dependente de uma entidade. |
+| **_Category_** | Agrega propriedades essenciais, mas não fornece princípio de identidade. |
+| **_Mixin_** | Representa propriedades essenciais para algumas instâncias e ocasionais para outras. |
+| **_RoleMixin_** | Representa um conceito antirrígido e relacionalmente dependente, aplicável a indivíduos com diferentes princípios de identidade. |
+| **_Collective_** | Representa um tipo que fornece princípio de identidade a coletivos, como um baralho ou um grupo de pessoas. |
+| **_Quantity_** | Representa entidades de massa, como água, areia ou vinho. |
+| **_Relator_** | Representa uma entidade relacional que fundamenta relações entre outras entidades. |
 
-O relato de desenvolvimento informa acompanhamento de especialista do domínio jurídico no refinamento dos conceitos e das relações. Entretanto, os materiais que acompanham esta versão não incluem identificação e perfil do participante, datas, roteiro de revisão, conceitos examinados ou decisões registradas. Por isso, esse acompanhamento não é apresentado como validação integral e reprodutível da ontologia. A documentação da participação deve ser complementada antes de atribuir a qualquer definição a condição de “validada com especialista”.
 
-No âmbito da modelagem, foram utilizadas a UFO e a OntoUML, bem como a UFO-L, apresentada por Beccalli (2018), e a OntoRS, descrita nos trabalhos de Zorzanelli Costa, Guizzardi e Almeida (2022) e Zorzanelli Costa et al. (2023). Essas fontes oferecem categorias e estruturas para a análise conceitual, não substituindo a fundamentação normativa dos termos jurídicos. O Apêndice A distingue fontes de apoio, adaptações do autor e pontos cuja validação com especialista permanece sem registro. Não foi identificado, entre os materiais disponibilizados, um dicionário jurídico com autoria, edição e páginas que permita atribuir-lhe a origem das definições.
 
-## 3.4 Levantamento dos requisitos
+Fonte: Adaptado de Guimarães et al. (2017) e Guizzardi (2005). 
 
-O levantamento dos requisitos integra a etapa de identificação do propósito e dos requisitos da ontologia prevista pela SABiO. Enquanto a delimitação apresentada na Seção 3.2 estabeleceu o domínio e os limites da ontologia, nesta etapa buscou-se determinar quais conhecimentos deveriam ser contemplados pelo modelo para que ele atendesse ao propósito definido.
+Guimarães et al. (2017) apresentam os principais estereótipos de classes da linguagem OntoUML, os quais permitem distinguir a natureza ontológica dos conceitos representados em um modelo conceitual. O Quadro 1 sintetiza esses estereótipos e suas respectivas funções. 
 
-Os requisitos funcionais da ontologia foram expressos por meio de Questões de Competência (QCs), formuladas em linguagem natural. Essas questões especificam o conhecimento que a ontologia deve ser capaz de representar e servem como orientação para a identificação dos conceitos, relações e módulos necessários ao modelo. Além de orientar a captura e a modelagem do domínio, as QCs também fornecem uma referência para a posterior avaliação da ontologia, permitindo verificar se o modelo construído contempla os elementos necessários para responder às questões inicialmente estabelecidas.
+Quadro 2: Estereótipos de Relacionamentos da linguagem OntoUML. 
 
-As Questões de Competência foram organizadas em sete grupos: sujeitos processuais; ação judicial; procedimento; provas; sentença e cumprimento; recursos; e questões voltadas ao cidadão. A lista completa, com identificadores QC1 a QC38, é apresentada na Seção 4.1. Algumas questões combinam um aspecto descritivo e um aspecto normativo, como identificar se há representante e determinar se ele é obrigatório. A avaliação conserva a formulação original e examina essas partes separadamente, evitando considerar uma questão integralmente atendida quando apenas um de seus componentes está representado.
+| **Relação** | **Descrição** |
+| --- | --- |
+| **_Mediação_** **_(mediation)_** | Representam um tipo de relação formal que relaciona um relator aos objetos que ele media. |
+| **_Material_** | Representa um tipo de relação que é induzida por um relator. |
+| **_Derivação_** | Representa a relação formal de derivação que ocorre entre uma relação material do relator que essa relação material é derivada. |
+| **_Caracterização_** | Relação formal que ocorre entre um mode e a classe que este mode caracteriza |
+| **_Formal_** | Representa uma relação formal, ou seja, uma relação de comparação a partir de propriedades intrínsecas das classes relacionadas, ou uma relação interna |
+| **_Componentof_** | Representa uma composição funcional. é uma relação todo-parte entre dois complexos funcionais (kind ou um subtipo de um kind). |
+| **_Memberof_** | Uma relação todo-parte e existe para relacionar membros a conjuntos |
+| **_SubCollectionOf_** | Uma relação todo parte que explicita relações de subgrupo entre collectives |
 
-Além das questões destinadas à representação conceitual do processo, foram formuladas questões sob a perspectiva do cidadão que utiliza o Juizado Especial Federal, considerando que um dos objetivos do trabalho é contribuir para uma representação do domínio que também possa apoiar, futuramente, sistemas voltados ao acesso e à compreensão da informação jurídica.
 
-As QCs orientaram a identificação e o refinamento dos conceitos e foram retomadas na avaliação para localizar o suporte às respostas esperadas. Como diretrizes de qualidade, adotaram-se clareza das definições, rastreabilidade das fontes, preservação de identidade, legibilidade dos módulos e distinção entre descrição de fatos e condições normativas. Essas diretrizes orientam a revisão, mas sua menção não demonstra que tenham sido integralmente satisfeitas. Compreensibilidade para cidadãos e desempenho computacional não foram medidos.
 
-## 3.5 Reúso de ontologias
+Fonte: Adaptado de Guimarães et al. (2017) e Guizzardi (2005). 
 
-O reúso é um processo de apoio da SABiO e pode envolver especialização, adaptação e analogia com estruturas de ontologias existentes (FALBO, 2014). Nesta proposta, é necessário distinguir três níveis: a fundamentação nas categorias da UFO; a adaptação dos padrões jurídicos da UFO-L; e o aproveitamento seletivo de conceitos da OntoRS. O reúso realizado é conceitual: não se documenta uma importação automática de módulos, IRIs ou axiomas de uma ontologia operacional.
+Essa distinção entre tipos, papéis e relações é especialmente relevante para a modelagem jurídica. Conforme Griffo (2018), a construção de ontologias jurídicas exige atenção às relações jurídicas e aos papéis exercidos por agentes dentro de estruturas normativas. Desse modo, a OntoUML contribui para representar o Direito de forma mais precisa, pois permite diferenciar uma entidade que possui identidade própria, como uma pessoa ou organização, dos papéis que ela pode exercer em determinado processo, como autor, réu, advogado, perito ou testemunha. A tese de Griffo, inclusive, apresenta a UFO-L como uma ontologia núcleo jurídica construída sob a perspectiva das relações jurídicas, reforçando a importância de uma modelagem juridicamente fundamentada. 
 
-A distinção entre Legal Role e Legal RoleMixin orientou a análise dos participantes. Participante Processual, Parte Processual e Demandante foram representados como `roleMixin` por reunirem papéis de pessoas e organizações, enquanto Representante Processual, Testemunha, Perito e Conciliador foram representados como `role` de Pessoa. Demandado foi representado como `role` de Organização Federal. Essa correspondência expressa uma intenção de alinhamento com a UFO-L; o simples uso dos estereótipos da OntoUML não comprova todas as dependências e posições jurídicas exigidas pelo núcleo (BECCALLI, 2018, Seções 5.5 e 5.6).
+A utilização da OntoUML também se relaciona ao método de desenvolvimento de ontologias adotado neste trabalho. Falbo (2014), ao propor a SABiO, diferencia ontologias de referência e ontologias operacionais, indicando que as ontologias de referência possuem foco na representação conceitual do domínio. Nesse sentido, a OntoUML é adequada para a construção da ontologia proposta, pois permite elaborar um modelo conceitual independente de uma implementação computacional específica, servindo como base para posteriores transformações em ontologias operacionais ou sistemas de apoio jurídico. 
 
-A concepção de Legal Relator orientou a reificação de vínculos como Relação Jurídico-Processual, Representação Processual, Obrigação Judicial e Acordo Processual. No padrão da UFO-L, não basta um vínculo receber o estereótipo `relator`: devem ser identificados agentes mediados, momentos jurídicos correlatos, suas dependências externas e o evento ou fundamento jurídico da relação. O diagrama de Sentença explicita Direito à Prestação e Dever de Prestação como partes de Obrigação Judicial, aproximando-se desse padrão. Nos demais vínculos, o detalhamento dessas posições não está completo; Competência Jurisdicional e Relação Recursal, em particular, exigem revisão de sua interpretação e de seus participantes antes de serem tratadas como especializações integrais de Legal Relator.
+###### 2.4.3 Visual Paradigm e o plugin OntoUML 
 
-Right e Duty fundamentam conceitualmente Direito à Prestação e Dever de Prestação. Legal Power é referência para Poder Jurisdicional, mas a posição correlata de sujeição não está explicitada no diagrama. Legal Norm e Rule orientam Norma Jurídica, Regra Jurídica, Regra de Competência e Regra de Prazo Recursal. A distinção entre norma e descrição normativa discutida no Capítulo 2 ainda precisa ser detalhada no modelo, assim como o conteúdo das regras aplicadas. Assim, essas correspondências são adaptações parciais, não equivalências formalmente demonstradas (BECCALLI, 2018, Seções 5.3, 5.7 e 5.9).
+Para a construção gráfica de modelos conceituais em OntoUML, podem ser utilizadas ferramentas de modelagem que ofereçam suporte aos elementos específicos da linguagem. Entre elas está o Visual Paradigm, ambiente voltado à criação de modelos e diagramas, que pode ser 
 
-A OntoRS foi selecionada pela proximidade com o domínio dos Juizados Especiais Federais e do Pedido de Uniformização. Judicial Process foi referência para Processo Judicial Federal, entendido aqui como relação reificada e não como sequência de eventos. Petition foi referência para Petição, também tratada como relação e distinguida do Documento de Petição Inicial. Party foi referência para Parte Processual, adaptada aos polos e sujeitos previstos no recorte do JEF Cível. A fonte imediata é Zorzanelli Costa et al. (2023, Seção 3, Figura 1), em continuidade ao estudo de 2022. A figura de origem representa decisões como eventos; aqui, Julgamento e Julgamento do Recurso são eventos, enquanto Sentença e Acórdão designam documentos. Essa opção é uma adaptação explícita, não uma transposição de todos os conceitos ou de suas naturezas ontológicas. Não se presume equivalência formal entre os pares mapeados.
+estendido por meio do plugin OntoUML, possibilitando a elaboração de modelos conceituais ontologicamente fundamentados. 
 
-O reúso não foi integral. A OntoRS detalha o Pedido de Uniformização e a atuação da TNU; esta proposta representa principalmente outros momentos do percurso processual. Foram construídas estruturas próprias para análise de cabimento, estados do procedimento, produção e avaliação de provas e cumprimento. “Próprias” significa desenvolvidas para o recorte deste trabalho, não demonstração de que tais estruturas sejam inéditas em toda a literatura. A verificação do reúso deve considerar as fontes, a interpretação preservada, as adaptações e as lacunas indicadas no Quadro 3.
+O plugin OntoUML acrescenta ao Visual Paradigm recursos próprios da linguagem, permitindo aplicar às classes e relações os estereótipos apresentados nos Quadros 1 e 2, como kind, role, relator e mode. Além disso, oferece mecanismos de apoio à modelagem, como sugestões de estereótipos e verificação do modelo segundo as regras da OntoUML. A Figura 6 exemplifica a representação desses elementos e de suas relações no ambiente de modelagem. 
 
-Quadro 3 – Mapeamento do reúso conceitual.
+Figura 6. Exemplo de modelagem OntoUML no Visual Paradigm. 
 
-| Fonte e localização                                          | Conceito ou padrão de origem                        | Correspondência na proposta                                                                         | Modalidade e limite                                                                                                    |
-| -------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| UFO / OntoUML: Guizzardi (2005); Guizzardi et al. (2013, 2015) | Identidade, papéis, relators, eventos e situações | Pessoa, Organização, participantes, vínculos, atos e situações processuais                      | Fundamentação conceitual; não equivale a aprovação automática das restrições da linguagem.                     |
-| UFO-L: Beccalli (2018), Seção 5.5                            | Legal Role                                           | Demandado, Representante Processual, Testemunha, Perito, Conciliador e papéis específicos de autor | Adaptação dos papéis jurídicos; faltam explicitações uniformes de seus vínculos e posições.                   |
-| UFO-L: Beccalli (2018), Seção 5.6                            | Legal RoleMixin                                      | Participante Processual, Parte Processual e Demandante                                               | Adaptação de categorias de papéis de diferentes tipos de agentes.                                                   |
-| UFO-L: Beccalli (2018), Seções 5.7–5.9 e Figura 33          | Legal Relator e posições correlatas                | Obrigação Judicial, Direito à Prestação e Dever de Prestação                                  | Reúso parcial do padrão direito–dever; explicitar correlação e dependência externa.                              |
-| UFO-L: Beccalli (2018), Capítulos 5 e 6                       | Legal Relator                                        | Relação Jurídico-Processual, Representação Processual e Acordo Processual                       | Analogia com o padrão; os momentos jurídicos não estão detalhados em todos os vínculos.                           |
-| UFO-L: Beccalli (2018), Seção 5.7.4                          | Legal Power / Legal Subjection                       | Poder Jurisdicional e sua relação com a competência                                               | Alinhamento parcial; a sujeição correlata e a distinção entre poder e competência precisam ser explicitadas.      |
-| UFO-L: Beccalli (2018), Seção 5.3                            | Legal Norm / Rule                                    | Norma Jurídica, Regra Jurídica, Regra de Competência e Regra de Prazo Recursal                    | Adaptação; a descrição normativa e as condições de aplicação não estão integralmente representadas.          |
-| OntoRS: Zorzanelli Costa et al. (2023), Seção 3, Figura 1    | Judicial Process                                     | Processo Judicial Federal                                                                            | Adaptação ao processo no JEF Cível, mantendo a interpretação relacional e separando a tramitação como eventos.  |
-| OntoRS: Zorzanelli Costa et al. (2023), Seção 3, Figura 1    | Petition                                             | Petição                                                                                            | Adaptação do relator; o documento é representado separadamente. Não impõe representante a toda petição inicial. |
-| OntoRS: Zorzanelli Costa et al. (2023), Seções 3 e 5         | Party                                                | Parte Processual                                                                                     | Adaptação às partes do JEF; não se afirma equivalência formal com toda a categoria da OntoRS.                     |
 
-Fonte: Elaborado pelo autor (2026).
 
-## 3.6 Captura e modelagem da ontologia
+<!-- Start of picture text -->
+p<br>Pessoa | enores_|<br>Loma Ld1]<br><<Mediation>><br>Estresse _|—— 7 |_Empregado — ContratoTrabalho<br><!-- End of picture text -->
 
-Esta etapa corresponde à captura e formalização da ontologia prevista pela SABiO. A partir das Questões de Competência e do conhecimento adquirido nas fontes do domínio, foram identificados os principais conceitos e relações necessários à representação do Juizado Especial Federal Cível. O levantamento inicial serviu como ponto de partida para a construção do modelo, sendo posteriormente refinado à medida que os conceitos eram analisados sob uma perspectiva ontológica.
+Fonte: Elaborado pelo autor (2026). 
 
-Durante esse processo, buscou-se não apenas identificar os elementos presentes no domínio jurídico, mas também compreender a natureza ontológica de cada um deles. Assim, foi necessário distinguir, por exemplo, entidades que possuem identidade própria, papéis assumidos pelos participantes do processo, relações que vinculam esses participantes, eventos que ocorrem durante a tramitação e situações resultantes desses eventos. A UFO forneceu a fundamentação para essas distinções, enquanto a UFO-L auxiliou na representação dos aspectos especificamente jurídicos e a OntoUML foi utilizada como linguagem para expressar graficamente o modelo conceitual.
+#### 2.5 Juizado Especial Federal Cível
 
-A modelagem foi realizada de forma iterativa e incremental. Os conceitos inicialmente identificados foram progressivamente revistos, especializados ou reorganizados conforme novas relações eram identificadas e as Questões de Competência eram avaliadas com o modelo. Dessa forma, a construção dos diagramas não consistiu apenas na transcrição dos termos encontrados na legislação ou na literatura; foi um processo de análise e refinamento conceitual focado no aprofundamento da compreensão das entidades e relações relevantes para o domínio.
+O Juizado Especial Federal Cível é um órgão da Justiça Federal destinado ao atendimento de causas previstas na Lei nº 10.259/2001. Sua criação busca aproximar o cidadão da Justiça por meio de um procedimento mais simples e acessível. Ribeiro e Sanzovo (2011) destacam essa contribuição ao discutir a redução de obstáculos que dificultam a busca pela proteção de direitos.
 
-Esse refinamento é importante, por exemplo, para diferenciar os participantes e papéis processuais na representação de relações jurídico-processuais por meio de relators e na distinção entre atos processuais, modelados como eventos, e as situações produzidas por esses atos. Também foram representados elementos como documentos, normas, pedidos, posições jurídicas, obrigações e poderes, conforme sua natureza e sua função dentro do processo judicial.
+O funcionamento dos Juizados é orientado pela oralidade, simplicidade, informalidade, economia processual e celeridade. Esses critérios procuram tornar o processo menos burocrático, sem deixar de garantir às partes a oportunidade de apresentar seus argumentos e suas provas. No âmbito federal, a Lei nº 10.259/2001 estabelece as regras específicas, enquanto a Lei nº 9.099/1995 é aplicada naquilo que não houver conflito com essa legislação (BRASIL, 1995, art. 2º; BRASIL, 2001, art. 1º).
 
-À medida que a modelagem avançou, o número de conceitos e relações tornou inadequada sua representação em um único diagrama. Para preservar a legibilidade e facilitar a compreensão do modelo, a ontologia foi organizada em módulos conceituais inter-relacionados, cada um concentrado em determinado aspecto do domínio. Essa modularização também permitiu relacionar os diferentes grupos de Questões de Competência às partes correspondentes da ontologia e é apresentada na seção seguinte.
+De modo geral, o JEF Cível pode processar, conciliar e julgar causas de competência da Justiça Federal cujo valor não ultrapasse sessenta salários mínimos, além de executar suas próprias sentenças. Entretanto, o valor não é o único critério para saber se um caso pode ser levado ao Juizado. A lei também estabelece exclusões, como as ações de mandado de segurança e as execuções fiscais. Por isso, é necessário considerar o assunto discutido e as demais condições previstas em lei (BRASIL, 2001, art. 3º).
 
-## 3.7 Modularização da ontologia
+Outro aspecto importante é a definição de quem pode participar como parte. A Lei nº 10.259/2001 permite que pessoas físicas, microempresas e empresas de pequeno porte apresentem ações. Como rés, podem figurar a União, as autarquias, as fundações e as empresas públicas federais. Essa distinção permite identificar quem apresenta o pedido e contra qual entidade ele é dirigido (BRASIL, 2001, art. 6º).
 
-Durante o processo de modelagem, verificou-se que a representação de todos os conceitos e relações do Juizado Especial Federal Cível em um único diagrama comprometeria a legibilidade e dificultaria a compreensão do modelo. Por esse motivo, a ontologia foi organizada de forma modular, distribuindo os conceitos em diferentes diagramas de acordo com os aspectos do domínio que representam.
+A possibilidade de iniciar uma ação sem contratar advogado, nas hipóteses admitidas, é uma das características que favorecem a aproximação com o cidadão. A lei também permite a indicação, por escrito, de um representante para a causa, advogado ou não. Essa possibilidade, porém, não se estende a todas as etapas: no recurso, as partes devem ser representadas por advogado. Além disso, o acesso ao primeiro grau não exige pagamento inicial de custas, sem afastar as despesas previstas para outras situações, como recursos e litigância de má-fé (BRASIL, 2001, art. 10; BRASIL, 1995, arts. 41, § 2º, 54 e 55).
 
-A modularização não corresponde à construção de ontologias independentes. Os diagramas são perspectivas de uma mesma proposta e compartilham conceitos como Processo Judicial Federal, Ato Processual, Situação Processual, Participante Processual, Parte Processual e Documento. Na consolidação do projeto, classes com o mesmo significado devem referenciar um único elemento, e não cópias locais semanticamente desconectadas. O diagrama de pacotes explicita dependências de apresentação; não prova, por si só, que todas as ligações entre indivíduos dos diferentes módulos estejam completas.
+Em linhas gerais, o procedimento começa com a apresentação do pedido, que deve indicar as partes, os fatos, os fundamentos e aquilo que se pretende obter. Esse pedido pode ser escrito ou apresentado oralmente e registrado pela Secretaria do Juizado. No decorrer do processo, o réu é chamado a participar e pode apresentar sua defesa. Também se busca, sempre que possível, um acordo entre as partes, que pode contar com a ajuda de um conciliador (BRASIL, 1995, arts. 14, 18, 21, 22 e 30).
 
-A organização dos diagramas acompanhou os principais grupos conceituais identificados durante o levantamento das Questões de Competência e o refinamento do domínio. Foram desenvolvidos modelos relacionados aos Representantes; Serventuários; Organizações; Sujeitos e papéis; Demanda, causa e pedidos; Competência do JEF; Instauração e desenvolvimento do procedimento; Contestação; Conciliação; Produção de provas; Análise e Julgamento; Sentença e obrigações decorrentes da decisão; Recursos; e Cumprimento da sentença.
+Quando necessário, são produzidas provas para esclarecer os fatos, como documentos, depoimentos de testemunhas e exames técnicos. No JEF, a Lei nº 10.259/2001 prevê a nomeação de pessoa habilitada para realizar o exame técnico necessário à conciliação ou ao julgamento. Assim, as atividades realizadas durante o processo dependem das questões discutidas e das informações necessárias para decidir o caso (BRASIL, 1995, arts. 32 a 35; BRASIL, 2001, art. 12).
 
-Essa divisão permitiu representar com maior clareza tanto os aspectos estruturais quanto os aspectos dinâmicos do domínio. Enquanto alguns diagramas concentram-se na identificação das entidades, papéis e relações existentes no processo, outros evidenciam eventos processuais e as situações produzidas por esses eventos. Os módulos permanecem semanticamente relacionados e devem ser compreendidos de forma integrada. A separação em diagramas teve, portanto, finalidade principalmente organizacional e de apresentação, permitindo reduzir a complexidade visual sem perder as relações existentes entre os diferentes elementos da ontologia. A organização global desses módulos foi representada por meio de um Diagrama de Pacotes, utilizado para explicitar a divisão da ontologia e as dependências existentes entre suas diferentes partes. Esse diagrama oferece uma visão geral da arquitetura conceitual adotada, enquanto os diagramas de classes apresentam detalhadamente os conceitos e relações pertencentes a cada módulo.
+Se houver acordo, ele será submetido à aprovação do juiz. Quando o conflito precisar de decisão, a sentença poderá acolher o pedido, acolhê-lo em parte ou rejeitá-lo, além das hipóteses de encerramento sem análise do mérito. Nas situações em que a lei permite, a parte pode apresentar recurso contra a sentença, a ser julgado pela Turma Recursal (BRASIL, 1995, arts. 22, 38, 41 e 51).
 
-## 3.8 Verificação por rastreabilidade e instanciação simulada
+O reconhecimento de um direito na sentença não significa que a obrigação já foi cumprida. Depois da decisão, podem ser necessários atos para realizar o que foi determinado. A Lei nº 10.259/2001 prevê formas de cumprimento para obrigações de fazer, não fazer, entregar coisa e pagar quantia, observadas as condições legais, como o trânsito em julgado. Essa etapa permite distinguir a decisão judicial de sua realização prática (BRASIL, 2001, arts. 16 e 17).
 
-Como parte da verificação da ontologia de referência, foram construídos uma matriz de rastreabilidade das Questões de Competência e um conjunto de instanciações com dados inteiramente fictícios. A matriz relaciona cada questão aos conceitos, às relações e aos diagramas que oferecem suporte à sua resposta. As instanciações, por sua vez, exemplificam a aplicação desses elementos em situações hipotéticas, permitindo examinar a distinção entre entidades, papéis, documentos, eventos e situações processuais. Essa atividade segue a orientação da SABiO de verificar a competência da ontologia por correspondência com os requisitos e de utilizar instanciações como instrumento de avaliação conceitual (FALBO, 2014).
+Esse conjunto de participantes, pedidos, documentos, atos e decisões forma a base do domínio representado neste trabalho. Compreender como esses elementos se relacionam ajuda a organizar a ontologia e a representar o percurso de uma demanda no Juizado Especial Federal Cível, desde a apresentação do caso até os possíveis desdobramentos da decisão.
 
-O procedimento compreendeu quatro atividades: identificação dos elementos necessários a cada resposta; localização desses elementos nos diagramas; construção de fragmentos de instâncias e relações para seis cenários; e registro das respostas esperadas, das premissas externas e das lacunas observadas. Foram utilizados identificadores estáveis para permitir o acompanhamento de uma mesma entidade em diferentes relações e recortes do cenário. Uma pessoa e o papel por ela exercido não foram representados como dois indivíduos distintos.
+## 3 Aspectos Metodológicos 
 
-A análise distinguiu o suporte direto à descrição de fatos já informados, o suporte parcial e a ausência de suporte suficiente para a decisão solicitada. Essa distinção é relevante porque algumas questões solicitam a identificação de informações, enquanto outras exigem decidir sobre necessidade, possibilidade ou obrigatoriedade jurídica. A existência de uma classe que registra um acontecimento não é suficiente para representar a regra que determina se ele deve ocorrer.
+#### 3.1 Abordagem para desenvolvimento da ontologia 
 
-Os resultados são apresentados na Seção 4.4. As instanciações são fragmentos conceituais, e não populações completas dos diagramas. Não foi executada verificação formal de todas as cardinalidades, da satisfatibilidade ou dos axiomas da OntoUML. As regras jurídicas utilizadas nos exemplos foram registradas separadamente como premissas externas. Portanto, a atividade não substitui validação documentada com especialistas nem testes de uma ontologia operacional. A SABiO recomenda instanciação a partir de situações reais; a adoção de cenários fictícios neste trabalho é uma avaliação exploratória de menor alcance, sem comprovação de representatividade da prática forense (FALBO, 2014).
+O desenvolvimento da ontologia proposta neste trabalho foi conduzido com base na Systematic Approach for Building Ontologies (SABiO), apresentada por Falbo (2014). A abordagem organiza a construção de ontologias por meio de um processo sistemático, envolvendo atividades de desenvolvimento e processos de apoio que acompanham a construção do artefato ontológico. Conforme apresentado no referencial teórico, o processo de desenvolvimento parte do levantamento dos requisitos e da identificação do propósito da ontologia, avança para a captura e formalização do conhecimento e resulta, inicialmente, na construção de uma ontologia de referência. 
 
-Os artefatos complementares encontram-se em [avaliacao/dados-simulados.json](avaliacao/dados-simulados.json), [avaliacao/instanciacoes-simuladas.md](avaliacao/instanciacoes-simuladas.md) e [avaliacao/verificar-dados.py](avaliacao/verificar-dados.py). O JSON distingue classificações e relações do modelo de anotações contextuais, marcos temporais e premissas normativas. O script confere a integridade desses registros; as respostas esperadas foram redigidas por inspeção, não obtidas por inferência automática.
+A SABiO prevê ainda etapas posteriores relacionadas ao design e à implementação, nas quais a ontologia de referência pode ser transformada em uma representação voltada ao uso computacional, resultando, por exemplo, em uma ontologia operacional. Apoiando as atividades de desenvolvimento, a abordagem oferece processos de apoio, como aquisição de conhecimento, documentação, gerenciamento de configuração, avaliação e reúso. Esses processos não necessariamente ocorrem de maneira isolada ou estritamente sequencial, podendo acompanhar diferentes momentos do desenvolvimento da ontologia. No próprio referencial deste trabalho, esses processos são apresentados como mecanismos de suporte à construção e à avaliação do modelo. 
 
-# 4 Resultados
+Considerando que o objetivo deste trabalho é desenvolver uma ontologia de referência para o domínio do Juizado Especial Federal Cível, foram adotadas principalmente as atividades da SABiO relacionadas à identificação do propósito e levantamento dos requisitos, aquisição do conhecimento, captura e formalização do domínio, reúso, modelagem conceitual e avaliação. As etapas destinadas ao design e à implementação de uma ontologia operacional não integram o escopo deste trabalho. Nas seções seguintes, são descritas as atividades realizadas durante esse processo, iniciando-se pela definição do propósito e pela delimitação do domínio da ontologia, seguida da aquisição do conhecimento, do levantamento das Questões de Competência e da captura e modelagem dos conceitos identificados. 
 
-## 4.1 Visão geral da ontologia
+#### 3.2 Propósito e delimitação do domínio 
 
-A ontologia desenvolvida tem como propósito representar conceitualmente o percurso de uma demanda no Juizado Especial Federal Cível, desde os elementos necessários à sua propositura até os possíveis desdobramentos decorrentes do julgamento, da interposição de recursos e do cumprimento da decisão. O escopo adotado não pretende representar todo o Direito Processual Civil ou toda a estrutura da Justiça Federal, mas os elementos considerados relevantes para a compreensão do funcionamento do JEF Cível e para o atendimento das Questões de Competência estabelecidas durante o desenvolvimento.
+Esta seção corresponde à etapa de levantamento de requisitos e identificação do propósito da ontologia prevista pela SABiO. Nessa etapa são estabelecidos o objetivo do artefato a ser desenvolvido, o domínio que será representado e os limites de seu escopo, de modo a orientar as atividades posteriores de aquisição de conhecimento e modelagem. 
 
-As Questões de Competência que foram elaboradas para o desenvolvimento dos artefatos foram as seguintes:
+A ontologia desenvolvida neste trabalho tem como propósito representar, de forma conceitual e estruturada, o domínio do Juizado Especial Federal Cível, organizando os principais elementos envolvidos no funcionamento e na tramitação de uma demanda judicial nesse contexto. Busca-se explicitar os conceitos e relações existentes entre os participantes do processo, seus papéis, as demandas apresentadas, os atos praticados, as provas produzidas, as decisões proferidas e os mecanismos de impugnação e cumprimento. 
 
-**1. Sujeitos Processuais:**
+A definição do escopo partiu da necessidade de estabelecer um recorte do domínio jurídico que fosse suficientemente abrangente para representar o funcionamento do Juizado Especial Federal Cível, sem pretender modelar todo o Direito Processual Civil ou toda a estrutura da Justiça Federal. Dessa forma, o trabalho concentrou-se no percurso de uma demanda no JEF Cível, desde sua propositura até os possíveis desdobramentos decorrentes da decisão judicial. 
 
-QC1. Quem são os participantes do processo e qual papel processual cada um exerce?
+Foram considerados no escopo conceitos relacionados aos sujeitos e papéis processuais, ação judicial, competência do Juizado, pedidos, tutela provisória, atos processuais, fases e estados do processo, produção de provas, conciliação, sentença, obrigações decorrentes da decisão, recursos e cumprimento da decisão. Também foram contemplados os órgãos e agentes que participam desses procedimentos, sempre na medida necessária para representar as relações relevantes ao domínio estudado. 
 
-QC2. O autor é pessoa física, microempresa ou empresa de pequeno porte?
+Essa delimitação orientou tanto a formulação das Questões de Competência quanto a identificação inicial dos conceitos e relações posteriormente refinados durante a modelagem ontológica. Assim, elementos que não contribuíam diretamente para responder às questões definidas ou que pertenciam a outros ramos e procedimentos da Justiça Federal permaneceram fora do escopo da ontologia. 
 
-QC3. O réu é a União, uma autarquia, uma fundação pública federal ou uma empresa pública federal?
+#### 3.3 Aquisição do conhecimento do domínio 
 
-QC4. Quem representa juridicamente as partes?
+Na SABiO, a aquisição de conhecimento é caracterizada como um processo de apoio ao desenvolvimento da ontologia, podendo ocorrer ao longo das diferentes atividades de construção do modelo. Neste trabalho, esse processo teve papel especialmente relevante nas etapas de definição dos requisitos e de captura da ontologia, uma vez que forneceu o conhecimento necessário para a identificação dos conceitos, relações e restrições existentes no domínio do Juizado Especial Federal Cível. 
 
-QC5. Há advogado constituído ou é necessária representação por advogado na fase atual?
+A aquisição do conhecimento necessário à construção da ontologia foi realizada por meio de pesquisa bibliográfica e análise documental. Para a compreensão do domínio jurídico, foram consideradas principalmente a Lei nº 10.259/2001, que institui os Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal, e a Lei nº 9.099/1995, aplicada subsidiariamente aos Juizados Especiais Federais quando não houver conflito com a legislação específica. 
 
-QC6. Há perito, conciliador, testemunha ou outro auxiliar da justiça vinculado ao processo?
+Também foram utilizados trabalhos da literatura jurídica voltados ao funcionamento e às características dos Juizados Especiais Federais, especialmente quanto à competência, aos sujeitos processuais, ao procedimento, aos atos praticados e aos mecanismos de acesso à justiça. Entre esses trabalhos, destaca-se o estudo de Ribeiro e Sanzovo (2011), utilizado como apoio para a compreensão da estrutura e das particularidades do Juizado Especial Federal Cível. 
 
-**2. Ação Judicial**
+Além da análise das fontes documentais e bibliográficas, o desenvolvimento contou com acompanhamento e validação por especialistas do domínio jurídico, que auxiliou na verificação da adequação dos conceitos, relações e situações processuais representadas. Essa participação contribuiu para confrontar a modelagem com a prática jurídica e para identificar eventuais imprecisões ou lacunas durante o refinamento da ontologia. 
 
-QC7. Qual é o tipo da ação proposta?
+No âmbito da modelagem ontológica, foram utilizadas como referências a UFO e a 
 
-QC8. Qual é o pedido principal formulado pelo autor?
+OntoUML, bem como a UFO-L, proposta por Griffo (2018), que fornece conceitos jurídicos gerais reutilizáveis na construção de ontologias de domínio. Também foi analisada a OntoRS, descrita nos trabalhos de Zorzanelli Costa, Guizzardi e Almeida (2022) e Zorzanelli Costa et al. (2023). O conhecimento obtido por meio dessas fontes, aliado ao acompanhamento e à validação realizados com especialista do domínio, foi utilizado na formulação das Questões de Competência e no refinamento dos conceitos e relações posteriormente representados na ontologia. 
 
-QC9. A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência?
+#### 3.4 Levantamento dos requisitos 
 
-QC10. Existe requerimento de tutela provisória?
+O levantamento dos requisitos integra a etapa de identificação do propósito e dos requisitos da ontologia prevista pela SABiO. Enquanto a delimitação apresentada na Seção 3.2 estabeleceu o domínio e os limites da ontologia, nesta etapa buscou-se determinar quais conhecimentos deveriam ser contemplados pelo modelo para que ele atendesse ao propósito definido. 
 
-**3. Procedimento:**
+Os requisitos funcionais da ontologia foram expressos por meio de Questões de Competência (QCs), formuladas em linguagem natural. Essas questões especificam o conhecimento que a ontologia deve ser capaz de representar e servem como orientação para a identificação dos conceitos, relações e módulos necessários ao modelo. Além de orientar a captura e a modelagem do domínio, as QCs também fornecem uma referência para a posterior avaliação da ontologia, permitindo verificar se o modelo construído contempla os elementos necessários para responder às questões inicialmente estabelecidas. 
 
-QC11. Em qual status ou fase o processo se encontra?
+As Questões de Competência foram elaboradas a partir do conhecimento adquirido sobre o funcionamento do Juizado Especial Federal Cível e organizadas em grupos temáticos relacionados aos principais aspectos identificados no domínio, Questões sobre: Sujeitos processuais; Ação judicial; Procedimento; Provas; Sentença e cumprimento; Recursos. Essa organização auxiliou tanto na identificação dos elementos conceituais necessários quanto na posterior divisão da ontologia em diagramas relacionados entre si. 
 
-QC12. O réu apresentou contestação?
+Além das questões destinadas à representação conceitual do processo, foram formuladas questões sob a perspectiva do cidadão que utiliza o Juizado Especial Federal, considerando que um dos objetivos do trabalho é contribuir para uma representação do domínio que também possa apoiar, futuramente, sistemas voltados ao acesso e à compreensão da informação jurídica. 
 
-QC13. Pode haver proposta ou realização de acordo entre as partes?
+As Questões de Competência serviram como referência durante as etapas seguintes de desenvolvimento. A partir delas, foram identificados os conceitos e relações necessários à representação do domínio e realizadas sucessivas revisões do modelo. Posteriormente, as questões foram retomadas na avaliação da ontologia, de modo a verificar se os diagramas elaborados forneciam suporte conceitual para as respostas esperadas. 
 
-QC14. É necessária audiência de conciliação?
+#### 3.5 Reúso de ontologia 
 
-QC15. Há necessidade de produção de provas?
+O reúso constitui um dos processos de apoio previstos pela SABiO e permite incorporar à ontologia em desenvolvimento conceitos e estruturas já estabelecidos em ontologias existentes (FALBO, 2014). Neste trabalho, o reúso ocorreu principalmente a partir da UFO-L, utilizada como ontologia núcleo para a representação dos aspectos jurídicos, e o aproveitamento seletivo 
 
-**4. Provas:**
+de conceitos da OntoRS. 
 
-QC16. Quais provas foram apresentadas pelas partes?
+A UFO-L forneceu estruturas conceituais utilizadas em diferentes partes do modelo. A distinção entre Legal Role e Legal RoleMixin foi empregada na representação dos participantes do processo. Assim, categorias como Participante Processual, Parte Processual e Demandante foram modeladas como `roleMixins` , enquanto papéis específicos, como Demandado, Representante Processual, Testemunha, Perito e Conciliador, foram representados como `roles` . Na UFO-L, os agentes jurídicos desempenham papéis jurídicos nas relações das quais participam, e os Legal RoleMixins permitem reunir papéis que podem ser exercidos por diferentes tipos de agentes (Griffo, 2018). 
 
-QC17. Há testemunhas indicadas ou necessidade de produção de prova testemunhal?
+Também foi reutilizada a concepção de Legal Relator para representar relações jurídicas existentes no domínio processual. A UFO-L trata as relações jurídicas como entidades reificadas que vinculam agentes em determinadas posições jurídicas. A partir dessa análise foram modelados, entre outros, Relação Jurídico-Processual, Representação Processual, Obrigação Judicial, Competência Jurisdicional, Acordo Processual e Relação Recursal. 
 
-QC18. As provas disponíveis são suficientes para julgamento antecipado?
+As posições jurídicas definidas pela UFO-L também foram especializadas no modelo. Os conceitos de Right e Duty fundamentaram a representação de Direito à Prestação e Dever de Prestação, relacionados à Obrigação Judicial, enquanto o conceito de Legal Power foi utilizado na representação do Poder Jurisdicional. Da mesma forma, a estrutura de Legal Norm e sua especialização em Rule foi empregada na representação de Norma Jurídica, Regra Jurídica e de regras específicas, como Regra de Competência e Regra de Prazo Recursal. 
 
-QC19. A ausência de alguma prova impede o julgamento do pedido?
+A OntoRS foi selecionada pela proximidade com o domínio dos Juizados Especiais Federais e do Pedido de Uniformização. Judicial Process foi utilizado como referência para Processo Judicial Federal; Petition para Petição; e Party para Parte Processual. Esses conceitos foram adaptados ao escopo e às necessidades da ontologia proposta, não sendo realizada uma transposição integral da OntoRS. 
 
-**5. Sentença e Cumprimento:**
+O reúso, portanto, ocorreu de forma seletiva, considerando a adequação dos conceitos existentes ao domínio do Juizado Especial Federal Cível e às Questões de Competência definidas para o trabalho. O mapeamento entre os conceitos de origem e as entidades resultantes na ontologia desenvolvida é apresentado no Capítulo 4, juntamente com os demais resultados da modelagem. 
 
-QC20. Qual foi o resultado da sentença?
+#### 3.6 Captura e modelagem da ontologia 
 
-QC21. Qual obrigação foi imposta ao réu: pagar, fazer, não fazer ou entregar algo?
+Esta etapa corresponde à captura e formalização da ontologia prevista pela SABiO. A partir das Questões de Competência e do conhecimento adquirido nas fontes do domínio, foram identificados os principais conceitos e relações necessários à representação do Juizado Especial Federal Cível. O levantamento inicial serviu como ponto de partida para a construção do modelo, sendo posteriormente refinado à medida que os conceitos eram analisados sob uma perspectiva ontológica. 
 
-QC22. A sentença transitou em julgado?
+Durante esse processo, buscou-se não apenas identificar os elementos presentes no domínio jurídico, mas também compreender a natureza ontológica de cada um deles. Assim, foi necessário distinguir, por exemplo, entidades que possuem identidade própria, papéis assumidos pelos participantes do processo, relações que vinculam esses participantes, eventos que ocorrem 
 
-QC23. A obrigação reconhecida na sentença foi cumprida?
+durante a tramitação e situações resultantes desses eventos. A UFO forneceu a fundamentação para essas distinções, enquanto a UFO-L auxiliou na representação dos aspectos especificamente jurídicos e a OntoUML foi utilizada como linguagem para expressar graficamente o modelo conceitual. 
 
-QC24. O cumprimento da sentença foi concluído?
+A modelagem foi realizada de forma iterativa e incremental. Os conceitos inicialmente identificados foram progressivamente revistos, especializados ou reorganizados conforme novas relações eram identificadas e as Questões de Competência eram avaliadas com o modelo. Dessa forma, a construção dos diagramas não consistiu apenas na transcrição dos termos encontrados na legislação ou na literatura; foi um processo de análise e refinamento conceitual focado no aprofundamento da compreensão das entidades e relações relevantes para o domínio. 
 
-QC25. O processo pode ser arquivado por satisfação da obrigação?
+Esse refinamento é importante, por exemplo, para diferenciar os participantes e papéis processuais na representação de relações jurídico-processuais por meio de relators e na distinção entre atos processuais, modelados como eventos, e as situações produzidas por esses atos. Também foram representados elementos como documentos, normas, pedidos, posições jurídicas, obrigações e poderes, conforme sua natureza e sua função dentro do processo judicial. 
 
-**6. Recursos:**
+À medida que a modelagem avançou, o número de conceitos e relações tornou inadequada sua representação em um único diagrama. Para preservar a legibilidade e facilitar a compreensão do modelo, a ontologia foi organizada em módulos conceituais inter-relacionados, cada um concentrado em determinado aspecto do domínio. Essa modularização também permitiu relacionar os diferentes grupos de Questões de Competência às partes correspondentes da ontologia e é apresentada na seção seguinte. 
 
-QC26. Foi interposto recurso contra a sentença?
+#### 3.7 Modularização da ontologia 
 
-QC27. Qual é o prazo para apresentação do recurso?
+Durante o processo de modelagem, verificou-se que a representação de todos os conceitos e relações do Juizado Especial Federal Cível em um único diagrama comprometeria a legibilidade e dificultaria a compreensão do modelo. Por esse motivo, a ontologia foi organizada de forma modular, distribuindo os conceitos em diferentes diagramas de acordo com os aspectos do domínio que representam. 
 
-QC28. O recurso exige representação por advogado?
+A modularização não significa construções de ontologias independentes. Os diagramas representam diferentes perspectivas de uma mesma ontologia e compartilham conceitos que funcionam como pontos de integração entre os módulos. Entre esses conceitos estão, por exemplo, Processo Judicial Federal, Ato Processual, Situação Processual, Participante Processual, Parte Processual e Documento, que aparecem em diferentes partes do modelo e permitem estabelecer continuidade entre os aspectos estruturais e dinâmicos do processo. 
 
-QC29. O processo foi encaminhado à Turma Recursal?
+A organização dos diagramas acompanhou os principais grupos conceituais identificados durante o levantamento das Questões de Competência e o refinamento do domínio. Foram desenvolvidos modelos relacionados aos Representantes; Serventuários; Organizações; Sujeitos e papéis; Demanda, causa e pedidos; Competência do JEF; Instauração e desenvolvimento do procedimento; Contestação; Conciliação; Produção de provas; Análise e Julgamento; Sentença e obrigações decorrentes da decisão; Recursos; e Cumprimento da sentença. 
 
-QC30. Qual foi o resultado do julgamento do recurso?
+Essa divisão permitiu representar com maior clareza tanto os aspectos estruturais quanto 
 
-**7. Questões voltadas ao cidadão:**
+os aspectos dinâmicos do domínio. Enquanto alguns diagramas concentram-se na identificação das entidades, papéis e relações existentes no processo, outros evidenciam eventos processuais e as situações produzidas por esses eventos. Os módulos permanecem semanticamente relacionados e devem ser compreendidos de forma integrada. A separação em diagramas teve, portanto, finalidade principalmente organizacional e de apresentação, permitindo reduzir a complexidade visual sem perder as relações existentes entre os diferentes elementos da ontologia. A organização global desses módulos foi representada por meio de um Diagrama de Pacotes, utilizado para explicitar a divisão da ontologia e as dependências existentes entre suas diferentes partes. Esse diagrama oferece uma visão geral da arquitetura conceitual adotada, enquanto os diagramas de classes apresentam detalhadamente os conceitos e relações pertencentes a cada módulo. 
 
-QC31. Meu caso pode ser levado ao Juizado Especial Federal?
+#### 3.8 Verificação por rastreabilidade e instanciação simulada 
 
-QC32. Preciso contratar advogado para iniciar a ação?
+Como parte da verificação da ontologia de referência, foram construídos uma matriz de rastreabilidade das Questões de Competência e um conjunto de instanciações com dados inteiramente fictícios. A matriz relaciona cada questão aos conceitos, às relações e aos diagramas que oferecem suporte à sua resposta. As instanciações, por sua vez, exemplificam a aplicação desses elementos em situações hipotéticas, permitindo examinar a distinção entre entidades, papéis, documentos, eventos e situações processuais. Essa atividade segue a orientação da SABiO de verificar a competência da ontologia por correspondência com os requisitos e de utilizar instanciações como instrumento de avaliação conceitual (FALBO, 2014). 
 
-QC33. Contra qual órgão ou entidade federal devo propor minha ação?
+O procedimento compreendeu quatro atividades: identificação dos elementos necessários a cada resposta; localização desses elementos nos diagramas; construção de fragmentos de instâncias e relações para seis cenários; e registro das respostas esperadas, das premissas externas e das lacunas observadas. Foram utilizados identificadores estáveis para permitir o acompanhamento de uma mesma entidade em diferentes relações e recortes do cenário. Uma pessoa e o papel por ela exercido não foram representados como dois indivíduos distintos. 
 
-QC34. Quais documentos preciso reunir para apresentar meu pedido?
+A análise distinguiu o suporte direto à descrição de fatos já informados, o suporte parcial e a ausência de suporte suficiente para a decisão solicitada. Essa distinção é relevante porque algumas questões solicitam a identificação de informações, enquanto outras exigem decidir sobre necessidade, possibilidade ou obrigatoriedade jurídica. A existência de uma classe que registra um acontecimento não é suficiente para representar a regra que determina se ele deve ocorrer. 
 
-QC35. O que acontece depois que eu entro com a ação?
+Os resultados são apresentados na Seção 4.4. As instanciações constituem fragmentos conceituais, e não populações completas de todos os diagramas. Não foi executada verificação formal das cardinalidades, da satisfatibilidade ou dos axiomas da OntoUML. As regras jurídicas utilizadas para contextualizar os exemplos foram identificadas separadamente como premissas externas. Portanto, essa atividade não substitui a validação por especialistas nem os testes de uma eventual ontologia operacional. 
 
-QC36. Em que fase está meu processo?
+## 4 Resultados 
 
-QC37. Preciso comparecer a alguma audiência ou perícia?
+#### 4.1 Visão geral da ontologia 
 
-QC38. O que acontece depois que a sentença reconhece meu direito?
+A ontologia desenvolvida tem como propósito representar conceitualmente o percurso de uma demanda no Juizado Especial Federal Cível, desde os elementos necessários à sua propositura até os possíveis desdobramentos decorrentes do julgamento, da interposição de recursos e do cumprimento da decisão. O escopo adotado não pretende representar todo o Direito Processual Civil ou toda a estrutura da Justiça Federal, mas os elementos considerados relevantes para a compreensão do funcionamento do JEF Cível e para o atendimento das Questões de Competência estabelecidas durante o desenvolvimento. 
 
-Como resultado da captura e do refinamento, foram produzidos 16 diagramas de classes, além de um diagrama de pacotes. São seis diagramas no pacote Estrutural — Sujeitos e Papéis, Organizações, Representantes, Serventuários, Cabimento no JEF e Competência — e dez no pacote Procedimental — Demanda, Causa e Pedido; Procedimentos; Instauração; Contestação; Conciliação; Produção de Prova; Análise Probatória e Julgamento; Sentença; Recursos; e Cumprimento e Encerramento. “Demanda, Causa e Pedido” é o nome de um único diagrama. As figuras reproduzem os PNGs disponibilizados; as correções que ainda exigem alteração dos modelos são distinguidas da descrição da versão existente.
+As Questões de Competência que foram elaboradas para o desenvolvimento dos artefatos foram as seguintes: 
 
-A Figura 7 apresenta o Diagrama de Pacotes da ontologia, oferecendo uma visão em nível mais abstrato de sua organização. Por meio dele, é possível visualizar a distribuição dos modelos e as dependências existentes entre os diferentes módulos, enquanto os diagramas de classes apresentados posteriormente detalham os conceitos e relações que compõem cada parte da ontologia.
+**1. Sujeitos Processuais:** 
 
-Figura 7 – Diagrama de pacotes.
+QC1. Quem são os participantes do processo e qual papel processual cada um exerce? QC2. O autor é pessoa física, microempresa ou empresa de pequeno porte? 
 
-![Diagrama de pacotes da OntoJEF](diagramas/pacotes.png)
+QC3. O réu é a União, uma autarquia, uma fundação pública federal ou uma empresa pública federal? 
 
-Fonte: elaborado pelo autor (2026)
+QC4. Quem representa juridicamente as partes? 
 
-A organização apresentada no Diagrama de Pacotes é detalhada pelos diagramas de classes que compõem a ontologia. O Quadro 4 sintetiza esses diagramas e o principal aspecto do domínio representado em cada um deles.
+QC5. Há advogado constituído ou é necessária representação por advogado na fase atual? 
 
-Quadro 4 – Visão geral dos diagramas da ontologia.
+QC6. Há perito, conciliador, testemunha ou outro auxiliar da justiça vinculado ao processo? 
 
-| **Diagrama**                          | **Foco da representação**                                                   |
-| ------------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Sujeitos e Papéis**                | Participantes do processo e papéis processuais desempenhados                       |
-| **Organizações**                    | Organizações e estruturas institucionais presentes no domínio                    |
-| **Representantes**                    | Relações de representação jurídica das partes                                  |
-| **Serventuários**                    | Agentes e auxiliares envolvidos no funcionamento do Juizado                         |
-| **Demanda, Causa e Pedido**           | Elementos constitutivos da demanda e tipos de pedido                                |
-| **Cabimento no JEF**                  | Análise de uma pretensão antes do ajuizamento, sem pressupor processo instaurado. |
-| **Competência**                      | Cabimento no JEF, competência jurisdicional e interesse de agir                    |
-| **Procedimentos**                     | Estrutura geral dos atos e situações processuais                                  |
-| **Instauração**                     | Peticionamento, protocolização e formação da demanda                            |
-| **Contestação**                     | Citação, prazo e apresentação ou ausência de contestação.                    |
-| **Conciliação**                     | Tentativa de composição, propostas e celebração de acordo                       |
-| **Produção de Prova**               | Produção documental, testemunhal e pericial                                       |
-| **Análise Probatória e Julgamento** | Análise da suficiência das provas e aptidão para julgamento                      |
-| **Sentença**                         | Resultado do julgamento, obrigação judicial e trânsito em julgado                |
-| **Recursos**                          | Interposição, tramitação e julgamento do recurso                                |
-| **Cumprimento e Encerramento**        | Cumprimento da obrigação e encerramento do processo                               |
+**2. Ação Judicial** 
 
-Fonte: Elaborado pelo autor (2026).
+QC7. Qual é o tipo da ação proposta? 
 
-## 4.2 Pacote Estrutural
+QC8. Qual é o pedido principal formulado pelo autor? 
 
-O pacote Estrutural reúne os modelos responsáveis pela representação dos principais elementos que constituem a estrutura do domínio do Juizado Especial Federal Cível. Nele são representadas as organizações envolvidas, os sujeitos que participam do processo, os papéis processuais assumidos por esses sujeitos, as relações de representação e os elementos relacionados à competência jurisdicional.
+QC9. A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? QC10. Existe requerimento de tutela provisória? 
 
-O pacote é composto pelos diagramas Organizações, Sujeitos e Papéis, Representantes, Serventuários, Cabimento no JEF e Competência. O modelo de Sujeitos e Papéis utiliza conceitos de organizações, representação e auxiliares para caracterizar os participantes. Cabimento no JEF trata de uma análise que pode anteceder a propositura da ação, enquanto Competência relaciona elementos de um processo já instaurado.
+**3. Procedimento:** 
 
-### 4.2.1 Sujeitos e Papéis
+QC11. Em qual status ou fase o processo se encontra? 
 
-O diagrama Sujeitos e Papéis representa os principais participantes envolvidos na relação processual e os papéis que podem ser desempenhados no contexto do Juizado Especial Federal Cível. A estrutura parte dos `kinds` Pessoa e Organização, que representam entidades com identidade própria, enquanto os diferentes papéis assumidos durante o processo são representados por roles e `roleMixins` .
+QC12. O réu apresentou contestação? 
 
-O Participante Processual é modelado como `roleMixin` e constitui o conceito mais abrangente para os sujeitos que participam do processo. A partir dele são especializados Parte Processual, também representada como `roleMixin` , além dos `roles` Representante Processual, Auxiliar da Justiça e Testemunha. Essa estrutura permite reunir em uma mesma categoria participantes de naturezas distintas, sem atribuir a esses papéis um princípio de identidade próprio.
+QC13. Pode haver proposta ou realização de acordo entre as partes? 
 
-A Parte Processual especializa-se em Demandante e Demandado. O Demandante é representado como `roleMixin` , pois essa posição pode ser ocupada por diferentes tipos de entidades. No modelo, são representados os roles Pessoa Física Autora, Microempresa Autora e Empresa de Pequeno Porte Autora. Já o Demandado é modelado como `role` desempenhado por uma Organização Federal, representando a entidade contra a qual a demanda é proposta no recorte considerado pela ontologia.
+QC14. É necessária audiência de conciliação? 
 
-Além dos papéis, o diagrama representa Relação Jurídico-Processual e Representação Processual como `relator`. A segunda formaliza o vínculo entre a parte e o representante. A opção por representação precisa ser compatível com as cardinalidades dos demais diagramas: a ausência de representante em uma etapa inicial admitida não pode ser impedida por uma obrigatoriedade introduzida no diagrama de Instauração. Também é necessário explicitar como Relação Jurídico-Processual se articula com Processo Judicial Federal, distinguindo eventual parte ou perspectiva do mesmo vínculo de uma relação independente.
+QC15. Há necessidade de produção de provas? 
 
-Os conceitos apresentados constituem uma base compartilhada pelos demais módulos. O enquadramento como microempresa ou empresa de pequeno porte, porém, não fornece por si só um princípio de identidade: o porte deve ser distinguido da natureza do agente e de seu papel no processo. A representação atual desses autores apenas como organizações precisa ser conferida quanto às hipóteses de empresário individual, sem duplicar a identidade da pessoa natural.
+**4. Provas:** 
 
-Figura 8 – Diagrama de Sujeitos e Papéis.
+QC16. Quais provas foram apresentadas pelas partes? 
 
-![Sujeitos e papéis processuais](diagramas/sujeitos-e-papeis.png)
+QC17. Há testemunhas indicadas ou necessidade de produção de prova testemunhal? 
 
-Fonte: elaborado pelo autor (2026)
+QC18. As provas disponíveis são suficientes para julgamento antecipado? 
 
-### 4.2.2 Organizações
+QC19. A ausência de alguma prova impede o julgamento do pedido? 
 
-O diagrama Organizações apresenta a classificação institucional utilizada na versão atual. Organização é representada como `kind` e Organização Federal como `subkind`. Seu objetivo é fornecer os tipos das entidades que participam do domínio e dos órgãos envolvidos no julgamento. Entretanto, entidade com personalidade jurídica, órgão e pessoa que exerce função jurisdicional precisam ser distinguidos; a hierarquia da Figura 9 ainda mistura esses níveis.
+###### **5. Sentença e Cumprimento:** 
 
-A Organização Federal é especializada, no desenho, em Empresa Pública Federal, União Federal, Autarquia Federal, Fundação Pública Federal e Órgão Julgador. As quatro primeiras denominações se relacionam às categorias admitidas no polo passivo pelo art. 6º, II, da Lei nº 10.259/2001. Órgão Julgador representa outra dimensão: uma unidade de exercício da função jurisdicional, que não deve ser confundida com a pessoa jurídica União ou com uma entidade ré.
+QC20. Qual foi o resultado da sentença? 
 
-O conjunto `{disjoint, complete}` expressa uma restrição de exclusividade e cobertura, não uma indicação meramente visual. Sua pertinência precisa ser revista: as categorias de réus admitidos no JEF não esgotam todas as organizações federais, e a inclusão de órgãos na mesma partição introduz ambiguidade. O recorte do estudo, isoladamente, não justifica declarar completa uma taxonomia cujo tipo geral permanece abrangente.
+QC21. Qual obrigação foi imposta ao réu: pagar, fazer, não fazer ou entregar algo? 
 
-O desenho especializa Órgão Julgador em Juiz e Turma Recursal. Esse ponto requer correção: Juiz, no sentido de magistrado, é um papel desempenhado por uma Pessoa, não uma espécie de Organização. Deve-se representar separadamente o magistrado, o órgão judicial e o colegiado. Também é preciso compatibilizar Órgão Julgador com Órgão Judicial, utilizado no diagrama de Competência, explicitando se são conceitos distintos ou denominações do mesmo conceito. A revisão textual registra essa inconsistência, mas não altera a imagem existente.
+QC22. A sentença transitou em julgado? 
 
-Figura 9 – Diagrama de Organização.
+QC23. A obrigação reconhecida na sentença foi cumprida? 
 
-![Diagrama de Organizações, com as limitações descritas no texto](diagramas/organizacoes.png)
+QC24. O cumprimento da sentença foi concluído? 
 
-Fonte: elaborado pelo autor (2026)
+QC25. O processo pode ser arquivado por satisfação da obrigação? 
 
-### 4.2.3 Representantes
+**6. Recursos:** 
 
-O diagrama Representantes apresenta os diferentes papéis de representação processual considerados na ontologia. A estrutura parte do `kind` Pessoa, do qual se especializa o `role` Representante Processual. Essa modelagem evidencia que a representação processual não constitui uma característica essencial da pessoa, mas um papel assumido por ela quando atua na representação de uma das partes em determinado processo.
+QC26. Foi interposto recurso contra a sentença? 
 
-O Representante Processual é especializado nos roles Representante Designado, Advogado Constituído, Defensor Público Federal e Representante Jurídico Federal. O Representante Designado contempla a pessoa que exerce a representação em razão de designação específica, enquanto o Advogado Constituído representa o profissional escolhido pela parte para atuar em sua defesa. O Defensor Público Federal representa a atuação da Defensoria Pública da União no processo, e o Representante Jurídico Federal agrupa os diferentes papéis de representação jurídica das entidades federais contempladas pelo modelo.
+QC27. Qual é o prazo para apresentação do recurso? 
 
-O `role` Representante Jurídico Federal é posteriormente especializado em Procurador Federal, Advogado da União, Procurador da Fazenda Nacional e Advogado de Empresa Pública Federal. Essa distinção permite representar, de maneira mais específica, os diferentes papéis que podem ser exercidos na representação jurídica da parte federal, mantendo todos eles subordinados a uma categoria processual comum.
+QC28. O recurso exige representação por advogado? 
 
-Os dois níveis apresentam conjuntos `{disjoint, complete}`. A restrição exige revisão: o art. 10 da Lei nº 10.259/2001 admite representante designado advogado ou não, de modo que designação e habilitação profissional não constituem necessariamente categorias excludentes. Além disso, uma pessoa pode exercer papéis diferentes em processos ou momentos distintos. Convém separar habilitação, vínculo institucional e papel exercido na representação concreta, delimitando a exclusividade apenas quando houver fundamento para ela. A completude dessas classificações também não foi formalmente verificada.
+QC29. O processo foi encaminhado à Turma Recursal? 
 
-Esse diagrama complementa o modelo de Sujeitos e Papéis, no qual o Representante Processual participa da Representação Processual juntamente com a Parte Processual. Enquanto aquele diagrama evidencia a relação existente entre representante e parte, o diagrama Representantes detalha os diferentes tipos de papéis que podem ocupar a posição de representação no processo.
+QC30. Qual foi o resultado do julgamento do recurso? 
 
-Figura 10 – Diagrama de Representantes.
+###### **7. Questões voltadas ao cidadão:** 
 
-![Papéis de representação processual](diagramas/representantes.png)
+QC31. Meu caso pode ser levado ao Juizado Especial Federal? 
 
-Fonte: elaborado pelo autor (2026)
+QC32. Preciso contratar advogado para iniciar a ação? 
 
-### 4.2.4 Serventuários
+QC33. Contra qual órgão ou entidade federal devo propor minha ação? 
 
-O diagrama denominado Serventuários reúne papéis de apoio à atividade jurisdicional. A estrutura parte de Pessoa e a especializa em Serventuário da Justiça. Para evitar ambiguidade jurídica, é necessário distinguir servidores do Judiciário de auxiliares que não integram seus quadros. O conceito mais abrangente para a articulação com Sujeitos e Papéis é Auxiliar da Justiça, e a denominação do diagrama não deve implicar que todo participante nele representado seja servidor público.
+QC34. Quais documentos preciso reunir para apresentar meu pedido? 
 
-No desenho, Serventuário da Justiça possui as especializações Servidor Judicial, Oficial de Justiça, Perito e Conciliador. Servidor Judicial exerce atividades institucionais de apoio; Oficial de Justiça cumpre ordens e diligências; Perito fornece conhecimento técnico ou científico; e Conciliador auxilia a composição. O CPC inclui esses últimos entre os auxiliares da Justiça, sem equipará-los indistintamente a servidores (BRASIL, 2015, art. 149). A Lei nº 10.259/2001 disciplina o exame técnico e a designação de conciliadores (arts. 12 e 18).
+QC35. O que acontece depois que eu entro com a ação? 
 
-A partição `{disjoint, complete}` também requer revisão. Oficial de Justiça pode integrar a categoria de servidores judiciais; Perito e Conciliador não precisam possuir esse vínculo. A modelagem deve distinguir vínculo funcional e participação como auxiliar no processo, estabelecendo as generalizações adequadas e evitando que a disjunção impeça classificações juridicamente compatíveis.
+QC36. Em que fase está meu processo? 
 
-Esses conceitos são reutilizados em diferentes partes da ontologia. O Perito participa dos eventos relacionados à produção de prova pericial, enquanto o Conciliador aparece no modelo de conciliação. Já Servidor Judicial e Oficial de Justiça representam agentes de apoio ao funcionamento e à prática dos atos necessários à tramitação processual. Dessa forma, o diagrama complementa o modelo de Sujeitos e Papéis ao detalhar os papéis institucionais desempenhados por pessoas vinculadas à atividade judiciária.
+QC37. Preciso comparecer a alguma audiência ou perícia? 
 
-Figura 11 – Diagrama de Serventuários.
+QC38. O que acontece depois que a sentença reconhece meu direito? 
 
-![Papéis de apoio à atividade jurisdicional](diagramas/serventuarios.png)
+Como resultado da captura e do refinamento, foram produzidos 16 diagramas de classes, além de um diagrama de pacotes. São seis diagramas no pacote Estrutural — Sujeitos e Papéis, Organizações, Representantes, Serventuários, Cabimento no JEF e Competência — e dez no pacote Procedimental — Demanda, Causa e Pedido; Procedimentos; Instauração; Contestação; Conciliação; Produção de Prova; Análise Probatória e Julgamento; Sentença; Recursos; e Cumprimento e Encerramento. “Demanda, Causa e Pedido” é o nome de um único diagrama. 
 
-Fonte: elaborado pelo autor (2026)
+A Figura 7 apresenta o Diagrama de Pacotes da ontologia, oferecendo uma visão em nível mais abstrato de sua organização. Por meio dele, é possível visualizar a distribuição dos modelos e as dependências existentes entre os diferentes módulos, enquanto os diagramas de classes apresentados posteriormente detalham os conceitos e relações que compõem cada parte da ontologia. 
 
-### 4.2.5 Cabimento no JEF
+Figura 7. Diagrama de pacotes. 
 
-O diagrama Cabimento no JEF representa a verificação pré-processual da possibilidade de uma pretensão ser submetida ao Juizado Especial Federal Cível. Diferentemente do diagrama Competência, que trata de um processo judicial já instaurado, este modelo busca representar a análise realizada antes do ajuizamento, permitindo avaliar se determinado caso reúne condições para tramitar no JEF sem pressupor a existência de Demandante, Demandado ou Processo Judicial Federal.
 
-O elemento central do diagrama é a Pretensão Jurídica, modelada como `intention` e associada à Pessoa que pretende buscar determinada tutela jurisdicional. Essa pretensão reúne os principais elementos necessários à análise de cabimento, incluindo um ou mais Pedidos Processuais, a Causa de Pedir e o Valor da Causa. Também é indicada a Organização Federal em face da qual se pretende formular a demanda.
 
-A Pretensão Jurídica possui um ou mais Pedidos Processuais, representados como `kind` , e uma Causa de Pedir, também modelada como `kind` . O Valor da Causa é representado como `quality` e caracteriza a pretensão, permitindo que sua dimensão econômica seja considerada na análise. A Organização Federal, por sua vez, é representada como `subkind` e corresponde à entidade contra a qual a pretensão poderá futuramente ser dirigida.
+Fonte: elaborado pelo autor (2026) 
 
-A verificação propriamente dita é representada pelo `event` Análise de Cabimento no JEF. Esse evento considera os elementos da pretensão, incluindo a entidade envolvida, o pedido, a causa de pedir e o valor da causa, além da Regra de Competência aplicável. A participação desses elementos evidencia que o cabimento não é determinado por um único critério isolado, mas pela análise conjunta das características da pretensão à luz das regras jurídicas pertinentes.
+A organização apresentada no Diagrama de Pacotes é detalhada pelos diagramas de classes que compõem a ontologia. O Quadro 4 sintetiza esses diagramas e o principal aspecto do domínio representado em cada um deles. 
 
-A Regra de Competência é representada como `subkind` e regula a Análise de Cabimento no JEF. Essa relação permite explicitar que a conclusão quanto ao enquadramento da pretensão depende da aplicação das normas que estabelecem os critérios de competência do Juizado Especial Federal Cível, inclusive as hipóteses de inclusão e exclusão previstas no ordenamento jurídico.
+<u>Quadro 3: Visão geral dos diagramas da ontologia</u> 
 
-Como resultado da análise, o evento produz a `situation` Resultado da Análise de Cabimento. Essa situação é especializada em Cabível no JEF e Não Cabível no JEF, formando um conjunto `{disjoint, complete}` . Dessa forma, no recorte adotado pela ontologia, o resultado da análise é classificado em uma dessas duas possibilidades, consideradas mutuamente exclusivas.
+| **Diagrama** | **Foco da representação** |
+| --- | --- |
+| **Sujeitos e Papéis** | Participantes do processo e papéis processuais desempenhados |
+| **Organizações** | Organizações e estruturas institucionais presentes no domínio |
+| **Representantes** | Relações de representação jurídica das partes |
+| **Serventuários** | Agentes e auxiliares envolvidos no funcionamento do Juizado |
+| **Demanda, Causa e** **Pedido** | Elementos constitutivos da demanda e tipos de pedido |
+| **Análise de** **Cabimento** | Analisa o cabimento de uma pretensão de um processo ainda nao instaurada no JEF |
+| **Competência** | Cabimento no JEF, competência jurisdicional e interesse de agir |
+| **Procedimentos** | Estrutura geral dos atos e situações processuais |
+| **Instauração** | Peticionamento, protocolização e formação da demanda |
+| **Contestação** | Citação, prazo e apresentação ou ausência de contestação |
+| **Conciliação** | Tentativa de composição, propostas e celebração de acordo |
+| **Produção de Prova** | Produção documental, testemunhal e pericial |
+| **Análise e** **Julgamento** | Análise da suficiência das provas e aptidão para julgamento |
+| **Sentença** | Resultado do julgamento, obrigação judicial e trânsito em julgado |
+| **Recursos** | Interposição, tramitação e julgamento do recurso |
+| **Cumprimento e** **Encerramento** | Cumprimento da obrigação e encerramento do processo |
 
-O diagrama distingue a análise de uma pretensão ainda não ajuizada da competência relacionada a um processo já existente. O resultado pode ser registrado, mas as condições das regras de competência ainda não são executadas pelo modelo. Há também um limite de cobertura: a Pretensão Jurídica caracteriza apenas Pessoa no desenho, embora o escopo inclua microempresas e empresas de pequeno porte. É necessário avaliar um agente mais abrangente ou outra representação que contemple esses interessados sem criar antecipadamente seus papéis de partes. A intenção aqui representada não deve ser confundida com uma pretensão material já reconhecida como direito.
 
-Figura 12 – Diagrama de Cabimento no JEF.
 
-![Análise de cabimento antes do ajuizamento](diagramas/pretencao.png)
+Fonte: Elaborado pelo autor (2026). 
 
-Fonte: elaborado pelo autor (2026)
+#### 4.2 Reúso das ontologias 
 
-### 4.2.6 Competência
+Como resultado do processo de reúso descrito na Seção 3.5, parte dos conceitos utilizados na OntoJEF foi fundamentada em estruturas provenientes da UFO-L e da OntoRS. O reúso não ocorreu de forma integral, uma vez que os conceitos de origem foram selecionados e, quando necessário, especializados ou adaptados ao escopo do Juizado Especial Federal Cível. 
 
-O diagrama Competência representa os elementos utilizados para determinar o cabimento de uma demanda no Juizado Especial Federal Cível e a existência de competência jurisdicional para sua apreciação. O modelo articula aspectos relacionados ao processo, às partes, ao valor da causa, à instrução documental, ao eventual requerimento administrativo prévio e às regras jurídicas que fundamentam a competência do órgão julgador.
+A UFO-L constituiu a principal fonte de reúso ontológico, fornecendo categorias relacionadas a papéis jurídicos, relações jurídicas reificadas, posições jurídicas, poderes e normas. Esses elementos fundamentaram conceitos presentes em diferentes diagramas da ontologia, como Demandante, Demandado, Representação Processual, Obrigação Judicial, Competência Jurisdicional, Direito à Prestação, Dever de Prestação e Poder Jurisdicional. 
 
-O Processo Judicial Federal é modelado como `relator` e constitui um dos elementos centrais do diagrama. Ele se relaciona à Demanda, representada como `kind` , que é caracterizada pela `quality` Valor da Causa. Essa propriedade permite representar um dos elementos considerados na verificação do cabimento da demanda perante o Juizado Especial Federal. O processo também se relaciona às partes envolvidas, representadas pelos papéis Demandante e Demandado, sendo este último desempenhado por uma Organização Federal.
+Da OntoRS foram reutilizados seletivamente conceitos relacionados à representação do processo judicial. Judicial Process serviu de referência para Processo Judicial Federal, Petition para Petição e Party para Parte Processual. Esses conceitos foram adaptados ao escopo mais amplo adotado neste trabalho, voltado ao percurso da demanda no JEF Cível. 
 
-A representação jurídica das partes é formalizada pelo `relator` Representação
+<u>Quadro 4: Mapeamento do reúso.</u> 
 
-Processual, que media a Parte Processual e o Representante Processual. Essa estrutura permite que a existência ou ausência de representação seja tratada de maneira independente da identidade da parte, mantendo a distinção entre o participante do processo e o papel eventualmente desempenhado por seu representante.
+| **Origem** | **Conceito de origem** | **Entidades** |
+| --- | --- | --- |
+| UFO-L | _Legal Role_ | _Demandado, Representante_ _Processual, Testemunha, Perito,_ _Conciliador, Auxiliar da_ _Justiça, Pessoa Física Autora,_ _Microempresa Autora, Empresa_ _de Pequeno Porte Autora, JEF_ _Competente_ |
+| UFO-L | _Legal RoleMixin_ | _Participante Processual, Parte_ _Processual, Demandante_ |
+| UFO-L | _Legal Relator_ | _Relação Jurídico-Processual,_ _Representação Processual,_ _Obrigação Judicial,_ _Competência Jurisdicional,_ _Acordo Processual, Relação_ _Recursal_e outros relators específicos |
+| UFO-L | _Right_/_Duty_ | _Direito à Prestação e Dever de_ _Prestação,_vinculados à _Obrigação Judicial_ |
+| UFO-L | _Legal Power_ | _Poder Jurisdicional_ |
+| UFO-L | _Legal Norm_/_Rule_ | _Norma Jurídica, Regra_ _Jurídica, Regra de Competência_ _e Regra de Prazo Recursal_ |
+| OntoRS | _Judicial Process_ | _Processo Judicial Federal,_ especializado para o domínio do trabalho |
+| OntoRS | _Petition_ | _Petição_, mantida como_relator_ |
+| OntoRS | _Party_ | _Parte Processual,_adaptada ao modelo geral do JEF |
 
-A instrução do processo é representada pelo `relator` Instrução Documental do Processo, que relaciona o Processo Judicial Federal aos Documentos Necessários ao Processo. Estes são modelados como `role` de Documento, indicando que um documento assume essa função quando é relevante para a instrução de determinada demanda. Entre os documentos representados encontra-se o Documento de Requerimento Administrativo, modelado como `subkind` de Documento e relacionado ao `event` Requerimento Administrativo.
 
-Requerimento Administrativo representa a provocação da Administração quando pertinente. Indeferimento Administrativo, Resistência Administrativa e Demora Excessiva são situações que podem ser relevantes à análise da necessidade da tutela, mas não constituem condições universais e suficientes do interesse de agir. A classificação de Interesse de Agir como `intention` é inadequada ao significado jurídico adotado: desejar ajuizar uma ação não equivale a satisfazer esse requisito. O conceito deve ser reformulado como condição jurídica apreciada no contexto da pretensão e do provimento necessário, distinguindo o resultado dessa análise da intenção do interessado (BRASIL, 2015, art. 17). Não se presume prévio requerimento obrigatório para toda demanda.
 
-A competência propriamente dita é representada pelo `relator` Competência Jurisdicional. Esse relator conecta o Processo Cabível no JEF ao JEF Competente, explicitando a relação pela qual determinado processo pode ser submetido a um Juizado Especial Federal específico. O Processo Cabível no JEF é modelado como `role` de Processo Judicial Federal, evidenciando que o cabimento perante o Juizado depende das condições presentes no contexto da demanda.
+Fonte: Elaborado pelo autor (2026). 
 
-O JEF Competente, por sua vez, é representado como `role` de Juizado Especial Federal, `subkind` de Órgão Judicial. O papel de JEF Competente é caracterizado pelo `mode` Poder Jurisdicional, representando o poder atribuído ao órgão para apreciar e decidir a demanda dentro de sua esfera de competência.
+O quadro evidencia que o reúso foi mais abrangente em relação à UFO-L, utilizada como base para diferentes estruturas jurídicas da ontologia, enquanto a OntoRS contribuiu de forma mais pontual com conceitos relacionados à organização do processo judicial. Os demais elementos da OntoJEF foram definidos ou refinados de acordo com as necessidades identificadas nas Questões de Competência e nas fontes jurídicas analisadas. 
 
-Por fim, a determinação dessa competência é vinculada à estrutura normativa. O `kind` Norma Jurídica é especializado em Regra Jurídica e, posteriormente, em Regra de Competência. No modelo, a Regra de Competência define a Competência Jurisdicional, tornando explícita a dependência entre a atribuição de competência ao órgão judicial e as normas jurídicas aplicáveis ao caso.
+#### 4.3 Pacote Estrutural 
 
-O diagrama aproxima informações sobre cabimento, partes, documentos e competência, mas essas dimensões não são equivalentes. Competência é a atribuição do órgão para apreciar uma causa; interesse de agir e legitimidade são condições distintas. A classe Documento Necessário ao Processo permite classificar um documento já identificado como necessário, mas não fornece uma lista exaustiva dos documentos exigíveis em cada tipo de caso. Essas limitações impedem tratar as QCs sobre cabimento, polo passivo e documentação como decisões integralmente respondidas pela estrutura atual.
+O pacote Estrutural reúne os modelos responsáveis pela representação dos principais elementos que constituem a estrutura do domínio do Juizado Especial Federal Cível. Nele são representadas as organizações envolvidas, os sujeitos que participam do processo, os papéis processuais assumidos por esses sujeitos, as relações de representação e os elementos relacionados à competência jurisdicional. 
 
-Figura 13 – Diagrama de Competência.
+O pacote é composto pelos diagramas Organizações, Sujeitos e Papéis, Representantes, Serventuários , Cabimento no JEF e Competência. Esses modelos estão relacionados entre si, uma vez que os conceitos definidos em um diagrama são utilizados em diferentes contextos da ontologia. O modelo de Sujeitos e Papéis, por exemplo, utiliza conceitos provenientes dos diagramas de Organizações, Representantes e Serventuários para caracterizar os diferentes participantes que podem integrar uma relação processual. 
 
-![Competência, documentos, partes e estrutura normativa](diagramas/competencia.png)
+###### 4.3.1 Sujeitos e Papéis 
 
-Fonte: elaborado pelo autor (2026)
+O diagrama <u>Sujeitos e Papéis</u> representa os principais participantes envolvidos na relação processual e os papéis que podem ser desempenhados no contexto do Juizado Especial Federal Cível. A estrutura parte dos `kinds` <u>Pessoa e Organização, que representam entidades</u> com identidade própria, enquanto os diferentes papéis assumidos durante o processo são representados por roles e `roleMixins` . 
 
-## 4.3 Pacote Procedimental
+O Participante Processual é modelado como `roleMixin` e constitui o conceito mais abrangente para os sujeitos que participam do processo. A partir dele são especializados Parte <u>Processual, também representada como</u> `roleMixin` , além dos `roles` <u>Representante Processual, Auxiliar da Justiça e Testemunha. Essa estrutura permite reunir em uma mesma</u> categoria participantes de naturezas distintas, sem atribuir a esses papéis um princípio de identidade próprio. 
 
-O pacote Procedimental reúne os modelos responsáveis pela representação da dinâmica do processo no Juizado Especial Federal Cível. Diferentemente do pacote Estrutural, que concentra os sujeitos, papéis, organizações e relações mais estáveis do domínio, este pacote representa os principais acontecimentos, documentos, relações e situações que surgem ao longo da tramitação da demanda.
+A <u>Parte Processual especializa-se em Demandante</u> e <u>Demandado. O Demandante é</u> representado como `roleMixin` , pois essa posição pode ser ocupada por diferentes tipos de entidades. No modelo, são representados os roles Pessoa Física Autora, <u>Microempresa Autora</u> e Empresa de Pequeno Porte Autora. Já o Demandado é modelado como `role` desempenhado por uma Organização Federal, representando a entidade contra a qual a demanda é proposta no recorte considerado pela ontologia. 
 
-O pacote é composto pelos diagramas Demanda, Causa e Pedido, Procedimentos, Instauração, Contestação, Conciliação, Produção de Prova, Análise Probatória e Julgamento, Sentença, Recursos e Cumprimento e Encerramento. Em conjunto, esses modelos representam o percurso processual contemplado pela ontologia, desde a formulação e o ajuizamento da demanda até os possíveis desdobramentos decorrentes da decisão judicial, incluindo a interposição de recurso e o cumprimento da obrigação reconhecida.
+Além dos papéis processuais, o diagrama representa a Relação <u>Jurídico-Processual</u> como `relator` , responsável por explicitar a relação estabelecida entre os participantes no contexto do processo. A <u>Representação Processual</u> também é modelada como `relator` , formalizando o vínculo existente entre uma Parte Processual e seu Representante Processual, com cardinalidade indicando que parte pode, ou não, depender de um representante. Dessa forma, o modelo distingue os próprios participantes das relações jurídicas que justificam os papéis exercidos por eles. 
 
-### 4.3.1 Demanda, Causa e Pedido
+Os conceitos apresentados nesse diagrama constituem uma base compartilhada por diferentes partes da ontologia. <u>Demandante, Demandado, Parte Processual, Representante Processual</u> e outros participantes reaparecem nos modelos referentes à competência, instauração, contestação, conciliação, produção de provas, recursos e demais etapas do procedimento. 
 
-O diagrama Demanda, Causa e Pedido representa os elementos utilizados para caracterizar a pretensão submetida ao Juizado Especial Federal Cível. O modelo distingue a própria Demanda, os fundamentos que a sustentam e aquilo que é solicitado ao órgão judicial, permitindo representar separadamente conceitos que, embora relacionados, possuem funções distintas no processo.
+Figura 8. Diagrama de Sujeitos e Papéis. 
 
-A Demanda é modelada como `kind` e se fundamenta em uma Causa de Pedir. Possui um ou mais Pedidos Processuais, permitindo explicitar as providências requeridas. São conteúdos articulados na pretensão apresentada, distintos do ato de ajuizar e do documento que os registra. O diagrama não possui uma relação específica que identifique qual dos pedidos é principal; essa informação é anotação externa nos cenários de avaliação.
 
-Pedido Processual é especializado em Pedido de Fazer, Pedido de Não Fazer, Pedido de Pagar, Pedido de Tutela Provisória e Pedido de Outra Providência. A partição disjunta e completa do desenho precisa ser revista: a natureza da prestação e a modalidade provisória ou definitiva da tutela são critérios distintos, pois uma tutela provisória pode determinar fazer ou pagar. Convém representar essas dimensões separadamente e avaliar a inclusão explícita de pedido de entrega de coisa. A presença de um pedido de tutela não significa seu deferimento.
 
-A Demanda é ainda caracterizada pela `quality` Valor da Causa. A inclusão desse elemento permite representar uma propriedade relevante da demanda e que também é utilizada em outras partes da ontologia, especialmente no modelo de Competência, no qual o valor da causa participa da análise do cabimento do processo perante o Juizado Especial Federal.
+<!-- Start of picture text -->
+<<Mediation>> oe<br>Representagao<<relator>> Processual | 7<br>OF<br><<Mediation>><br><<Mediation>><br>oe<br>Relacdo Juridico-Processual<<relator><br>hs<br><tediaion>><br>te<br><<roleMixin>> °.<br>Participante Processual |<} <<roleMixin>> [ <ekina>><br>mn Parte Processual Organizagao<br>A A<br>— Prccrotemiine> | fF <croien> |__p f° <<subkina>><br>Pessoa Demandante Demandado Organizagdo Federal<br>A A my<br>,»<br>f <<role>> <<role>> —<br>Ropresentante Processual | | Auxiiar da Justica |__| Testemunha = =a<br>Pessoa Fisica Autora Microempresa Autora<br><<role>><br>Empresa de pequeno Porte Autora<br><!-- End of picture text -->
 
-O diagrama relaciona a Demanda ao `relator` Processo Judicial Federal e apresenta classificações por matéria: Processo Previdenciário, Processo Assistencial e Processo Indenizatório. Na imagem, Processo FGTS e Processo Habitacional aparecem subordinados a Processo Indenizatório. Essa generalização não é adequada como regra geral: demandas sobre FGTS ou habitação não são necessariamente indenizatórias. É preciso separar matéria discutida e natureza da tutela, sem tratar a enumeração como taxonomia exaustiva de ações. Os rótulos gráficos “Processo Previdenciária” e “Processo Indenizatória” são normalizados no texto, mas ainda precisam de correção na figura.
+Fonte: elaborado pelo autor (2026) 
 
-Dessa forma, o diagrama explicita que a caracterização de uma demanda não depende apenas da identificação de um tipo de processo, mas também da combinação entre sua Causa de Pedir, seu Pedido Processual e seu Valor da Causa. Esses elementos fornecem a base para a representação das Questões de Competência relacionadas ao tipo da ação proposta, ao pedido formulado pelo autor, à natureza da obrigação pretendida e à existência de pedido de tutela provisória.
+###### 4.3.2 Organizações 
 
-Figura 14 – Diagrama de Demanda, Causa e Pedido.
+O diagrama Organizações apresenta a estrutura das principais entidades organizacionais consideradas no domínio do Juizado Especial Federal Cível. O conceito mais geral é <u>Organização, modelado como</u> `kind` , a partir do qual se especializa <u>Organização Federal,</u> representada como `subkind` . Essa estrutura permite reunir, sob uma mesma base ontológica, as diferentes organizações federais relevantes para a atuação e o funcionamento do JEF. 
 
-![Demanda, causa de pedir, pedidos e classificações do processo](diagramas/demanda-causa-pedido.png)
+A Organização Federal especializa-se nos `subkinds` <u>Empresa Pública Federal, União Federal, Autarquia Federal, Fundação Pública Federal e Órgão Julgador. As quatro primeiras</u> categorias representam diferentes tipos de entidades federais que podem participar do domínio processual, especialmente na posição de parte demandada. O <u>Órgão Julgador, por sua vez,</u> representa a estrutura responsável pelo exercício da função jurisdicional. 
 
-Fonte: elaborado pelo autor (2026)
+As especializações de <u>Organização Federal</u> estão organizadas em um conjunto de generalização definido como `{disjoint, complete}` . Dessa forma, no escopo adotado pela ontologia, as categorias representadas são consideradas mutuamente exclusivas e abrangem as possibilidades previstas para a classificação das organizações federais modeladas. 
 
-### 4.3.2 Procedimentos
+O <u>Órgão Julgador é ainda especializado nos</u> `subkinds` <u>Juiz e Turma Recursal,</u> permitindo representar os diferentes elementos responsáveis pela apreciação e decisão das demandas em momentos distintos do procedimento. Esses conceitos são posteriormente utilizados em outros diagramas da ontologia, especialmente no modelo de Recursos, nos quais a atuação jurisdicional é detalhada em relação aos demais elementos processuais. 
 
-O diagrama Procedimento representa, de forma geral, a sequência de atos e situações que marcam o desenvolvimento de uma demanda no Juizado Especial Federal Cível. Seu objetivo é fornecer uma visão sintética da dinâmica processual, evidenciando os principais eventos que ocorrem ao longo da tramitação e as situações produzidas por esses acontecimentos.
+Figura 9. Diagrama de Organização. 
 
-O elemento mais abrangente do diagrama é o `event` Ato Processual, que representa os acontecimentos processuais praticados no curso da demanda. Esse evento geral está relacionado, por meio da relação `participation` , ao Participante Processual, indicando que os atos processuais envolvem a participação de sujeitos já representados no pacote estrutural. Além disso, Ato Processual se relaciona à Situação Processual, modelada como `situation` , permitindo representar os estados ou condições produzidas ao longo do processo.
 
-A partir de Ato Processual, o diagrama especializa alguns eventos considerados centrais para a estrutura procedimental do modelo: Ajuizamento, Citação, Apresentação de Contestação e Julgamento, todos representados como `event` . O Ajuizamento representa o ato inicial de instauração da demanda judicial. No modelo, esse evento leva a situação Processo Instaurado e, adicionalmente, por meio da relação `creation` , dá origem ao Processo Judicial Federal, modelado como `relator` .
 
-O evento Citação mantém uma relação de `historicalDependence` com o Ajuizamento, indicando que sua ocorrência depende da instauração prévia do processo. A citação leva a situação Demandado Citado, representando o estado processual decorrente da ciência formal do réu acerca da demanda proposta.
+<!-- Start of picture text -->
+(4<br><<kind>><br>Organizagao<br>A<br>i<br><<subkind>><br>Organizagao Federal<br>TAN<br>(disjoint, complete}<br><<subkind>> <<subkind>> <<subkind>> <<subkind>> <<subkind>><br>Empresa Publica Federal | |Unido Federal | | Autarquia Federal | |Fundacdo Publica Federal | |Orgao Julgador<br>L\ PAN<br><<subkind>> | |" <<subkind>><br>Juiz Turma Recursal<br><!-- End of picture text -->
 
-Apresentação de Contestação aparece como historicamente dependente da Citação no percurso desenhado. Não se trata de requisito universal: o comparecimento espontâneo pode suprir a falta ou nulidade da citação (BRASIL, 1995, art. 18, § 3º; BRASIL, 2015, art. 239, § 1º). A ligação desenhada de Apresentação de Contestação para Apto a Julgamento com `triggers` também precisa ser corrigida, pois esse estereótipo relaciona situação a evento, e não evento a situação. O resultado da apresentação da defesa é Contestação Apresentada; a aptidão para julgamento depende de avaliação própria.
+Fonte: elaborado pelo autor (2026) 
 
-A situação Apto a Julgamento é relacionada ao evento Julgamento por `triggers`. Já a dependência obrigatória de Julgamento em relação à Apresentação de Contestação, sugerida no desenho, não cobre o julgamento em processos sem contestação. A estrutura oferece uma visão de um percurso, mas precisa contemplar alternativas e exceções. Um diagrama de classes com eventos não equivale, por si só, a um fluxo de execução completo ou a uma especificação de todas as condições legais de tramitação.
+###### 4.3.3 Representantes 
 
-O diagrama Procedimento exerce, portanto, uma função de síntese dentro do pacote Procedimental. Ele apresenta o encadeamento básico entre eventos e situações do processo e serve como referência geral para os modelos mais específicos desenvolvidos nas seções seguintes, como Contestação, Conciliação, Produção de Prova, Análise Probatória e Julgamento e Sentença.
+O diagrama Representantes apresenta os diferentes papéis de representação processual considerados na ontologia. A estrutura parte do `kind` <u>Pessoa, do qual se especializa o</u> `role` <u>Representante Processual. Essa modelagem evidencia que a representação processual não</u> constitui uma característica essencial da pessoa, mas um papel assumido por ela quando atua na 
 
-Figura 15 – Diagrama de Procedimentos.
+representação de uma das partes em determinado processo. 
 
-![Visão geral dos eventos e situações processuais](diagramas/procedimento.png)
+O <u>Representante Processual é especializado nos roles Representante Designado, Advogado Constituído, Defensor Público Federal</u> e <u>Representante Jurídico Federal. O Representante Designado contempla a pessoa que exerce a representação em razão de</u> designação específica, enquanto o Advogado Constituído representa o profissional escolhido pela parte para atuar em sua defesa. O <u>Defensor Público Federal</u> representa a atuação da Defensoria Pública da União no processo, e o <u>Representante Jurídico Federal agrupa os</u> diferentes papéis de representação jurídica das entidades federais contempladas pelo modelo. 
 
-Fonte: elaborado pelo autor (2026)
+O `role` <u>Representante Jurídico Federal é posteriormente especializado em Procurador Federal, Advogado da União, Procurador da Fazenda Nacional e Advogado de Empresa Pública Federal. Essa distinção permite representar, de maneira mais específica, os diferentes papéis</u> que podem ser exercidos na representação jurídica da parte federal, mantendo todos eles subordinados a uma categoria processual comum. 
 
-### 4.3.3 Instauração
+Nos dois níveis de especialização foram utilizados conjuntos de generalização `{disjoint, complete}` . No escopo estabelecido pelo modelo, isso indica que cada instância de <u>Representante Processual pertence a uma das categorias representadas,</u> consideradas mutuamente exclusivas. O mesmo princípio é aplicado às especializações de <u>Representante Jurídico Federal.</u> 
 
-O diagrama Instauração representa os principais eventos e elementos envolvidos na formação da demanda judicial, desde a elaboração da petição até o ajuizamento e a constituição do processo. A estrutura evidencia a sequência entre Peticionamento, Protocolização e Ajuizamento, bem como os documentos, participantes e situações relacionados a esses acontecimentos.
+Esse diagrama complementa o modelo de Sujeitos e Papéis, no qual o Representante <u>Processual participa da Representação Processual juntamente com a Parte Processual. Enquanto</u> aquele diagrama evidencia a relação existente entre representante e parte, o diagrama <u>Representantes</u> detalha os diferentes tipos de papéis que podem ocupar a posição de representação no processo. 
 
-O Peticionamento é modelado como `event` e especializa Ato Processual. Esse evento envolve a participação do Representante Processual e, por meio da relação `creation` , dá origem ao Documento de Petição Inicial, representado como `subkind` de Documento. A petição inicial formaliza a Demanda, formula o Pedido Processual e expõe a Causa de Pedir, reunindo, em um único documento, os principais elementos necessários à apresentação da pretensão ao Judiciário.
+Figura 10. Diagrama de Representantes. 
 
-A relação entre o Demandante e a apresentação da petição é representada pelo `relator` Petição. Esse relator media o Demandante e se relaciona ao Documento de Petição Inicial, permitindo distinguir o documento produzido da própria relação estabelecida em torno da apresentação da pretensão. O Representante Processual também participa dessa estrutura, especialmente nos casos em que atua na elaboração e apresentação da petição. Após o Peticionamento ocorre a Protocolização, também modelada como `event` . Esse evento apresenta `historicalDependence` em relação ao Peticionamento, indicando que a protocolização depende da existência prévia da petição elaborada. A Protocolização leva à `situation` Demanda Protocolizada e, por meio da relação `creation` , produz o Comprovante de Protocolo, representado como `subkind` de Documento.
 
-Ajuizamento é representado como `event`, relacionado à Protocolização e à situação Processo Instaurado. A distinção é analítica, não a afirmação de um ato jurídico adicional sempre posterior ao protocolo: o CPC considera proposta a ação quando a petição inicial é protocolada (BRASIL, 2015, art. 312). A separação entre preparação, registro e efeitos da propositura deve ser compatibilizada com essa regra e com a apresentação oral admitida no rito especial.
 
-O diagrama distingue conteúdo, documento, registro e relação processual, mas representa a via de petição escrita com participação de representante. A mediação com mínimo de um Representante Processual no relator Petição impede, nessa estrutura, a petição sem representante. Para atender à QC32 e ao art. 10 da Lei nº 10.259/2001, é necessário modelar explicitamente a atuação pessoal e revisar a obrigatoriedade de representante. A apresentação oral reduzida a escrito também precisa de tratamento próprio (BRASIL, 1995, art. 14, § 3º).
+<!-- Start of picture text -->
+A<br><i><br>RepresentanteProcessul<br>a {disjoint, complete}<br>Representante Designado| | Advogade Consttuido | | Defensor Pubico Federal] | RepresenanteJurdicoA Federal<br>{soit conplte)<br>Procurador Federa| | Advogado da Uniso | |Procuradorda Fazenda Nacional | |Advogadode Empresa Publica Federal<br><!-- End of picture text -->
 
-Figura 16 – Diagrama de Instauração.
+Fonte: elaborado pelo autor (2026) 
 
-![Peticionamento, protocolo e instauração do processo](diagramas/instauracao.png)
+###### 4.3.4 Serventuários 
 
-Fonte: elaborado pelo autor (2026)
+O diagrama <u>Serventuários representa os principais papéis exercidos por pessoas que</u> atuam no funcionamento do Juizado Especial Federal Cível. A estrutura parte do `kind` <u>Pessoa,</u> a partir do qual é especializado o `role` <u>Serventuário da Justiça. Essa modelagem evidencia que</u> a atuação como serventuário não corresponde a uma característica essencial da pessoa, mas a um papel assumido em razão de sua participação no contexto institucional e processual da 
 
-### 4.3.4 Contestação
+Justiça. 
 
-O diagrama Contestação representa os eventos, documentos e situações relacionados à apresentação da defesa pelo demandado após a citação. O modelo evidencia tanto a hipótese de apresentação da contestação quanto a possibilidade de transcurso do prazo sem manifestação, permitindo representar diferentes estados processuais decorrentes dessa etapa.
+O Serventuário da Justiça possui as especializações Servidor Judicial, Oficial de Justiça, <u>Perito</u> e <u>Conciliador. Servidor Judicial</u> exerce atividades institucionais de apoio; <u>Oficial de Justiça</u> cumpre ordens e diligências; <u>Perito</u> fornece conhecimento técnico ou científico; e <u>Conciliador auxilia a composição. O CPC inclui esses últimos entre os auxiliares da Justiça,</u> sem equipará-los indistintamente a servidores (BRASIL, 2015, art. 149). A Lei nº 10.259/2001 disciplina o exame técnico e a designação de conciliadores (arts. 12 e 18). 
 
-A Citação é modelada como `event` e especializa Ato Processual. Sua ocorrência leva às `situations` Demandado Citado e Prazo de Contestação em Curso, representando, respectivamente, a ciência formal do demandado acerca da demanda e o período em que pode ser apresentada a defesa.
+As especializações de Serventuário da Justiça foram organizadas em um conjunto de generalização `{disjoint, complete}` . No escopo definido pela ontologia, isso indica que os papéis representados são tratados como categorias distintas e que os tipos de serventuários considerados relevantes para o modelo estão contemplados por essas especializações. 
 
-Prazo de Contestação em Curso relaciona-se ao Decurso do Prazo de Contestação. Ausência de Contestação deve resultar da combinação entre término do prazo aplicável e falta de defesa, não do mero transcurso do tempo. O desenho ainda não explicita essa condição negativa nem o conteúdo da regra de prazo. Não se presume prazo uniforme de contestação para todas as hipóteses; a antecedência mínima de trinta dias da citação para conciliação, prevista no art. 9º da Lei nº 10.259/2001, não é automaticamente um prazo de defesa.
+Esses conceitos são reutilizados em diferentes partes da ontologia. O <u>Perito participa</u> dos eventos relacionados à produção de prova pericial, enquanto o <u>Conciliador aparece no</u> modelo de conciliação. Já Servidor Judicial e Oficial de Justiça representam agentes de apoio ao funcionamento e à prática dos atos necessários à tramitação processual. Dessa forma, o diagrama complementa o modelo de <u>Sujeitos e Papéis</u> ao detalhar os papéis institucionais desempenhados por pessoas vinculadas à atividade judiciária. 
 
-Apresentação de Contestação é modelada como `event` com participação do Demandado e de Contestação, esta como `subkind` de Documento. O evento produz Contestação Apresentada. O modelo registra a ocorrência, não demonstra automaticamente tempestividade ou regularidade da defesa. A dependência de citação deve considerar comparecimento espontâneo, e a representação documental precisa contemplar a defesa oral admitida no art. 30 da Lei nº 9.099/1995. Ausência de contestação não implica, por si só, procedência do pedido nem todos os efeitos materiais de revelia.
+Figura 11. Diagrama de Serventuários. 
 
-As situações Demandado Citado, Prazo de Contestação em Curso, Ausência de Contestação e Contestação Apresentada são especializações de Situação Processual. Assim, o diagrama evidencia como diferentes eventos modificam o estado do processo ao longo dessa etapa e permite representar tanto o desenvolvimento regular da defesa quanto a ausência de contestação.
 
-Dessa forma, o modelo de Contestação complementa o diagrama Procedimento ao detalhar a sequência iniciada pela Citação e os possíveis resultados relacionados à resposta do demandado. Ele fornece suporte, especialmente, às Questões de Competência relacionadas à verificação da apresentação da contestação e à identificação da situação processual em que a demanda se encontra.
 
-Figura 17 – Diagrama de Contestação.
+<!-- Start of picture text -->
+P <<kind>><br>Pessoa<br>L\<br><<role>><br>Serventuario da Justica<br>4 {disjoint, complete}<br>IM<br><<role>> <<role>> <<role>> <<role>><br>Servidor Judicial Oficial de Justica Conciliador<br><!-- End of picture text -->
 
-![Apresentação de defesa e situações associadas](diagramas/contestacao.png)
+Fonte: elaborado pelo autor (2026) 
 
-Fonte: elaborado pelo autor (2026)
+###### 4.3.5 Cabimento no JEF 
 
-### 4.3.5 Conciliação
+O diagrama Cabimento no JEF representa a verificação pré-processual da possibilidade de uma pretensão ser submetida ao Juizado Especial Federal Cível. Diferentemente do diagrama <u>Competência, que trata de um processo judicial já instaurado, este modelo busca representar a</u> análise realizada antes do ajuizamento, permitindo avaliar se determinado caso reúne condições para tramitar no JEF sem pressupor a existência de <u>Demandante, Demandado ou Processo Judicial Federal.</u> 
 
-O diagrama Conciliação representa a determinação da audiência, sua ocorrência e a tentativa de composição. Determinação de Audiência é um evento que pode produzir Resultado da Determinação de Audiência, especializado em Audiência Designada e Audiência Dispensada. A partição desses resultados é disjunta e completa, mas a associação com multiplicidade `0..1` ainda permite uma determinação sem resultado registrado. Os critérios jurídicos para designar ou dispensar a audiência não estão explicitados; registrar a dispensa não exige criar uma audiência que tenha efetivamente ocorrido.
+O elemento central do diagrama é a Pretensão Jurídica, modelada como `intention` e associada à Pessoa que pretende buscar determinada tutela jurisdicional. Essa pretensão reúne os principais elementos necessários à análise de cabimento, incluindo um ou mais <u>Pedidos</u> 
 
-A Audiência de Conciliação é modelada como `event` e especializa Ato Processual. Durante sua realização pode ocorrer a Apresentação de Propostas de Acordo, também representada como `event` . Esse evento envolve a participação de uma ou mais Propostas de Acordo, modeladas como `subkind` de Documento, permitindo representar formalmente as propostas apresentadas pelas partes durante a tentativa de composição.
+<u>Processuais, a Causa de Pedir e o Valor da Causa. Também é indicada a Organização Federal</u> em face da qual se pretende formular a demanda. 
 
-A Tentativa de Conciliação, igualmente modelada como `event` , ocorre no contexto da Audiência de Conciliação e envolve a participação do Conciliador, do Demandante e do Demandado. O Conciliador é representado como `role` , enquanto Demandante e Demandado correspondem aos papéis processuais já definidos no pacote Estrutural. Dessa forma, o modelo integra os sujeitos envolvidos à dinâmica própria da conciliação.
+A <u>Pretensão Jurídica possui um ou mais Pedidos Processuais, representados como</u> `kind` , e uma Causa de Pedir, também modelada como `kind` . O Valor da Causa é representado como `quality` e caracteriza a pretensão, permitindo que sua dimensão econômica seja considerada na análise. A Organização Federal, por sua vez, é representada como `subkind` e corresponde à entidade contra a qual a pretensão poderá futuramente ser dirigida. 
 
-Quando a tentativa resulta em consenso entre as partes, ocorre o `event` Celebração de Acordo, que apresenta `historicalDependence` em relação à Tentativa de Conciliação. A celebração cria o `relator` Acordo Processual, responsável por formalizar a relação estabelecida entre Demandante e Demandado. O Acordo Processual media as partes, explicitando que o acordo não é representado apenas como um documento ou resultado abstrato, mas como uma relação constituída entre os participantes.
+A verificação propriamente dita é representada pelo `event` <u>Análise de Cabimento no</u> JEF. Esse evento considera os elementos da pretensão, incluindo a entidade envolvida, o pedido, a causa de pedir e o valor da causa, além da Regra de Competência aplicável. A participação desses elementos evidencia que o cabimento não é determinado por um único critério isolado, mas pela análise conjunta das características da pretensão à luz das regras jurídicas pertinentes. 
 
-Celebração de Acordo produz Conciliação Realizada, utilizada no modelo no sentido de conciliação bem-sucedida; Conciliação Frustrada corresponde à tentativa sem acordo. O rótulo “Conciliação Frustada” da figura é normalizado no texto. A partição completa dessas duas situações está desenhada diretamente sob Situação Processual. Se esse supertipo é compartilhado com os outros módulos, a restrição pode forçar indevidamente toda situação processual a ser um desses resultados. O refinamento indicado é introduzir um resultado específico da tentativa de conciliação, preservando a categoria geral para os demais estados.
+A <u>Regra de Competência é representada como</u> `subkind` e regula a <u>Análise de Cabimento no JEF. Essa relação permite explicitar que a conclusão quanto ao enquadramento</u> da pretensão depende da aplicação das normas que estabelecem os critérios de competência do <u>Juizado Especial Federal Cível, inclusive as hipóteses de inclusão e exclusão previstas no</u> ordenamento jurídico. 
 
-A figura também inclui Dever de Comparecimento à Audiência e Dever de Comparecimento à Perícia como `mode`, ambos caracterizando Audiência de Conciliação. Essa ligação requer correção: o dever jurídico deve ter como portador o agente obrigado e ser relacionado ao ato a que se refere, ao seu fundamento, à intimação e à vigência. A própria qualificação como dever, e não ônus processual, precisa ser conferida conforme o destinatário e a consequência jurídica. O dever relativo à perícia não deve caracterizar uma audiência de conciliação. A estrutura, portanto, não responde integralmente à QC37. Também falta ligação explícita entre Acordo Processual e a sentença que o homologa; a narrativa dos cenários não supre esse vínculo.
+Como resultado da análise, o evento produz a `situation` <u>Resultado da Análise de Cabimento. Essa situação é especializada em Cabível no JEF e Não Cabível no JEF, formando</u> um conjunto `{disjoint, complete}` . Dessa forma, no recorte adotado pela ontologia, o resultado da análise é classificado em uma dessas duas possibilidades, consideradas mutuamente exclusivas. 
 
-Figura 18 – Diagrama de Conciliação.
+O diagrama permite, portanto, distinguir a análise de uma pretensão ainda não ajuizada da competência jurisdicional relacionada a um processo já existente. Essa separação é especialmente importante para representar situações em que o cidadão deseja saber previamente se seu caso pode ser levado ao Juizado Especial Federal. 
 
-![Determinação de audiência, tentativa de conciliação e acordo](diagramas/conciliacao.png)
+Figura 12. Diagrama de Cabimento no JEF. 
 
-Fonte: elaborado pelo autor (2026)
 
-### 4.3.6 Produção de Prova
 
-O diagrama Produção de Prova representa os principais eventos relacionados à formação do conjunto probatório no processo. A estrutura parte do `event` Produção de Prova, especializado a partir de Ato Processual, e contempla diferentes formas de produção probatória, incluindo a oitiva de testemunha, a realização de perícia e a juntada de documentos.
+<!-- Start of picture text -->
+P<br> <ekind>><br>Pessoa<br><<Characterization>><br>1 <<intention>> 4<br>Pretensdo Juridica<br>1 1<br>demanda para <<Characterization>><br>v possui v possui<br>1 4° 1 1<br>a By a a<br><<subkind>> <skind>> <s<kind>> <<quality>><br>Organizagao Federal Pedido Processual Causa de Pedir Valor da Causa<br><<participation>> <<participatipn>> <<participation>> <<participation>><br><<event>> streguia P  <esubkind>><br>Analise de Cabimento no JEF Regra de Competéncia<br>V resulta em<br><<situation>><br>Resultado da Andlise de Cabimento<br>L\<br>{disjoint, complete}<br><<situation>> <<situation>><br>Cabivel no JEF Nao Cabivel no JEF<br><!-- End of picture text -->
 
-A Oitiva de Testemunha é modelada como `event` e envolve a participação da Testemunha, representada como `role` . A realização desse evento leva à `situation` Testemunho Colhido, permitindo representar o estado processual decorrente da produção da prova testemunhal.
+Fonte: elaborado pelo autor (2026) 
 
-A Realização de Perícia também é representada como `event` e envolve a participação do Perito, modelado como `role` . Como resultado dessa atividade, o modelo representa a `situation` Perícia Realizada. Além disso, a realização da perícia cria o Laudo Pericial, representado como `subkind` de Documento, que registra formalmente o resultado da análise técnica produzida no processo.
+###### 4.3.6 Competência 
 
-A produção documental é representada pelo `event` Juntada de Documento. Esse evento envolve a participação da Parte Processual e de documentos utilizados com finalidade probatória. O conceito Documento Probatório é modelado como role de Documento, indicando que determinado documento assume função probatória quando utilizado no contexto do processo. O Laudo Pericial também pode participar da Juntada de Documento, permitindo que o resultado da perícia seja formalmente incorporado aos autos.
+O diagrama <u>Competência</u> representa os elementos utilizados para determinar o cabimento de uma demanda no Juizado Especial Federal Cível e a existência de competência jurisdicional para sua apreciação. O modelo articula aspectos relacionados ao processo, às partes, ao valor da causa, à instrução documental, ao eventual requerimento administrativo prévio e às regras jurídicas que fundamentam a competência do órgão julgador. 
 
-A ocorrência da Juntada de Documento leva à `situation` Documento Juntado. Assim como Testemunho Colhido e Perícia Realizada, essa situação especializa Situação Processual, permitindo representar os diferentes estados produzidos pelos atos de instrução probatória.
+O Processo Judicial Federal é modelado como `relator` e constitui um dos elementos centrais do diagrama. Ele se relaciona à <u>Demanda, representada como</u> `kind` , que é caracterizada pela `quality` <u>Valor da Causa. Essa propriedade permite representar um dos</u> elementos considerados na verificação do cabimento da demanda perante o Juizado Especial Federal. O processo também se relaciona às partes envolvidas, representadas pelos papéis <u>Demandante e Demandado, sendo este último desempenhado por uma Organização Federal.</u> 
 
-O diagrama permite registrar provas produzidas e seus participantes, mas não decide sozinho quais provas são necessárias. A vinculação de uma testemunha à oitiva não representa seu arrolamento prévio pela parte, e Testemunho Colhido não especifica o conteúdo do depoimento. As composições e cardinalidades entre Produção de Prova, Oitiva de Testemunha e Realização de Perícia precisam permitir que cada processo utilize apenas as modalidades necessárias, sem impor cumulativamente todas elas. A ligação “pode levar a” entre Realização de Perícia e Juntada de Documento também deve ser distinguida da relação técnica entre evento e situação resultante.
+A representação jurídica das partes é formalizada pelo `relator` <u>Representação</u> 
 
-Figura 19 – Diagrama de Produção de Prova.
+<u>Processual, que media a Parte Processual e o Representante Processual. Essa estrutura permite</u> que a existência ou ausência de representação seja tratada de maneira independente da identidade da parte, mantendo a distinção entre o participante do processo e o papel eventualmente desempenhado por seu representante. 
 
-![Produção documental, testemunhal e pericial](diagramas/producaodeprova.png)
+A instrução do processo é representada pelo `relator` <u>Instrução Documental do Processo, que relaciona o Processo Judicial Federal aos Documentos Necessários ao Processo.</u> Estes são modelados como `role` de Documento, indicando que um documento assume essa função quando é relevante para a instrução de determinada demanda. Entre os documentos representados encontra-se o <u>Documento de Requerimento Administrativo, modelado como</u> `subkind` de Documento e relacionado ao `event` <u>Requerimento Administrativo.</u> 
 
-Fonte: elaborado pelo autor (2026)
+O Requerimento Administrativo representa a provocação realizada previamente perante a Administração quando pertinente ao caso modelado. Esse evento pode resultar nas `situations` <u>Indeferimento Administrativo e Resistência Administrativa, ou apresentar uma</u> situação de <u>Demora Excessiva. O requerimento administrativo também é relacionado ao</u> processo como evento que pode antecedê-lo, sem que essa estrutura signifique que todo processo necessariamente dependa de requerimento administrativo prévio. 
 
-### 4.3.7 Análise Probatória e Julgamento
+A competência propriamente dita é representada pelo `relator` <u>Competência Jurisdicional. Esse relator conecta o Processo Cabível no JEF ao JEF Competente, explicitando</u> a relação pela qual determinado processo pode ser submetido a um Juizado Especial Federal específico. O Processo Cabível no JEF é modelado como `role` de Processo Judicial Federal, evidenciando que o cabimento perante o Juizado depende das condições presentes no contexto da demanda. 
 
-O diagrama Análise Probatória e Julgamento representa a avaliação das provas produzidas no processo e os possíveis desdobramentos decorrentes de sua suficiência ou insuficiência. O modelo busca explicitar a relação entre a produção probatória, sua análise e a formação da condição necessária para que o processo possa ser submetido a julgamento.
+O <u>JEF Competente, por sua vez, é representado como</u> `role` de <u>Juizado Especial Federal,</u> `subkind` de Órgão Judicial. O papel de JEF Competente é caracterizado pelo `mode` <u>Poder Jurisdicional, representando o poder atribuído ao órgão para apreciar e decidir a demanda</u> dentro de sua esfera de competência. 
 
-A Produção de Prova é modelada como `event` e especializa Ato Processual. Após a produção dos elementos probatórios, ocorre a Análise das Provas, também representada como `event` e relacionada à produção probatória por `historicalDependence` . Essa relação evidencia que a análise pressupõe a existência de provas previamente produzidas no processo. O evento Análise das Provas leva à `situation` Resultado da Análise Probatória, que representa a condição resultante da avaliação do conjunto de provas disponível.
+Por fim, a determinação dessa competência é vinculada à estrutura normativa. O `kind` <u>Norma Jurídica é especializado em Regra Jurídica e, posteriormente, em Regra de Competência.</u> No modelo, a Regra de Competência define a Competência Jurisdicional, tornando explícita a dependência entre a atribuição de competência ao órgão judicial e as normas jurídicas aplicáveis ao caso. 
 
-O Resultado da Análise Probatória é especializado nas `situations` Provas Suficientes e Provas Insuficientes. Essas especializações formam um conjunto `{disjoint, complete}` , indicando que, no recorte adotado pelo modelo, o resultado da análise é classificado em uma dessas duas situações, consideradas mutuamente exclusivas.
+Dessa forma, o diagrama integra em uma mesma estrutura os elementos relacionados ao cabimento da demanda, às partes, à documentação, ao interesse de agir e à competência jurisdicional. Esses conceitos fornecem suporte especialmente às Questões de Competência relacionadas à possibilidade de ajuizamento perante o JEF, à identificação da entidade federal demandada, à documentação necessária e à determinação do órgão competente. 
 
-Quando as provas são consideradas suficientes, a situação Provas Suficientes possibilita a `situation` Apto a Julgamento. Esta representa a condição em que o conjunto probatório existente permite o prosseguimento do processo para decisão. A situação Apto a Julgamento, por sua vez, `triggers` o `event` Julgamento, também especializado a partir de Ato Processual.
+Figura 13. Diagrama de Competência. 
 
-Quando a análise identifica necessidade de complementação, Provas Insuficientes relaciona-se a Não Apto a Julgamento e desencadeia Produção de Prova Complementar. O evento produz Prova Complementar Produzida, situação que pode desencadear nova Análise das Provas. A figura não explicita uma generalização de Produção de Prova Complementar para Produção de Prova; essa classificação pretendida precisa ser consolidada no projeto. A associação com Não Apto a Julgamento não possui rótulo e não deve ser interpretada como regra jurídica universal de impedimento.
 
-Apto a Julgamento é especialização de Situação Processual; a generalização correspondente de Não Apto a Julgamento deve ser explicitada no modelo. A avaliação registra resultados em momentos distintos, sem tomar suficiência e insuficiência históricas como estados atuais simultâneos. Não se admite um ciclo obrigatório e ilimitado de complementação: o julgamento pode ocorrer segundo as regras de distribuição do ônus da prova e a apreciação judicial. A insuficiência para demonstrar um fato não impede necessariamente a decisão, e aptidão não equivale a julgamento antecipado, favorável ou já realizado (BRASIL, 2015, arts. 355, 370, 371 e 373).
 
-O modelo complementa o diagrama Produção de Prova ao representar o que ocorre após a obtenção dos elementos probatórios. Enquanto aquele diagrama descreve as formas pelas quais as provas são produzidas e incorporadas ao processo, este evidencia sua avaliação e as consequências decorrentes de sua suficiência ou insuficiência, fornecendo suporte especialmente às Questões de Competência relacionadas à necessidade de produção de provas, à suficiência do conjunto probatório e à possibilidade de julgamento.
+<!-- Start of picture text -->
+SS sae one<br>a im<br>C=)<br>=<br><!-- End of picture text -->
 
-Figura 20 – Diagrama de Análise Probatória e Julgamento.
+Fonte: elaborado pelo autor (2026) 
 
-![Análise de provas, complementação e aptidão para julgamento](diagramas/analiseejulgamento.png)
+#### 4.4 Pacote Procedimental 
 
-Fonte: elaborado pelo autor (2026)
+O pacote Procedimental reúne os modelos responsáveis pela representação da dinâmica do processo no Juizado Especial Federal Cível. Diferentemente do pacote Estrutural, que concentra os sujeitos, papéis, organizações e relações mais estáveis do domínio, este pacote representa os principais acontecimentos, documentos, relações e situações que surgem ao longo da tramitação da demanda. 
 
-### 4.3.8 Sentença
+O pacote é composto pelos diagramas Demanda, Causa e Pedido, Procedimentos, Instauração, Contestação, Conciliação, Produção de Prova, Análise Probatória e Julgamento, Sentença, Recursos e Cumprimento e Encerramento. Em conjunto, esses modelos representam o percurso processual contemplado pela ontologia, desde a formulação e o ajuizamento da demanda até os possíveis desdobramentos decorrentes da decisão judicial, incluindo a interposição de recurso e o cumprimento da obrigação reconhecida. 
 
-O diagrama Sentença representa o resultado do julgamento e os efeitos jurídicos decorrentes da decisão proferida no processo. O modelo articula o evento de julgamento, o documento de sentença, os diferentes tipos de resultado, as obrigações impostas e a formação das posições jurídicas entre Demandante e Demandado.
+###### 4.4.1 Demanda, Causa e Pedido 
 
-O Julgamento é modelado como `event` e, por meio da relação `creation` , dá origem à Sentença, representada como `subkind` de Documento. Dessa forma, o modelo distingue o acontecimento processual de julgar do documento que registra formalmente a decisão produzida.
+O diagrama <u>Demanda, Causa e Pedido</u> representa os elementos utilizados para caracterizar a pretensão submetida ao Juizado Especial Federal Cível. O modelo distingue a própria Demanda, os fundamentos que a sustentam e aquilo que é solicitado ao órgão judicial, permitindo representar separadamente conceitos que, embora relacionados, possuem funções distintas no processo. 
 
-A figura apresenta Sentença Homologatória, Procedência, Improcedência, Extinção sem Resolução do Mérito e Procedência Parcial como especializações de Sentença. No recorte, esses nomes classificam o documento pelo resultado registrado, não representam o evento de julgar. A partição precisa de avaliação quanto a decisões com capítulos distintos e quanto ao alcance de “homologatória”, pois nem todas as hipóteses de homologação e de extinção estão explicitadas. Não se afirma cobertura de todo o regime dos pronunciamentos judiciais (BRASIL, 2015, arts. 203, 485 e 487).
+A Demanda é modelada como `kind` e constitui o elemento central dessa estrutura. Ela se fundamenta em uma Causa de Pedir, também representada como `kind` , que corresponde aos fundamentos associados à pretensão apresentada. A demanda também possui um <u>Pedido Processual, modelado como</u> `kind` , permitindo explicitar aquilo que se pretende obter por meio 
 
-Quando a decisão reconhece uma prestação devida, a Sentença impõe uma Obrigação Judicial, modelada como `relator` . Essa relação vincula Demandante e Demandado e permite representar as posições jurídicas decorrentes da decisão. O Demandante é caracterizado pelo `mode` Direito à Prestação, enquanto o Demandado é caracterizado pelo `mode Dever de Prestação` , evidenciando a correlação entre o direito reconhecido a uma parte e o dever correspondente atribuído à outra.
+do processo. 
 
-Obrigação Judicial é especializada em Obrigação de Entregar Coisa, de Fazer, de Pagar e de Não Fazer. A classificação deve incidir sobre cada prestação individualizada: uma sentença pode reconhecer mais de uma obrigação, inclusive de naturezas diferentes. A figura admite de zero a várias obrigações por sentença, o que permite representar também decisões sem prestação a cumprir. Direito à Prestação e Dever de Prestação são posições correlatas, não duplicações das pessoas que as portam; suas dependências externas e a relação de correlação devem ser explicitadas para completar o alinhamento com a UFO-L.
+O <u>Pedido Processual é especializado em diferentes modalidades de providência</u> representadas no domínio. Entre elas estão os `subkinds` <u>Pedido de Fazer, Pedido de Não Fazer, Pedido de Pagar, Pedido de Tutela Provisória</u> e <u>Pedido de Outra Providência. Essa</u> estrutura permite diferenciar a natureza da prestação ou medida requerida sem confundir o pedido com a própria demanda ou com os fundamentos que a justificam. 
 
-O diagrama também representa o Trânsito em Julgado como `event` , tendo a Sentença como objeto. A ocorrência desse evento leva à `situation` Sentença Transitada em Julgado, indicando a consolidação da decisão no estado processual representado pela ontologia.
+A <u>Demanda é ainda caracterizada pela</u> `quality` <u>Valor da Causa. A inclusão desse</u> elemento permite representar uma propriedade relevante da demanda e que também é utilizada em outras partes da ontologia, especialmente no modelo de Competência, no qual o valor da causa participa da análise do cabimento do processo perante o Juizado Especial Federal. 
 
-Dessa forma, o diagrama Sentença integra em uma mesma estrutura a decisão judicial, sua materialização documental, seus possíveis resultados e os efeitos jurídicos produzidos entre as partes. O modelo fornece suporte especialmente às Questões de Competência relacionadas ao resultado da sentença, à obrigação imposta ao demandado e à verificação da ocorrência do trânsito em julgado.
+O diagrama também relaciona a Demanda ao `relator` <u>Processo Judicial Federal. Essa</u> distinção permite separar a pretensão formulada pelo demandante do vínculo processual constituído no âmbito judicial. A partir de <u>Processo Judicial Federal, o modelo contempla</u> especializações relacionadas às diferentes matérias consideradas no escopo da ontologia, incluindo processos de natureza previdenciária, assistencial e indenizatória, além das matérias relacionadas ao FGTS e às questões habitacionais representadas no modelo. 
 
-Figura 21 – Diagrama de Sentença.
+Dessa forma, o diagrama explicita que a caracterização de uma demanda não depende apenas da identificação de um tipo de processo, mas também da combinação entre sua Causa <u>de Pedir, seu Pedido Processual e seu Valor da Causa. Esses elementos fornecem a base para a</u> representação das Questões de Competência relacionadas ao tipo da ação proposta, ao pedido formulado pelo autor, à natureza da obrigação pretendida e à existência de pedido de tutela provisória. 
 
-![Sentença, obrigações e posições de direito e dever](diagramas/sentenca.png)
+Figura 14. Diagrama de Demanda, Causa e Pedido. 
 
-Fonte: elaborado pelo autor (2026)
 
-### 4.3.9 Recursos
 
-O diagrama Recursos representa os principais elementos envolvidos na impugnação da sentença, desde a abertura do prazo recursal até o julgamento do recurso pela Turma Recursal. O modelo contempla tanto a hipótese de interposição do recurso quanto a ausência de manifestação recursal, além dos participantes, documentos, prazos e situações decorrentes dessa etapa do processo.
+<!-- Start of picture text -->
+<<subkind>> <<subkind>> <<subkind>> <<subkind>> <<subkind>><br>Pedido de Fazer | | Pedido de Nao Fazer | | Pedido de Pagar | | Pedido de Tutela Provisdria| _| Pedido de Outra Providencia<br>{disjoint, completey<br>- 7 YZ<br><<kind>> <<kind>><br>Causa de Pedir Pedido Processual<br>12<br>fundamenta-seem <<kind>> possui<br>Demanda | 1.”<br>| <<Characterization>> °  <<quality>><br>possui Valor da Causa<br>1<br><<relator>><br>Processo Judicial Federal<br>A<br><<subkind>> <<subkind>> <<subkind>><br>Processo Previdenciaria Processo Assistencial | | Processo Indenizatoria<br>aN<br><<subkind>> <<subkind>><br>Processo FGTS Processo Habitacional<br><!-- End of picture text -->
 
-A Sentença, representada como `subkind` de Documento, é produzida pelo `event` Julgamento e pode assumir o role Sentença Recorrida quando se torna objeto de impugnação. Essa posição é mediada pelo relator `Relação Recursal` , que também envolve a Parte Processual, permitindo representar a relação constituída em torno da impugnação da decisão.
+Fonte: elaborado pelo autor (2026) 
 
-O Recurso Inominado é modelado como `subkind` de Documento e impugna a Sentença Recorrida. Sua apresentação ocorre por meio do `event` Interposição de Recurso, regulado pela Regra de Prazo Recursal, especialização de Regra Jurídica. A regra é caracterizada pela `quality` Prazo Recursal, permitindo representar o intervalo temporal aplicável à apresentação do recurso.
+###### 4.4.2 Procedimentos 
 
-A Interposição de Recurso cria o Recurso Inominado e leva a `situation` Recurso Interposto. Essa situação, por sua vez, `triggers` o `event` Remessa à Turma Recursal, representando o encaminhamento do processo para apreciação do recurso. A remessa destina o recurso à Turma Recursal e leva à `situation` Processo Encaminhado à Turma Recursal.
+O diagrama Procedimento representa, de forma geral, a sequência de atos e situações que marcam o desenvolvimento de uma demanda no Juizado Especial Federal Cível. Seu objetivo é fornecer uma visão sintética da dinâmica processual, evidenciando os principais eventos que ocorrem ao longo da tramitação e as situações produzidas por esses acontecimentos. 
 
-A representação processual em grau recursal é detalhada por meio de Representação Recursal, modelada como `subkind` de Representação Processual. Esse `relator` media a Parte Processual e o Representante Processual, permitindo distinguir a representação exercida especificamente durante a fase recursal daquela existente nas etapas anteriores do processo. O Julgamento do Recurso é modelado como `event` e possui `historicalDependence` em relação à Remessa à Turma Recursal. A situação Processo Encaminhado à Turma Recursal `triggers` esse julgamento, que produz o Acórdão, representado como `subkind` de Documento, e leva a `situation` Resultado do Julgamento Recursal.
+O elemento mais abrangente do diagrama é o `event` <u>Ato Processual, que representa os</u> acontecimentos processuais praticados no curso da demanda. Esse evento geral está relacionado, por meio da relação `participation` , ao Participante Processual, indicando que os atos processuais envolvem a participação de sujeitos já representados no pacote estrutural. Além disso, Ato Processual se relaciona à Situação Processual, modelada como `situation` , permitindo representar os estados ou condições produzidas ao longo do processo. 
 
-O Resultado do Julgamento Recursal é especializado nas `situations` Recurso Provido, Recurso Parcialmente Provido, Recurso Desprovido e Recurso Não Conhecido. Essas especializações formam um conjunto `{disjoint, complete}` , permitindo representar, dentro do escopo da ontologia, os diferentes resultados possíveis da apreciação do recurso.
+A partir de Ato Processual, o diagrama especializa alguns eventos considerados centrais para a estrutura procedimental do modelo: Ajuizamento, Citação, Apresentação de Contestação e <u>Julgamento, todos representados como</u> `event` . O <u>Ajuizamento</u> representa o ato inicial de instauração da demanda judicial. No modelo, esse evento leva a situação Processo Instaurado e, adicionalmente, por meio da relação `creation` , dá origem ao Processo Judicial Federal, modelado como `relator` . 
 
-O modelo contempla Decurso do Prazo Recursal, Ausência de Recurso e Trânsito em Julgado. A ligação `triggers` que parte diretamente de Sentença, um documento, é inadequada segundo a semântica adotada: é necessário representar uma situação decorrente de ciência ou intimação válida e as condições do prazo. O decurso, por si só, não produz ausência de recurso se houve interposição, e essa ausência só autoriza concluir trânsito quando não houver outra possibilidade de impugnação aplicável. O modelo não calcula essas condições. O prazo de dez dias úteis é premissa normativa externa dos cenários, fundamentada nos arts. 12-A, 42 e 50 da Lei nº 9.099/1995.
+O evento <u>Citação mantém uma relação de</u> `historicalDependence` com o <u>Ajuizamento, indicando que sua ocorrência depende da instauração prévia do processo. A</u> citação leva a situação <u>Demandado Citado, representando o estado processual decorrente da</u> ciência formal do réu acerca da demanda proposta. 
 
-Dessa forma, o diagrama Recursos organiza os principais conceitos relacionados à fase recursal, integrando a decisão impugnada, o recurso, o prazo, a representação processual, a remessa à Turma Recursal, o julgamento e seus possíveis resultados. O modelo fornece suporte especialmente às Questões de Competência relacionadas à existência de recurso contra a sentença, ao prazo recursal, à necessidade de representação, ao encaminhamento à Turma Recursal e ao resultado do julgamento do recurso.
+Em seguida, o evento Apresentação de Contestação é representado como historicamente dependente da Citação, expressando a lógica segundo a qual a contestação somente pode ser apresentada após a citação do demandado. Esse evento se conecta à situação Apto a Julgamento por meio da relação `triggers` , indicando que a apresentação da resposta do réu pode desencadear a formação da condição necessária para o julgamento da causa. 
 
-O suporte normativo é parcial: Representação Recursal ligada ao genérico Representante Processual não exclui, por si só, representante sem habilitação. A obrigatoriedade de advogado exige restrição própria (BRASIL, 1995, art. 41, § 2º), assim como a exceção à recorribilidade da sentença homologatória de conciliação. O rótulo “Não Conhecido” da figura corresponde ao resultado mencionado como Recurso Não Conhecido no texto. A interpretação de Relação Recursal, mediando parte e documento, também exige revisão antes de sua equiparação ao padrão de Legal Relator entre agentes jurídicos.
+Por fim, o evento Julgamento também se relaciona à situação Apto a Julgamento por meio de triggers, representando a conexão entre a aptidão do processo para decisão e a efetiva realização do julgamento. Desse modo, o diagrama evidencia que o julgamento não é representado como um acontecimento isolado, mas como etapa inserida em uma sequência processual logicamente estruturada. 
 
-Figura 22 – Diagrama de Recursos.
+O diagrama <u>Procedimento exerce, portanto, uma função de síntese dentro do pacote</u> Procedimental. Ele apresenta o encadeamento básico entre eventos e situações do processo e serve como referência geral para os modelos mais específicos desenvolvidos nas seções seguintes, como Contestação, Conciliação, Produção de Prova, Análise Probatória e Julgamento e Sentença. 
 
-![Recurso inominado e julgamento pela Turma Recursal](diagramas/recursos.png)
+Figura 15. Diagrama de Procedimentos. 
 
-Fonte: elaborado pelo autor (2026)
 
-### 4.3.10 Cumprimento e Encerramento
 
-O diagrama Cumprimento e Encerramento representa os eventos e situações relacionados à fase posterior ao trânsito em julgado da sentença, abrangendo o cumprimento da obrigação judicial e os possíveis desdobramentos até o encerramento do processo.
+<!-- Start of picture text -->
+P <<roleMixin>> > <<patticipation>>cin at F  <cevent>> > traz a tona Mf <<situation>><br>Participante Processual Ato Processual Situagao Processual<br>L\ PAN<br><<event>> Pievaa <<situation>><br>Ajuizamento Processo Instaurado<br>1<br>> <<creation>><br><<relator>><br>Processo Judicial Federal<br>V <<historicalDependence>><br>1<br>F <<event>> Prievaa a <<situation>><br>Citagao Demandado Citado<br>V <<historicalDependence>>1<br>{<br>P SED > <ctriggers>><br>Apresentagao de Contestagdo<br>V <<historicalDependence>>1<br>[4<br><<event>> dixctriggers>>  F ;<br>fie <<situation>><br>Apto a Julgamento<br><!-- End of picture text -->
 
-A `situation` Sentença Transitada em Julgado `triggers` o `event` Cumprimento da Sentença, indicando que, no recorte representado pelo modelo, o início dessa etapa decorre da estabilização da decisão judicial. O Cumprimento da Sentença está relacionado ao `relator` Obrigação Judicial pela relação satisfaz, evidenciando que essa fase tem como finalidade efetivar a prestação estabelecida na decisão.
+Fonte: elaborado pelo autor (2026) 
 
-A ocorrência do Cumprimento da Sentença leva a `situation` Resultado do Cumprimento. Esse resultado é especializado nas situações Obrigação Cumprida, Obrigação Parcialmente Cumprida e Obrigação Não Cumprida. As três especializações integram um conjunto `{disjoint, complete}` , permitindo representar, no escopo da ontologia, os possíveis resultados da verificação do cumprimento da obrigação judicial.
+###### 4.4.3 Instauração 
 
-Quando a obrigação é integralmente satisfeita, a `situation` Obrigação Cumprida `triggers` o `event` Conclusão do Cumprimento. Esse evento leva a situação Cumprimento Concluído, indicando que não há necessidade de continuidade dos atos voltados à satisfação da obrigação.
+O diagrama <u>Instauração representa os principais eventos e elementos envolvidos na</u> formação da demanda judicial, desde a elaboração da petição até o ajuizamento e a constituição do processo. A estrutura evidencia a sequência entre <u>Peticionamento, Protocolização</u> e <u>Ajuizamento, bem como os documentos, participantes e situações relacionados a esses</u> acontecimentos. 
 
-Nos casos de satisfação parcial ou inexistente, as situações correspondentes relacionam-se ao evento Prosseguimento do Cumprimento. Seu resultado deve ser uma nova situação de cumprimento avaliado. A ligação direta “brings about” entre esse evento e Conclusão do Cumprimento, também evento, precisa ser substituída por uma situação intermediária ou por relação apropriada entre ocorrências. Além disso, “satisfaz” não pode caracterizar indistintamente toda ocorrência da fase de cumprimento quando o próprio modelo admite ausência de satisfação.
+O Peticionamento é modelado como `event` e especializa Ato Processual. Esse evento envolve a participação do <u>Representante Processual</u> e, por meio da relação `creation` , dá origem ao <u>Documento de Petição Inicial, representado como</u> `subkind` de <u>Documento. A</u> petição inicial formaliza a Demanda, formula o Pedido Processual e expõe a Causa de Pedir, reunindo, em um único documento, os principais elementos necessários à apresentação da pretensão ao Judiciário. 
 
-A `situation` Cumprimento Concluído, por sua vez, `triggers` o `event` Arquivamento do Processo. O arquivamento leva a situação Processo Arquivado por Satisfação da Obrigação, representando o encerramento do percurso processual contemplado pela ontologia após o cumprimento da prestação reconhecida judicialmente.
+A relação entre o <u>Demandante</u> e a apresentação da petição é representada pelo `relator` <u>Petição. Esse relator media o Demandante e se relaciona ao Documento de Petição Inicial, permitindo distinguir o documento produzido da própria relação estabelecida em torno</u> da apresentação da pretensão. O <u>Representante Processual</u> também participa dessa estrutura, especialmente nos casos em que atua na elaboração e apresentação da petição. 
 
-Dessa forma, o diagrama permite acompanhar a evolução da fase de cumprimento desde o trânsito em julgado até o arquivamento do processo, distinguindo as hipóteses de cumprimento integral, parcial ou inexistente da obrigação. O modelo fornece suporte especialmente às Questões de Competência relacionadas ao cumprimento da sentença, à conclusão dessa fase e à possibilidade de arquivamento do processo em razão da satisfação da obrigação.
+Após o Peticionamento ocorre a Protocolização, também modelada como `event` . Esse evento apresenta `historicalDependence` em relação ao Peticionamento, indicando que a 
 
-O suporte à decisão sobre arquivamento permanece parcial. É preciso associar cada resultado à obrigação, ao processo e ao intervalo de vigência, verificar todas as prestações e eventuais pendências e distinguir conclusão, declaração de extinção da execução e arquivamento. A disciplina de ofício, RPV ou precatório permanece parcialmente fora da representação. O percurso é um caso de encerramento por satisfação, não a descrição de todas as formas de extinção processual.
+protocolização depende da existência prévia da petição elaborada. A <u>Protocolização leva à</u> `situation` <u>Demanda Protocolizada e, por meio da relação</u> `creation` , produz o <u>Comprovante de Protocolo, representado como</u> `subkind` de Documento. 
 
-Figura 23 – Diagrama de Cumprimento e Encerramento.
+O <u>Ajuizamento, igualmente representado como</u> `event` , mantém relação de `historicalDependence` com a <u>Protocolização. No modelo, esse evento leva à</u> `situation` <u>Processo Instaurado, marcando a transição entre a apresentação formal da</u> demanda e a instauração do processo judicial. 
 
-![Cumprimento das obrigações e encerramento por satisfação](diagramas/cumprimento.png)
+O diagrama distingue conteúdo, documento, registro e relação processual, mas representa a via de petição escrita com participação de representante. A mediação com mínimo de um Representante Processual no relator Petição impede, nessa estrutura, a petição sem representante. Para atender à QC32 e ao art. 10 da Lei nº 10.259/2001, é necessário modelar explicitamente a atuação pessoal e revisar a obrigatoriedade de representante. A apresentação oral reduzida a escrito também precisa de tratamento próprio (BRASIL, 1995, art. 14). 
 
-Fonte: elaborado pelo autor (2026)
+Figura 16. Diagrama de Instauração. 
 
-## 4.4 Avaliação da Ontologia
 
-Esta seção apresenta a verificação documental das 38 QCs e sua aplicação a seis cenários com dados simulados. Todos os participantes fictícios, documentos, identificadores de processos, valores e acontecimentos específicos foram construídos para o ensaio. A referência à União em C3 utiliza uma entidade real apenas como participante de uma hipótese inventada, sem lhe atribuir um fato ocorrido. Não foram utilizados números CNJ, documentos pessoais ou registros profissionais reais.
 
-### 4.4.1 Matriz de rastreabilidade das 38 QCs
+<!-- Start of picture text -->
+fAto<<ovent>>Processual P Documento<ekind>><br>& AN<br>> formaliza<br><<event>> > s<creation>> oS -<br>Paticionamento Documonto de Ptigao nicial | P> formula<br>1 <4 <<participation>> Pedido Processual<br>z & expoe P ceckind>><br>paces Causa de Pedir<br>V <chistoricalDependence>> Representante Processual | or_°-<br>‘<<mediation>> A @ documentada por<br><4 <<participation>> elabora1 |<br><ctelator>> | 1 1.2 | <<toleMixin>><br>1 Esticso) <<mediation>>apresenta | Demandante<br><<event>> Pievaa <<situation>><br>Protocolizagsio Demanda Protocolizada<br>1 1<br>D> <<crection>> 1 <<subkind>><br>Comprovante de Protocolo<br>Y <chistoricalDependence>><br>| 1<br><<event>> ar<br>Ajuizamento Pievaa Processo Instaurado<br><!-- End of picture text -->
 
-A matriz preserva a numeração e a formulação das questões da Seção 4.1. O símbolo `>` indica um percurso de leitura, `/` separa alternativas e `;` separa percursos. A leitura inversa de uma associação é indicada quando necessário. Esses percursos não acrescentam relações ao modelo nem constituem consultas executadas. A presença de elementos rastreáveis não demonstra, por si só, atendimento integral à questão.
+Fonte: elaborado pelo autor (2026) 
 
-Quadro 5 – Matriz de rastreabilidade das 38 QCs.
+###### 4.4.4 Contestação 
 
-| QC | Pergunta                                                                                            | Elementos e relações rastreados                                                                                                                                                                                                                                                                                                      | Localização                |
-| -- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| 1  | Quem são os participantes do processo e qual papel processual cada um exerce?                      | Relação Jurídico-Processual > mediação > Participante Processual > especializações > Parte Processual / Representante Processual / Auxiliar da Justiça / Testemunha; Parte Processual > especializações > Demandante / Demandado.                                                                                            | Figura 8.                    |
-| 2  | O autor é pessoa física, microempresa ou empresa de pequeno porte?                                | Processo Judicial Federal > mediação > Demandante > especializações > Pessoa Física Autora / Microempresa Autora / Empresa de Pequeno Porte Autora.                                                                                                                                                                               | Figuras 8 e 13.              |
-| 3  | O réu é a União, uma autarquia, uma fundação pública federal ou uma empresa pública federal? | Processo Judicial Federal > mediação > Demandado > supertipo > Organização Federal > especializações > União Federal / Autarquia Federal / Fundação Pública Federal / Empresa Pública Federal.                                                                                                                              | Figuras 8, 9 e 13.           |
-| 4  | Quem representa juridicamente as partes?                                                            | Parte Processual > mediada por > Representação Processual > mediação > Representante Processual > especializações > Representante Designado / Advogado Constituído / Defensor Público Federal / Representante Jurídico Federal.                                                                                               | Figuras 8 e 10.              |
-| 5  | Há advogado constituído ou é necessária representação por advogado na fase atual?             | Representação Processual > mediação > Representante Processual > especialização > Advogado Constituído; Representação Recursal > especialização de > Representação Processual. A obrigatoriedade jurídica não decorre apenas desses vínculos.                                                                          | Figuras 10 e 22.             |
-| 6  | Há perito, conciliador, testemunha ou outro auxiliar da justiça vinculado ao processo?            | Perito > participação > Realização de Perícia; Conciliador > participação > Tentativa de Conciliação; Testemunha > participação > Oitiva de Testemunha; Serventuário da Justiça > especializações do desenho > Servidor Judicial / Oficial de Justiça / Perito / Conciliador.                                          | Figuras 11, 18 e 19.         |
-| 7  | Qual é o tipo da ação proposta?                                                                  | Processo Judicial Federal > especializações por matéria > Processo Previdenciário / Processo Assistencial / Processo Indenizatório. A hierarquia de FGTS e habitação permanece sujeita à revisão.                                                                                                                             | Figura 14.                   |
-| 8  | Qual é o pedido principal formulado pelo autor?                                                    | Processo Judicial Federal > possui > Demanda > possui > Pedido Processual; Documento de Petição Inicial > formula > Pedido Processual. A prioridade do pedido não está explicitada por associação própria.                                                                                                                      | Figuras 14 e 16.             |
-| 9  | A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência?               | Demanda / Pretensão Jurídica > possui > Pedido Processual > especializações > Pedido de Fazer / Pedido de Não Fazer / Pedido de Pagar / Pedido de Outra Providência.                                                                                                                                                             | Figuras 12 e 14.             |
-| 10 | Existe requerimento de tutela provisória?                                                          | Demanda / Pretensão Jurídica > possui > Pedido Processual > especialização > Pedido de Tutela Provisória; Documento de Petição Inicial > formula > pedido.                                                                                                                                                                      | Figuras 12, 14 e 16.         |
-| 11 | Em qual status ou fase o processo se encontra?                                                      | Ato Processual > produz > Situação Processual > especializações > Processo Instaurado / Contestação Apresentada / Apto a Julgamento / Cumprimento Concluído; Determinação de Audiência > leva a > Resultado da Determinação de Audiência. A vigência atual dos estados depende do recorte.                               | Figuras 15, 17, 18, 20 e 23. |
-| 12 | O réu apresentou contestação?                                                                    | Demandado / Contestação > participação > Apresentação de Contestação > produz > Contestação Apresentada; Prazo de Contestação em Curso > triggers > Decurso do Prazo de Contestação > produz > Ausência de Contestação, sob a condição de falta de defesa.                                                          | Figura 17.                   |
-| 13 | Pode haver proposta ou realização de acordo entre as partes?                                      | Proposta de Acordo > participação > Apresentação de Propostas de Acordo; Celebração de Acordo > creation > Acordo Processual > mediação > Demandante / Demandado. A ocorrência não representa todas as condições de permissão.                                                                                            | Figura 18.                   |
-| 14 | É necessária audiência de conciliação?                                                         | Determinação de Audiência > leva a > Resultado da Determinação de Audiência > especializações > Audiência Designada / Audiência Dispensada; Audiência Designada > promove > Audiência de Conciliação. Os critérios da determinação são externos.                                                                     | Figura 18.                   |
-| 15 | Há necessidade de produção de provas?                                                            | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Insuficientes > triggers > Produção de Prova Complementar > leva a > Prova Complementar Produzida > triggers > Análise das Provas.                                                                                                    | Figura 20.                   |
-| 16 | Quais provas foram apresentadas pelas partes?                                                       | Parte Processual / Documento Probatório > participação > Juntada de Documento > produz > Documento Juntado; Realização de Perícia > creation > Laudo Pericial; Oitiva de Testemunha > produz > Testemunho Colhido.                                                                                                               | Figura 19.                   |
-| 17 | Há testemunhas indicadas ou necessidade de produção de prova testemunhal?                        | Testemunha > participação > Oitiva de Testemunha > produz > Testemunho Colhido. A indicação prévia pela parte e a necessidade da prova não estão integralmente representadas.                                                                                                                                                   | Figuras 8 e 19.              |
-| 18 | As provas disponíveis são suficientes para julgamento antecipado?                                 | Análise das Provas > leva ao > Resultado da Análise Probatória > especialização > Provas Suficientes > possibilita > Apto a Julgamento > triggers > Julgamento. Aptidão não equivale à hipótese jurídica de julgamento antecipado.                                                                                           | Figura 20.                   |
-| 19 | A ausência de alguma prova impede o julgamento do pedido?                                          | Análise das Provas > leva ao > Provas Insuficientes > associação sem rótulo > Não Apto a Julgamento; Provas Insuficientes > triggers > Produção de Prova Complementar. Não há regra de impedimento universal.                                                                                                                 | Figura 20.                   |
-| 20 | Qual foi o resultado da sentença?                                                                  | Julgamento > creation > Sentença > especializações por resultado > Procedência / Procedência Parcial / Improcedência / Sentença Homologatória / Extinção sem Resolução do Mérito.                                                                                                                                         | Figura 21.                   |
-| 21 | Qual obrigação foi imposta ao réu: pagar, fazer, não fazer ou entregar algo?                    | Sentença > impõe > Obrigação Judicial > especializações > Obrigação de Pagar / Obrigação de Fazer / Obrigação de Não Fazer / Obrigação de Entregar Coisa; Obrigação Judicial > composição > Direito à Prestação / Dever de Prestação.                                                                          | Figura 21.                   |
-| 22 | A sentença transitou em julgado?                                                                   | Sentença > é objeto de > Trânsito em Julgado > produz > Sentença Transitada em Julgado. O trânsito é registrado, não calculado a partir de todas as condições legais.                                                                                                                                                         | Figuras 21 e 22.             |
-| 23 | A obrigação reconhecida na sentença foi cumprida?                                                | Cumprimento da Sentença > produz > Resultado do Cumprimento > especializações > Obrigação Cumprida / Obrigação Parcialmente Cumprida / Obrigação Não Cumprida.                                                                                                                                                               | Figura 23.                   |
-| 24 | O cumprimento da sentença foi concluído?                                                          | Obrigação Cumprida > triggers > Conclusão do Cumprimento > produz > Cumprimento Concluído.                                                                                                                                                                                                                                         | Figura 23.                   |
-| 25 | O processo pode ser arquivado por satisfação da obrigação?                                      | Cumprimento Concluído > triggers > Arquivamento do Processo > produz > Processo Arquivado por Satisfação da Obrigação. As condições de autorização e ausência de outras pendências não estão completas.                                                                                                                   | Figura 23.                   |
-| 26 | Foi interposto recurso contra a sentença?                                                          | Interposição de Recurso > creation > Recurso Inominado > impugna > Sentença Recorrida; Interposição de Recurso > produz > Recurso Interposto.                                                                                                                                                                                     | Figura 22.                   |
-| 27 | Qual é o prazo para apresentação do recurso?                                                     | Prazo Recursal > caracterização > Regra de Prazo Recursal > regula > Interposição de Recurso. Duração, ciência válida e condições de contagem precisam de conteúdo normativo e dados adicionais.                                                                                                                            | Figura 22.                   |
-| 28 | O recurso exige representação por advogado?                                                       | Representação Recursal > especialização de > Representação Processual > mediação > Parte Processual / Representante Processual; Representante Processual > especializações profissionais. Falta restrição que exclua representante não habilitado no recurso.                                                             | Figuras 10 e 22.             |
-| 29 | O processo foi encaminhado à Turma Recursal?                                                       | Recurso Interposto > triggers > Remessa à Turma Recursal > destina a > Turma Recursal; Remessa à Turma Recursal > produz > Processo Encaminhado à Turma Recursal.                                                                                                                                                                   | Figura 22.                   |
-| 30 | Qual foi o resultado do julgamento do recurso?                                                      | Julgamento do Recurso > creation > Acórdão; Julgamento do Recurso > produz > Resultado do Julgamento Recursal > especializações > Recurso Provido / Recurso Parcialmente Provido / Recurso Desprovido / Não Conhecido.                                                                                                            | Figura 22.                   |
-| 31 | Meu caso pode ser levado ao Juizado Especial Federal?                                               | Pretensão Jurídica > possui > Pedido Processual / Causa de Pedir; Organização Federal / Pedido Processual / Causa de Pedir / Valor da Causa > participação > Análise de Cabimento no JEF; Regra de Competência > regula > análise > resulta em > Resultado da Análise de Cabimento > Cabível no JEF / Não Cabível no JEF. | Figura 12.                   |
-| 32 | Preciso contratar advogado para iniciar a ação?                                                   | Parte Processual > mediada por > Representação Processual > mediação > Representante Processual > especializações > Representante Designado / Advogado Constituído; Petição > mediação obrigatória no desenho > Representante Processual. Há conflito entre a opção inicial e a estrutura da petição.                 | Figuras 8, 10 e 16.          |
-| 33 | Contra qual órgão ou entidade federal devo propor minha ação?                                   | Pretensão Jurídica > demanda para > Organização Federal; Processo Judicial Federal > mediação > Demandado > supertipo > Organização Federal. A indicação de uma organização não determina automaticamente a legitimidade passiva.                                                                                         | Figuras 8, 9, 12 e 13.       |
-| 34 | Quais documentos preciso reunir para apresentar meu pedido?                                         | Processo Judicial Federal > mediado por > Instrução Documental do Processo > mediação > Documento Necessário ao Processo; Documento de Petição Inicial > formaliza > Demanda. Não existe catálogo exaustivo de exigências por matéria.                                                                                      | Figuras 13 e 16.             |
-| 35 | O que acontece depois que eu entro com a ação?                                                    | Ajuizamento > produz > Processo Instaurado; Determinação de Audiência > leva a > Audiência Designada / Audiência Dispensada; Provas Insuficientes > triggers > Produção de Prova Complementar > produz > Prova Complementar Produzida > triggers > Análise das Provas.                                                         | Figuras 15, 18 e 20.         |
-| 36 | Em que fase está meu processo?                                                                     | Análise das Provas > leva ao > Resultado da Análise Probatória > especializações > Provas Suficientes / Provas Insuficientes; Provas Suficientes > possibilita > Apto a Julgamento; Determinação de Audiência > leva a > Resultado da Determinação de Audiência. A seleção da situação atual é contextual.             | Figuras 18 e 20.             |
-| 37 | Preciso comparecer a alguma audiência ou perícia?                                                 | Determinação de Audiência > leva a > Audiência Designada > promove > Audiência de Conciliação; Dever de Comparecimento à Audiência / Dever de Comparecimento à Perícia > caracterização desenhada > Audiência de Conciliação. O portador do dever é inadequado e não se representa a intimação do indivíduo.      | Figuras 18 e 19.             |
-| 38 | O que acontece depois que a sentença reconhece meu direito?                                        | Sentença > impõe > Obrigação Judicial; Trânsito em Julgado > produz > Sentença Transitada em Julgado > triggers > Cumprimento da Sentença; Obrigação Cumprida > triggers > Conclusão do Cumprimento > produz > Cumprimento Concluído > triggers > Arquivamento do Processo.                                                 | Figuras 21 e 23.             |
+O diagrama Contestação representa os eventos, documentos e situações relacionados à apresentação da defesa pelo demandado após a citação. O modelo evidencia tanto a hipótese de apresentação da contestação quanto a possibilidade de transcurso do prazo sem manifestação, permitindo representar diferentes estados processuais decorrentes dessa etapa. 
 
-Fonte: elaborado pelo autor, por inspeção dos diagramas e dos artefatos de avaliação (2026).
+A Citação é modelada como `event` e especializa Ato Processual. Sua ocorrência leva às `situations` <u>Demandado Citado e Prazo de Contestação em Curso, representando,</u> respectivamente, a ciência formal do demandado acerca da demanda e o período em que pode ser apresentada a defesa. 
 
-### 4.4.2 Instanciação e identidade dos indivíduos
+A partir da situação <u>Prazo de Contestação em Curso, o modelo representa o</u> `event` <u>Decurso do Prazo de Contestação, relacionado por</u> `triggers` . Quando esse prazo transcorre sem apresentação da defesa, o evento leva à `situation` <u>Ausência de Contestação. Dessa</u> forma, o modelo permite explicitar a situação processual decorrente da falta de manifestação do demandado dentro do prazo previsto. 
 
-Os seis cenários empregam identificadores locais, sem correspondência com processos reais. Os marcos são ordinais de cada cenário e não representam dias ou datas judiciais. Os fragmentos exemplificam relações selecionadas, sem preencher todas as mediações, cardinalidades ou classificações exigíveis de uma população completa.
+Por outro lado, a Apresentação de Contestação é modelada como event e mantém relação de `historicalDependence` com a Citação, evidenciando que a apresentação da defesa pressupõe a realização prévia desse ato. O evento conta com a participação do Demandado, representado como role, e da Contestação, modelada como subkind de Documento. A prática desse evento leva à situation Contestação Apresentada, indicando que a defesa foi regularmente apresentada no processo. 
 
-Quadro 6 – Cenários de instanciação.
+As situações Demandado Citado, Prazo de Contestação em Curso, Ausência de Contestação e Contestação Apresentada são especializações de Situação Processual. Assim, o diagrama evidencia como diferentes eventos modificam o estado do processo ao longo dessa etapa e permite representar tanto o desenvolvimento regular da defesa quanto a ausência de contestação. 
 
-| Cenário | Dados simulados                                                                                                                                                                                                                                                               | Aspectos exemplificados                                                                                                                                                  |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| C1       | Pessoa Alfa demanda a Autarquia Previdenciária Simulada Alfa para implantação de benefício. O cabimento positivo é informado. Há pedido separado de tutela provisória, contestação, conciliação frustrada, perícia, oitiva, procedência e satisfação integral. | Pessoa física autora, representação, pretensão e demanda distintas, provas e obrigação de fazer. Não se simula deferimento da tutela.                             |
-| C2       | Microempresa Beta demanda a Empresa Pública Federal Simulada Beta. Pede R$ 8.000,00, obtém R$ 6.000,00 e recebe inicialmente R$ 2.000,00, com satisfação posterior do saldo.                                                                                            | Microempresa autora, pedido de pagar, procedência parcial e resultados de cumprimento em recortes distintos.                                                            |
-| C3       | Empresa Gama, de pequeno porte, demanda a União em hipótese indenizatória inventada. Após improcedência, interpõe recurso inominado, posteriormente desprovido.                                                                                                         | Empresa de pequeno porte autora, representação recursal, remessa à Turma Recursal e acórdão. Não se afirma trânsito automático após o acórdão.                |
-| C4       | Pessoa Delta atua inicialmente por representante designado não advogado, na hipótese de admissibilidade estipulada, e celebra acordo com a Fundação Pública Federal Simulada Delta para entrega de documento.                                                            | Designação da audiência, acordo, homologação e obrigação não cumprida. O dever de comparecimento é reproduzido conforme o desenho, sem certificar seu portador. |
-| C5       | Pessoa Épsilon demanda a Autarquia Simulada Épsilon. Há audiência dispensada e ausência de contestação. A análise inicial indica necessidade de complementação; após sua produção, uma nova análise registra suficiência e aptidão.                           | Dispensa sem ocorrência de audiência; Prova Complementar Produzida; resultados históricos e atuais distintos. Não se estipula julgamento ou perícia realizada.      |
-| C6       | Pessoa Zeta consulta sobre mandado de segurança em caso federal de dez salários mínimos, antes de qualquer ajuizamento. A análise tem resultado negativo informado.                                                                                                       | Pretensão sem processo ou papéis processuais; Não Cabível no JEF por exclusão legal, apesar do valor inferior ao limite.                                            |
+Dessa forma, o modelo de Contestação complementa o diagrama Procedimento ao detalhar a sequência iniciada pela Citação e os possíveis resultados relacionados à resposta do demandado. Ele fornece suporte, especialmente, às Questões de Competência relacionadas à verificação da apresentação da contestação e à identificação da situação processual em que a demanda se encontra. 
 
-Fonte: elaborado pelo autor com base em `avaliacao/dados-simulados.json` (2026).
+Figura 17. Diagrama de Contestação. 
 
-**Identidade e classificação.** Um mesmo indivíduo pode ser classificado como Pessoa e Pessoa Física Autora no contexto de um processo. Isso não cria duas pessoas. Já a relação de representação, o documento e o ato de apresentá-lo são indivíduos distintos. O Quadro 7 explicita parte do inventário de C1; os identificadores restantes podem ser consultados no JSON.
 
-Quadro 7 – Identidade e classificação dos indivíduos.
 
-| Identificador         | Classificação no fragmento                                                  | Interpretação                                                                  |
-| --------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| C1-AUT                | Pessoa; Pessoa Física Autora; Demandante                                     | Uma única pessoa, no polo ativo do cenário.                                    |
-| C1-REU                | Organização; Organização Federal; Autarquia Federal; Demandado            | Entidade simulada no polo passivo.                                               |
-| C1-ADV                | Pessoa; Representante Processual; Advogado Constituído                       | Advogada da autora.                                                              |
-| C1-REP-A              | Representação Processual                                                    | Vínculo entre C1-AUT e C1-ADV.                                                  |
-| C1-PF                 | Pessoa; Representante Processual; Procurador Federal                          | Representante da autarquia ré.                                                  |
-| C1-REP-R              | Representação Processual                                                    | Vínculo entre C1-REU e C1-PF.                                                   |
-| C1-PROC               | Processo Judicial Federal; Processo Previdenciário; Processo Cabível no JEF | Relação processual SIM-P01, com cabimento estipulado.                          |
-| C1-DEM                | Demanda                                                                       | Conteúdo da demanda de implantação do benefício.                             |
-| C1-PRET               | Pretensão Jurídica                                                          | Estado intencional atribuído à Pessoa Alfa; distinto da demanda e do processo. |
-| C1-VAL-PRET           | Valor da Causa                                                                | Propriedade da pretensão, com valor de trinta salários mínimos informado.     |
-| C1-ANALISAR-CAB       | Análise de Cabimento no JEF                                                  | Evento regulado por C1-REG-COMP.                                                 |
-| C1-CABIVEL            | Resultado da Análise de Cabimento; Cabível no JEF                           | Um resultado positivo informado, distinto do papel Processo Cabível no JEF.     |
-| C1-PED                | Pedido de Fazer                                                               | Pedido de implantação, considerado principal por anotação externa.           |
-| C1-TUT                | Pedido de Tutela Provisória                                                  | Requerimento provisório sem decisão de deferimento simulada.                   |
-| C1-INI                | Documento; Documento de Petição Inicial                                     | Registro documental, distinto do relator Petição.                              |
-| C1-PET                | Petição                                                                     | Relação associada à apresentação da pretensão.                             |
-| C1-DETERMINAR-AUD     | Determinação de Audiência                                                  | Evento da determinação da audiência.                                          |
-| C1-AUD-DESIGNADA      | Resultado da Determinação de Audiência; Audiência Designada               | Um resultado classificado pelo tipo geral e por um de seus subtipos.             |
-| C1-AUD                | Audiência de Conciliação                                                   | Ocorrência efetiva da audiência.                                               |
-| C1-PERICIA            | Realização de Perícia                                                      | Evento efetivamente ocorrido no cenário.                                        |
-| C1-LAUDO              | Documento; Laudo Pericial; Documento Probatório                              | Artefato criado pela perícia e utilizado como prova.                            |
-| C1-SENT               | Sentença; Procedência                                                       | Documento que registra a decisão.                                               |
-| C1-OBR                | Obrigação Judicial; Obrigação de Fazer                                    | Vínculo entre o direito da autora e o dever da ré.                             |
-| C1-DIREITO / C1-DEVER | Direito à Prestação / Dever de Prestação                                 | Duas posições distintas e correlatas, partes de C1-OBR.                        |
+<!-- Start of picture text -->
+P <<event>><br>Ato Processual P trazatona<br>A<br>a <<event>> 5 <<situation>> 7<br>Citagao Pievaa |Demandado Citado pol <<situation>><br>7 Situagdo Processual<br>Prievaa <<situation>><br>Prazo de Contestacao em Curso<br><<triggers>><br><<event>><br>V <chistoricalDependence>> Decurso do Prazo de Contestagéo<br>Vievaa<br>1<br>iz<br>;<br>owed Auséncia de Contesta<br>Apresentagao de Contestagao TOC ED<br>1." 1<br>a<br>Pievaa <<situation>><br>Contestagao Apresentada<br>5<br><<kind>><br>Documento<br>4 <<participation>> 1 | cegubkind>> aN<br>Contestacao<br><4 <<participation>>  ccrole>><br>1 | Demandado<br><!-- End of picture text -->
 
-Fonte: elaborado pelo autor (2026).
+Fonte: elaborado pelo autor (2026) 
 
-Quadro 8 – Relações entre instâncias.
+###### 4.4.5 Conciliação 
 
-| Fragmento                                                                                                      | Interpretação                                                                                     |
-| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| C1-REP-A > mediação > C1-AUT / C1-ADV                                                                        | Representação vincula a autora e a advogada.                                                      |
-| C1-PROC > possui > C1-DEM > possui > C1-PED / C1-TUT                                                           | Processo, conteúdo da demanda e pedidos são distinguidos. A prioridade é anotação do cenário. |
-| C1-PRET > caracterização > C1-AUT; C1-PRET > demanda para > C1-REU                                           | A pessoa porta a intenção, relacionada à organização considerada no caso.                      |
-| C1-REU / C1-PED / C1-TUT / C1-CAUSA / C1-VAL-PRET > participação > C1-ANALISAR-CAB > resulta em > C1-CABIVEL | Entradas e resultado da análise são indivíduos distintos; a regra regula o evento.               |
-| C1-DETERMINAR-AUD > leva a > C1-AUD-DESIGNADA > promove > C1-AUD                                               | Determinação, designação e ocorrência da audiência não se confundem.                         |
-| C1-PERICIA > creation > C1-LAUDO                                                                               | Um evento cria um documento.                                                                        |
-| C1-ANALISE > leva ao > C1-SUF > possibilita > C1-APTO                                                          | O resultado suficiente é informado no cenário, não inferido do conteúdo das provas.             |
-| C1-APTO > triggers > C1-JULGAR > creation > C1-SENT                                                            | Uma situação desencadeia o julgamento, que produz o documento da decisão.                        |
-| C1-SENT > impõe > C1-OBR; C1-OBR > mediação > C1-AUT / C1-REU                                               | A obrigação reconhecida vincula as partes.                                                        |
-| C1-CUMPRIR > leva a > C1-CUMPRIDA > triggers > C1-CONCLUIR                                                     | Ocorrência do cumprimento, satisfação e conclusão são distinguidas.                            |
+O diagrama <u>Conciliação representa a determinação da audiência, sua ocorrência e a</u> tentativa de composição. Determinação de Audiência é um evento que pode produzir Resultado <u>da Determinação de Audiência, especializado em Audiência Designada e Audiência Dispensada. A partição desses resultados é disjunta e completa, mas a associação com</u> multiplicidade `0..1` ainda permite uma determinação sem resultado registrado. Os critérios jurídicos para designar ou dispensar a audiência não estão explicitados; registrar a dispensa não exige criar uma audiência que tenha efetivamente ocorrido. 
 
-Fonte: elaborado pelo autor (2026).
+A Audiência de Conciliação é modelada como `event` e especializa <u>Ato Processual.</u> Durante sua realização pode ocorrer a <u>Apresentação de Propostas de Acordo, também</u> representada como `event` . Esse evento envolve a participação de uma ou mais Propostas de <u>Acordo, modeladas como</u> `subkind` de <u>Documento, permitindo representar formalmente as</u> propostas apresentadas pelas partes durante a tentativa de composição, a figura também inclui <u>Dever de Comparecimento à audiência e Dever de Comparecimento</u> à <u>Perícia como</u> `mode` , ambos caracterizando Audiência de Conciliação. 
 
-**Recortes temporais.** Situações históricas não são automaticamente estados atuais. Em C2, o pagamento parcial não deve ser confundido com o valor pedido nem com o total reconhecido na sentença. Os valores são anotações da simulação, não um esquema monetário já implementado na ontologia.
+A Tentativa de Conciliação, igualmente modelada como `event` , ocorre no contexto da <u>Audiência de Conciliação e envolve a participação do Conciliador, do Demandante</u> e do <u>Demandado. O Conciliador é representado como</u> `role` , enquanto Demandante e Demandado correspondem aos papéis processuais já definidos no pacote Estrutural. Dessa forma, o modelo integra os sujeitos envolvidos à dinâmica própria da conciliação. 
 
-Quadro 9 – Recortes temporais do cumprimento.
+Quando a tentativa resulta em consenso entre as partes, ocorre o `event` <u>Celebração de Acordo, que apresenta</u> `historicalDependence` em relação à Tentativa de Conciliação. A celebração cria o `relator` <u>Acordo Processual, responsável por formalizar a relação</u> estabelecida entre <u>Demandante e Demandado. O Acordo Processual media as partes,</u> explicitando que o acordo não é representado apenas como um documento ou resultado abstrato, mas como uma relação constituída entre os participantes. 
 
-| Recorte | Obrigação reconhecida     | Pagamento acumulado | Saldo                                               | Situação |
-| ------- | --------------------------- | ------------------- | --------------------------------------------------- | ---------- |
-| C2-TP   | R$ 6.000,00 | R$ 2.000,00 | R$ 4.000,00         | Obrigação Parcialmente Cumprida e prosseguimento. |            |
-| C2-TF   | R$ 6.000,00 | R$ 6.000,00 | R$ 0,00             | Obrigação Cumprida e Cumprimento Concluído.      |            |
+A Celebração de Acordo leva à `situation` <u>Conciliação Realizada, indicando que a</u> tentativa de composição foi bem-sucedida. Em sentido contrário, quando não há consenso entre as partes, o modelo contempla a `situation` <u>Conciliação Frustrada. Tanto Conciliação Realizada</u> quanto <u>Conciliação Frustrada especializam Situação Processual, permitindo</u> representar os diferentes estados que podem resultar da tentativa conciliatória. 
 
-Fonte: elaborado pelo autor (2026).
+Dessa forma, o diagrama evidencia que a conciliação constitui um conjunto de eventos inter-relacionados, envolvendo a audiência, a apresentação de propostas, a participação das partes e do conciliador e, eventualmente, a celebração de um acordo. O modelo fornece suporte às Questões de Competência relacionadas à possibilidade de realização de acordo e à necessidade de audiência de conciliação. 
 
-O total pago no recorte final é acumulado, não uma parcela a somar novamente ao valor anterior. O cenário não informa arquivamento de C2, nem simula integralmente requisições de pagamento. Uma resposta sobre C2-TP não pode usar a satisfação ocorrida somente em C2-TF.
+Figura 18. Diagrama de Conciliação. 
 
-Quadro 10 – Instanciação de recurso, acordo e comparecimento.
 
-| Fragmento                                                                | Interpretação e limite                                                                                                     |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| C3-REL-REC > mediação > C3-AUT / C3-SENT                               | Relação recursal conforme o desenho, sem certificar sua adequação ao padrão de Legal Relator.                           |
-| C3-INTERPOR > creation > C3-RECURSO > impugna > C3-SENT                  | O evento, o documento recursal e a sentença impugnada são distintos.                                                       |
-| C3-REMETER > destina a > C3-TURMA; C3-JULGAR-REC > creation > C3-ACORDAO | Remessa e decisão colegiada são registradas. O resultado desprovido não implica trânsito automático.                    |
-| C4-DETERMINAR-AUD > leva a > C4-AUD-DESIGNADA > promove > C4-AUD         | A audiência foi designada e ocorreu.                                                                                        |
-| C4-DEVER-COMP > caracterização desenhada > C4-AUD                      | Reproduz a ligação atual do dever com a audiência, sem atribuí-lo silenciosamente à autora e sem validar esse portador. |
-| C4-CELEBRAR > creation > C4-ACORDO > mediação > C4-AUT / C4-REU        | A celebração constitui uma relação entre as partes.                                                                      |
-| C4-JULGAR > creation > C4-SENT > impõe > C4-OBR                         | A decisão homologatória registra uma obrigação de entrega de documento no exemplo.                                       |
 
-Fonte: elaborado pelo autor (2026).
+<!-- Start of picture text -->
+P<br>ceevent>><br>Ato Processual<br>A<br><<event>> 1 Prevaa 0.1 ‘<<situation>><br>Determinagao de Audiéncia Resultado da Determinago de Audiéncia<br>Z\ (disjoint, complete)<br>V <chistoricalDependence>> <<situation>> <<situation>> F<br>Audiéncia Designada | | Audiéncia Dispensada<br><4 promove ds<br>i <<event>> <<event>> d<<participation>> fF  <ceubkind>><br>Audiéncia de Conciliagao<br>Apresentacaode Propostasde Acordo | 1. | Proposta de Acordo<br>a<br><<Charactorization>> 9.4 ‘<<mode>><br>Dever de Comparecimento a Audiéncia<br><<Characterization>> 0.41<br>-<<mode>><br>A ccorre em Dever de Comparecimento a Pericia<br><<event>> > <chistoricalDependence>> <<event>> Mrovaa<br>Tentativa de Conciliagio Celebragio de Acordo<br>‘A <<participation>> <<creation>><br>‘A <<participation>> ‘A <<participation>> |<br>Z 7 = o <<relator>> F<br><aae> | [7 <ctess | [FE<acmane>] [acon Proceseual eas a<br>Conciliador | | Demandado | | Demandante PF  <csituation>> — ky ase)<br><1 Mediation >> Situagao Processual <<situation>><br>traz atona<br>P ‘<<Mediation>> Conciliagéo Frustada<br>Pievaa<br><!-- End of picture text -->
 
-Quadro 11 – Insuficiência probatória e reanálise.
+Fonte: elaborado pelo autor (2026) 
 
-| Recorte        | Resultado da análise                          | Aptidão e produção complementar                                                       |
-| -------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| C5-TI, marco 4 | C5-INSUF: Provas Insuficientes                 | C5-NAO-APTO: Não Apto a Julgamento. A produção complementar ainda não ocorreu.       |
-| C5-TC, marco 6 | C5-SUF: Provas Suficientes, após C5-REANALISE | C5-COMPLEMENTO-PRODUZIDO ocorreu no marco 5; a nova análise informa C5-APTO no marco 6. |
+###### 4.4.6 Produção de Prova 
 
-Fonte: elaborado pelo autor (2026).
+O diagrama Produção de Prova representa os principais eventos relacionados à formação do conjunto probatório no processo. A estrutura parte do `event` <u>Produção de Prova,</u> especializado a partir de Ato Processual, e contempla diferentes formas de produção probatória, incluindo a oitiva de testemunha, a realização de perícia e a juntada de documentos. 
 
-Em C6, o valor de dez salários mínimos não afasta a exclusão do mandado de segurança da competência do JEF Cível (BRASIL, 2001, art. 3º, § 1º, I). O cenário não cria Processo Judicial Federal, Demanda, Demandante ou Demandado para representar a consulta pré-processual. O resultado negativo é informado com essa premissa normativa, não inferido por execução de Regra de Competência. Em C1 ocorre o mesmo cuidado com o resultado positivo informado.
+A <u>Oitiva de Testemunha é modelada como</u> `event` e envolve a participação da <u>Testemunha, representada como</u> `role` . A realização desse evento leva à `situation` <u>Testemunho Colhido, permitindo representar o estado processual decorrente da produção da</u> prova testemunhal. 
 
-### 4.4.3 Síntese do suporte e alcance da conferência
+A Realização de Perícia também é representada como `event` e envolve a participação do <u>Perito, modelado como</u> `role` . Como resultado dessa atividade, o modelo representa a `situation` <u>Perícia Realizada. Além disso, a realização da perícia cria o Laudo Pericial,</u> representado como `subkind` de Documento, que registra formalmente o resultado da análise técnica produzida no processo. 
 
-A classificação documental distingue **D**, suporte descritivo direto a fatos informados no fragmento; **P**, suporte parcial, com necessidade de regras, relações, dados ou anotações adicionais; e **N**, ausência de suporte suficiente no recorte considerado. A versão dos artefatos analisada registra 16 QCs em D, 22 em P e nenhuma em N. Esses números não correspondem a porcentagem de acerto, certificação jurídica ou aprovação do modelo.
+A produção documental é representada pelo `event` <u>Juntada de Documento. Esse evento</u> envolve a participação da <u>Parte Processual</u> e de documentos utilizados com finalidade probatória. O conceito Documento Probatório é modelado como role de Documento, indicando 
 
-Quadro 12 – Síntese do suporte às questões de competência.
+que determinado documento assume função probatória quando utilizado no contexto do processo. O Laudo Pericial também pode participar da Juntada de Documento, permitindo que o resultado da perícia seja formalmente incorporado aos autos. 
 
-| Classificação   | Questões                                                                                                                        | Interpretação                                                                                                                                                    |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| D — 16 questões | QC2, QC3, QC4, QC6, QC7, QC9, QC10, QC12, QC20, QC21, QC22, QC23, QC24, QC26, QC29 e QC30                                        | Os fragmentos contêm classificações e fatos que permitem a descrição esperada. Não se demonstra que esses fatos seriam obtidos ou validados automaticamente. |
-| P — 22 questões | QC1, QC5, QC8, QC11, QC13, QC14, QC15, QC16, QC17, QC18, QC19, QC25, QC27, QC28, QC31, QC32, QC33, QC34, QC35, QC36, QC37 e QC38 | Parte da resposta depende de conteúdo normativo externo, contextualização, integração entre módulos ou refinamento conceitual.                               |
+A ocorrência da Juntada de Documento leva à `situation` <u>Documento Juntado. Assim</u> como Testemunho Colhido e Perícia Realizada, essa situação especializa Situação Processual, permitindo representar os diferentes estados produzidos pelos atos de instrução probatória. 
 
-Fonte: síntese de `avaliacao/dados-simulados.json` e `avaliacao/instanciacoes-simuladas.md` (2026).
+Dessa forma, o diagrama organiza as principais modalidades de produção de prova contempladas pela ontologia e evidencia a relação entre os atos praticados, os participantes envolvidos, os documentos produzidos e as situações resultantes. O modelo fornece suporte às Questões de Competência relacionadas às provas apresentadas pelas partes, à necessidade de prova testemunhal ou pericial e à identificação dos elementos probatórios existentes no processo. 
 
-O conjunto contém 169 indivíduos, 190 relações declaradas e 13 recortes distribuídos nos seis cenários. Esses números se referem ao ensaio, não ao número de classes da ontologia. A conferência de integridade pode ser reproduzida, na pasta desta monografia, com:
+Figura 19. Diagrama de Produção de Prova. 
 
-```powershell
-python avaliacao/verificar-dados.py
-```
 
-O script verifica identificadores, referências, tipos básicos selecionados de relações, marcos temporais, conciliação de valores de C2 e preservação das 38 QCs e de suas localizações. Não consulta o grafo para produzir as respostas esperadas, não analisa integralmente os arquivos do Visual Paradigm e não verifica todas as cardinalidades, os axiomas ou a correção jurídica. Uma execução sem erro deve ser descrita como conferência de integridade dos artefatos, nunca como “38 QCs aprovadas por um raciocinador”.
 
-As principais premissas jurídicas externas são: critérios de competência e partes admitidas (BRASIL, 2001, arts. 3º e 6º); representação inicial e recursal (BRASIL, 2001, art. 10; BRASIL, 1995, art. 41, § 2º); prazo, dias úteis e interrupção por embargos (BRASIL, 1995, arts. 12-A, 42 e 50); apreciação da prova (BRASIL, 2015, arts. 355, 370 e 373); exceção da sentença homologatória ao recurso previsto no art. 41 da Lei nº 9.099/1995; e cumprimento por modalidades de prestação (BRASIL, 2001, arts. 16 e 17). O armazenamento dessas referências não equivale a axiomatizar ou executar seus conteúdos.
+<!-- Start of picture text -->
+fF<br><cevent>><br>‘Ato Processual<br>Z<br>F<br><<kind>><br>B <<event>> ray<br>Produgao de Prova<br>V raza tona <<creation>> 1 P&Laudocceubkind>>Pericial FDocumento<<tole>>Probatério<br>1 1<br>fz 1<br>Oitiva de<<event>> Testemunha fzRealizagao<<event>> de Perici |_— > levaa<br>_ <<pattcipation>> <<partcipation>><br><<patticipation>> <<participation>> 1 0.<br>1 1s <<evenb><br>7 <<role>> = <<role>> Juntadaa de Documento |i<br>Testemunha Perito <<patcipation>><br>Jo<br>levaa levaa co <<roleMixin> levea<br>Parte Processual<br><<situation>><br>Situagdo Processual<br>a<br><<situation>> <<situation>> <<situation>><br>Testemunho Colhido Pericia Realizada Documento Juntado<br><!-- End of picture text -->
 
-### 4.4.4 Limitações e refinamentos necessários
+Fonte: elaborado pelo autor (2026) 
 
-O Quadro 13 reúne problemas detectados por inspeção conceitual e documental. As correções indicadas não foram incorporadas automaticamente aos PNGs ou aos arquivos do Visual Paradigm. Os estereótipos e cardinalidades precisam ser reavaliados no modelo integrado e, depois, novamente confrontados com as QCs e as instâncias. Problemas de classificação e de semântica das relações têm prioridade sobre a operacionalização.
+###### 4.4.7 Análise Probatória e Julgamento 
 
-Quadro 13 – Inconsistências e refinamentos necessários.
+O diagrama <u>Análise Probatória e Julgamento</u> representa a avaliação das provas produzidas no processo e os possíveis desdobramentos decorrentes de sua suficiência ou insuficiência. O modelo busca explicitar a relação entre a produção probatória, sua análise e a formação da condição necessária para que o processo possa ser submetido a julgamento. 
 
-| Localização                                      | Problema observado                                                                                                                                | Refinamento necessário                                                                                                                                                    |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Organizações — Figura 9                         | Juiz aparece como espécie de organização; órgãos e pessoas jurídicas são reunidos na mesma partição.                                     | Representar o magistrado como papel de Pessoa, separar órgão e entidade e rever disjunção e completude. Compatibilizar Órgão Judicial e Órgão Julgador.            |
-| Sujeitos e Competência — Figuras 8 e 13          | Relação Jurídico-Processual e Processo Judicial Federal são relators sem articulação suficientemente explícita.                            | Definir se são vínculos distintos, partes ou perspectivas do mesmo vínculo, e representar a conexão correspondente.                                                    |
-| Representantes e Serventuários — Figuras 10 e 11 | Partições misturam designação, habilitação, vínculo funcional e atividade auxiliar.                                                        | Separar os critérios, rever exclusividade entre papéis e distinguir auxiliares de servidores; evitar disjunção que exclua classificações compatíveis.               |
-| Cabimento — Figura 12                             | Pretensão Jurídica caracteriza somente Pessoa, embora o domínio inclua empresas autoras; regras permanecem genéricas.                         | Contemplar os interessados admitidos e explicitar critérios de inclusão e exclusão, sem criar antecipadamente papéis de parte.                                         |
-| Competência — Figura 13                          | Interesse de Agir foi modelado como intenção subjetiva.                                                                                         | Representar a condição jurídica e sua análise, distinguindo-a da intenção e da competência do órgão. Tratar requerimento prévio conforme a hipótese aplicável. |
-| Demanda — Figura 14                               | Tutela provisória e natureza da prestação compõem uma partição única; FGTS e habitação aparecem necessariamente indenizatórios.         | Separar os eixos de classificação, prever pedidos e obrigações múltiplos e explicitar pedido principal e acessório quando necessário.                               |
-| Procedimentos — Figura 15                         | `triggers` liga contestação a situação; julgamento depende obrigatoriamente da contestação no percurso desenhado.                         | Corrigir os tipos e as direções das relações e contemplar julgamento sem contestação e comparecimento espontâneo.                                                   |
-| Instauração — Figura 16                         | Petição exige representante; protocolo e ajuizamento aparecem como etapas necessariamente distintas.                                            | Admitir atuação pessoal e pedido oral reduzido a escrito, ajustando a representação aos efeitos jurídicos do protocolo.                                               |
-| Contestação e Recursos — Figuras 17 e 22        | Decurso de prazo aparece ligado a ausência, sem explicitar a não apresentação da peça.                                                       | Representar ciência, prazo aplicável, eventual manifestação e condições negativas, sem inferir ausência da simples falta de registro.                               |
-| Conciliação — Figura 18                         | Deveres caracterizam audiência, inclusive o de comparecimento à perícia; resultado da determinação é opcional.                              | Dar ao dever um portador agente, relacioná-lo ao ato correto e à intimação e avaliar o registro obrigatório de resultado quando a determinação estiver concluída.  |
-| Conciliação — Figura 18                         | Partição completa de resultados diretamente sob Situação Processual; falta vínculo explícito com homologação.                             | Criar uma categoria específica de resultado conciliatório e explicitar a relação entre acordo, documento e sentença homologatória.                                   |
-| Produção de Prova — Figura 19                   | Composições e mínimos podem impor modalidades probatórias cumulativas; indicação de testemunha não está explícita.                       | Rever a opcionalidade dos meios e representar arrolamento, conteúdo e proveniência da prova conforme os requisitos.                                                      |
-| Análise Probatória — Figura 20                  | Complementação e não aptidão podem ser tomadas como consequências universais da insuficiência; generalizações precisam de consolidação. | Delimitar o resultado de avaliação ao momento e ao caso, contemplar julgamento segundo ônus da prova e explicitar as generalizações pretendidas.                      |
-| Sentença — Figura 21                             | Partição por resultado pode não cobrir decisões com capítulos distintos; posições jurídicas estão apenas parcialmente detalhadas.        | Individualizar prestações e resultados relevantes e completar correlação e dependência externa das posições jurídicas.                                             |
-| Recursos — Figura 22                              | Documento Sentença origina `triggers`; exigência de advogado e exceções de recorribilidade não estão completas.                           | Introduzir situação apropriada e conteúdo normativo, restringir representação recursal e verificar admissibilidade antes de remessa e julgamento.                     |
-| Cumprimento — Figura 23                           | `brings about` liga dois eventos; “satisfaz” pode conflitar com não cumprimento; arquivamento está simplificado.                            | Introduzir resultado intermediário, distinguir atos de cumprimento de satisfação efetiva e verificar todas as obrigações e pendências antes do encerramento.         |
-| Integração dos módulos                          | Atos e situações não possuem vínculo uniforme explícito com processo, participante e vigência.                                              | Definir identificadores compartilhados e ligações temporais, distinguindo estados históricos, atuais e concomitantes.                                                   |
-| Reúso e validação                               | Uso de estereótipos não prova alinhamento integral à UFO-L; acompanhamento de especialista não possui registros suficientes.                  | Documentar padrões, fundamentos, participantes, datas, roteiro e decisões da revisão, vinculando cada resultado aos termos e às QCs afetadas.                          |
+A Produção de Prova é modelada como `event` e especializa Ato Processual. Após a produção dos elementos probatórios, ocorre a Análise das Provas, também representada como 
 
-Fonte: análise documental do autor a partir dos diagramas, da literatura de fundamentação e das fontes normativas citadas (2026).
+`event` e relacionada à produção probatória por `historicalDependence` . Essa relação evidencia que a análise pressupõe a existência de provas previamente produzidas no processo. O evento <u>Análise das Provas leva à</u> `situation` <u>Resultado da Análise Probatória, que</u> representa a condição resultante da avaliação do conjunto de provas disponível. 
 
-O conjunto de cenários é pequeno e construído pelo próprio trabalho, o que limita a generalização e favorece exemplos próximos ao modelo. Não foram avaliados processos reais, a compreensão de cidadãos, a interoperabilidade com sistemas judiciais ou o desempenho de uma implementação. Nenhum resultado autoriza usar a ontologia atual como mecanismo autônomo de aconselhamento ou decisão jurídica. A contribuição da avaliação é tornar verificáveis os pontos de cobertura e expor as lacunas, em vez de declarar a ontologia completa.
+O <u>Resultado da Análise Probatória é especializado nas</u> `situations` <u>Provas Suficientes e Provas Insuficientes. Essas especializações formam um conjunto</u> `{disjoint, complete}` , indicando que, no recorte adotado pelo modelo, o resultado da análise é classificado em uma dessas duas situações, consideradas mutuamente exclusivas. 
 
-# 5 Conclusão
+Quando as provas são consideradas suficientes, a situação Provas Suficientes possibilita a `situation` <u>Apto a Julgamento. Esta representa a condição em que o conjunto probatório</u> existente permite o prosseguimento do processo para decisão. A situação Apto a Julgamento, por sua vez, `triggers` o `event` <u>Julgamento, também especializado a partir de Ato Processual.</u> 
 
-Este capítulo retoma os objetivos da pesquisa, sintetiza as contribuições da ontologia de referência e discute o alcance dos resultados. A avaliação permite identificar quais fragmentos estão representados e quais condições ainda precisam ser explicitadas antes de uma validação mais ampla ou de uma implementação operacional.
+Quando o resultado corresponde a Provas Insuficientes, o modelo prevê a Produção de <u>Prova Complementar, representada como</u> `event` e especialização de Produção de Prova. Essa estrutura permite representar a necessidade de ampliar a instrução antes que o processo esteja apto para julgamento. Após a produção complementar, uma nova Análise das Provas pode ser desencadeada, formando um ciclo de produção e avaliação até que os elementos disponíveis sejam considerados suficientes. 
 
-## 5.1 Considerações Finais
+A situação Apto a Julgamento também é representada como especialização de Situação <u>Processual, integrando o resultado da análise probatória aos demais estados assumidos pelo</u> processo ao longo de sua tramitação. Dessa forma, o diagrama evidencia que o julgamento depende não apenas da ocorrência de atos processuais anteriores, mas da existência de condições que permitam considerar a instrução suficiente para a apreciação da demanda. 
 
-O objetivo geral foi desenvolver e avaliar documentalmente uma ontologia de referência do Juizado Especial Federal Cível. O trabalho produziu uma organização conceitual do domínio que distingue pessoas e organizações de seus papéis, documentos de seus conteúdos e relações, e eventos das situações que deles resultam. Essas distinções foram aplicadas à análise de cabimento, à demanda, aos participantes, à defesa, à conciliação, à instrução, ao julgamento, ao recurso inominado e ao cumprimento da decisão. O resultado é um artefato de referência em desenvolvimento, não uma representação completa de todo o Direito Processual Civil ou uma implementação pronta para orientar decisões jurídicas.
+O modelo complementa o diagrama Produção de Prova ao representar o que ocorre após a obtenção dos elementos probatórios. Enquanto aquele diagrama descreve as formas pelas quais as provas são produzidas e incorporadas ao processo, este evidencia sua avaliação e as consequências decorrentes de sua suficiência ou insuficiência, fornecendo suporte especialmente às Questões de Competência relacionadas à necessidade de produção de provas, à suficiência do conjunto probatório e à possibilidade de julgamento. 
 
-Em relação ao objetivo específico de identificar conceitos do domínio, foram descritos sujeitos, papéis, relações, documentos e acontecimentos relevantes ao recorte, acompanhados de dicionário de termos. A documentação evidencia, por exemplo, que a pessoa autora e a própria pessoa são o mesmo indivíduo sob classificações distintas; que o documento de petição não se confunde com a relação denominada Petição; e que a sentença, o evento de julgar, a obrigação reconhecida e o resultado de seu cumprimento possuem funções conceituais diferentes. O dicionário registra fontes normativas e ontológicas de apoio, adaptações do autor e pontos de conferência com especialista, evitando apresentar definições sem proveniência como transcrições de um dicionário jurídico.
+Figura 20. Diagrama de Análise Probatória e Julgamento. 
 
-O objetivo de levantar requisitos foi materializado nas 38 questões de competência, incluindo questões formuladas sob a perspectiva do cidadão. A manutenção de identificadores estáveis e de uma matriz de rastreabilidade permite localizar o suporte conceitual de cada questão e examinar o impacto de futuras alterações. A análise mostrou também que algumas perguntas combinam descrição e decisão normativa: saber se um advogado está constituído não basta para determinar se sua atuação é obrigatória, assim como registrar provas suficientes não demonstra, por si só, cabimento de julgamento antecipado. Essa distinção é parte relevante do resultado da pesquisa.
 
-Quanto à aquisição do conhecimento, a base normativa central é formada pelas Leis nº 10.259/2001 e nº 9.099/1995, complementadas pelas disposições pertinentes da Constituição Federal e do CPC e pela literatura selecionada. A aplicação das fontes deve respeitar a especialidade do rito, a vigência e a hipótese jurídica considerada. O acompanhamento de especialista foi mencionado no relato de desenvolvimento, mas os registros disponíveis ainda não permitem caracterizá-lo como validação integral reproduzível. Essa limitação exige complementação documental, não a atribuição retroativa de aprovação a todos os conceitos.
 
-O objetivo de modelar e documentar o domínio resultou em 16 diagramas de classes e um diagrama de pacotes, organizados em componentes estruturais e procedimentais. A fundamentação na UFO e a adaptação de estruturas da UFO-L e da OntoRS permitiram explicitar decisões que não seriam evidentes apenas a partir dos nomes jurídicos. O mapeamento de reúso identifica as correspondências e seus limites: foram aproveitadas interpretações e padrões conceituais, não demonstrada equivalência formal entre módulos ou importação completa de uma ontologia operacional. A existência de um relator ou role no desenho não substitui a documentação dos agentes, das posições jurídicas e das dependências requeridas pelo padrão de origem.
+<!-- Start of picture text -->
+<<event>><br>Ato Processual<br>ras<br><<event>><br>Producao de Prova<br>Y <<historicalDependence>> sd <<triggers>> ‘<<situation>><br>Prova Complementar Produzida<br><<even>> P teva ao ‘<<situation>><br>Analise das Provas Resultado da Anilise Probatéria<br>V raza tona {Gisjoint, complete}& Alevaa<br><<situation>> <csituation>> |PP <<triggers>>| <ceven>><br>Provas Suficientes Provas Insuficientes Produgao de Prova Complementar<br>possibilta<br>V v<br>[’ <coventa> |i<ctiggers>> |" <csituation>> <<situation>><br>Julgamento Apto a Julgamento Nao Apto a Julgamento<br>-<<situation>><br>Situagao Processual |<!<br><!-- End of picture text -->
 
-Quanto à avaliação, os seis cenários fictícios contêm 169 indivíduos, 190 relações declaradas e 13 recortes. A classificação documental registra 16 questões com suporte descritivo direto e 22 com suporte parcial. Os cenários positivos e negativos permitiram distinguir fatos informados, premissas externas e conclusões que o modelo ainda não pode produzir. O caso de mandado de segurança com valor inferior ao limite evidencia que o valor da causa não é critério suficiente de cabimento. O pagamento parcial seguido de satisfação evidencia a necessidade de separar o pedido, a prestação reconhecida, o valor pago e a situação atual. A conferência de integridade torna esses registros reprodutíveis, mas não demonstra satisfatibilidade, atendimento de todas as cardinalidades ou validade jurídica.
+Fonte: elaborado pelo autor (2026) 
 
-As principais contribuições são, portanto, a organização modular de um recorte do domínio, a explicitação de distinções ontológicas relevantes, a documentação do reúso, o dicionário com fontes e a avaliação rastreável por questões e cenários. Esses artefatos podem apoiar comunicação entre modeladores e especialistas e servir de base para extensões. A pretensão de contribuir futuramente para sistemas mais compreensíveis é coerente com a motivação social, mas depende de implementação e de avaliação com usuários. A presente pesquisa não mediu ampliação efetiva do acesso à justiça, redução de erros de peticionamento ou melhoria de desempenho de sistemas judiciais.
+###### 4.4.8 Sentença 
 
-O desenvolvimento também evidencia cuidados metodológicos: modularizar um modelo não garante sua integração; registrar uma regra por seu nome não representa seu conteúdo; e construir instâncias compatíveis com fragmentos não prova a consistência do conjunto. A inspeção encontrou decisões que precisam ser revistas, como a classificação de Juiz sob Organização, o tratamento de Interesse de Agir como intenção, o portador dos deveres de comparecimento, as partições de classificação e algumas relações entre eventos e situações. Esses problemas foram expostos na Seção 4.4.4 para orientar o refinamento, em vez de serem ocultados pela redação.
+O diagrama <u>Sentença</u> representa o resultado do julgamento e os efeitos jurídicos decorrentes da decisão proferida no processo. O modelo articula o evento de julgamento, o documento de sentença, os diferentes tipos de resultado, as obrigações impostas e a formação das posições jurídicas entre Demandante e Demandado. 
 
-Conclui-se que o objetivo de produzir uma base conceitual documentada e avaliá-la exploratoriamente foi atendido no recorte apresentado. Já a consistência formal, a validação jurídica integral, a cobertura de todas as alternativas procedimentais e a adequação a aplicações reais não foram demonstradas. A consolidação do artefato exige corrigir os problemas identificados, registrar a revisão com especialista e repetir a avaliação sobre os modelos efetivamente atualizados.
+O Julgamento é modelado como `event` e, por meio da relação `creation` , dá origem à Sentença, representada como `subkind` de Documento. Dessa forma, o modelo distingue o acontecimento processual de julgar do documento que registra formalmente a decisão produzida. 
 
-## 5.2 Trabalhos Futuros
+A Sentença é especializada em Sentença Homologatória, <u>Procedência, Improcedência, Extinção sem Resolução do Mérito e Procedência Parcial, todos modelados como</u> `subkind` . Essas especializações formam um conjunto `{disjoint, complete}` , indicando que, no escopo adotado pela ontologia, a sentença é classificada em uma dessas modalidades de resultado. 
 
-O primeiro encaminhamento é revisar o modelo integrado no Visual Paradigm, priorizando as inconsistências de classificação e de semântica das relações. Devem ser separados magistrado, órgão e entidade; reformulados os papéis de apoio e de representação; revistos o interesse de agir, o portador dos deveres e os conjuntos de generalização; e corrigidas as ligações de `triggers` e `brings about`. A atualização precisa alcançar os elementos compartilhados entre módulos, as figuras, o dicionário e a matriz, não apenas as explicações textuais.
+Quando a decisão reconhece uma prestação devida, a Sentença impõe uma Obrigação <u>Judicial, modelada como</u> `relator` . Essa relação vincula Demandante e Demandado e permite representar as posições jurídicas decorrentes da decisão. O Demandante é caracterizado pelo `mode` <u>Direito à Prestação, enquanto o Demandado</u> é caracterizado pelo `mode Dever de Prestação` , evidenciando a correlação entre o direito reconhecido a uma parte e o dever correspondente atribuído à outra. 
 
-Uma segunda frente é formalizar os critérios jurídicos necessários às QCs parcialmente atendidas. Isso envolve explicitar condições de competência, legitimidade, representação, documentos por hipótese, prazos e recorribilidade, vinculando cada condição ao dispositivo e à interpretação pertinente. É importante distinguir duração normativa e prazo concreto, pedido e concessão de tutela, suficiência probatória e resultado do mérito. O registro de vigência e de versões das fontes permitirá analisar o impacto de mudanças legislativas ou jurisprudenciais sem tratar as regras como permanentes.
+A Obrigação Judicial é especializada em Obrigação de Entregar Coisa, Obrigação de 
 
-Também deve ser realizada uma validação documentada com especialistas e potenciais usuários. Recomenda-se registrar o perfil dos participantes, o conjunto de cenários e QCs examinados, o procedimento, as objeções e as decisões de revisão. Os casos podem incluir documentos ou situações reais devidamente autorizados, anonimizados e tratados segundo as exigências éticas e de proteção de dados. A revisão jurídica e a avaliação por cidadãos devem ter objetivos distintos: a primeira examina adequação ao domínio; a segunda investiga compreensão e utilidade informacional.
+<u>Fazer, Obrigação de Pagar e Obrigação de Não Fazer, todas representadas como</u> `subkind` . Essas categorias formam um conjunto `{disjoint, complete}` e permitem distinguir a natureza da prestação determinada pela decisão judicial. 
 
-No âmbito da avaliação formal, o modelo corrigido poderá ser submetido a ferramentas apropriadas à versão da OntoUML utilizada, documentando ferramenta, versão, restrições examinadas, populações ou contraexemplos e resultados. Devem ser testadas cardinalidades, partições, dependências e identidade, inclusive em casos com múltiplas partes, pedidos e obrigações, ausência de contestação e estados concomitantes. O benefício é detectar problemas que cenários narrativos seletivos não expõem. A conferência de integridade dos artefatos deve continuar como verificação complementar, sem substituir essa análise.
+O diagrama também representa o Trânsito em Julgado como `event` , tendo a Sentença como objeto. A ocorrência desse evento leva à `situation` <u>Sentença Transitada em Julgado,</u> indicando a consolidação da decisão no estado processual representado pela ontologia. 
 
-Uma futura ontologia operacional poderá ser projetada a partir da referência consolidada, por exemplo em OWL com apoio de gUFO, tomando a experiência da OntoRS como referência de implementação. Essa transformação exigirá escolhas explícitas sobre temporalidade, regras, restrições e limites de inferência. As QCs então deverão originar consultas e casos de teste com entradas, resultados esperados e resultados obtidos, diferenciando consulta descritiva, validação de dados e decisão normativa. Essa etapa não deve automatizar silenciosamente lacunas conceituais da versão de referência.
+Dessa forma, o diagrama Sentença integra em uma mesma estrutura a decisão judicial, sua materialização documental, seus possíveis resultados e os efeitos jurídicos produzidos entre as partes. O modelo fornece suporte especialmente às Questões de Competência relacionadas ao resultado da sentença, à obrigação imposta ao demandado e à verificação da ocorrência do trânsito em julgado. 
 
-Por fim, poderão ser estudadas aplicações de consulta explicativa, organização de documentos, elaboração assistida de petições e acompanhamento processual. Um protótipo deve informar as fontes e as limitações das respostas, tratar situações não contempladas e permitir encaminhamento para apoio jurídico. Seu benefício deverá ser avaliado com métricas de compreensão, identificação de informações e reconhecimento de limites, em vez de presumido a partir da existência da ontologia. A integração com dados judiciais e a ampliação do tratamento de homologação, RPV, precatório e meios de impugnação também constituem extensões possíveis, desde que acompanhadas de novos requisitos e avaliação.
+###### Figura 21. Diagrama de Sentença. 
 
-# Referências
 
-BECCALLI, Cristine Leonor Pereira Griffo. **UFO-L: uma ontologia núcleo de aspectos jurídicos construída sob a perspectiva das relações jurídicas**. 2018. Tese (Doutorado em Informática) — Universidade Federal do Espírito Santo, Vitória, 2018. Autora também identificada na literatura como Cristine Griffo.
 
-BRASIL. **Decreto-Lei nº 200, de 25 de fevereiro de 1967**. Dispõe sobre a organização da Administração Federal, estabelece diretrizes para a Reforma Administrativa e dá outras providências. Brasília, DF: Presidência da República, 1967. Disponível em: https://www.planalto.gov.br/ccivil_03/decreto-lei/del0200.htm. Acesso em: 20 out. 2026.
+<!-- Start of picture text -->
+ee<br>eranaaenrae on aoaire =Ss ispoane ecnsons==]Fi<br>cont pooner Feat = nneames | Ean oipte| [an i gee<br>=a<br>winston sata<br>bignto de Nae Fer aae Pa | eerey Zane) eee[maaano> Eaneeeas<br>comandaner?<br><!-- End of picture text -->
 
-BRASIL. **Constituição da República Federativa do Brasil de 1988**. Brasília, DF: Presidência da República, 1988. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 20 out. 2026.
+Fonte: elaborado pelo autor (2026) 
 
-BRASIL. **Lei nº 9.099, de 26 de setembro de 1995**. Dispõe sobre os Juizados Especiais Cíveis e Criminais e dá outras providências. Brasília, DF: Presidência da República, 1995. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9099.htm. Acesso em: 20 out. 2026.
+###### 4.4.9 Recursos 
 
-BRASIL. **Lei nº 10.259, de 12 de julho de 2001**. Dispõe sobre a instituição dos Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal. Brasília, DF: Presidência da República, 2001. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10259.htm. Acesso em: 20 out. 2026.
+O diagrama Recursos representa os principais elementos envolvidos na impugnação da sentença, desde a abertura do prazo recursal até o julgamento do recurso pela Turma Recursal. O modelo contempla tanto a hipótese de interposição do recurso quanto a ausência de manifestação recursal, além dos participantes, documentos, prazos e situações decorrentes dessa etapa do processo. 
 
-BRASIL. **Lei nº 13.105, de 16 de março de 2015**. Código de Processo Civil. Brasília, DF: Presidência da República, 2015. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm. Acesso em: 20 out. 2026.
+A <u>Sentença, representada como</u> `subkind` de <u>Documento, é produzida pelo</u> `event` <u>Julgamento e pode assumir o role Sentença Recorrida quando se torna objeto de impugnação.</u> Essa posição é mediada pelo relator `Relação Recursal` , que também envolve a <u>Parte Processual, permitindo representar a relação constituída em torno da impugnação da decisão.</u> 
 
-FALBO, Ricardo de Almeida. SABiO: Systematic Approach for Building Ontologies. In: JOINT WORKSHOP ONTO.COM / ODISE ON ONTOLOGIES IN CONCEPTUAL MODELING AND INFORMATION SYSTEMS ENGINEERING, 1., 2014, Rio de Janeiro. **Proceedings [...]**. CEUR Workshop Proceedings, v. 1301, 2014. Disponível em: https://ceur-ws.org/Vol-1301/ontocomodise2014_2.pdf. Acesso em: 20 out. 2026.
+O <u>Recurso Inominado é modelado como</u> `subkind` de <u>Documento e impugna a Sentença Recorrida. Sua apresentação ocorre por meio do</u> `event` <u>Interposição de Recurso,</u> regulado pela <u>Regra de Prazo Recursal, especialização de Regra Jurídica. A regra é</u> caracterizada pela `quality` <u>Prazo Recursal, permitindo representar o intervalo temporal</u> aplicável à apresentação do recurso. 
 
-GUIZZARDI, Giancarlo. **Ontological Foundations for Structural Conceptual Models**. 2005. Tese (Doutorado) — University of Twente, Enschede, 2005. Telematica Instituut Fundamental Research Series, n. 15.
+A Interposição de Recurso cria o Recurso Inominado e leva a `situation` <u>Recurso Interposto. Essa situação, por sua vez,</u> `triggers` o `event` <u>Remessa à Turma Recursal,</u> representando o encaminhamento do processo para apreciação do recurso. A remessa destina o recurso à Turma Recursal e leva à `situation` <u>Processo Encaminhado à Turma Recursal.</u> 
 
-GUIZZARDI, Giancarlo; ALMEIDA, João Paulo; GUIZZARDI, Renata S. S.; BARCELLOS, Monalessa Perini; FALBO, Ricardo. **Ontologias de fundamentação, modelagem conceitual e interoperabilidade semântica**. Documento complementar à apresentação no Ibero-American Meeting on Ontological Research, Gramado, 2011.
+A representação processual em grau recursal é detalhada por meio de <u>Representação</u> 
 
-GUIZZARDI, Giancarlo; WAGNER, Gerd; FALBO, Ricardo de Almeida; GUIZZARDI, Renata S. S.; ALMEIDA, João Paulo A. Towards Ontological Foundations for the Conceptual Modeling of Events. In: **Conceptual Modeling — ER 2013**. Berlin; Heidelberg: Springer, 2013. p. 327–341. DOI: https://doi.org/10.1007/978-3-642-41924-9_27.
+<u>Recursal, modelada como</u> `subkind` de <u>Representação Processual. Esse</u> `relator` media a <u>Parte Processual e o Representante Processual, permitindo distinguir a representação exercida</u> especificamente durante a fase recursal daquela existente nas etapas anteriores do processo. 
 
-GUIZZARDI, Giancarlo; WAGNER, Gerd; ALMEIDA, João Paulo Andrade; GUIZZARDI, Renata S. S. Towards ontological foundations for conceptual modeling: the Unified Foundational Ontology (UFO) story. **Applied Ontology**, v. 10, n. 3–4, p. 259–271, 2015. DOI: https://doi.org/10.3233/AO-150157.
+O <u>Julgamento do Recurso</u> é modelado como `event` e possui `historicalDependence` em relação à Remessa à Turma Recursal. A situação Processo <u>Encaminhado à Turma Recursal</u> `triggers` esse julgamento, que produz o <u>Acórdão,</u> representado como `subkind` de Documento, e leva a `situation` Resultado do Julgamento <u>Recursal.</u> 
 
-RIBEIRO, Luiz Alberto Pereira; SANZOVO, Mariana Resende. Juizado especial cível federal como instrumento facilitador do acesso à justiça. **Revista do Direito Público**, Londrina, v. 6, n. 2, p. 142–159, 2011. DOI: https://doi.org/10.5433/1980-511X.2011v6n2p142.
+O <u>Resultado do Julgamento Recursal é especializado nas</u> `situations` <u>Recurso Provido, Recurso Parcialmente Provido, Recurso Desprovido e Recurso Não Conhecido. Essas</u> especializações formam um conjunto `{disjoint, complete}` , permitindo representar, dentro do escopo da ontologia, os diferentes resultados possíveis da apreciação do recurso. 
 
-SCHERP, Ansgar; SAATHOFF, Carsten; FRANZ, Thomas; STAAB, Steffen. **Designing Core Ontologies**. Koblenz: Universität Koblenz-Landau, 2011. Arbeitsberichte aus dem Fachbereich Informatik, n. 5/2011. Relatório técnico, versão de 22 fev. 2011.
+O modelo também contempla a hipótese de não interposição. A Sentença `triggers` o `event` <u>Decurso do Prazo Recursal, que leva a</u> `situation` <u>Ausência de Recurso. Essa</u> situação, por sua vez, `triggers` o `event` <u>Trânsito em Julgado, representando o encerramento</u> da possibilidade recursal considerada nesse trecho do modelo. 
 
-ZORZANELLI COSTA, Melissa; GUIZZARDI, Giancarlo; ALMEIDA, João Paulo A. On Capturing Legal Knowledge in Ontology and Process Models Combined: The Case of an Appeal Process. In: FRANCESCONI, E. et al. (ed.). **Legal Knowledge and Information Systems**. Amsterdam: IOS Press, 2022. p. 267–272. DOI: https://doi.org/10.3233/FAIA220478.
+Dessa forma, o diagrama Recursos organiza os principais conceitos relacionados à fase recursal, integrando a decisão impugnada, o recurso, o prazo, a representação processual, a remessa à Turma Recursal, o julgamento e seus possíveis resultados. O modelo fornece suporte especialmente às Questões de Competência relacionadas à existência de recurso contra a sentença, ao prazo recursal, à necessidade de representação, ao encaminhamento à Turma Recursal e ao resultado do julgamento do recurso. 
 
-ZORZANELLI COSTA, Melissa; VIEIRA, Thiago Baiense Peçanha; BOURGUET, Jean-Rémi; GUIZZARDI, Giancarlo; ALMEIDA, João Paulo A. Enhancing Access to Legal Data through Ontology-based Representation: A Case Study with Brazilian Judicial Appeals. In: SEMINAR ON ONTOLOGY RESEARCH IN BRAZIL (ONTOBRAS), 16., 2023, Brasília. **Proceedings of the XVI Seminar on Ontology Research in Brazil and VII Doctoral and Masters Consortium on Ontologies**. CEUR Workshop Proceedings, 2023. p. 79–92.
+Figura 22. Diagrama de Recursos. 
 
-<!-- Conferência editorial final: adequar a apresentação das referências e citações ao manual institucional vigente. As fontes primárias não consultadas diretamente não devem ser acrescentadas apenas para ocultar citações secundárias. -->
 
-# Apêndice A — Dicionário de Termos
 
-Este dicionário apresenta 167 termos usados na ontologia, com explicações breves e as fontes que apoiam cada definição. As definições foram elaboradas ou adaptadas pelo autor a partir das referências indicadas; não são cópias literais dessas obras.
+<!-- Start of picture text -->
+(se<br>=<br>: . rr ei Vom<br>a z A ctsee :<br>ee<br>ane , sone <a<br>ot oe<br><!-- End of picture text -->
 
-As fontes são escritas pelo nome da lei ou pelos autores e pelo ano da publicação. Os dados completos das obras estão nas Referências. A expressão “Elaboração do autor” indica uma definição ou adaptação feita para este trabalho. Quando consta “Validação com especialista pendente”, a definição ou algum aspecto do modelo ainda precisa dessa conferência; isso não significa que a validação já ocorreu.
+Fonte: elaborado pelo autor (2026) 
 
-As leis gerais citadas devem ser aplicadas apenas quando forem compatíveis com as regras dos Juizados Especiais Federais. A indicação de uma fonte apoia a definição, mas não garante que sua representação no diagrama esteja correta.
+4.4.10 Cumprimento e Encerramento 
 
-Quadro 14 – Dicionário de termos e fontes.
+O diagrama <u>Cumprimento e Encerramento</u> representa os eventos e situações relacionados à fase posterior ao trânsito em julgado da sentença, abrangendo o cumprimento da obrigação judicial e os possíveis desdobramentos até o encerramento do processo. 
 
-| Termo                                              | Definição                                                                                                                                                                    | Fonte                                                                                                                                                                                                              |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Acórdão                                          | Documento que registra a decisão tomada em conjunto pelos juízes da Turma Recursal.                                                                                          | Código de Processo Civil (Lei nº 13.105/2015), artigo 204; Lei nº 9.099/1995, artigo 46; Elaboração do autor para a representação documental.                                                               |
-| Acordo Processual                                  | Entendimento aceito pelas partes para resolver o conflito. É diferente da proposta de acordo e da decisão do juiz que o aprova.                                              | Lei nº 10.259/2001, artigo 10, parágrafo único; Lei nº 9.099/1995, artigo 22; Beccalli (2018); Elaboração do autor.                                                                                          |
-| Advogado Constituído                              | Advogado escolhido pela parte para representá-la no processo.                                                                                                                 | Lei nº 9.099/1995, artigos 9º e 41, § 2º; Lei nº 10.259/2001, artigo 10; Elaboração do autor; conferir habilitação e poderes no caso concreto.                                                            |
-| Advogado da União                                 | Advogado público que representa a União nos assuntos de sua responsabilidade.                                                                                                | Constituição Federal de 1988, artigo 131; Elaboração do autor; Validação com especialista pendente quanto ao detalhamento das atribuições da carreira.                                                     |
-| Advogado de Empresa Pública Federal               | Advogado que representa uma empresa pública federal no processo.                                                                                                              | Lei nº 10.259/2001, artigos 7º e 10, como contexto da representação; Elaboração do autor; Validação com especialista pendente quanto ao vínculo e aos poderes.                                            |
-| Ajuizamento                                        | Ato de levar um pedido à Justiça para iniciar uma ação. Seus efeitos devem ser considerados junto ao registro da petição.                                                | Código de Processo Civil (Lei nº 13.105/2015), artigo 312; Lei nº 9.099/1995, artigo 14; Elaboração do autor.                                                                                                 |
-| Análise das Provas                                | Exame das provas pelo juiz para verificar o que elas demonstram e se é preciso produzir outras.                                                                               | Lei nº 9.099/1995, artigos 5º e 32–35; Código de Processo Civil (Lei nº 13.105/2015), artigos 370 e 371; Elaboração do autor.                                                                               |
-| Análise de Cabimento no JEF                       | Verificação de que um caso pode ser apresentado ao Juizado Especial Federal, considerando as regras aplicáveis. Pode ocorrer antes da ação.                               | Lei nº 10.259/2001, artigos 3º e 6º; Elaboração do autor; não corresponde a decisão jurídica automatizada.                                                                                                 |
-| Apresentação de Contestação                    | Ato em que o réu apresenta sua defesa, por escrito ou oralmente. Apresentar a defesa não significa que ela foi aceita.                                                       | Lei nº 9.099/1995, artigo 30; Elaboração do autor.                                                                                                                                                              |
-| Apresentação de Propostas de Acordo              | Ato de apresentar sugestões para resolver o conflito por acordo. A apresentação não significa que as sugestões foram aceitas.                                             | Lei nº 9.099/1995, artigos 21 e 22; Lei nº 10.259/2001, artigo 10; Elaboração do autor.                                                                                                                        |
-| Apto a Julgamento                                  | Situação em que o processo reúne condições para receber uma decisão. Não significa que o autor ganhará a ação.                                                       | Código de Processo Civil (Lei nº 13.105/2015), artigos 355, 370 e 373; Guizzardi e colaboradores (2013) para a categoria situação; Elaboração do autor.                                                      |
-| Arquivamento do Processo                           | Ato de enviar o processo ao arquivo. Neste trabalho, é tratado o arquivamento após o cumprimento da obrigação.                                                             | Elaboração do autor; Código de Processo Civil (Lei nº 13.105/2015), artigos 924, II, e 925, como contexto da extinção da execução; Validação com especialista pendente sobre os atos de encerramento.    |
-| Ato Processual                                     | Ação praticada na formação ou no andamento do processo, como citar o réu, apresentar defesa ou realizar uma audiência.                                                   | Lei nº 9.099/1995, artigos 12 e 13; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                      |
-| Audiência de Conciliação                        | Encontro destinado a buscar um acordo entre as partes. Pode terminar com ou sem acordo.                                                                                        | Lei nº 9.099/1995, artigos 21 e 22; Lei nº 10.259/2001, artigos 9º e 10; Elaboração do autor.                                                                                                                 |
-| Audiência Designada                               | Situação em que uma audiência foi marcada, mas ainda não necessariamente aconteceu.                                                                                        | Elaboração do autor; Lei nº 9.099/1995, artigo 16, e Lei nº 10.259/2001, artigo 9º, como contexto procedimental; Validação com especialista pendente sobre as condições aplicáveis.                      |
-| Audiência Dispensada                              | Situação em que se decidiu não realizar a audiência naquele caso.                                                                                                          | Elaboração do autor; Validação com especialista pendente quanto ao fundamento e aos critérios da dispensa.                                                                                                    |
-| Ausência de Contestação                         | Situação em que o réu não apresentou defesa no prazo ou momento aplicável. A falta de registro, sozinha, não comprova essa ausência.                                    | Lei nº 9.099/1995, artigo 30, como contexto da defesa; Elaboração do autor; Validação com especialista pendente quanto ao prazo e aos efeitos jurídicos.                                                     |
-| Ausência de Recurso                               | Situação em que não foi apresentado recurso dentro do prazo aplicável, consideradas as regras de contagem.                                                                 | Lei nº 9.099/1995, artigos 12-A, 42 e 50; Elaboração do autor.                                                                                                                                                  |
-| Autarquia Federal                                  | Entidade criada por lei, com existência jurídica própria, para realizar atividades da Administração Pública Federal.                                                     | Decreto-Lei nº 200/1967, artigo 5º, I; Lei nº 10.259/2001, artigo 6º, II.                                                                                                                                      |
-| Auxiliar da Justiça                               | Pessoa que ajuda na realização das atividades do processo. Nem todo auxiliar é servidor do Judiciário.                                                                     | Código de Processo Civil (Lei nº 13.105/2015), artigo 149; Lei nº 9.099/1995, artigo 7º; Elaboração do autor.                                                                                                |
-| Cabível no JEF                                    | Resultado da análise que indica que o caso pode tramitar no Juizado Especial Federal. É diferente de um processo já iniciado.                                               | Lei nº 10.259/2001, artigos 3º e 6º; Elaboração do autor.                                                                                                                                                     |
-| Causa de Pedir                                     | Fatos e razões jurídicas usados para justificar o que se pede à Justiça.                                                                                                   | Lei nº 9.099/1995, artigo 14, § 1º, II; Código de Processo Civil (Lei nº 13.105/2015), artigo 319, III; Elaboração do autor.                                                                                |
-| Celebração de Acordo                             | Momento em que as partes aceitam os termos de um acordo. É diferente da aprovação desse acordo pelo juiz.                                                                   | Lei nº 10.259/2001, artigo 10; Lei nº 9.099/1995, artigo 22, § 1º; Elaboração do autor.                                                                                                                      |
-| Citação                                          | Ato de chamar formalmente o réu para participar do processo e apresentar sua defesa.                                                                                          | Lei nº 10.259/2001, artigo 7º; Lei nº 9.099/1995, artigo 18; Código de Processo Civil (Lei nº 13.105/2015), artigo 238.                                                                                       |
-| Competência Jurisdicional                         | Atribuição que permite a um órgão judicial analisar e julgar determinado caso, conforme as regras legais.                                                                  | Lei nº 10.259/2001, artigo 3º; Beccalli (2018), Seção 5.7.4, como referência de poder jurídico; Elaboração do autor; Validação com especialista pendente sobre a forma de representar essa relação.    |
-| Comprovante de Protocolo                           | Documento que comprova o registro de um pedido e informa dados como identificação, data e horário.                                                                          | Elaboração do autor; Código de Processo Civil (Lei nº 13.105/2015), artigo 312, como contexto dos efeitos do protocolo.                                                                                        |
-| Conciliação Frustrada                            | Situação em que houve tentativa de conciliação, mas as partes não chegaram a um acordo.                                                                                   | Lei nº 9.099/1995, artigos 22 e 27, como contexto dos resultados conciliatórios; Elaboração do autor.                                                                                                          |
-| Conciliação Realizada                            | Neste modelo, situação em que a tentativa de conciliação terminou com acordo. Não significa apenas que a audiência aconteceu.                                            | Lei nº 9.099/1995, artigo 22, § 1º; Elaboração do autor; recomenda-se avaliar o rótulo “acordo celebrado”.                                                                                                 |
-| Conciliador                                        | Pessoa que ajuda as partes a conversar e buscar um acordo.                                                                                                                     | Lei nº 9.099/1995, artigo 7º; Lei nº 10.259/2001, artigo 18; Elaboração do autor.                                                                                                                             |
-| Conclusão do Cumprimento                          | Ato que encerra as atividades de cumprimento após a obrigação ser totalmente atendida, no caso representado.                                                                | Lei nº 10.259/2001, artigos 16 e 17; Código de Processo Civil (Lei nº 13.105/2015), artigos 924 e 925, como contexto; Elaboração do autor.                                                                    |
-| Contestação                                      | Defesa apresentada pelo réu. No modelo, o termo representa o documento escrito ou o registro da defesa oral.                                                                  | Lei nº 9.099/1995, artigo 30; Elaboração do autor para a representação documental.                                                                                                                            |
-| Contestação Apresentada                          | Situação em que o réu já apresentou sua defesa. Isso não informa, sozinho, se ela foi apresentada corretamente ou aceita.                                                 | Lei nº 9.099/1995, artigo 30; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                            |
-| Cumprimento Concluído                             | Situação em que as atividades de cumprimento foram encerradas. Outras pendências do processo ainda precisam ser verificadas.                                                | Elaboração do autor, com apoio contextual em Lei nº 10.259/2001, artigos 16 e 17.                                                                                                                               |
-| Cumprimento da Sentença                           | Conjunto de atos para colocar em prática o que a sentença determinou. O início dessa etapa não significa que a obrigação foi cumprida.                                   | Lei nº 10.259/2001, artigos 16 e 17; Elaboração do autor.                                                                                                                                                       |
-| Decurso do Prazo de Contestação                  | Término do prazo para apresentar defesa. O prazo pode terminar com ou sem defesa apresentada.                                                                                 | Elaboração do autor; Validação com especialista pendente quanto à regra de prazo de cada hipótese do rito.                                                                                                   |
-| Decurso do Prazo Recursal                          | Término do prazo para apresentar recurso, conforme as regras de contagem aplicáveis.                                                                                         | Lei nº 9.099/1995, artigos 12-A, 42 e 50; Elaboração do autor.                                                                                                                                                  |
-| Defensor Público Federal                          | Membro da Defensoria Pública da União que presta assistência jurídica e representa as pessoas atendidas pela instituição.                                                | Constituição Federal de 1988, artigo 134; Elaboração do autor; Validação com especialista pendente quanto às condições de atuação e aos poderes no caso concreto.                                       |
-| Demanda                                            | Pedido levado à Justiça, formado pelo que se deseja obter e pelos fatos e razões que o justificam. Não é o próprio processo nem a petição.                             | Lei nº 9.099/1995, artigo 14; Código de Processo Civil (Lei nº 13.105/2015), artigo 319; Elaboração do autor.                                                                                                 |
-| Demanda Protocolizada                              | Situação em que o pedido foi registrado no órgão judicial.                                                                                                                 | Lei nº 9.099/1995, artigos 14 e 16; Código de Processo Civil (Lei nº 13.105/2015), artigo 312; Elaboração do autor.                                                                                           |
-| Demandado                                          | Pessoa ou entidade contra a qual a ação é proposta. Neste trabalho, corresponde às entidades federais admitidas como rés.                                                 | Lei nº 10.259/2001, artigo 6º, II; Beccalli (2018) para papéis; Elaboração do autor.                                                                                                                          |
-| Demandado Citado                                   | Situação em que o réu já foi formalmente chamado para participar do processo.                                                                                              | Lei nº 10.259/2001, artigo 7º; Lei nº 9.099/1995, artigo 18; Elaboração do autor.                                                                                                                             |
-| Demandante                                         | Pessoa ou organização que apresenta o pedido à Justiça, ocupando o lado do autor no processo.                                                                              | Lei nº 10.259/2001, artigo 6º, I; Beccalli (2018), Seção 5.6; Elaboração do autor.                                                                                                                           |
-| Demora Excessiva                                   | Situação em que a Administração demora a responder além do tempo considerado aceitável para aquele caso.                                                                 | Elaboração do autor; Validação com especialista pendente quanto ao prazo, à norma e à jurisprudência aplicáveis.                                                                                           |
-| Determinação de Audiência                       | Ato que define se uma audiência será marcada ou dispensada, conforme as condições do caso.                                                                                 | Elaboração do autor; Validação com especialista pendente quanto aos agentes competentes e aos critérios do ato.                                                                                               |
-| Dever de Comparecimento à Audiência              | Obrigação de uma pessoa de comparecer à audiência, quando isso for exigido pelas regras e pela comunicação recebida.                                                     | Beccalli (2018) para o conceito de dever; Lei nº 9.099/1995, artigos 19, 20 e 51, como contexto; Elaboração do autor; Validação com especialista pendente.                                                    |
-| Dever de Comparecimento à Perícia                | Obrigação de uma pessoa de comparecer ao exame pericial, quando seu comparecimento for exigido.                                                                              | Lei nº 10.259/2001, artigo 12, como contexto do exame técnico; Beccalli (2018); Elaboração do autor; Validação com especialista pendente.                                                                    |
-| Dever de Prestação                               | Dever de realizar o que é devido a outra pessoa ou entidade, como pagar, entregar algo, fazer ou deixar de fazer alguma coisa.                                                | Beccalli (2018), Seções 5.7.1 e 5.9; Lei nº 10.259/2001, artigos 16 e 17; Elaboração do autor.                                                                                                                |
-| Direito à Prestação                             | Direito de exigir que outra pessoa ou entidade cumpra o que lhe é devido.                                                                                                     | Beccalli (2018), Seções 5.7.1 e 5.9; Elaboração do autor.                                                                                                                                                      |
-| Documento                                          | Registro de informações que pode ser usado para apresentar um pedido, comprovar fatos ou registrar atos e decisões do processo.                                             | Elaboração do autor, com Guizzardi (2005) como apoio à distinção ontológica entre entidades e propriedades.                                                                                                  |
-| Documento de Petição Inicial                     | Documento que apresenta o pedido à Justiça, seus fatos e suas razões. Também pode registrar um pedido feito oralmente.                                                     | Lei nº 9.099/1995, artigo 14; Código de Processo Civil (Lei nº 13.105/2015), artigo 319; Elaboração do autor.                                                                                                 |
-| Documento de Requerimento Administrativo           | Documento que registra ou comprova um pedido feito à Administração Pública.                                                                                                | Elaboração do autor; Ribeiro e Sanzovo (2011) como contexto do domínio; Validação com especialista pendente sobre quando o documento é exigido e o que deve conter em cada caso.                             |
-| Documento Juntado                                  | Situação em que um documento já foi incluído nos registros do processo.                                                                                                    | Código de Processo Civil (Lei nº 13.105/2015), artigos 434 e 435; Elaboração do autor.                                                                                                                         |
-| Documento Necessário ao Processo                  | Documento cuja apresentação é exigida para o caso. Nem todo documento útil como prova é obrigatório para iniciar a ação.                                               | Código de Processo Civil (Lei nº 13.105/2015), artigo 320; Lei nº 10.259/2001, artigo 11; Elaboração do autor; Validação com especialista pendente quanto à lista de documentos por caso.                  |
-| Documento Probatório                              | Documento usado como prova de um fato importante para o processo.                                                                                                              | Lei nº 9.099/1995, artigos 32 e 33; Código de Processo Civil (Lei nº 13.105/2015), artigos 369 e 434; Elaboração do autor.                                                                                    |
-| Empresa de Pequeno Porte Autora                    | Empresa de pequeno porte que apresenta uma ação. Sua participação no processo não é o que define seu porte.                                                              | Lei nº 10.259/2001, artigo 6º, I; Elaboração do autor; Validação com especialista pendente quanto ao regime de enquadramento vigente.                                                                        |
-| Empresa Pública Federal                           | Empresa integrante da Administração Pública Federal, com existência jurídica própria, constituída como empresa pública.                                                | Decreto-Lei nº 200/1967, artigo 5º, II; Lei nº 10.259/2001, artigo 6º, II.                                                                                                                                     |
-| Extinção sem Resolução do Mérito              | Decisão que encerra o processo sem analisar se o pedido principal deve ser aceito ou rejeitado. No modelo, identifica o documento dessa sentença.                            | Código de Processo Civil (Lei nº 13.105/2015), artigo 485; Lei nº 9.099/1995, artigo 51; Elaboração do autor para a classificação documental.                                                               |
-| Fundação Pública Federal                        | Entidade da Administração Pública Federal criada para realizar atividades de interesse público, conforme o regime aplicável.                                              | Decreto-Lei nº 200/1967, artigos 4º e 5º, IV; Lei nº 10.259/2001, artigo 6º, II; Elaboração do autor.                                                                                                       |
-| Improcedência                                     | Resultado em que o juiz analisa e rejeita o pedido do autor. No modelo, classifica a sentença que registra esse resultado.                                                    | Código de Processo Civil (Lei nº 13.105/2015), artigo 487, I; Elaboração do autor.                                                                                                                             |
-| Indeferimento Administrativo                       | Situação em que a Administração Pública rejeita um pedido apresentado a ela.                                                                                              | Elaboração do autor; Validação com especialista pendente quanto ao regime administrativo da matéria.                                                                                                          |
-| Instrução Documental do Processo                 | Relação que reúne o processo e os documentos usados para apresentar e esclarecer o caso.                                                                                    | Lei nº 10.259/2001, artigo 11; Código de Processo Civil (Lei nº 13.105/2015), artigos 320, 434 e 435; Elaboração do autor.                                                                                    |
-| Interesse de Agir                                  | Necessidade e utilidade de buscar a Justiça para obter a proteção solicitada. Não é apenas a vontade de iniciar uma ação.                                               | Código de Processo Civil (Lei nº 13.105/2015), artigo 17; Elaboração do autor; Validação com especialista pendente para os critérios por matéria e a reformulação ontológica.                           |
-| Interposição de Recurso                          | Ato de apresentar um recurso para pedir a revisão de uma decisão. É diferente do julgamento desse recurso.                                                                  | Lei nº 9.099/1995, artigos 41 e 42; Elaboração do autor.                                                                                                                                                        |
-| JEF Competente                                     | Juizado Especial Federal que tem atribuição legal para analisar e julgar o caso considerado.                                                                                 | Lei nº 10.259/2001, artigo 3º; Elaboração do autor.                                                                                                                                                            |
-| Juiz                                               | Pessoa que exerce a função de conduzir o processo e julgar a causa. Não se confunde com o órgão judicial em que atua.                                                     | Lei nº 9.099/1995, artigos 5º e 6º; Lei nº 10.259/2001, artigos 4º e 12; Guizzardi (2005) para a distinção entre pessoa e papel; Elaboração do autor.                                                     |
-| Juizado Especial Federal                           | Órgão da Justiça Federal que julga as causas previstas em sua legislação. Neste trabalho, são tratadas as causas cíveis.                                                | Lei nº 10.259/2001, artigos 1º e 3º.                                                                                                                                                                            |
-| Julgamento                                         | Ato em que o juiz ou órgão judicial analisa e decide uma questão. É diferente do documento que registra a decisão.                                                        | Lei nº 9.099/1995, artigos 28 e 38; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                      |
-| Julgamento do Recurso                              | Ato em que o órgão responsável verifica se pode examinar o recurso e, quando possível, decide o pedido de revisão.                                                        | Lei nº 9.099/1995, artigos 41 e 46; Elaboração do autor.                                                                                                                                                        |
-| Juntada de Documento                               | Ato de incluir um documento nos registros do processo.                                                                                                                         | Código de Processo Civil (Lei nº 13.105/2015), artigos 434 e 435; Elaboração do autor.                                                                                                                         |
-| Laudo Pericial                                     | Documento em que o perito apresenta o exame realizado, suas análises e suas conclusões.                                                                                      | Lei nº 10.259/2001, artigo 12; Código de Processo Civil (Lei nº 13.105/2015), artigo 473, quando compatível; Elaboração do autor.                                                                            |
-| Microempresa Autora                                | Microempresa que apresenta uma ação na Justiça.                                                                                                                             | Lei nº 10.259/2001, artigo 6º, I; Elaboração do autor; Validação com especialista pendente quanto à classificação legal e aos casos de empresário individual.                                            |
-| Não Apto a Julgamento                             | Situação em que a avaliação do caso aponta a necessidade de outras providências antes da decisão. Não decorre de qualquer falta de prova.                               | Código de Processo Civil (Lei nº 13.105/2015), artigos 370 e 373; Elaboração do autor; Validação com especialista pendente quanto aos critérios de avaliação.                                             |
-| Não Cabível no JEF                               | Resultado da análise que indica que o caso não pode tramitar no Juizado Especial Federal. O pedido ainda pode ser cabível em outro procedimento.                            | Lei nº 10.259/2001, artigos 3º e 6º; Elaboração do autor.                                                                                                                                                     |
-| Não Conhecido                                     | Resultado em que o recurso não é examinado quanto ao pedido de revisão porque algum requisito necessário não foi atendido.                                                | Elaboração do autor; Lei nº 9.099/1995, artigos 41 e 42, como contexto; Validação com especialista pendente quanto aos requisitos específicos.                                                               |
-| Norma Jurídica                                    | Regra ou princípio do Direito que orienta condutas, atribuições e consequências. É diferente do texto usado para expressá-lo.                                            | Beccalli (2018), Seção 5.3.                                                                                                                                                                                      |
-| Obrigação Cumprida                               | Situação em que tudo o que era devido naquela obrigação já foi realizado.                                                                                                 | Lei nº 10.259/2001, artigos 16 e 17; Elaboração do autor.                                                                                                                                                       |
-| Obrigação de Entregar Coisa                      | Dever de entregar determinado bem ou objeto, conforme a decisão ou o acordo.                                                                                                  | Lei nº 10.259/2001, artigo 16; Elaboração do autor.                                                                                                                                                             |
-| Obrigação de Fazer                               | Dever de realizar uma ação, conforme a decisão ou o acordo.                                                                                                                 | Lei nº 10.259/2001, artigo 16; Elaboração do autor.                                                                                                                                                             |
-| Obrigação de Não Fazer                          | Dever de deixar de praticar uma ação, conforme a decisão ou o acordo.                                                                                                       | Lei nº 10.259/2001, artigo 16; Beccalli (2018) para direito e dever relativos a omissão; Elaboração do autor.                                                                                                  |
-| Obrigação de Pagar                               | Dever de pagar uma quantia definida na decisão ou no acordo. O valor devido pode ser diferente do valor pedido ou já pago.                                                   | Lei nº 10.259/2001, artigo 17; Elaboração do autor.                                                                                                                                                             |
-| Obrigação Judicial                               | Relação em que uma parte tem o direito de exigir e a outra tem o dever de cumprir algo reconhecido ou determinado pela Justiça.                                             | Beccalli (2018), Capítulos 5 e 6; Lei nº 10.259/2001, artigos 16 e 17; Elaboração do autor.                                                                                                                    |
-| Obrigação Não Cumprida                          | Situação em que o que era devido ainda não foi realizado, no momento considerado.                                                                                           | Lei nº 10.259/2001, artigos 16 e 17, como contexto; Elaboração do autor.                                                                                                                                        |
-| Obrigação Parcialmente Cumprida                  | Situação em que apenas parte do que era devido foi realizada.                                                                                                                | Lei nº 10.259/2001, artigos 16 e 17, como contexto; Elaboração do autor.                                                                                                                                        |
-| Oficial de Justiça                                | Servidor responsável por cumprir ordens e diligências do juiz, como realizar citações e entregar comunicações.                                                           | Código de Processo Civil (Lei nº 13.105/2015), artigos 149 e 154; Elaboração do autor.                                                                                                                         |
-| Oitiva de Testemunha                               | Ato de ouvir uma testemunha sobre fatos importantes para o processo.                                                                                                           | Lei nº 9.099/1995, artigos 28 e 34; Elaboração do autor.                                                                                                                                                        |
-| Organização                                      | Entidade formada para realizar atividades, distinta das pessoas que a integram ou representam.                                                                                 | Guizzardi e colaboradores (2015); Beccalli (2018), Seção 5.4; Elaboração do autor.                                                                                                                             |
-| Organização Federal                              | Organização ligada à esfera federal. Essa classificação, sozinha, não significa que ela possa ser ré no Juizado Especial Federal.                                       | Lei nº 10.259/2001, artigo 6º, II; Decreto-Lei nº 200/1967, artigo 4º, como contexto parcial; Elaboração do autor; Validação com especialista pendente sobre a classificação.                            |
-| Órgão Judicial                                   | Unidade do Poder Judiciário responsável por atividades da Justiça. É diferente da pessoa do juiz.                                                                          | Lei nº 10.259/2001, artigos 3º, 18 e 21; Elaboração do autor.                                                                                                                                                  |
-| Órgão Julgador                                   | Órgão responsável por analisar e decidir o caso. Seu uso no modelo precisa ser alinhado ao termo Órgão Judicial.                                                          | Elaboração do autor; Validação com especialista pendente; não tratar como sinônimo de pessoa do juiz.                                                                                                        |
-| Parte Processual                                   | Pessoa ou entidade que ocupa um dos lados do processo, como autor ou réu.                                                                                                     | Zorzanelli Costa e colaboradores (2023), conceito de parte processual; Lei nº 10.259/2001, artigo 6º; Elaboração do autor.                                                                                     |
-| Participante Processual                            | Pessoa ou entidade que participa do processo, como parte, representante, auxiliar ou testemunha.                                                                               | Beccalli (2018) para as categorias de papéis jurídicos; Elaboração do autor.                                                                                                                                   |
-| Pedido de Fazer                                    | Pedido para que a Justiça determine a realização de uma ação.                                                                                                             | Lei nº 9.099/1995, artigo 14; Lei nº 10.259/2001, artigo 16, como contexto da prestação; Elaboração do autor.                                                                                                |
-| Pedido de Não Fazer                               | Pedido para que a Justiça determine que alguém deixe de praticar uma ação.                                                                                                 | Lei nº 9.099/1995, artigo 14; Lei nº 10.259/2001, artigo 16; Elaboração do autor.                                                                                                                              |
-| Pedido de Outra Providência                       | Pedido de uma medida que não foi detalhada nas outras categorias do modelo.                                                                                                   | Elaboração do autor; Lei nº 9.099/1995, artigo 14, como contexto; Validação com especialista pendente sobre a classificação.                                                                                |
-| Pedido de Pagar                                    | Pedido para que a Justiça determine o pagamento de uma quantia.                                                                                                               | Lei nº 9.099/1995, artigo 14; Lei nº 10.259/2001, artigo 17, como contexto da prestação; Elaboração do autor.                                                                                                |
-| Pedido de Tutela Provisória                       | Pedido de proteção judicial temporária. Fazer esse pedido não significa que a medida foi concedida.                                                                        | Lei nº 10.259/2001, artigo 4º; Código de Processo Civil (Lei nº 13.105/2015), artigos 294 e 300, conforme compatibilidade; Elaboração do autor.                                                              |
-| Pedido Processual                                  | Aquilo que se solicita à Justiça no processo. É diferente do documento usado para apresentar a solicitação.                                                               | Lei nº 9.099/1995, artigo 14; Código de Processo Civil (Lei nº 13.105/2015), artigos 319, IV, e 322; Elaboração do autor.                                                                                     |
-| Perícia Realizada                                 | Situação em que o exame técnico ou científico já foi concluído.                                                                                                          | Lei nº 10.259/2001, artigo 12; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                           |
-| Perito                                             | Profissional que examina uma questão técnica ou científica e apresenta informações para ajudar na análise do caso.                                                       | Lei nº 10.259/2001, artigo 12; Código de Processo Civil (Lei nº 13.105/2015), artigos 149 e 156; Elaboração do autor.                                                                                         |
-| Pessoa                                             | Ser humano que pode exercer diferentes papéis no processo. No modelo, as pessoas jurídicas são tratadas como organizações.                                                | Guizzardi (2005); Beccalli (2018), Seção 5.4; Elaboração do autor para a delimitação do termo.                                                                                                               |
-| Pessoa Física Autora                              | Pessoa que apresenta uma ação em seu próprio nome, ocupando o lado do autor no processo.                                                                                    | Lei nº 10.259/2001, artigo 6º, I; Guizzardi (2005); Elaboração do autor.                                                                                                                                       |
-| Petição                                          | Neste modelo, relação criada em torno da apresentação do pedido à Justiça. É diferente do documento de petição e não exige representante em toda situação inicial. | Zorzanelli Costa e colaboradores (2023), conceito de petição; Elaboração do autor; Validação com especialista pendente sobre os vínculos e as quantidades previstas no modelo.                              |
-| Peticionamento                                     | Ato de preparar e apresentar um pedido à Justiça.                                                                                                                            | Lei nº 9.099/1995, artigo 14; Elaboração do autor.                                                                                                                                                              |
-| Poder Jurisdicional                                | Poder atribuído ao órgão judicial para exercer a função de julgar e decidir os casos de sua responsabilidade.                                                             | Beccalli (2018), Seção 5.7.4; Lei nº 10.259/2001, artigo 3º; Elaboração do autor; Validação com especialista pendente quanto a quem possui esse poder e a quem está sujeito a ele.                        |
-| Prazo de Contestação em Curso                    | Situação em que o prazo para apresentar a defesa está em andamento.                                                                                                         | Elaboração do autor; Validação com especialista pendente quanto à disciplina específica do prazo.                                                                                                            |
-| Prazo Recursal                                     | Tempo disponível para apresentar um recurso, contado conforme as regras aplicáveis.                                                                                          | Lei nº 9.099/1995, artigos 12-A, 42 e 50; Elaboração do autor; distinguir duração normativa e intervalo concreto.                                                                                             |
-| Pretensão Jurídica                               | No modelo, intenção da pessoa de obter uma proteção ou providência da Justiça. Essa intenção não comprova que ela tenha o direito alegado.                            | Guizzardi e colaboradores (2015) para intenção; Lei nº 10.259/2001, artigos 3º e 6º, como contexto; Elaboração do autor; Validação com especialista pendente quanto ao nome usado e a quem ele se aplica. |
-| Procedência                                       | Resultado em que o juiz aceita todo o pedido considerado. No modelo, classifica a sentença que registra esse resultado.                                                       | Código de Processo Civil (Lei nº 13.105/2015), artigo 487, I; Elaboração do autor.                                                                                                                             |
-| Procedência Parcial                               | Resultado em que o juiz aceita apenas parte do que foi pedido. No modelo, classifica a sentença que registra esse resultado.                                                  | Código de Processo Civil (Lei nº 13.105/2015), artigo 487, I; Elaboração do autor; considerar capítulos distintos da decisão.                                                                                |
-| Processo Arquivado por Satisfação da Obrigação | Situação em que o processo foi arquivado após o cumprimento das obrigações e a verificação de outras pendências.                                                       | Elaboração do autor; Código de Processo Civil (Lei nº 13.105/2015), artigos 924, II, e 925, como contexto; Validação com especialista pendente.                                                              |
-| Processo Assistencial                              | Processo que trata de um direito ou benefício da assistência social. Nem todo caso desse tipo pode tramitar no Juizado Especial Federal.                                     | Lei nº 10.259/2001, artigo 12, § 2º; Ribeiro e Sanzovo (2011); Elaboração do autor.                                                                                                                           |
-| Processo Cabível no JEF                           | Processo já iniciado que atende às condições legais para tramitar no Juizado Especial Federal.                                                                             | Lei nº 10.259/2001, artigos 3º e 6º; Elaboração do autor.                                                                                                                                                     |
-| Processo Encaminhado à Turma Recursal             | Situação em que o processo foi enviado à Turma Recursal para análise do recurso.                                                                                           | Lei nº 9.099/1995, artigo 41; Lei nº 10.259/2001, artigo 21; Elaboração do autor.                                                                                                                              |
-| Processo FGTS                                      | Processo sobre direitos ou valores do Fundo de Garantia do Tempo de Serviço. Não é necessariamente uma ação de indenização.                                             | Ribeiro e Sanzovo (2011) como contexto das causas federais; Elaboração do autor; Validação com especialista pendente sobre a classificação e o cabimento por hipótese.                                      |
-| Processo Habitacional                              | Processo sobre moradia, financiamento ou contrato habitacional. Seu assunto não garante, sozinho, que o caso possa tramitar no Juizado Especial Federal.                      | Elaboração do autor; Validação com especialista pendente sobre os assuntos abrangidos e as regras de competência.                                                                                             |
-| Processo Indenizatório                            | Processo em que se pede reparação por um dano ou prejuízo.                                                                                                                  | Elaboração do autor; Lei nº 10.259/2001, artigo 3º, como limite geral de competência; Validação com especialista pendente sobre as especializações.                                                       |
-| Processo Instaurado                                | Situação em que o processo já foi iniciado perante a Justiça.                                                                                                              | Lei nº 9.099/1995, artigo 14; Código de Processo Civil (Lei nº 13.105/2015), artigo 312; Elaboração do autor.                                                                                                 |
-| Processo Judicial Federal                          | Neste modelo, relação entre os envolvidos em uma demanda apresentada à Justiça Federal. Os atos de andamento do processo são representados separadamente.                 | Zorzanelli Costa e colaboradores (2023), conceito de processo judicial; Elaboração do autor; distinguir de Relação Jurídico-Processual.                                                                       |
-| Processo Previdenciário                           | Processo sobre direitos previdenciários, como benefícios da Previdência Social. Nem todo caso desse tipo pode tramitar no Juizado Especial Federal.                         | Lei nº 10.259/2001, artigos 3º e 12, § 2º; Ribeiro e Sanzovo (2011); Elaboração do autor.                                                                                                                    |
-| Procurador da Fazenda Nacional                     | Representante da União nos assuntos fiscais e tributários que são de sua responsabilidade.                                                                                  | Constituição Federal de 1988, artigo 131, § 3º; Elaboração do autor; Validação com especialista pendente quanto ao detalhamento das atribuições da carreira.                                             |
-| Procurador Federal                                 | Representante jurídico de autarquias e fundações públicas federais, conforme suas atribuições.                                                                           | Elaboração do autor; Lei nº 10.259/2001, artigos 7º e 10, apenas como contexto; Validação com especialista pendente e complementação da fonte específica da carreira.                                     |
-| Produção de Prova                                | Atos realizados para obter informações e demonstrar fatos importantes para o processo. Não é necessário usar todos os tipos de prova em cada caso.                        | Lei nº 9.099/1995, artigos 32–35; Lei nº 10.259/2001, artigo 12; Elaboração do autor.                                                                                                                         |
-| Produção de Prova Complementar                   | Produção de provas adicionais quando isso for necessário e permitido no caso.                                                                                               | Código de Processo Civil (Lei nº 13.105/2015), artigos 370 e 373; Elaboração do autor.                                                                                                                         |
-| Proposta de Acordo                                 | Documento que apresenta os termos sugeridos para resolver o conflito. Não significa que o acordo já foi aceito.                                                              | Lei nº 9.099/1995, artigos 21 e 22; Lei nº 10.259/2001, artigo 10; Elaboração do autor.                                                                                                                        |
-| Prosseguimento do Cumprimento                      | Continuação dos atos necessários para cumprir o que ainda está pendente da obrigação.                                                                                    | Lei nº 10.259/2001, artigos 16 e 17; Elaboração do autor.                                                                                                                                                       |
-| Protocolização                                   | Ato de registrar formalmente um pedido no órgão judicial.                                                                                                                    | Lei nº 9.099/1995, artigos 14 e 16; Código de Processo Civil (Lei nº 13.105/2015), artigo 312; Elaboração do autor.                                                                                           |
-| Prova Complementar Produzida                       | Situação em que a prova adicional já foi produzida e pode ser analisada. Isso não significa que ela resolveu todas as dúvidas.                                            | Guizzardi e colaboradores (2013) para evento e situação; Código de Processo Civil (Lei nº 13.105/2015), artigo 370, como contexto; Elaboração do autor.                                                      |
-| Provas Insuficientes                               | Resultado da análise que aponta que as provas não esclarecem suficientemente os fatos examinados. Isso não impede todo tipo de julgamento.                                  | Código de Processo Civil (Lei nº 13.105/2015), artigos 370, 371 e 373; Elaboração do autor.                                                                                                                    |
-| Provas Suficientes                                 | Resultado da análise que aponta que as provas disponíveis permitem decidir as questões examinadas. Não significa que o autor ganhará a ação.                            | Código de Processo Civil (Lei nº 13.105/2015), artigos 355, 370 e 371; Elaboração do autor.                                                                                                                    |
-| Realização de Perícia                           | Ato de realizar um exame técnico ou científico para esclarecer uma questão do processo.                                                                                     | Lei nº 10.259/2001, artigo 12; Código de Processo Civil (Lei nº 13.105/2015), artigo 464, quando compatível; Elaboração do autor.                                                                            |
-| Recurso Desprovido                                 | Resultado em que o pedido de revisão é analisado e rejeitado, mantendo-se a decisão nos pontos examinados.                                                                  | Elaboração do autor; Lei nº 9.099/1995, artigo 46, como contexto do julgamento; Validação com especialista pendente quanto à classificação dos resultados.                                                 |
-| Recurso Inominado                                  | Recurso usado para pedir a revisão de uma sentença do Juizado nas hipóteses previstas em lei. No modelo, representa o documento apresentado.                                | Lei nº 9.099/1995, artigos 41 e 42; Lei nº 10.259/2001, artigo 5º; Elaboração do autor.                                                                                                                       |
-| Recurso Interposto                                 | Situação em que um recurso já foi apresentado. Não significa que ele foi admitido ou aceito.                                                                               | Lei nº 9.099/1995, artigo 42; Elaboração do autor.                                                                                                                                                              |
-| Recurso Parcialmente Provido                       | Resultado em que apenas parte do pedido feito no recurso é aceita.                                                                                                            | Elaboração do autor; Lei nº 9.099/1995, artigo 46, como contexto; Validação com especialista pendente.                                                                                                        |
-| Recurso Provido                                    | Resultado em que o pedido feito no recurso é aceito, nos termos da decisão.                                                                                                  | Elaboração do autor; Lei nº 9.099/1995, artigo 46, como contexto; Validação com especialista pendente.                                                                                                        |
-| Regra de Competência                              | Regra que define qual órgão judicial pode analisar e julgar um caso.                                                                                                         | Lei nº 10.259/2001, artigos 3º e 6º; Beccalli (2018) para o conceito de regra; Elaboração do autor.                                                                                                           |
-| Regra de Prazo Recursal                            | Regra que define o tempo e a forma de contagem do prazo para apresentar um recurso.                                                                                            | Lei nº 9.099/1995, artigos 12-A, 42 e 50; Beccalli (2018) para o conceito de regra; Elaboração do autor.                                                                                                        |
-| Regra Jurídica                                    | Norma do Direito que estabelece o que se aplica quando certas condições são atendidas. É diferente do texto que a expressa.                                                | Beccalli (2018), Seção 5.3.                                                                                                                                                                                      |
-| Relação Jurídico-Processual                     | Vínculo jurídico entre os participantes de um processo. Sua ligação com Processo Judicial Federal ainda precisa ser detalhada no modelo.                                   | Beccalli (2018) para as relações jurídicas; Elaboração do autor; Validação com especialista pendente sobre a articulação entre os vínculos.                                                              |
-| Relação Recursal                                 | Vínculo relacionado ao pedido de revisão de uma decisão. No desenho atual, liga a parte que recorre à sentença questionada.                                               | Beccalli (2018) como referência de análise; Elaboração do autor; Validação com especialista pendente sobre os participantes e a forma de representar essa relação.                                         |
-| Remessa à Turma Recursal                          | Ato de enviar o recurso ou o processo à Turma Recursal responsável por examiná-lo.                                                                                          | Lei nº 9.099/1995, artigos 41 e 42; Lei nº 10.259/2001, artigo 21; Elaboração do autor.                                                                                                                        |
-| Representação Processual                         | Relação entre uma parte e a pessoa autorizada a atuar em seu nome no processo.                                                                                               | Lei nº 10.259/2001, artigo 10; Lei nº 9.099/1995, artigo 41, § 2º; Beccalli (2018); Elaboração do autor.                                                                                                     |
-| Representação Recursal                           | Representação de uma parte durante a fase de recurso, observada a exigência de advogado.                                                                                    | Lei nº 9.099/1995, artigo 41, § 2º; Elaboração do autor.                                                                                                                                                      |
-| Representante Designado                            | Pessoa indicada por escrito para representar uma parte nas situações permitidas. Pode ser advogado ou não, conforme a fase e as regras aplicáveis.                         | Lei nº 10.259/2001, artigo 10; Elaboração do autor.                                                                                                                                                             |
-| Representante Jurídico Federal                    | Pessoa que representa juridicamente uma entidade federal, conforme suas atribuições.                                                                                         | Lei nº 10.259/2001, artigos 7º e 10; Elaboração do autor; Validação com especialista pendente sobre as especializações profissionais.                                                                      |
-| Representante Processual                           | Pessoa que atua em nome de uma parte no processo, dentro dos poderes que possui.                                                                                               | Lei nº 10.259/2001, artigo 10; Beccalli (2018) para os papéis jurídicos; Elaboração do autor.                                                                                                                 |
-| Requerimento Administrativo                        | Ato de fazer um pedido à Administração Pública. Sua necessidade antes da ação depende do caso.                                                                           | Elaboração do autor; Ribeiro e Sanzovo (2011) como contexto; Validação com especialista pendente quanto aos fundamentos específicos da exigência.                                                            |
-| Resistência Administrativa                        | Situação em que a Administração se opõe ao pedido do interessado. Não deve ser presumida apenas porque houve demora.                                                     | Elaboração do autor; Validação com especialista pendente quanto aos critérios por matéria.                                                                                                                   |
-| Resultado da Análise de Cabimento                 | Conclusão da avaliação sobre a possibilidade de o caso tramitar no Juizado Especial Federal.                                                                                | Lei nº 10.259/2001, artigos 3º e 6º; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                   |
-| Resultado da Análise Probatória                  | Conclusão da análise das provas disponíveis em determinado momento do processo.                                                                                             | Código de Processo Civil (Lei nº 13.105/2015), artigos 370 e 371; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                       |
-| Resultado da Determinação de Audiência          | Resultado da decisão de marcar ou dispensar uma audiência.                                                                                                                   | Guizzardi e colaboradores (2013); Elaboração do autor; Validação com especialista pendente quanto aos fundamentos da dispensa.                                                                                 |
-| Resultado do Cumprimento                           | Verificação de quanto da obrigação já foi cumprido em determinado momento.                                                                                                | Lei nº 10.259/2001, artigos 16 e 17; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                     |
-| Resultado do Julgamento Recursal                   | Resultado da decisão sobre o recurso, como sua aceitação, rejeição ou não conhecimento.                                                                                  | Lei nº 9.099/1995, artigos 41 e 46; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                      |
-| Sentença                                          | Documento que registra a decisão do juiz ao encerrar a análise da causa ou a execução. É diferente do ato de julgar.                                                      | Código de Processo Civil (Lei nº 13.105/2015), artigo 203, § 1º; Lei nº 9.099/1995, artigo 38; Elaboração do autor para a representação documental.                                                       |
-| Sentença Homologatória                           | Neste trabalho, sentença em que o juiz aprova um acordo entre as partes.                                                                                                      | Lei nº 9.099/1995, artigo 22, § 1º, e artigo 41; Elaboração do autor.                                                                                                                                         |
-| Sentença Recorrida                                | Sentença que está sendo questionada por meio de um recurso. Continua sendo a mesma sentença, agora nessa condição.                                                        | Lei nº 9.099/1995, artigo 41; Guizzardi (2005); Elaboração do autor.                                                                                                                                            |
-| Sentença Transitada em Julgado                    | Situação em que a sentença não pode mais ser questionada por recurso. Os efeitos sobre o pedido dependem do tipo de decisão.                                              | Código de Processo Civil (Lei nº 13.105/2015), artigo 502, quanto à coisa julgada material; Lei nº 10.259/2001, artigos 16 e 17; Elaboração do autor.                                                        |
-| Serventuário da Justiça                          | Nome usado no diagrama para quem exerce atividades de apoio à Justiça. Precisa ser delimitado, pois nem todo auxiliar é servidor.                                           | Código de Processo Civil (Lei nº 13.105/2015), artigo 149; Elaboração do autor; Validação com especialista pendente sobre a reorganização da categoria.                                                    |
-| Servidor Judicial                                  | Pessoa vinculada ao serviço do Judiciário que realiza atividades de apoio ao funcionamento do órgão e dos processos.                                                       | Código de Processo Civil (Lei nº 13.105/2015), artigos 149 e 152, como contexto; Elaboração do autor; Validação com especialista pendente sobre o vínculo funcional.                                        |
-| Situação Processual                              | Condição em que o processo se encontra em determinado momento. Mais de uma condição pode existir ao mesmo tempo.                                                           | Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                                                           |
-| Tentativa de Conciliação                         | Ato de buscar um acordo entre as partes. A tentativa pode terminar sem acordo.                                                                                                 | Lei nº 9.099/1995, artigos 21 e 22; Lei nº 10.259/2001, artigo 10; Elaboração do autor.                                                                                                                        |
-| Testemunha                                         | Pessoa que relata o que sabe sobre fatos importantes para o processo.                                                                                                          | Lei nº 9.099/1995, artigo 34; Guizzardi (2005); Elaboração do autor.                                                                                                                                            |
-| Testemunho Colhido                                 | Situação em que o depoimento da testemunha já foi ouvido. O modelo não representa todo o conteúdo desse depoimento.                                                       | Lei nº 9.099/1995, artigos 34 e 36; Guizzardi e colaboradores (2013); Elaboração do autor.                                                                                                                      |
-| Trânsito em Julgado                               | Momento em que não cabe mais recurso contra a decisão. A certidão apenas registra essa ocorrência.                                                                         | Lei nº 10.259/2001, artigos 16 e 17; Código de Processo Civil (Lei nº 13.105/2015), artigo 502, para os efeitos sobre a decisão de mérito; Elaboração do autor.                                             |
-| Turma Recursal                                     | Órgão formado por juízes, responsável por julgar recursos no sistema dos Juizados.                                                                                         | Lei nº 9.099/1995, artigo 41, § 1º; Lei nº 10.259/2001, artigo 21.                                                                                                                                             |
-| União Federal                                     | Ente público federal com direitos e obrigações próprios, distinto dos órgãos que integram sua estrutura.                                                                 | Constituição Federal de 1988, artigos 18 e 131; Lei nº 10.259/2001, artigo 6º, II; Elaboração do autor.                                                                                                      |
-| Valor da Causa                                     | Valor atribuído ao que se pede à Justiça, calculado conforme as regras legais. Não é necessariamente o valor que será reconhecido ou pago.                               | Lei nº 10.259/2001, artigo 3º; Lei nº 9.099/1995, artigo 14, § 1º, III; Código de Processo Civil (Lei nº 13.105/2015), artigos 291 e 292; Elaboração do autor.                                            |
+A `situation` <u>Sentença Transitada em Julgado</u> `triggers` o `event` <u>Cumprimento da Sentença, indicando que, no recorte representado pelo modelo, o início dessa etapa decorre</u> da estabilização da decisão judicial. O Cumprimento da Sentença está relacionado ao `relator` <u>Obrigação Judicial</u> pela relação satisfaz, evidenciando que essa fase tem como finalidade efetivar a prestação estabelecida na decisão. 
 
-Fonte: elaboração do autor com base nas referências indicadas em cada linha (2026). Os termos estão em ordem alfabética. “Ação Instaurada” é o nome anterior de Processo Instaurado, e “Recurso Não Conhecido” corresponde a Não Conhecido. Esses nomes alternativos não representam conceitos adicionais neste dicionário.
+A ocorrência do <u>Cumprimento da Sentença</u> leva a `situation` <u>Resultado do Cumprimento. Esse resultado é especializado nas situações Obrigação Cumprida, Obrigação Parcialmente Cumprida e Obrigação Não Cumprida. As três especializações integram um</u> conjunto `{disjoint, complete}` , permitindo representar, no escopo da ontologia, os possíveis resultados da verificação do cumprimento da obrigação judicial. 
+
+Quando a obrigação é integralmente satisfeita, a `situation` <u>Obrigação Cumprida</u> `triggers` o `event` <u>Conclusão do Cumprimento. Esse evento leva a situação Cumprimento Concluído, indicando que não há necessidade de continuidade dos atos voltados à satisfação da</u> obrigação. 
+
+Nos casos em que a obrigação é apenas parcialmente cumprida ou permanece não cumprida, as situações <u>Obrigação Parcialmente Cumprida e Obrigação Não Cumprida</u> `trigger` o `event` <u>Prosseguimento do Cumprimento. Esse evento representa a continuidade</u> das medidas destinadas à satisfação da obrigação e pode posteriormente levar a Conclusão do <u>Cumprimento, caso a prestação venha a ser efetivamente satisfeita.</u> 
+
+A `situation` <u>Cumprimento Concluído, por sua vez,</u> `triggers` o `event` <u>Arquivamento do Processo. O arquivamento leva a situação Processo Arquivado por Satisfação da Obrigação, representando o encerramento do percurso processual contemplado pela</u> ontologia após o cumprimento da prestação reconhecida judicialmente. 
+
+Dessa forma, o diagrama permite acompanhar a evolução da fase de cumprimento desde o trânsito em julgado até o arquivamento do processo, distinguindo as hipóteses de cumprimento integral, parcial ou inexistente da obrigação. O modelo fornece suporte especialmente às Questões de Competência relacionadas ao cumprimento da sentença, à conclusão dessa fase e à possibilidade de arquivamento do processo em razão da satisfação da obrigação. 
+
+Figura 23. Diagrama de Cumprimento e Encerramento. 
+
+
+
+<!-- Start of picture text -->
+fz<br><<situation>><br>Sentenca Transitada em Julgado<br>| V <ctriggers>><br><<event>> Psatisfaz PF  <crelator>><br>Cumprimento da Sentenca Obrigacao Judicial<br>Vievaa<br><<situation>><br>Resultado do Cumprimento<br>L\<br>disjoint, complete’<br><<situation>> <<situation>> <<situation>><br>Obrigacao Cumprida Obrigacao Parcialmente Cumprida Obrigacado Nao Cumprida<br>|V <<triggers>> v “<enpoore V |<ctriggers>><br><<event>> “dievaa <<event>><br>Conclusao do Cumprimento Prosseguimento do Cumprimento<br>Vievaa<br><<situation>><br>Cumprimento Concluido<br>|<br>V <<triggers>><br><<event>><br>Arquivamento do Processo<br>Vievaa<br><<situation>><br>Processo Arquivado por Satisfacdo da Obrigacao<br><!-- End of picture text -->
+
+Fonte: elaborado pelo autor (2026) 
+
+#### 4.5 Avaliação da Ontologia 
+
+Esta seção apresenta a verificação das 38 QCs e sua aplicação a seis cenários com dados simulados. Todos os participantes, documentos, identificadores de processos, valores e acontecimentos específicos dos exemplos são fictícios. A referência à União indica apenas sua posição no cenário hipotético, sem atribuir a ela um fato real. Não foram utilizados números CNJ, documentos pessoais ou registros profissionais reais. 
+
+###### 4.4.1 Rastreabilidade das 38 QCs 
+
+A matriz preserva a numeração e as perguntas da Seção 4.1. A primeira coluna apresenta o identificador e a pergunta. Em Elementos e relações rastreados, explica-se-se como localizar os participantes, consultar suas relações e identificar as entidades necessárias para a resposta. A 
+
+última coluna indica os diagramas correspondentes. 
+
+Quadro 5: Rastreabilidade das QCs
+
+**Sujeitos processuais — QC1 a QC6:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC1. Quem são os participantes do processo e qual papel processual cada um exerce? | Localiza-se a Relação Jurídico-Processual do caso e identificam-se os Participantes Processuais ligados a ela. Para cada participante, verifica-se se atua como Parte Processual, Representante Processual, Auxiliar da Justiça ou Testemunha. Quando for uma parte, verifica-se se ocupa a posição de Demandante ou de Demandado. Assim, relacionam-se os participantes aos papéis que exercem naquele contexto. | Figura 8. |
+| QC2. O autor é pessoa física, microempresa ou empresa de pequeno porte? | Localiza-se o Processo Judicial Federal e identifica-se quem participa como Demandante. Em seguida, verifica-se como esse autor está classificado no modelo. A classificação permite informar se ele é Pessoa Física Autora, Microempresa Autora ou Empresa de Pequeno Porte Autora. | Figuras 8 e 13. |
+| QC3. O réu é a União, uma autarquia, uma fundação pública federal ou uma empresa pública federal? | Localiza-se o Processo Judicial Federal e identifica-se o Demandado. No modelo, esse papel é exercido por uma Organização Federal. Verifica-se então se a organização está classificada como União Federal, Autarquia Federal, Fundação Pública Federal ou Empresa Pública Federal. A resposta descreve a entidade indicada no processo, sem decidir se ela foi corretamente escolhida como ré. | Figuras 8, 9 e 13. |
+| QC4. Quem representa juridicamente as partes? | Para cada Parte Processual, procura-se uma Representação Processual que a vincule a um Representante Processual. Quando esse vínculo estiver registrado, identifica-se a pessoa que representa a parte. Em seguida, verifica-se se ela atua como Representante Designado, Advogado Constituído, Defensor Público Federal ou Representante Jurídico Federal. | Figuras 8 e 10. |
+| QC5. Há advogado constituído ou é necessária representação por advogado na fase atual? | Identifica-se a Parte Processual e consulta-se sua Representação Processual. Verifica-se se o Representante Processual está classificado como Advogado Constituído. Se o contexto analisado for a fase de recurso, examina-se também a Representação Recursal. | Figuras 10 e 22. |
+| QC6. Há perito, conciliador, testemunha ou outro auxiliar da justiça vinculado ao processo? | No contexto do caso, procuram-se os participantes dos atos registrados. Na Realização de Perícia, identifica-se o Perito. Na Tentativa de Conciliação, identifica-se o Conciliador. Na Oitiva de Testemunha, identifica-se a Testemunha ouvida. Consulta-se ainda a classificação de Serventuário da Justiça para localizar Servidor Judicial e Oficial de Justiça. | Figuras 11, 18 e 19. |
+
+**Ação judicial — QC7 a QC10:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC7. Qual é o tipo da ação proposta? | Localiza-se o Processo Judicial Federal e verifica-se sua classificação por assunto. O modelo apresenta Processo Previdenciário, Processo Assistencial e Processo Indenizatório, além de Processo FGTS e Processo Habitacional. Informa-se a classificação registrada para o caso. | Figura 14. |
+| QC8. Qual é o pedido principal formulado pelo autor? | Localiza-se o Processo Judicial Federal e identifica-se a Demanda associada a ele. Em seguida, levantam-se os Pedidos Processuais dessa demanda e consultam-se os pedidos formulados no Documento de Petição Inicial. Para apontar qual é o principal, é necessária uma indicação adicional do caso. | Figuras 12, 14 e 16. |
+| QC9. A ação busca obrigação de fazer, não fazer, pagar valores ou outra providência? | Identifica-se a Demanda ou, antes do ajuizamento, a Pretensão Jurídica. Localizam-se seus Pedidos Processuais. Para cada pedido, verifica-se se está classificado como Pedido de Fazer, Pedido de Não Fazer, Pedido de Pagar ou Pedido de Outra Providência. A resposta informa o que foi solicitado, sem confundir o pedido com uma obrigação já reconhecida pelo juiz. | Figuras 12 e 14. |
+| QC10. Existe requerimento de tutela provisória? | Localizam-se os Pedidos Processuais associados à Demanda ou à Pretensão Jurídica. Verifica-se se algum deles está classificado como Pedido de Tutela Provisória. Quando houver petição inicial, consulta-se também o Documento de Petição Inicial que formula esse pedido. | Figuras 12, 14 e 16. |
+
+**Procedimento — QC11 a QC15:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC11. Em qual status ou fase o processo se encontra? | Identificam-se os Atos Processuais considerados no caso e as Situações Processuais produzidas por eles. Verifica-se se estão registrados estados como Processo Instaurado, Contestação Apresentada, Apto a Julgamento ou Cumprimento Concluído. Consulta-se também o Resultado da Determinação de Audiência para identificar Audiência Designada ou Audiência Dispensada. Por fim, selecionam-se as situações vigentes no momento analisado, sem tratar todo o histórico como estado atual. | Figuras 15, 17, 18, 20 e 23. |
+| QC12. O réu apresentou contestação? | Identifica-se o Demandado e procura-se um ato de Apresentação de Contestação com sua participação e com o documento Contestação. Quando o ato e a situação Contestação Apresentada estiverem registrados, pode-se informar que houve defesa. Para examinar a falta de defesa, consideram-se Prazo de Contestação em Curso, Decurso do Prazo de Contestação e o registro de Ausência de Contestação. | Figura 17. |
+| QC13. Pode haver proposta ou realização de acordo entre as partes? | Procuram-se os documentos de Proposta de Acordo e os atos de Apresentação de Propostas de Acordo em que foram utilizados. Verifica-se depois se ocorreu Celebração de Acordo. Quando esse evento está registrado, identifica-se o Acordo Processual criado e as partes, Demandante e Demandado, ligadas a ele. | Figura 18. |
+| QC14. É necessária audiência de conciliação? | Localiza-se a Determinação de Audiência e consulta-se seu resultado. Verifica-se se o Resultado da Determinação de Audiência foi classificado como Audiência Designada ou Audiência Dispensada. No caso de designação, identifica-se a Audiência de Conciliação relacionada. | Figura 18. |
+| QC15. Há necessidade de produção de provas? | Localiza-se a Análise das Provas e examina-se o Resultado da Análise Probatória. Se o resultado informado for Provas Insuficientes, verifica-se a indicação de Produção de Prova Complementar no percurso representado. Caso a produção já tenha ocorrido, localiza-se Prova Complementar Produzida e a nova Análise das Provas. Distingue-se assim a necessidade apontada da prova efetivamente produzida, sem assumir que toda insuficiência exige complementação. | Figura 20. |
+
+**Provas — QC16 a QC19:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC16. Quais provas foram apresentadas pelas partes? | Localizam-se as Juntadas de Documento do caso e identificam-se a Parte Processual participante, os Documentos Probatórios e as situações Documento Juntado. Verifica-se se alguma Realização de Perícia criou um Laudo Pericial. Consultam-se também as Oitivas de Testemunha e os registros de Testemunho Colhido. | Figura 19. |
+| QC17. Há testemunhas indicadas ou necessidade de produção de prova testemunhal? | Procura-se uma Testemunha ligada a uma Oitiva de Testemunha. Quando a oitiva e o registro de Testemunho Colhido estiverem presentes, identifica-se a pessoa que já foi ouvida. | Figuras 8 e 19. |
+| QC18. As provas disponíveis são suficientes para julgamento antecipado? | Localiza-se a Análise das Provas e verifica-se se seu resultado foi classificado como Provas Suficientes. Examina-se a situação Apto a Julgamento relacionada a esse resultado e sua ligação com o evento Julgamento. O percurso permite registrar a suficiência avaliada e a aptidão informada. | Figura 20. |
+| QC19. A ausência de alguma prova impede o julgamento do pedido? | Consulta-se o Resultado da Análise Probatória produzido pela Análise das Provas. Quando estiver classificado como Provas Insuficientes, examina-se sua associação com Não Apto a Julgamento e a indicação de Produção de Prova Complementar. Identifica-se, assim, a necessidade registrada naquele momento. | Figura 20. |
+
+**Sentença e cumprimento — QC20 a QC25:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC20. Qual foi o resultado da sentença? | Localiza-se o evento Julgamento e identifica-se a Sentença criada por ele. Verifica-se como o documento foi classificado quanto ao resultado. No modelo, as possibilidades apresentadas são Procedência, Procedência Parcial, Improcedência, Sentença Homologatória e Extinção sem Resolução do Mérito. | Figura 21. |
+| QC21. Qual obrigação foi imposta ao réu: pagar, fazer, não fazer ou entregar algo? | Localiza-se a Sentença e identificam-se as Obrigações Judiciais que ela impõe. Para cada obrigação, verifica-se se é Obrigação de Pagar, de Fazer, de Não Fazer ou de Entregar Coisa. No recorte representado, identificam-se o Demandante e o Demandado ligados à obrigação. Examinam-se o Direito à Prestação e o Dever de Prestação que a compõem para distinguir quem pode exigir e quem deve cumprir. | Figura 21. |
+| QC22. A sentença transitou em julgado? | Localiza-se a Sentença e verifica-se se há um evento de Trânsito em Julgado que a tenha como objeto. Consulta-se a situação Sentença Transitada em Julgado produzida por esse evento. Quando esses fatos estiverem informados, registra-se o trânsito da decisão. | Figuras 21 e 22. |
+| QC23. A obrigação reconhecida na sentença foi cumprida? | Identifica-se a Obrigação Judicial examinada e o evento de Cumprimento da Sentença relacionado a ela. Consulta-se o Resultado do Cumprimento no momento considerado. Verifica-se se o resultado está classificado como Obrigação Cumprida, Obrigação Parcialmente Cumprida ou Obrigação Não Cumprida. A resposta deve considerar esse momento, sem substituir um cumprimento parcial pelo pagamento ocorrido somente depois. | Figura 23. |
+| QC24. O cumprimento da sentença foi concluído? | Verifica-se se há registro de Obrigação Cumprida no caso analisado. Em seguida, procura-se o evento de Conclusão do Cumprimento e a situação Cumprimento Concluído produzida por ele. Esses registros permitem informar que a conclusão ocorreu no momento considerado. A simples satisfação da obrigação não deve ser confundida com o registro de todos os atos de encerramento. | Figura 23. |
+| QC25. O processo pode ser arquivado por satisfação da obrigação? | Localiza-se a situação Cumprimento Concluído e verifica-se se ocorreu Arquivamento do Processo. Consulta-se então a situação Processo Arquivado por Satisfação da Obrigação. O percurso informa o arquivamento registrado no caso. | Figura 23. |
+
+**Recursos — QC26 a QC30:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC26. Foi interposto recurso contra a sentença? | Identifica-se a Sentença do caso e procura-se um Recurso Inominado que a questione. Havendo esse vínculo, a sentença assume a condição de Sentença Recorrida. Localiza-se o evento de Interposição de Recurso que criou o documento e verifica-se o registro de Recurso Interposto. Assim, distingue-se o recurso efetivamente apresentado da simples possibilidade de recorrer. | Figura 22. |
+| QC27. Qual é o prazo para apresentação do recurso? | Localiza-se a Regra de Prazo Recursal que regula a Interposição de Recurso. Identifica-se o Prazo Recursal que caracteriza essa regra e consulta-se o valor informado. Para determinar uma data final, ainda são necessários a ciência válida da decisão, o calendário e as condições que alteram a contagem. Essas condições não são calculadas integralmente pelo modelo atual. | Figura 22. |
+| QC28. O recurso exige representação por advogado? | Localiza-se a Representação Recursal, que é uma forma de Representação Processual. Identificam-se a Parte Processual representada e seu Representante Processual. Verifica-se se o representante atua como Advogado Constituído, Defensor Público Federal ou Representante Jurídico Federal. | Figuras 10 e 22. |
+| QC29. O processo foi encaminhado à Turma Recursal? | Parte-se do registro de Recurso Interposto e verifica-se se ocorreu Remessa à Turma Recursal. Identifica-se a Turma Recursal de destino e consulta-se a situação Processo Encaminhado à Turma Recursal produzida pela remessa. Dessa forma, informa-se o encaminhamento efetivamente registrado, sem presumir que a simples interposição já represente a remessa. | Figura 22. |
+| QC30. Qual foi o resultado do julgamento do recurso? | Localiza-se o Julgamento do Recurso e identifica-se o Acórdão criado por ele. Consulta-se o Resultado do Julgamento Recursal e verifica-se sua classificação como Recurso Provido, Recurso Parcialmente Provido, Recurso Desprovido ou Não Conhecido. Informa-se o resultado registrado. | Figura 22. |
+
+**Questões voltadas ao cidadão — QC31 a QC38:**
+
+| QC | Elementos e relações rastreados | Localização |
+| --- | --- | --- |
+| QC31. Meu caso pode ser levado ao Juizado Especial Federal? | Identifica-se a Pessoa interessada e sua Pretensão Jurídica. Levantam-se os Pedidos Processuais, a Causa de Pedir, o Valor da Causa e a Organização Federal envolvida. Esses elementos participam da Análise de Cabimento no JEF, regulada pela Regra de Competência. Consulta-se o resultado e verifica-se sua classificação como Cabível no JEF ou Não Cabível no JEF. | Figura 12. |
+| QC32. Preciso contratar advogado para iniciar a ação? | Identifica-se a Parte Processual e verifica-se se há Representação Processual. Quando houver representante, examina-se se ele atua como Representante Designado ou Advogado Constituído. Consulta-se também a Petição, que exige um Representante Processual no desenho atual. | Figuras 8, 10 e 22. |
+| QC33. Contra qual órgão ou entidade federal devo propor minha ação? | Antes do ajuizamento, identifica-se a Organização Federal à qual a Pretensão Jurídica é dirigida. Se o processo já foi iniciado, localiza-se o Processo Judicial Federal e seu Demandado. Verifica-se a classificação da entidade como União Federal, Autarquia Federal, Fundação Pública Federal ou Empresa Pública Federal. | Figuras 8, 9, 12 e 13. |
+| QC34. Quais documentos preciso reunir para apresentar meu pedido? | Localiza-se o Processo Judicial Federal e consulta-se a Instrução Documental do Processo. Identificam-se os documentos ligados a ela como Documento Necessário ao Processo. Consulta-se ainda o Documento de Petição Inicial que apresenta a Demanda. | Figuras 13 e 16. |
+| QC35. O que acontece depois que eu entro com a ação? | Parte-se do Ajuizamento e da situação Processo Instaurado. Examina-se a Determinação de Audiência e seu resultado para verificar se há Audiência Designada ou Audiência Dispensada. Quando uma avaliação registra Provas Insuficientes e necessidade de complementação, acompanha-se a Produção de Prova Complementar. Depois de registrada Prova Complementar Produzida, consulta-se a nova Análise das Provas. | Figuras 15, 18 e 20. |
+| QC36. Em que fase está meu processo? | Localizam-se as avaliações e situações do caso no momento escolhido. Consulta-se o Resultado da Análise Probatória e verifica-se se informa Provas Suficientes ou Provas Insuficientes, além da situação Apto a Julgamento ou Não Apto a Julgamento relacionada. Examina-se também o Resultado da Determinação de Audiência para identificar designação ou dispensa. Selecionam-se os registros vigentes naquele momento, sem confundir situações antigas com as atuais. | Figuras 18 e 20. |
+| QC37. Preciso comparecer a alguma audiência ou perícia? | Consulta-se a Determinação de Audiência e seu resultado para verificar se há Audiência Designada e qual Audiência de Conciliação está relacionada. Examinam-se os registros de Dever de Comparecimento à Audiência e de Dever de Comparecimento à Perícia. Para a prova pericial, consultam-se Realização de Perícia e Perícia Realizada, sem confundir um exame ocorrido com uma convocação futura. | Figuras 18 e 19. |
+| QC38. O que acontece depois que a sentença reconhece meu direito? | Localiza-se a Sentença e identifica-se a Obrigação Judicial reconhecida. Verifica-se o registro de Trânsito em Julgado e da situação Sentença Transitada em Julgado. Acompanha-se então o Cumprimento da Sentença. Quando a obrigação estiver cumprida e houver Conclusão do Cumprimento, consulta-se Cumprimento Concluído. Por fim, verifica-se o Arquivamento do Processo e a situação Processo Arquivado por Satisfação da Obrigação. | Figuras 21 e 23. |
+
+###### 4.4.2 instanciação e identidade dos indivíduos 
+
+Para complementar a matriz de rastreabilidade, foram elaborados seis cenários de instanciação com dados inteiramente fictícios. Cada cenário reúne indivíduos, classificações e relações que exemplificam um fragmento da ontologia. Os códigos utilizados são 
+
+identificadores locais do ensaio e não correspondem a processos judiciais, documentos pessoais ou registros profissionais reais. 
+
+<u>Quadro 6: Cenarios instanciados</u> 
+
+| **Cenário** | **Descrição dos dados simulados** | **Aspectos exemplificados** |
+| --- | --- | --- |
+| C1 | Pessoa Alfa demanda a Autarquia Previdenciária Simulada Alfa para implantação de benefício. A análise de cabimento tem resultado positivo informado; há tutela provisória requerida, contestação, audiência designada, conciliação frustrada, perícia, oitiva, procedência e cumprimento integral. | Pretensão Jurídica, resultado Cabível no JEF distinto do processo, pessoa física autora, representação, provas e obrigação de fazer. |
+| C2 | Microempresa Beta demanda a Empresa Pública Federal Simulada Beta. Solicita R\$ 8.000,00, obtém reconhecimento de R\$ 6.000,00 e recebe inicialmente R\$ 2.000,00, com satisfação posterior do saldo. | Microempresa autora, pedido de pagar, procedência parcial e mudança do estado de cumprimento. |
+| C3 | Empresa Gama, de pequeno porte, demanda a União em pretensão indenizatória hipotética. Após a improcedência, interpõe recurso inominado, posteriormente desprovido. | Empresa de pequeno porte autora, representação recursal, remessa à Turma Recursal, acórdão e resultado do recurso. |
+| C4 | Pessoa Delta, inicialmente por representante designado não advogado nas condições estipuladas, celebra acordo com a Fundação Pública Federal Simulada Delta para entrega de documento. | Resultado da Determinação de Audiência, designação, Dever de Comparecimento à Audiência, acordo, homologação e obrigação ainda não cumprida. |
+| C5 | Pessoa Épsilon demanda a Autarquia Simulada Épsilon. Há audiência dispensada e ausência de contestação. Uma análise inicial indica insuficiência e não aptidão; após produção complementar e nova análise, há suficiência e aptidão. | Prova Complementar Produzida como situação intermediária; mudança de resultado em dois recortes, sem julgamento ou perícia realizada estipulados. |
+| C6 | Pessoa Zeta consulta sobre mandado de segurança em caso federal, com valor de dez salários mínimos, antes de qualquer ajuizamento. A análise registra resultado negativo informado. | Pretensão Jurídica sem processo ou papéis processuais constituídos; entradas da análise, regra e resultado Não Cabível no JEF. |
+
+
+
+**Identidade e classificação dos indivíduos.** Um mesmo indivíduo pode ser classificado como Pessoa e Pessoa Física Autora no contexto de um processo. Isso não cria duas pessoas. Já a relação de representação, o documento e o ato de apresentá-lo são indivíduos distintos. O Quadro 7 explicita parte do inventário de C1. 
+
+Quadro 7: Identidade e classificação dos indivíduos. 
+
+| **Identificador** | **Classificação no** **fragmento** | **Interpretação simulada** |
+| --- | --- | --- |
+| C1-AUT | Pessoa; Pessoa Física Autora; Demandante | Pessoa Alfa no polo ativo. |
+| C1-REU | Organização; Organização Federal; Autarquia Federal; Demandado | Autarquia Previdenciária Simulada Alfa no polo passivo. |
+| C1-ADV | Pessoa; Representante Processual; Advogado Constituído | Advogada da autora. |
+| C1-REP-A | Representação Processual | Relação que media C1-AUT e C1-ADV. |
+| C1-PF | Pessoa; Representante Processual; Procurador Federal | Representante da autarquia ré. |
+| C1-REP-R | Representação Processual | Relação que media C1-REU e C1-PF. |
+| C1-PROC | Processo Judicial Federal; Processo Previdenciário; Processo Cabível no JEF | Relação processual SIM-P01; cabimento estipulado no ensaio. |
+| C1-DEM | Demanda | Pretensão de implantação de benefício simulado. |
+| C1-PRET | Pretensão Jurídica | Estado intencional atribuído à Pessoa Alfa; não é o mesmo indivíduo que C1-DEM ou C1-PROC. |
+| C1-VAL-PRET | Valor da Causa | Propriedade da pretensão avaliada, com valor informado de trinta salários mínimos. |
+| C1-ANALISAR-CAB | Análise de Cabimento no JEF | Evento regulado por C1-REG-COMP, com participação da organização, pedidos, causa e valor da pretensão. |
+| C1-CABIVEL | Resultado da Análise de Cabimento; Cabível no JEF | Situação de resultado positivo informado, distinta do papel Processo Cabível no JEF. |
+| C1-PED | Pedido de Fazer | Pedido de implantação. |
+| C1-TUT | Pedido de Tutela Provisória | Requerimento provisório, sem decisão sobre seu deferimento. |
+| C1-INI | Documento de Petição Inicial | Documento distinto do relator Petição. |
+| C1-PET | Petição | Relação que envolve a apresentação da pretensão. |
+| C1-DETERMINAR-AUD | Determinação de Audiência | Evento que resulta na designação da audiência do cenário. |
+| C1-AUD-DESIGNADA | Resultado da Determinação de Audiência; Audiência Designada | Um único resultado classificado pelo tipo geral e pelo subtipo da partição disjunta e completa. |
+| C1-AUD | Audiência de Conciliação | Evento de audiência efetivamente realizado no cenário. |
+| C1-PERICIA | Realização de Perícia | Ocorrência efetiva da perícia no cenário. |
+| C1-LAUDO | Documento; Laudo Pericial; Documento Probatório | Artefato criado pela perícia. |
+| C1-SENT | Sentença; Procedência | Documento que registra a decisão. |
+| C1-OBR | Obrigação Judicial; Obrigação de Fazer | Relação que vincula direito da autora e dever da ré. |
+| C1-DIREITO / C1-DEVER | Direito à Prestação / Dever de Prestação | Posições correlatas, partes de C1-OBR, caracterizando as respectivas partes. |
+
+
+
+<u>Quadro 8: Relaçoes entre instancias</u> 
+
+| **Fragmento de** **instâncias** | **Classes envolvidas** | **Interpretação no modelo** |
+| --- | --- | --- |
+| C1-REP-A, C1-AUT, C1-ADV | Representação Processual, Pessoa Física Autora, Advogado Constituído | Parte-se da autora C1-AUT, Pessoa Alfa. Ela é representada pela advogada C1-ADV. A relação C1-REP-A liga essas duas pessoas e registra a representação da autora. |
+| C1-PROC, C1-DEM, C1-PED, C1-TUT | Processo Judicial Federal, Demanda, Pedido de Fazer, Pedido de Tutela Provisória | Localiza-se o processo C1-PROC e a demanda C1-DEM associada a ele. A demanda possui o pedido de implantação C1-PED e o pedido provisório C1-TUT. |
+| C1-PRET, C1-AUT, C1-REU | Pretensão Jurídica, Pessoa, Organização Federal | Pessoa Alfa, identificada por C1-AUT, tem a intenção C1-PRET de obter proteção judicial. Essa pretensão é dirigida à organização federal C1-REU. A intenção, a pessoa interessada e a entidade envolvida são indivíduos distintos no exemplo. |
+| C1-REU, C1-PED, C1-TUT, C1-CAUSA, C1-VAL-PRET, C1-REG-COMP, C1-ANALISAR-CAB, C1-CABIVEL | Organização Federal, Pedido de Fazer, Pedido de Tutela Provisória, Causa de Pedir, Valor da Causa, Regra de Competência, Análise de Cabimento no JEF, Resultado da Análise de Cabimento, Cabível no JEF | Identificam-se a entidade C1-REU, os pedidos C1-PED e C1-TUT, a causa C1-CAUSA e o valor C1-VAL-PRET. Esses elementos participam da análise C1-ANALISAR-CAB, regulada por C1-REG-COMP. O evento produz o resultado C1-CABIVEL. |
+| C1-DETERMINAR-AUD, C1-AUD-DESIGNADA, C1-AUD | Determinação de Audiência, Resultado da Determinação de Audiência, Audiência Designada, Audiência de Conciliação | O ato C1-DETERMINAR-AUD produz o resultado C1-AUD-DESIGNADA, que informa a marcação da audiência. Essa designação se relaciona à audiência C1-AUD. O exemplo registra que a audiência aconteceu, distinguindo a decisão de marcá-la de sua realização. |
+| C1-PERICIA, C1-LAUDO | Realização de Perícia, Laudo Pericial, Documento Probatório | A perícia C1-PERICIA é realizada e produz o laudo C1-LAUDO. O laudo é um documento usado como prova. Ele não é o próprio exame pericial. |
+| C1-ANALISE, C1-SUF, C1-APTO | Análise das Provas, Resultado da Análise Probatória, Provas Suficientes, Apto a Julgamento | A análise C1-ANALISE produz o resultado C1-SUF, informado como Provas Suficientes. Esse resultado possibilita a situação C1-APTO. |
+| C1-APTO, C1-JULGAR, C1-SENT | Apto a Julgamento, Julgamento, Sentença, Procedência | A situação C1-APTO permite representar o início do julgamento C1-JULGAR no percurso do cenário. O julgamento produz a sentença C1-SENT, que registra a procedência do pedido. A condição de estar apto, o ato de julgar e o documento da decisão são diferentes. |
+| C1-SENT, C1-OBR, C1-AUT, C1-REU, C1-DIREITO, C1-DEVER | Sentença, Obrigação Judicial, Obrigação de Fazer, Demandante, Demandado, Direito à Prestação, Dever de Prestação | A sentença C1-SENT reconhece a obrigação C1-OBR de implantar o benefício. Essa obrigação liga a autora C1-AUT à ré C1-REU. C1-DIREITO identifica o direito da autora de exigir a implantação, e C1-DEVER identifica o dever correspondente da ré. As duas posições fazem parte da mesma obrigação, mas não são as próprias partes do processo. |
+| C1-CUMPRIR, C1-CUMPRIDA, C1-CONCLUIR | Cumprimento da Sentença, Obrigação Cumprida, Conclusão do Cumprimento | O evento C1-CUMPRIR produz a situação C1-CUMPRIDA, que registra a satisfação integral da obrigação no exemplo. Essa situação se relaciona ao ato C1-CONCLUIR, de conclusão do cumprimento. Assim, distinguem-se os atos para cumprir, o resultado alcançado e o ato de concluir essa etapa. |
+
+
+
+**Recortes temporais e cumprimento da obrigação.** Situações históricas não são automaticamente estados atuais. Em C2, o pagamento parcial não deve ser confundido com o valor pedido nem com o total reconhecido na sentença. Os valores são anotações da simulação, não um esquema monetário já implementado na ontologia. 
+
+<u>Quadro 9: Recortes temporais do cumprimento.</u> 
+
+| **Recorte** | **Obrigação** **reconhecida** | **Pagamento** **acumulado** | **Saldo** | **Situação registrada** |
+| --- | --- | --- | --- | --- |
+| C2-TP | R\$ 6.000,00 | R\$ 2.000,00 | R\$ 4.000,00 | C2-PARCIAL: Obrigação Parcialmente Cumprida, com prosseguimento do cumprimento. |
+| C2-TF | R\$ 6.000,00 | R\$ 6.000,00 | R\$ 0,00 | C2-CUMPRIDA: Obrigação Cumprida; C2-CONCLUIDO: Cumprimento Concluído. |
+
+
+
+O total pago no recorte final é acumulado, não uma parcela a somar novamente ao valor anterior. O cenário não informa arquivamento de C2, nem simula integralmente requisições de pagamento. Uma resposta sobre C2-TP não pode usar a satisfação ocorrida somente em C2-TF. 
+
+<u>Quadro 9: Quadro de instanciação recurso, acordo e dever de comparecimento</u> 
+
+| **Fragmento de** **instâncias** | **Classes envolvidas** | **Interpretação no modelo** |
+| --- | --- | --- |
+| C3-REL-REC, C3-AUT, C3-SENT | Relação Recursal, Empresa de Pequeno Porte Autora, Sentença Recorrida | A relação C3-REL-REC liga a autora C3-AUT à sentença C3-SENT que ela questiona. |
+| C3-INTERPOR, C3-RECURSO, C3-SENT | Interposição de Recurso, Recurso Inominado, Sentença Recorrida | A autora apresenta o recurso no evento C3-INTERPOR. Esse ato cria o documento C3-RECURSO, que questiona a sentença C3-SENT. O ato de recorrer, o recurso escrito e a decisão questionada não são o mesmo indivíduo. |
+| C3-REMETER, C3-TURMA, C3-JULGAR-REC, C3-ACORDAO, C3-DESPROVIDO | Remessa à Turma Recursal, Turma Recursal, Julgamento do Recurso, Acórdão, Recurso Desprovido | O recurso é encaminhado à turma C3-TURMA pelo ato C3-REMETER. Depois, ocorre o julgamento C3-JULGAR-REC, que produz o acórdão C3-ACORDAO e o resultado C3-DESPROVIDO. |
+| C4-DETERMINAR-AUD, C4-AUD-DESIGNADA, C4-AUD | Determinação de Audiência, Resultado da Determinação de Audiência, Audiência Designada, Audiência de Conciliação | O ato C4-DETERMINAR-AUD produz o resultado C4-AUD-DESIGNADA. Esse resultado informa que a audiência foi marcada e se relaciona ao evento C4-AUD. O cenário registra que a audiência efetivamente ocorreu. |
+| C4-DEVER-COMP, C4-AUD | Dever de Comparecimento à Audiência, Audiência de Conciliação | C4-DEVER-COMP representa o dever de comparecimento. No desenho atual, ele está ligado ao evento C4-AUD, e não à pessoa obrigada a comparecer. O exemplo mantém essa ligação para mostrar a limitação. |
+| C4-CELEBRAR, C4-ACORDO, C4-AUT, C4-REU | Celebração de Acordo, Acordo Processual, Demandante, Demandado | No evento C4-CELEBRAR, a autora C4-AUT e a ré C4-REU chegam a um acordo. Esse evento cria C4-ACORDO, a relação entre as partes que aceitaram seus termos. |
+| C4-JULGAR, C4-SENT, C4-OBR | Julgamento, Sentença, Sentença Homologatória, Obrigação Judicial, Obrigação de Entregar Coisa | O julgamento C4-JULGAR produz a sentença C4-SENT, que aprova o acordo no exemplo. A sentença registra a obrigação C4-OBR de entregar um documento. O ato de julgar, a sentença e a obrigação são representados separadamente. |
+
+
+
+Quadro 10: Quadro de instanciação recurso, acordo e dever de comparecimento 
+
+| **Recorte** | **Classes envolvidas** | **Interpretação no modelo** |
+| --- | --- | --- |
+| C5-TI — Primeira análise, marco 4 | Análise das Provas, Resultado da Análise Probatória, Provas Insuficientes, Não Apto a Julgamento | A primeira análise, C5-ANALISE, produz C5-INSUF, que registra provas insuficientes. Esse resultado está associado à situação C5-NAO-APTO. Neste momento, o exemplo aponta necessidade de complementação, mas a prova adicional ainda não foi produzida. |
+| C5-TC — Nova análise, marco 6 | Produção de Prova Complementar, Prova Complementar Produzida, Análise das Provas, Resultado da Análise Probatória, Provas Suficientes, Apto a Julgamento | No marco 5, o evento C5-COMPLEMENTAR produz a situação C5-COMPLEMENTO-PRODUZIDO. No marco 6, a nova análise C5-REANALISE produz C5-SUF, que registra provas suficientes. O exemplo informa então a situação C5-APTO. A avaliação anterior permanece no histórico, mas não é usada como a situação atual desse recorte. |
+
+
+
+O total pago no recorte final é acumulado, não uma parcela a somar novamente ao valor anterior. O cenário não informa arquivamento de C2, nem simula integralmente requisições de pagamento. Uma resposta sobre C2-TP não pode usar a satisfação 
+
+###### 4.4.3 Resultados da avaliação 
+
+Escrever o que a avaliacao me fez mudar no resultado 
+
+# 5 Conclusão 
+
+Este capítulo retoma os objetivos da pesquisa, sintetiza as contribuições da ontologia de referência e discute o alcance dos resultados. A avaliação permite identificar quais fragmentos estão representados e quais condições ainda precisam ser explicitadas antes de uma validação mais ampla ou de uma implementação operacional. 
+
+##### 5.1 Considerações Finais 
+
+O presente trabalho teve como objetivo desenvolver e avaliar documentalmente uma ontologia de referência para o Juizado Especial Federal Cível. Como resultado, foi construída uma organização conceitual do domínio, distinguindo sujeitos, papéis processuais, documentos, relações, eventos e situações, abrangendo desde a análise de cabimento até o cumprimento da decisão judicial. 
+
+A identificação dos conceitos foi acompanhada de um dicionário de termos, com definições fundamentadas em fontes normativas e ontológicas. Os requisitos foram organizados em 38 questões de competência, incluindo questões formuladas sob a perspectiva do cidadão, permitindo relacionar as necessidades do domínio aos elementos representados e identificar limitações quanto à interpretação de regras jurídicas. 
+
+A modelagem resultou em 16 diagramas de classes e um diagrama de pacotes, organizados em componentes estruturais e procedimentais. A utilização da UFO, juntamente com o reúso de padrões conceituais da UFO-L e da OntoRS, contribuiu para a fundamentação ontológica e a organização das relações entre os conceitos. A aquisição do conhecimento teve como principais referências as Leis nº 10.259/2001 e nº 9.099/1995, além da Constituição Federal, do CPC e da literatura especializada. 
+
+A avaliação foi realizada por meio de seis cenários fictícios, contendo 169 indivíduos, 190 relações declaradas e 13 recortes. Os cenários permitiram verificar a capacidade representativa do modelo, identificar lacunas e distinguir informações expressamente modeladas de conclusões que dependem de regras jurídicas adicionais. Entretanto, essa avaliação não comprova a consistência formal ou a validade jurídica integral da ontologia. 
+
+Entre as principais contribuições, destacam-se a organização modular do domínio, a explicitação de distinções ontológicas, a documentação do reúso e a rastreabilidade entre conceitos, requisitos e cenários. Também foram identificados pontos que necessitam de refinamento, especialmente na classificação de determinados conceitos, na representação de deveres processuais e nas relações entre eventos e situações, conforme discutido na Seção 4.4.4. 
+
+##### 5.2 Trabalhos Futuros 
+
+Como trabalhos futuros, propõe-se o aprimoramento da ontologia de referência desenvolvida, por meio da correção das limitações identificadas, da ampliação dos conceitos representados e da validação com especialistas jurídicos. Posteriormente, pretende-se evoluir o modelo para uma ontologia operacional, utilizando linguagens como OWL com apoio de gUFO, de modo a permitir a interpretação computacional dos conceitos, relações e restrições do domínio, possibilitando a realização de consultas, verificações de consistência e apoio à aplicação de regras jurídicas. 
+
+A partir dessa evolução, pretende-se desenvolver um sistema de apoio à elaboração e ao protocolo de demandas judiciais e ao acompanhamento processual no Juizado Especial Federal Cível. O sistema deverá utilizar o conhecimento estruturado na ontologia para orientar o cidadão no preenchimento de informações, na organização de documentos e na compreensão dos requisitos processuais, além de permitir o acompanhamento das movimentações e etapas do processo. Futuramente, poderão ser investigadas integrações com os sistemas eletrônicos do Poder Judiciário, buscando contribuir para a redução de erros e para uma interação mais acessível e compreensível entre o cidadão e a Justiça Federal.). 
+
+# Referências 
+
+BRASIL. **Lei nº 9.099, de 26 de setembro de 1995** . Dispõe sobre os Juizados Especiais Cíveis e Criminais e dá outras providências. Brasília, DF: Presidência da República, 1995. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9099.htm. Acesso em: 20 out. 2026. 
+
+BRASIL. **Lei nº 10.259, de 12 de julho de 2001** . Dispõe sobre a instituição dos Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal. Brasília, DF: Presidência da República, 2001. Disponível em: 
+
+<u>https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10259.htm. Acesso em: 20 out. 2026.</u> 
+
+FALBO, Ricardo de Almeida. SABiO: Systematic Approach for Building Ontologies. In: JOINT WORKSHOP ONTO.COM/ODISE ON ONTOLOGIES IN CONCEPTUAL MODELING AND INFORMATION SYSTEMS ENGINEERING, 1., 2014. **Proceedings [...]** . CEUR Workshop Proceedings, v. 1301, 2014. Disponível em: https://ceur-ws.org/Vol- <u>1301/ontocomodise2014_2.pdf. Acesso em: 20 out. 2026.</u> 
+
+GRIFFO, Cristine Leonor Pereira Griffo. **UFO-L** : uma ontologia núcleo de aspectos jurídicos construída sob a perspectiva das relações jurídicas. 2018. Tese (Doutorado em Informática) – Centro Tecnológico, Universidade Federal do Espírito Santo, Vitória, 2018. Disponível em: <u>https://repositorio.ufes.br/handle/10/9875. Acesso em: 21 out. 2026.</u> 
+
+GUIZZARDI, Giancarlo. **Ontological foundations for structural conceptual models** . 2005. 416 p. Tese (Doutorado) – University of Twente, Enschede, 2005. (Telematica Instituut Fundamental Research Series, n. 15). 
+
+GUIZZARDI, Giancarlo; ALMEIDA, João Paulo; GUIZZARDI, Renata S. S.; BARCELLOS, Monalessa Perini; FALBO, Ricardo. **Ontologias de fundamentação, modelagem conceitual e interoperabilidade semântica** . Documento complementar à apresentação no Ibero-American Meeting on Ontological Research, Gramado, 2011. 
+
+GUIZZARDI, Giancarlo; WAGNER, Gerd; FALBO, Ricardo de Almeida; GUIZZARDI, Renata S. S.; ALMEIDA, João Paulo A. Towards ontological foundations for the conceptual modeling of events. In: **Conceptual Modeling** – ER 2013. Berlin: Springer, 2013. p. 327–341. 
+
+GUIZZARDI, Giancarlo; WAGNER, Gerd; ALMEIDA, João Paulo Andrade; GUIZZARDI, Renata S. S. Towards ontological foundations for conceptual modeling: the Unified Foundational Ontology (UFO) story. **Applied Ontology** , v. 10, n. 3–4, p. 259–271, 2015. 
+
+RIBEIRO, Luiz Alberto Pereira; SANZOVO, Mariana Resende. Juizado especial cível federal como instrumento facilitador do acesso à justiça. **Revista do Direito Público** , Londrina, v. 6, n. 2, p. 142–159, 2011. 
+
+SCHERP, Ansgar; SAATHOFF, Carsten; FRANZ, Thomas; STAAB, Steffen. **Designing core ontologies** . Applied Ontology, v. 6, n. 3, p. 177–221, 2011. 
+
+ZORZANELLI COSTA, Melissa; GUIZZARDI, Giancarlo; ALMEIDA, João Paulo A. On capturing legal knowledge in ontology and process models combined: the case of an appeal 
+
+process. In: FRANCESCONI, E. et al. (ed.). **Legal Knowledge and Information Systems** . Amsterdam: IOS Press, 2022. p. 267–272. 
+
+ZORZANELLI COSTA, Melissa; VIEIRA, Thiago Baiense Peçanha; BOURGUET, Jean-Rémi; GUIZZARDI, Giancarlo; ALMEIDA, João Paulo A. Enhancing access to legal data through ontology-based representation: a case study with Brazilian judicial appeals. In: SEMINAR ON ONTOLOGY RESEARCH IN BRAZIL (ONTOBRAS), 16., 2023, Brasília. **Proceedings of the XVI Seminar on Ontology Research in Brazil and VII Doctoral and Masters Consortium on Ontologies** . CEUR Workshop Proceedings, 2023. p. 79–92. 
+
+#### Anexo A – Dicionario de Termos 
+
+O dicionário reúne 167 termos da proposta com definições de trabalho e fontes de apoio identificáveis. A indicação de uma lei fundamenta o conteúdo jurídico, mas não valida automaticamente o estereótipo ou a relação desenhada. As definições são sínteses ou adaptações, não transcrições literais das obras citadas. 
+
+<u>Quadro 5: Dicionario de Termos</u> 
+
+| Termo | Descrição | Fonte |
+| --- | --- | --- |
+| Acórdão | Documento que registra a decisão tomada em conjunto pelos juízes da Turma Recursal. | Código de Processo Civil |
+| Acordo Processual | Entendimento aceito pelas partes para resolver o conflito. É diferente da proposta de acordo e da decisão do juiz que o aprova. | Lei nº 10.259/2001 |
+| Advogado Constituído | Advogado escolhido pela parte para representá-la no processo. | Lei nº9.099/1995 |
+| Advogado da União | Advogado público que representa a União nos assuntos de sua responsabilidade. | Constituição Federal |
+| Advogado de Empresa Pública Federal | Advogado que representa uma empresa pública federal no processo. | Lei nº 10.259/2001 |
+| Ajuizamento | Ato de levar um pedido à Justiça para iniciar uma ação. Seus efeitos devem ser considerados junto ao registro da petição. | Código de Processo Civil |
+| Análise das Provas | Exame das provas pelo juiz para verificar o que elas demonstram e se é preciso produzir outras. | Lei nº 9.099/1995 |
+| Análise de Cabimento no JEF | Verificação de que um caso pode ser apresentado ao Juizado Especial Federal, considerando as regras aplicáveis. Pode ocorrer antes da ação. | Lei nº 10.259/2001 |
+| Apresentação de Contestação | Ato em que o réu apresenta sua defesa, por escrito ou oralmente. Apresentar a defesa não significa que ela foi aceita. | Lei nº9.099/1995 |
+| Apresentação de Propostas de Acordo | Ato de apresentar sugestões para resolver o conflito por acordo. A apresentação não significa que as sugestões foram aceitas. | Lei nº 9.099/1995; Validação com especialista |
+| Apto a Julgamento | Situação em que o processo reúne condições para receber uma decisão. Não significa que o autor ganhará a ação. | Código de Processo Civil |
+| Arquivamento do Processo | Ato de enviar o processo ao arquivo. Neste trabalho, é tratado o arquivamento após o cumprimento da obrigação. | Código de Processo Civil |
+| Ato Processual | Ação praticada na formação ou no andamento do processo, como citar o réu, apresentar defesa ou realizar uma audiência. | Lei nº 9.099/1995 |
+| Audiência de Conciliação | Encontro destinado a buscar um acordo entre as partes. Pode terminar com ou sem acordo. | Lei nº 9.099/1995; Validação com especialista |
+| Audiência Designada | Situação em que uma audiência foi marcada, mas ainda não necessariamente aconteceu. | Lei nº 9.099/1995, conceito adaptado a ontologia |
+| Audiência Dispensada | Situação em que se decidiu não realizar a audiência naquele caso. | Validação com especialista |
+| Ausência de Contestação | Situação em que o réu não apresentou defesa no prazo ou momento aplicável. A falta de registro, sozinha, não comprova essa ausência. | Lei nº 9.099/1995; Validação com especialista |
+| Ausência de Recurso | Situação em que não foi apresentado recurso dentro do prazo aplicável, consideradas as regras de contagem. | Lei nº 9.099/1995 |
+| Autarquia Federal | Entidade criada por lei, com existência jurídica própria, para realizar atividades da Administração Pública Federal. | Lei nº 10.259/2001 |
+| Auxiliar da Justiça | Pessoa que ajuda na realização das atividades do processo. Nem todo auxiliar é servidor do Judiciário. | Código de Processo Civil |
+| Cabível no JEF | Resultado da análise que indica que o caso pode tramitar no Juizado Especial Federal. É diferente de um processo já iniciado. | Lei nº 10.259/2001 |
+| Causa de Pedir | Fatos e razões jurídicas usados para justificar o que se pede à Justiça. | Lei nº9.099/1995 |
+| Celebração de Acordo | Momento em que as partes aceitam os termos de um acordo. É diferente da aprovação desse acordo pelo juiz. | Lei nº 9.099/1995 |
+| Citação | Ato de chamar formalmente o réu para participar do processo e apresentar sua defesa. | Lei nº 9.099/1995 |
+| Competência Jurisdicional | Atribuição que permite a um órgão judicial analisar e julgar determinado caso, conforme as regras legais. | Lei nº 10.259/2001; Griffo 2018 |
+| Comprovante de Protocolo | Documento que comprova o registro de um pedido e informa dados como identificação, data e horário. | Código de Processo Civil |
+| Conciliação Frustada | Situação em que houve tentativa de conciliação, mas as partes não chegaram a um acordo. | Lei nº 9.099/1995 |
+| Conciliação Realizada | Neste modelo, situação em que a tentativa de conciliação terminou com acordo. Não significa apenas que a audiência aconteceu. | Lei nº 9.099/1995 |
+| Conciliador | Pessoa que ajuda as partes a conversar e buscar um acordo. | Lei nº9.099/1995 |
+| Conclusão do Cumprimento | Ato que encerra as atividades de cumprimento após a obrigação ser totalmente atendida, no caso representado. | Lei nº 10.259/2001 |
+| Contestação | Defesa apresentada pelo réu. No modelo, o termo representa o documento escrito ou o registro da defesa oral. | Lei nº 9.099/1995 |
+| Contestação Apresentada | Situação em que o réu já apresentou sua defesa. Isso não informa, sozinho, se ela foi apresentada corretamente ou aceita. | Lei nº 9.099/1995 |
+| Cumprimento Concluído | Situação em que as atividades de cumprimento foram encerradas. Outras pendências do processo ainda precisam ser verificadas. | 10.259/2001 |
+| Cumprimento da Sentença | Conjunto de atos para colocar em prática o que a sentença determinou. O início dessa etapa não significa que a obrigação foi cumprida. | Lei nº 10.259/2001 |
+| Decurso do Prazo de Contestação | Término do prazo para apresentar defesa. O prazo pode terminar com ou sem defesa apresentada. | Elaboração do autor |
+| Decurso do Prazo Recursal | Término do prazo para apresentar recurso, conforme as regras de contagem aplicáveis. | Lei nº 9.099/1995 |
+| Defensor Público Federal | Membro da Defensoria Pública da União que presta assistência jurídica e representa as pessoas atendidas pela instituição. | Constituição Federal |
+| Demanda | Pedido levado à Justiça, formado pelo que se deseja obter e pelos fatos e razões que o justificam. Não é o próprio processo nem a petição. | Lei nº 9.099/1995 |
+| Demanda Protocolizada | Situação em que o pedido foi registrado no órgão judicial. | Lei nº9.099/1995 |
+| Demandado | Pessoa ou entidade contra a qual a ação é proposta. Neste trabalho, corresponde às entidades federais admitidas como rés. | Lei nº 10.259/2001; Validação com especialista |
+| Demandado Citado | Situação em que o réu já foi formalmente chamado para participar do processo. | Lei nº 10.259/2001; Validação com especialista |
+| Demandante | Pessoa ou organização que apresenta o pedido à Justiça, ocupando o lado do autor no processo. | Lei nº 10.259/2001; Validação com especialista |
+| Demora Excessiva | Situação em que a Administração demora a responder além do tempo considerado aceitável para aquele caso. | Elaboração do autor |
+| Determinação de Audiência | Ato que define se uma audiência será marcada ou dispensada, conforme as condições do caso. | Validação com especialista |
+| Dever de Comparecimento à Audiência | Obrigação de uma pessoa de comparecer à audiência, quando isso for exigido pelas regras e pela comunicação recebida. | Giffo 2018 |
+| Dever de Comparecimento à Perícia | Obrigação de uma pessoa de comparecer ao exame pericial, quando seu comparecimento for exigido. | Giffo 2018 |
+| Dever de Prestação | Dever de realizar o que é devido a outra pessoa ou entidade, como pagar, entregar algo, fazer ou deixar de fazer alguma coisa. | Giffo 2018 |
+| Direito à Prestação | Direito de exigir que outra pessoa ou entidade cumpra o que lhe é devido. | Giffo 2018 |
+| Documento | Registro de informações que pode ser usado para apresentar um pedido, comprovar fatos ou registrar atos e decisões do processo. | Dicionario |
+| Documento de Petição Inicial | Documento que apresenta o pedido à Justiça, seus fatos e suas razões. Também pode registrar um pedido feito oralmente. | Lei nº 9.099/1995 |
+| Documento de Requerimento Administrativo | Documento que registra ou comprova um pedido feito à Administração Pública. | Ribeiro e Sanzovo (2011) |
+| Documento Juntado | Situação em que um documento já foi incluído nos registros do processo. | Código de Processo Civil |
+| Documento Necessário ao Processo | Documento cuja apresentação é exigida para o caso. Nem todo documento útil como prova é obrigatório para iniciar a ação. | Código de Processo Civil |
+| Documento Probatório | Documento usado como prova de um fato importante para o processo. | Lei nº9.099/1995 |
+| Empresa de Pequeno Porte Autora | Empresa de pequeno porte que apresenta uma ação. Sua participação no processo não é o que define seu porte. | Lei nº 10.259/2001 |
+| Empresa Pública Federal | Empresa integrante da Administração Pública Federal, com existência jurídica própria, constituída como empresa pública. | Lei nº 10.259/2001 |
+| Extinção sem Resolução do Mérito | Decisão que encerra o processo sem analisar se o pedido principal deve ser aceito ou rejeitado. No modelo, identifica o documento dessa sentença. | Código de Processo Civil |
+| Fundação Pública Federal | Entidade da Administração Pública Federal criada para realizar atividades de interesse público, conforme o regime aplicável. | Lei nº 10.259/2001 |
+| Improcedência | Resultado em que o juiz analisa e rejeita o pedido do autor. No modelo, classifica a sentença que registra esse resultado. | Código de Processo Civil |
+| Indeferimento Administrativo | Situação em que a Administração Pública rejeita um pedido apresentado a ela. | Elaboração do autor |
+| Instrução Documental do Processo | Relação que reúne o processo e os documentos usados para apresentar e esclarecer o caso. | Lei nº 10.259/2001 |
+| Interposição de Recurso | Ato de apresentar um recurso para pedir a revisão de uma decisão. É diferente do julgamento desse recurso. | Lei nº 9.099/1995 |
+| JEF Competente | Juizado Especial Federal que tem atribuição legal para analisar e julgar o caso considerado. | Lei nº 10.259/2001 |
+| Juiz | Pessoa que exerce a função de conduzir o processo e julgar a causa. Não se confunde com o órgão judicial em que atua. | Lei nº 9.099/1995 |
+| Juizado Especial Federal | Órgão da Justiça Federal que julga as causas previstas em sua legislação. Neste trabalho, são tratadas as causas cíveis. | Lei nº 10.259/2001 |
+| Julgamento | Ato em que o juiz ou órgão judicial analisa e decide uma questão. É diferente do documento que registra a decisão. | Lei nº 9.099/1995 |
+| Julgamento do Recurso | Ato em que o órgão responsável verifica se pode examinar o recurso e, quando possível, decide o pedido de revisão. | Lei nº9.099/1995 |
+| Juntada de Documento | Ato de incluir um documento nos registros do processo. | Código de Processo Civil |
+| Laudo Pericial | Documento em que o perito apresenta o exame realizado, suas análises e suas conclusões. | Lei nº 10.259/2001 |
+| Microempresa Autora | Microempresa que apresenta uma ação na Justiça. | Lei nº10.259/2001 |
+| Não Apto a Julgamento | Situação em que a avaliação do caso aponta a necessidade de outras providências antes da decisão. Não decorre de qualquer falta de prova. | Código de Processo Civil |
+| Não Cabível no JEF | Resultado da análise que indica que o caso não pode tramitar no Juizado Especial Federal. O pedido ainda pode ser cabível em outro procedimento. | Lei nº 10.259/2001 |
+| Não Conhecido | Resultado em que o recurso não é examinado quanto ao pedido de revisão porque algum requisito necessário não foi atendido. | Lei nº 9.099/1995 |
+| Norma Jurídica | Regra ou princípio do Direito que orienta condutas, atribuições e consequências. É diferente do texto usado para expressá-lo. | Griffo 2018 |
+| Obrigação Cumprida | Situação em que tudo o que era devido naquela obrigação já foi realizado. | Lei nº10.259/2001 |
+| Obrigação de Entregar Coisa | Dever de entregar determinado bem ou objeto, conforme a decisão ou o acordo. | Lei nº 10.259/2001 |
+| Obrigação de Fazer | Dever de realizar uma ação, conforme a decisão ou o acordo. | Lei nº10.259/2001 |
+| Obrigação de Não Fazer | Dever de deixar de praticar uma ação, conforme a decisão ou o acordo. | Lei nº10.259/2001 |
+| Obrigação de Pagar | Dever de pagar uma quantia definida na decisão ou no acordo. O valor devido pode ser diferente do valor pedido ou já pago. | Lei nº 10.259/2001 |
+| Obrigação Judicial | Relação em que uma parte tem o direito de exigir e a outra tem o dever de cumprir algo reconhecido ou determinado pela Justiça. | Griffo 2018 |
+| Obrigação Não Cumprida | Situação em que o que era devido ainda não foi realizado, no momento considerado. | Lei nº 10.259/2001 |
+| Obrigação Parcialmente Cumprida | Situação em que apenas parte do que era devido foi realizada. | Lei nº 10.259/2001 |
+| Oficial de Justiça | Servidor responsável por cumprir ordens e diligências do juiz, como realizar citações e entregar comunicações. | Código de Processo Civil |
+| Oitiva de Testemunha | Ato de ouvir uma testemunha sobre fatos importantes para o processo. | Lei nº9.099/1995 |
+| Organização | Entidade formada para realizar atividades, distinta das pessoas que a integram ou representam. | Griffo 2018 |
+| Organização Federal | Organização ligada à esfera federal. Essa classificação, sozinha, não significa que ela possa ser ré no Juizado Especial Federal. | Lei nº 10.259/2001 |
+| Órgão Judicial | Unidade do Poder Judiciário responsável por atividades da Justiça. É diferente da pessoa do juiz. | Lei nº 10.259/2001 |
+| Órgão Julgador | Órgão responsável por analisar e decidir o caso. Seu uso no modelo precisa ser alinhado ao termo Órgão Judicial. | Elaboração do autor |
+| Parte Processual | Pessoa ou entidade que ocupa um dos lados do processo, como autor ou réu. | Zorzanelli Costa 2023 |
+| Participante Processual | Pessoa ou entidade que participa do processo, como parte, representante, auxiliar ou testemunha. | Griffo 2018 |
+| Pedido de Fazer | Pedido para que a Justiça determine a realização de uma ação. | Lei nº9.099/1995 |
+| Pedido de Não Fazer | Pedido para que a Justiça determine que alguém deixe de praticar uma ação. | Lei nº9.099/1995 |
+| Pedido de Outra Providência | Pedido de uma medida que não foi detalhada nas outras categorias do modelo. | Lei nº9.099/1995 |
+| Pedido de Pagar | Pedido para que a Justiça determine o pagamento de uma quantia. | Lei nº9.099/1995 |
+| Pedido de Tutela Provisória | Pedido de proteção judicial temporária. Fazer esse pedido não significa que a medida foi concedida. | Lei nº 10.259/2001 |
+| Pedido Processual | Aquilo que se solicita à Justiça no processo. É diferente do documento usado para apresentar a solicitação. | Lei nº 9.099/1995 |
+| Perícia Realizada | Situação em que o exame técnico ou científico já foi concluído. | Lei nº10.259/2001 |
+| Perito | Profissional que examina uma questão técnica ou científica e apresenta informações para ajudar na análise do caso. | Lei nº 10.259/2001 |
+| Pessoa | Ser humano que pode exercer diferentes papéis no processo. No modelo, as pessoas jurídicas são tratadas como organizações. | Griffo 2018 |
+| Pessoa Física Autora | Pessoa que apresenta uma ação em seu próprio nome, ocupando o lado do autor no processo. | Lei nº 10.259/2001 |
+| Petição | Neste modelo, relação criada em torno da apresentação do pedido à Justiça. É diferente do documento de petição e não exige representante em toda situação inicial. | Zorzanelli Costa 2023 |
+| Peticionamento | Ato de preparar e apresentar um pedido à Justiça. | Lei nº9.099/1995 |
+| Poder Jurisdicional | Poder atribuído ao órgão judicial para exercer a função de julgar e decidir os casos de sua responsabilidade. | Griffo 2018 |
+| Prazo de Contestação em Curso | Situação em que o prazo para apresentar a defesa está em andamento. | Elaboração do autor |
+| Prazo Recursal | Tempo disponível para apresentar um recurso, contado conforme as regras aplicáveis. | Lei nº 9.099/1995 |
+| Pretensão Jurídica | No modelo, intenção da pessoa de obter uma proteção ou providência da Justiça. Essa intenção não comprova que ela tenha o direito alegado. | Lei nº 10.259/2001 |
+| Procedência | Resultado em que o juiz aceita todo o pedido considerado. No modelo, classifica a sentença que registra esse resultado. | Código de Processo Civil |
+| Procedência Parcial | Resultado em que o juiz aceita apenas parte do que foi pedido. No modelo, classifica a sentença que registra esse resultado. | Código de Processo Civil |
+| Processo Arquivado por Satisfação da Obrigação | Situação em que o processo foi arquivado após o cumprimento das obrigações e a verificação de outras pendências. | Código de Processo Civil |
+| Processo Assistencial | Processo que trata de um direito ou benefício da assistência social. Nem todo caso desse tipo pode tramitar no Juizado Especial Federal. | Ribeiro e Sanzovo (2011) |
+| Processo Cabível no JEF | Processo já iniciado que atende às condições legais para tramitar no Juizado Especial Federal. | Lei nº 10.259/2001 |
+| Processo Encaminhado à Turma Recursal | Situação em que o processo foi enviado à Turma Recursal para análise do recurso. | Lei nº 9.099/1995 |
+| Processo FGTS | Processo sobre direitos ou valores do Fundo de Garantia do Tempo de Serviço. Não é necessariamente uma ação de indenização. | Ribeiro e Sanzovo (2011) |
+| Processo Habitacional | Processo sobre moradia, financiamento ou contrato habitacional. Seu assunto não garante, sozinho, que o caso possa tramitar no Juizado Especial Federal. | Elaboração do autor |
+| Processo Indenizatório | Processo em que se pede reparação por um dano ou prejuízo. | Lei nº10.259/2001 |
+| Processo Instaurado | Situação em que o processo já foi iniciado perante a Justiça. | Lei nº9.099/1995 |
+| Processo Judicial Federal | Neste modelo, relação entre os envolvidos em uma demanda apresentada à Justiça Federal. Os atos de andamento do processo são representados separadamente. | Zorzanelli Costa 2023 |
+| Processo Previdenciário | Processo sobre direitos previdenciários, como benefícios da Previdência Social. Nem todo caso desse tipo pode tramitar no Juizado Especial Federal. | Lei nº 10.259/2001 |
+| Procurador da Fazenda Nacional | Representante da União nos assuntos fiscais e tributários que são de sua responsabilidade. | Constituição Federal |
+| Procurador Federal | Representante jurídico de autarquias e fundações públicas federais, conforme suas atribuições. | Lei nº 10.259/2001 |
+| Produção de Prova | Atos realizados para obter informações e demonstrar fatos importantes para o processo. Não é necessário usar todos os tipos de prova em cada caso. | Lei nº 9.099/1995 |
+| Produção de Prova Complementar | Produção de provas adicionais quando isso for necessário e permitido no caso. | Código de Processo Civil |
+| Proposta de Acordo | Documento que apresenta os termos sugeridos para resolver o conflito. Não significa que o acordo já foi aceito. | Lei nº 9.099/1995 |
+| Prosseguimento do Cumprimento | Continuação dos atos necessários para cumprir o que ainda está pendente da obrigação. | Lei nº 10.259/2001 |
+| Protocolização | Ato de registrar formalmente um pedido no órgão judicial. | Lei nº9.099/1995 |
+| Prova Complementar Produzida | Situação em que a prova adicional já foi produzida e pode ser analisada. Isso não significa que ela resolveu todas as dúvidas. | Código de Processo Civil |
+| Provas Insuficientes | Resultado da análise que aponta que as provas não esclarecem suficientemente os fatos examinados. Isso não impede todo tipo de julgamento. | Código de Processo Civil |
+| Provas Suficientes | Resultado da análise que aponta que as provas disponíveis permitem decidir as questões examinadas. Não significa que o autor ganhará a ação. | Código de Processo Civil |
+| Realização de Perícia | Ato de realizar um exame técnico ou científico para esclarecer uma questão do processo. | Lei nº 10.259/2001 |
+| Recurso Desprovido | Resultado em que o pedido de revisão é analisado e rejeitado, mantendo-se a decisão nos pontos examinados. | Lei nº 9.099/1995 |
+| Recurso Inominado | Recurso usado para pedir a revisão de uma sentença do Juizado nas hipóteses previstas em lei. No modelo, representa o documento apresentado. | Lei nº 9.099/1995 |
+| Recurso Interposto | Situação em que um recurso já foi apresentado. Não significa que ele foi admitido ou aceito. | Lei nº 9.099/1995 |
+| Recurso Parcialmente Provido | Resultado em que apenas parte do pedido feito no recurso é aceita. | Lei nº 9.099/1995 |
+| Recurso Provido | Resultado em que o pedido feito no recurso é aceito, nos termos da decisão. | Lei nº9.099/1995 |
+| Regra de Competência | Regra que define qual órgão judicial pode analisar e julgar um caso. | Griffo 2018 |
+| Regra de Prazo Recursal | Regra que define o tempo e a forma de contagem do prazo para apresentar um recurso. | Griffo 2018 |
+| Regra Jurídica | Norma do Direito que estabelece o que se aplica quando certas condições são atendidas. É diferente do texto que a expressa. | Griffo 2018 |
+| Relação Jurídico-Processual | Vínculo jurídico entre os participantes de um processo. Sua ligação com Processo Judicial Federal ainda precisa ser detalhada no modelo. | Griffo 2018 |
+| Relação Recursal | Vínculo relacionado ao pedido de revisão de uma decisão. No desenho atual, liga a parte que recorre à sentença questionada. | Griffo 2018 |
+| Remessa à Turma Recursal | Ato de enviar o recurso ou o processo à Turma Recursal responsável por examiná-lo. | Lei nº 9.099/1995 |
+| Representação Processual | Relação entre uma parte e a pessoa autorizada a atuar em seu nome no processo. | Lei nº 10.259/2001 |
+| Representação Recursal | Representação de uma parte durante a fase de recurso, observada a exigência de advogado. | Lei nº 9.099/1995 |
+| Representante Designado | Pessoa indicada por escrito para representar uma parte nas situações permitidas. Pode ser advogado ou não, conforme a fase e as regras aplicáveis. | Lei nº 10.259/2001 |
+| Representante Jurídico Federal | Pessoa que representa juridicamente uma entidade federal, conforme suas atribuições. | Lei nº 10.259/2001 |
+| Representante Processual | Pessoa que atua em nome de uma parte no processo, dentro dos poderes que possui. | Griffo 2018 |
+| Requerimento Administrativo | Ato de fazer um pedido à Administração Pública. Sua necessidade antes da ação depende do caso. | Ribeiro e Sanzovo (2011) |
+| Resistência Administrativa | Situação em que a Administração se opõe ao pedido do interessado. Não deve ser presumida apenas porque houve demora. | Elaboração do autor |
+| Resultado da Análise de Cabimento | Conclusão da avaliação sobre a possibilidade de o caso tramitar no Juizado Especial Federal. | Lei nº 10.259/2001 |
+| Resultado da Análise Probatória | Conclusão da análise das provas disponíveis em determinado momento do processo. | Código de Processo Civil |
+| Resultado da Determinação de Audiência | Resultado da decisão de marcar ou dispensar uma audiência. | Validação com especialista |
+| Resultado do Cumprimento | Verificação de quanto da obrigação já foi cumprido em determinado momento. | Lei nº 10.259/2001 |
+| Resultado do Julgamento Recursal | Resultado da decisão sobre o recurso, como sua aceitação, rejeição ou não conhecimento. | Lei nº 9.099/1995 |
+| Sentença | Documento que registra a decisão do juiz ao encerrar a análise da causa ou a execução. É diferente do ato de julgar. | Código de Processo Civil |
+| Sentença Homologatória | Neste trabalho, sentença em que o juiz aprova um acordo entre as partes. | Lei nº9.099/1995 |
+| Sentença Recorrida | Sentença que está sendo questionada por meio de um recurso. Continua sendo a mesma sentença, agora nessa condição. | Lei nº 9.099/1995 |
+| Sentença Transitada em Julgado | Situação em que a sentença não pode mais ser questionada por recurso. Os efeitos sobre o pedido dependem do tipo de decisão. | Código de Processo Civil |
+| Serventuário da Justiça | Nome usado no diagrama para quem exerce atividades de apoio à Justiça. | Código de Processo Civil |
+| Servidor Judicial | Pessoa vinculada ao serviço do Judiciário que realiza atividades de apoio ao funcionamento do órgão e dos processos. | Código de Processo Civil |
+| Situação Processual | Condição em que o processo se encontra em determinado momento. Mais de uma condição pode existir ao mesmo tempo. | Elaboração do autor |
+| Tentativa de Conciliação | Ato de buscar um acordo entre as partes. A tentativa pode terminar sem acordo. | Lei nº 9.099/1995 |
+| Testemunha | Pessoa que relata o que sabe sobre fatos importantes para o processo. | Lei nº9.099/1995 |
+| Testemunho Colhido | Situação em que o depoimento da testemunha já foi ouvido. O modelo não representa todo o conteúdo desse depoimento. | Lei nº 9.099/1995 |
+| Trânsito em Julgado | Momento em que não cabe mais recurso contra a decisão. A certidão apenas registra essa ocorrência. | Lei nº 10.259/2001 |
+| Turma Recursal | Órgão formado por juízes, responsável por julgar recursos no sistema dos Juizados. | Lei nº 9.099/1995 |
+| União Federal | Ente público federal com direitos e obrigações próprios, distinto dos órgãos que integram sua estrutura. | Constituição Federal |
+| Valor da Causa | Valor atribuído ao que se pede à Justiça, calculado conforme as regras legais. Não é necessariamente o valor que será reconhecido ou pago. | Lei nº 10.259/2001 |

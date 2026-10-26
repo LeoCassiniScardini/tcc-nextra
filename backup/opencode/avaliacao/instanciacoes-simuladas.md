@@ -6,7 +6,7 @@ Este material documenta uma **instanciação conceitual parcial com dados inteir
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| [`../tcc-jec.md`](../tcc-jec.md), Seções 3.8 e 4.4 | Procedimento de avaliação; matriz com número da QC, pergunta, percursos de elementos/relações com `>` e localização; cenários e síntese das lacunas em seções próprias. |
+| [`../tcc-jec.md`](../tcc-jec.md), Seções 3.8 e 4.4 | Procedimento de avaliação; matriz com número e pergunta na mesma coluna, classes envolvidas, percurso descrito por extenso e localização; cenários e síntese das lacunas em seções próprias. |
 | [`dados-simulados.json`](dados-simulados.json) | Inventário de indivíduos, classificações, relações, recortes, anotações, premissas e 38 respostas esperadas. É a fonte dos identificadores deste guia. |
 | [`verificar-dados.py`](verificar-dados.py) | Conferência de integridade dos artefatos, sem inferência ontológica ou decisão jurídica. |
 
@@ -283,7 +283,7 @@ Não são necessárias bibliotecas externas. O script lê os arquivos, não modi
 4. Ordem temporal local das relações verificadas; evidências e anotações não posteriores ao recorte usado pela QC.
 5. Partições de resultados declaradas nas instâncias, limite de um resultado por determinação, entrada/regra/resultado informado de cada análise de cabimento concluída e não compartilhamento de uma mesma propriedade intrínseca por portadores distintos. Os recortes selecionam uma avaliação atual por dimensão, uma obrigação e uma pretensão por cenário; não se pretende validar todos os estados possíveis de um processo real.
 6. Conciliação dos valores de pagamento e dos estados de C2.
-7. Preservação das 38 QCs, suas perguntas completas e percursos com `>`; reconhecimento da seção da matriz pelo título, sem fixar sua numeração; correspondência de recorte e classificação de suporte deste guia com o JSON.
+7. Preservação das 38 QCs, com número e pergunta na mesma célula, classes listadas no dicionário e percursos escritos por extenso, sem separadores simbólicos. Essa conferência é lexical e estrutural, não prova que a descrição esteja semanticamente correta. A seção da matriz é reconhecida pelo título, sem fixar sua numeração. Também se confere a correspondência de recorte e classificação de suporte deste guia com o JSON.
 
 As respostas esperadas foram redigidas por inspeção. **O script não consulta o grafo para obtê-las e não prova que seu conteúdo textual é verdadeiro.** Também não verifica todas as cardinalidades, toda a semântica de generalização, equivalência entre conceitos reutilizados, axiomas legais, prazos reais ou a adequação para usuários.
 
